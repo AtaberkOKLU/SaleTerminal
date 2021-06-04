@@ -1,0 +1,17 @@
+vendor_name = ModelSim
+source_file = 1, D:/EE/EE314/Project/Resources/DE1_SoC.sdc
+source_file = 1, D:/EE/EE314/Project/Resources/DE1_SoC.qsf
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.bdf
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/db/SaleTerminal.cbx.xml
+design_name = SaleTerminal
+instance = comp, \Q~output , Q~output, SaleTerminal, 1
+instance = comp, \Q2~output , Q2~output, SaleTerminal, 1
+instance = comp, \clk~input , clk~input, SaleTerminal, 1
+instance = comp, \inst1~0 , inst1~0, SaleTerminal, 1
+instance = comp, \inst1~feeder , inst1~feeder, SaleTerminal, 1
+instance = comp, \inst1~DUPLICATE , inst1~DUPLICATE, SaleTerminal, 1
+instance = comp, \clk_135~input , clk_135~input, SaleTerminal, 1
+instance = comp, \inst2~0 , inst2~0, SaleTerminal, 1
+instance = comp, \inst2~feeder , inst2~feeder, SaleTerminal, 1
+instance = comp, \inst2~DUPLICATE , inst2~DUPLICATE, SaleTerminal, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, SaleTerminal, 1
