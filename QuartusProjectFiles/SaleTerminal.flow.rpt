@@ -1,5 +1,5 @@
 Flow report for SaleTerminal
-Fri Jun 04 17:17:47 2021
+Mon Jun 07 21:31:31 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun 04 17:17:41 2021       ;
+; Flow Status                     ; Successful - Mon Jun 07 21:31:24 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -50,7 +50,7 @@ https://fpgasoftware.intel.com/eula.
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 1 / 32,070 ( < 1 % )                        ;
 ; Total registers                 ; 1                                           ;
-; Total pins                      ; 5 / 457 ( 1 % )                             ;
+; Total pins                      ; 33 / 457 ( 7 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -68,30 +68,44 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/04/2021 17:16:51 ;
+; Start date & time ; 06/07/2021 21:30:20 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SaleTerminal        ;
 +-------------------+---------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                        ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 141812761300711.162281621102968        ; --            ; --          ; --         ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
-; MISC_FILE                           ; VGA_PLL.cmp                            ; --            ; --          ; --         ;
-; MISC_FILE                           ; VGA_PLL_sim/VGA_PLL.vo                 ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
-; SPD_FILE                            ; VGA_PLL.spd                            ; --            ; --          ; --         ;
-; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --          ; --         ;
-+-------------------------------------+----------------------------------------+---------------+-------------+------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                 ;
++-------------------------------------+-----------------------------------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                                           ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+-----------------------------------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 141812761300711.162309062006520                                 ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                              ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                               ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/../../FP_MULT.qsys                           ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/FP_MULT.v                                    ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/submodules/fpoint2_combi.vhd                 ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd   ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/submodules/FPCompareFused/FPCompareFused.vhd ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/submodules/FPNeg_Abs/FPNeg.vhd               ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/simulation/submodules/FPNeg_Abs/FPAbs.vhd               ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/synthesis/../FP_MULT.cmp                                ; --            ; --          ; --         ;
+; MISC_FILE                           ; FP_MULT/synthesis/../../FP_MULT.qsys                            ; --            ; --          ; --         ;
+; MISC_FILE                           ; VGA_PLL.cmp                                                     ; --            ; --          ; --         ;
+; MISC_FILE                           ; VGA_PLL_sim/VGA_PLL.vo                                          ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; -- (Not supported for targeted family)                          ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family)                          ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family)                          ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                             ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                           ; --            ; --          ; --         ;
+; SLD_FILE                            ; FP_MULT/synthesis/FP_MULT.debuginfo                             ; --            ; --          ; --         ;
+; SLD_INFO                            ; QSYS_NAME FP_MULT HAS_SOPCINFO 1 GENERATION_ID 1622840197       ; --            ; FP_MULT     ; --         ;
+; SOPCINFO_FILE                       ; FP_MULT/synthesis/../../FP_MULT.sopcinfo                        ; --            ; --          ; --         ;
+; SPD_FILE                            ; FP_MULT/simulation/../FP_MULT.spd                               ; --            ; --          ; --         ;
+; SPD_FILE                            ; VGA_PLL.spd                                                     ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                              ; --            ; --          ; --         ;
+; SYNTHESIS_ONLY_QIP                  ; On                                                              ; --            ; --          ; --         ;
++-------------------------------------+-----------------------------------------------------------------+---------------+-------------+------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -99,11 +113,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4827 MB             ; 00:00:23                           ;
-; Fitter               ; 00:00:32     ; 1.0                     ; 6542 MB             ; 00:00:53                           ;
-; Assembler            ; 00:00:07     ; 1.0                     ; 4837 MB             ; 00:00:07                           ;
-; Timing Analyzer      ; 00:00:05     ; 1.0                     ; 5134 MB             ; 00:00:05                           ;
-; Total                ; 00:00:54     ; --                      ; --                  ; 00:01:28                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4856 MB             ; 00:00:28                           ;
+; Fitter               ; 00:00:40     ; 1.0                     ; 6547 MB             ; 00:01:05                           ;
+; Assembler            ; 00:00:08     ; 1.0                     ; 4844 MB             ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:06     ; 1.0                     ; 5136 MB             ; 00:00:06                           ;
+; Total                ; 00:01:07     ; --                      ; --                  ; 00:01:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

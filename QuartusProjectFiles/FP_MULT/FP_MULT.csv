@@ -1,0 +1,22 @@
+# system info FP_MULT on 2021.06.04.23:56:34
+system_info:
+name,value
+DEVICE,5CSEMA5F31C6
+DEVICE_FAMILY,Cyclone V
+GENERATION_ID,1622840193
+#
+#
+# Files generated for FP_MULT on 2021.06.04.23:56:34
+files:
+filepath,kind,attributes,module,is_top
+simulation/FP_MULT.v,VERILOG,,FP_MULT,true
+simulation/submodules/fpoint2_combi.vhd,VHDL,,fpoint2_combi,false
+simulation/submodules/FPMinMaxFused/FPMinMaxFused.vhd,VHDL,,fpoint2_combi,false
+simulation/submodules/FPCompareFused/FPCompareFused.vhd,VHDL,,fpoint2_combi,false
+simulation/submodules/FPNeg_Abs/FPNeg.vhd,VHDL,,fpoint2_combi,false
+simulation/submodules/FPNeg_Abs/FPAbs.vhd,VHDL,,fpoint2_combi,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+FP_MULT.nios_custom_instr_floating_point_2_combi_0,fpoint2_combi
