@@ -25,12 +25,13 @@ Visit Docs Folder
 +	3 Modes		:
 	+	Barcode : SW1 & SW2 OFF
 	+	Arrow   : SW1 ON & SW2 OFF
-	+	Product Editing : SW2 ON 
+	+	Basket Editing : SW2 ON 
 
 # System
+
 ## Clocks
 +	Base CLK 	: 50 MHz
-+	VGA CLK		: PLL - 108 MHz
++	VGA CLK		: PLL - 108 MHz (54/25)
 
 ## Buttons
 +	4-Direction Buttons
@@ -42,9 +43,10 @@ Visit Docs Folder
 	+	Quantity
 		+ 	Max	: 4
 		+	4 Button (1, 2, 3, 4)
-	+	Final Decition
-		+ 	4 Button (1, 2, 3, 4)
-		+	Max Product 4^4 = 256
++	Final Decition
+	+ 	4 Button (1, 2, 3, 4) (<-, ^, ->, v)
+	+	Max Product 4^4 = 256
+	+	1 Action Button (Select = Delete) ?+ (Edit Quantity in SW-2 Mode)
 
 ## Switchs
 +	SW-1		: Mode Arrow
@@ -52,6 +54,8 @@ Visit Docs Folder
 
 ## Segment Display
 + 	(TBD)
++	? Barcode can be Displayed
+	+	 4 Digit 
 
 ## VGA
 +	[Details & Referrence](http://tinyvga.com/vga-timing/1280x1024@60Hz)
@@ -74,6 +78,7 @@ Visit Docs Folder
 
 ## States List
 +	Start State
++	? Waiting State
 +	Barcode Product Selection State
 +	Interactive Product Selection (SW-1) State
 	+	4-Direction Buttons
