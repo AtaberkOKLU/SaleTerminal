@@ -1,0 +1,107 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim
+vBarcodeController
+Z1 !s110 1623260492
+!i10b 1
+!s100 ]D@B;QJgE<iHfhI8Ma@Vf0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IM`cYS1Tc_HoMjj1BTNH982
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1623260490
+Z4 8SaleTerminal.vo
+Z5 FSaleTerminal.vo
+!i122 32
+L0 32 2161
+Z6 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z7 !s108 1623260492.000000
+Z8 !s107 SaleTerminal.vo|
+Z9 !s90 -work|work|SaleTerminal.vo|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@barcode@controller
+vBarcodeController_vlg_vec_tst
+R1
+!i10b 1
+!s100 ^TY@DE`zHjI7=an@IDi>D2
+R2
+IS6mjP`A^JJ6GMS;=2dRV40
+R3
+R0
+w1623260489
+8BarcodeController.vwf.vt
+FBarcodeController.vwf.vt
+!i122 33
+L0 30 110
+R6
+r1
+!s85 0
+31
+R7
+!s107 BarcodeController.vwf.vt|
+!s90 -work|work|BarcodeController.vwf.vt|
+!i113 1
+R10
+R11
+n@barcode@controller_vlg_vec_tst
+vBarcodeShiftRegister
+!s110 1623257006
+!i10b 1
+!s100 8midmPcU8j]=T19X0RoZC0
+R2
+IeNgHOaLkigBmmJJME9`[<2
+R3
+R0
+w1623257005
+R4
+R5
+!i122 4
+L0 32 905
+R6
+r1
+!s85 0
+31
+Z12 !s108 1623257006.000000
+R8
+R9
+!i113 1
+R10
+R11
+n@barcode@shift@register
+vBarcodeShiftRegister_vlg_vec_tst
+!s110 1623257007
+!i10b 1
+!s100 S@AY0@oceGdQR?7b;DgkK2
+R2
+IGgb;DQ90Vg59THhh``]JG0
+R3
+R0
+w1623257004
+8BarcodeShiftRegister.vwf.vt
+FBarcodeShiftRegister.vwf.vt
+!i122 5
+L0 30 100
+R6
+r1
+!s85 0
+31
+R12
+!s107 BarcodeShiftRegister.vwf.vt|
+!s90 -work|work|BarcodeShiftRegister.vwf.vt|
+!i113 1
+R10
+R11
+n@barcode@shift@register_vlg_vec_tst

@@ -4,115 +4,211 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "VGA_R[0]",
+					"name" : "BarcodeDigitCompleted",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[1]",
+					"name" : "Barcode_Digit_0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[2]",
+					"name" : "Barcode_Digit_0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[3]",
+					"name" : "Barcode_Digit_0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[4]",
+					"name" : "Barcode_Digit_0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[5]",
+					"name" : "Barcode_Digit_1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[6]",
+					"name" : "Barcode_Digit_1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_R[7]",
+					"name" : "Barcode_Digit_1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[0]",
+					"name" : "Barcode_Digit_1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[1]",
+					"name" : "Barcode_Digit_2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[2]",
+					"name" : "Barcode_Digit_2[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[3]",
+					"name" : "Barcode_Digit_2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[4]",
+					"name" : "Barcode_Digit_2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[5]",
+					"name" : "Barcode_Digit_3[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[6]",
+					"name" : "Barcode_Digit_3[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_G[7]",
+					"name" : "Barcode_Digit_3[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[0]",
+					"name" : "Barcode_Digit_3[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[1]",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[2]",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[3]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[4]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[5]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[6]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_B[7]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_HS",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_VS",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "VGA_BLANK_N",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "RESET",
+					"name" : "HEX1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "ENABLE",
+					"strict" : false
+				},
+				{
+					"name" : "Digit_in[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Digit_in[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Digit_in[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Digit_in[3]",
 					"strict" : false
 				}
 			]
