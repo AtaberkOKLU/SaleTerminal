@@ -1,3 +1,14 @@
+/*
+ *		Module		:	7-Segment Block
+ * 	Description	: 	The indiviual block manages connected on-board 
+ *							segment displays
+ *		Inputs		: 	bcd	=> BCD number to display
+ *
+ *		Outputs		: 	seg	=> 7-bit control signal to realize BCD
+										number on the display
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module Segment7(
      input [3:0] bcd,
      output reg[6:0] seg

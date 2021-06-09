@@ -1,3 +1,17 @@
+/*
+ *		Module		:	HVSync Generator Block
+ * 	Description	: 	This Block Generates proper V/H Sync signals
+							for defined timing constrains
+ *		Inputs		: 	VGA_CLK	=> Main Board FPGA Clock
+ *						:	RESET_N 	=> Reset Signal
+ *
+ *		Outputs		: 	CounterXY	=> V/H Counters 
+ * 					:	VGA_HVSync 	=> 2 Sync Singanls to the VGA Port Pins
+ * 					:	inDisplay 	=> Logic Singal informing other blocks
+ * 											that counters in the DisplayArea
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module HVSync_Generator
 #(
 	 parameter CNTR_WIDTH_V = 10,

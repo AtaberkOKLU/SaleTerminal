@@ -1,3 +1,17 @@
+/*
+ *		Module		:	VGA Controller Block
+ * 	Description	: 	It contains VGA_PLL Block, HVSync_Generator,
+							ImageLocator Logic Block and ImageROM Block
+							Memory holding the image data. This block 
+							manages proper timing and pixel outputs.
+ *		Inputs		: 	CLOCK_50	=> Main Board FPGA Clock
+ *						:	RESET_N 	=> Reset Signal
+ *
+ *		Outputs		: 	VGA_RGB		=> 24-bit RBG values to the VGA Port Pins
+ * 					:	VGA_HVSync 	=> 2 Sync Singanls to the VGA Port Pins
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module VGA_Controller
 #(
 	// Color Width = 8
@@ -32,7 +46,7 @@ module VGA_Controller
 )
 (
     input CLOCK_50,
-	 input RESET,
+	 input RESET_N,
     output reg [R_WIDTH-1:0] VGA_R,
 	 output reg [G_WIDTH-1:0] VGA_G,
 	 output reg [B_WIDTH-1:0] VGA_B,
@@ -51,7 +65,7 @@ module VGA_Controller
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
-		.rst(RESET),
+		.rst(RESET_N),
 		.outclk_0(VGA_CLK_W),
 		.locked()
 	 );
@@ -69,7 +83,7 @@ module VGA_Controller
 			.VISIBLE_V(VISIBLE_V)
 		) HVSync_Generator_inst0(
 			.VGA_CLK(VGA_CLK_W),
-			.RST_N(RESET),
+			.RST_N(RESET_N),
 			.VGA_HS(VGA_HS),
 			.VGA_VS(VGA_VS),
 			.CounterX(CounterX),

@@ -1,3 +1,17 @@
+/*
+ *		Module		:	Button Controller Block
+ * 	Description	: 	It manages the roles of limited number of buttons
+ *							to handle both informative and command inputs
+ *		Inputs		: 	SW		=> SW[9] from the board
+ *						:	KEY 	=> KEY# from the board
+ *
+ *		Outputs		: 	CMD_Reg	=> Provides Current States of CMD Keys
+ *											for other blocks
+ * 					:	KEY_Reg 	=> Provides Current States of KEY values
+ *											for other blocks
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module ButtonController(
 	input wire [9:9] SW,
 	input wire [3:0] KEY,
