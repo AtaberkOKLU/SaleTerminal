@@ -6,6 +6,9 @@ Visit Docs Folder
 
 # Link Resources
 
+## Verilog Tutorial
+* [Verilog](https://zipcpu.com/tutorial/)
+
 ## VGA Controller
 * [VGA Controller using Verilog](https://ktln2.org/2018/01/23/implementing-vga-in-verilog/)
 * [VGA Controller | Verilog](https://numato.com/kb/simple-vga-design-example-for-telesto/)
