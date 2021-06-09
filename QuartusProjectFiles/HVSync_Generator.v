@@ -1,7 +1,17 @@
 module HVSync_Generator
 #(
 	 parameter CNTR_WIDTH_V = 10,
-	 parameter CNTR_WIDTH_H = 10
+	 parameter CNTR_WIDTH_H = 10,
+	 
+	 parameter FRONT_PORCH_H = 40,
+	 parameter BACK_PORCH_H = 88,
+	 parameter SYNC_PULSE_H = 128,
+	 parameter VISIBLE_H = 800,
+	 
+	 parameter FRONT_PORCH_V = 1,
+	 parameter BACK_PORCH_V = 23,
+	 parameter SYNC_PULSE_V = 4,
+	 parameter VISIBLE_V = 600
 )(
     input VGA_CLK,
 	 input RST_N,
@@ -13,16 +23,8 @@ module HVSync_Generator
   );
     reg vga_HS, vga_VS;
 	 
-	 localparam FRONT_PORCH_H = 40;
-	 localparam BACK_PORCH_H = 88;
-	 localparam SYNC_PULSE_H = 128;
-	 localparam VISIBLE_H = 800;
-	 localparam WHOLE_H = FRONT_PORCH_H + BACK_PORCH_H + SYNC_PULSE_H + VISIBLE_H;
 	 
-	 localparam FRONT_PORCH_V = 1;
-	 localparam BACK_PORCH_V = 23;
-	 localparam SYNC_PULSE_V = 4;
-	 localparam VISIBLE_V = 600;
+	 localparam WHOLE_H = FRONT_PORCH_H + BACK_PORCH_H + SYNC_PULSE_H + VISIBLE_H;
 	 localparam WHOLE_V = FRONT_PORCH_V + BACK_PORCH_V + SYNC_PULSE_V + VISIBLE_V;
 	 
     wire CounterXmaxed = (CounterX == WHOLE_H);
