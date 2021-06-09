@@ -23,8 +23,9 @@ Visit Docs Folder
 	+	Product List
 	+	Basket List
 	+	Overall Price
-+	6 Product 	: Garlic, Tomato, Patato, Banana, Berry, Cherry
-	+	Images	: Fixed Sized, Fixed Position
+	+ 	Logo
++	12	Product : Apple, Avocado, Banana, Cherry, Fig, Grape, Kiwi, Lemon, Peach, Pineapple, Tomato, Potato
+	+	Images	: Fixed Sized (100 x 100), Fixed Position
 +	3 Modes		:
 	+	Barcode : SW1 & SW2 OFF
 	+	Arrow   : SW1 ON & SW2 OFF
@@ -34,7 +35,7 @@ Visit Docs Folder
 
 ## Clocks
 +	Base CLK 	: 50 MHz
-+	VGA CLK		: PLL - 108 MHz (54/25)
++	VGA CLK		: PLL - 40 MHz
 
 ## Buttons
 +	4-Direction Buttons
@@ -54,6 +55,7 @@ Visit Docs Folder
 ## Switchs
 +	SW-1		: Mode Arrow
 +	SW-2		: Mode Editting
++	SW-9 		: Button Managment Switch
 
 ## Segment Display
 + 	(TBD)
@@ -61,25 +63,26 @@ Visit Docs Folder
 	+	 4 Digit 
 
 ## VGA
-+	[Details & Referrence](http://tinyvga.com/vga-timing/1280x1024@60Hz)
-+	Frame Size 	: 1280x1024
++	[Details & Referrence](http://tinyvga.com/vga-timing/800x600@60Hz)
++	Frame Size 	: 800 x 600
 +	Frame Rate	: 60 Hz
 +	Horizontal Timing
-	+	Visible : 1280
-	+ 	F. Porch: 48
-	+	B. Porch: 248
-	+ 	S. Pulse: 112
-	+	Total 	: 1688
+	+	Visible : 800
+	+ 	F. Porch: 40
+	+	B. Porch: 88
+	+ 	S. Pulse: 128
+	+	Total 	: 1056
 +	Vertical Timing
-	+	Visible : 1024
+	+	Visible : 600
 	+ 	F. Porch: 1
-	+	B. Porch: 38
-	+ 	S. Pulse: 3
-	+	Total 	: 1066
-+	Total B/s	: 107.964.480
-+	VGA CLK FREQ: 108.0 MHz
+	+	B. Porch: 23
+	+ 	S. Pulse: 4
+	+	Total 	: 628
++	Total B/s	: 39.790.080
++	VGA CLK FREQ: 40 MHz
 
 ## States List
++	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
 +	Start State
 +	? Waiting State
 +	Barcode Product Selection State
