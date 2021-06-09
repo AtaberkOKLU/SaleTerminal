@@ -1,16 +1,8 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="0f49476ea63bc7cfbf0c"/>
+    <hash md5_digest_80b="88fe94f2b1c63ca95d57"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="SaleTerminal.sof" usercode="0xFFFFFFFF"/>
   </file_info>
-  <sld_infos>
-    <sld_info hpath="FP_MULT:inst4" name="inst4">
-      <assignment_values>
-        <assignment_value text="QSYS_NAME FP_MULT HAS_SOPCINFO 1 GENERATION_ID 1622840197"/>
-      </assignment_values>
-      <parameters/>
-    </sld_info>
-  </sld_infos>
 </sld_project_info>

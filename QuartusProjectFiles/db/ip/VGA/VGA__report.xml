@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2021.06.08.13:48:44"
+ outputDirectory="D:/EE/EE314/Project/QuartusProjectFiles/db/ip/VGA/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone V"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="5CSEMA5F31C6"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="6"
+     onHdl="0"
+     affectsHdl="1" />
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="VGA:1.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,AUTO_GENERATION_ID=1623149320,AUTO_UNIQUE_ID=(altera_up_avalon_video_pll:18.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,gui_refclk=50.0,refclk=50.0,video_in_clk_en=false)"
+   instancePathKey="VGA"
+   kind="VGA"
+   version="1.0"
+   name="VGA">
+  <parameter name="AUTO_GENERATION_ID" value="1623149320" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="D:/EE/EE314/Project/QuartusProjectFiles/db/ip/VGA/VGA.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="D:/EE/EE314/Project/QuartusProjectFiles/db/ip/VGA/submodules/VGA_video_pll_0.v"
+       type="VERILOG" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file path="D:/EE/EE314/Project/QuartusProjectFiles/VGA.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="C:/intelfpga_lite/20.1/ip/altera/university_program/clocks/altera_up_avalon_video_pll/altera_up_avalon_video_pll_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="VGA">queue size: 0 starting:VGA "VGA"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>1</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="VGA"><![CDATA["<b>VGA</b>" reuses <b>altera_up_avalon_video_pll</b> "<b>submodules/VGA_video_pll_0</b>"]]></message>
+   <message level="Debug" culprit="VGA">queue size: 0 starting:altera_up_avalon_video_pll "submodules/VGA_video_pll_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>0</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Info" culprit="video_pll_0"><![CDATA["<b>VGA</b>" instantiated <b>altera_up_avalon_video_pll</b> "<b>video_pll_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_video_pll:18.0:AUTO_DEVICE=5CSEMA5F31C6,AUTO_DEVICE_FAMILY=Cyclone V,AUTO_DEVICE_SPEEDGRADE=6,gui_refclk=50.0,refclk=50.0,video_in_clk_en=false"
+   instancePathKey="VGA:.:video_pll_0"
+   kind="altera_up_avalon_video_pll"
+   version="18.0"
+   name="VGA_video_pll_0">
+  <parameter name="gui_refclk" value="50.0" />
+  <parameter name="AUTO_DEVICE" value="5CSEMA5F31C6" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone V" />
+  <parameter name="refclk" value="50.0" />
+  <parameter name="video_in_clk_en" value="false" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="6" />
+  <generatedFiles>
+   <file
+       path="D:/EE/EE314/Project/QuartusProjectFiles/db/ip/VGA/submodules/VGA_video_pll_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="C:/intelfpga_lite/20.1/ip/altera/university_program/clocks/altera_up_avalon_video_pll/altera_up_avalon_video_pll_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="VGA" as="video_pll_0" />
+  <messages>
+   <message level="Debug" culprit="VGA">queue size: 0 starting:altera_up_avalon_video_pll "submodules/VGA_video_pll_0"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>0</b> modules, <b>0</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Info" culprit="video_pll_0"><![CDATA["<b>VGA</b>" instantiated <b>altera_up_avalon_video_pll</b> "<b>video_pll_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

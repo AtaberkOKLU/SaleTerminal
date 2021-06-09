@@ -1,0 +1,38 @@
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_TOOL_NAME "Qsys"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_TOOL_VERSION "20.1"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_TOOL_ENV "Qsys"
+set_global_assignment -library "FP_MULT" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../../FP_MULT.sopcinfo"]
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name SLD_INFO "QSYS_NAME FP_MULT HAS_SOPCINFO 1 GENERATION_ID 1623149465"
+set_global_assignment -library "FP_MULT" -name SLD_FILE [file join $::quartus(qip_path) "FP_MULT.debuginfo"]
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_TARGETED_DEVICE_FAMILY "Cyclone V"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_GENERATED_DEVICE_FAMILY "{Cyclone V}"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_QSYS_MODE "STANDALONE"
+set_global_assignment -name SYNTHESIS_ONLY_QIP ON
+set_global_assignment -library "FP_MULT" -name MISC_FILE [file join $::quartus(qip_path) "../../../FP_MULT.qsys"]
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_NAME "RlBfTVVMVA=="
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_DISPLAY_NAME "RlBfTVVMVA=="
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_REPORT_HIERARCHY "On"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_VERSION "MS4w"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTYyMzE0OTQ2NQ==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
+set_global_assignment -entity "FP_MULT" -library "FP_MULT" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_NAME "ZnBvaW50Ml9jb21iaQ=="
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_DISPLAY_NAME "RmxvYXRpbmcgUG9pbnQgSGFyZHdhcmUgMiBDb21iaW5hdG9yaWFs"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_INTERNAL "Off"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_AUTHOR "QWx0ZXJhIENvcnBvcmF0aW9u"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_VERSION "MjAuMQ=="
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_COMPONENT_DESCRIPTION "VGhpcyBjb21wb25lbnQgcmVwcmVzZW50cyBwYXJ0IG9mIHRoZSBGbG9hdGluZyBQb2ludCBIYXJkd2FyZSAyIHdoZXJlIHRoZSBBcml0aG1ldGljIGFuZCBDb21wYXJpc29uIG9wZXJhdGlvbnMgYXJlIHBlcmZvcm1lZA=="
+
+set_global_assignment -library "FP_MULT" -name VERILOG_FILE [file join $::quartus(qip_path) "FP_MULT.v"]
+set_global_assignment -library "FP_MULT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/fpoint2_combi.vhd"]
+set_global_assignment -library "FP_MULT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/FPMinMaxFused/FPMinMaxFused.vhd"]
+set_global_assignment -library "FP_MULT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/FPCompareFused/FPCompareFused.vhd"]
+set_global_assignment -library "FP_MULT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/FPNeg_Abs/FPNeg.vhd"]
+set_global_assignment -library "FP_MULT" -name VHDL_FILE [file join $::quartus(qip_path) "submodules/FPNeg_Abs/FPAbs.vhd"]
+
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_TOOL_NAME "altera_nios_custom_instr_floating_point_2_combi"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_TOOL_VERSION "20.1"
+set_global_assignment -entity "fpoint2_combi" -library "FP_MULT" -name IP_TOOL_ENV "Qsys"

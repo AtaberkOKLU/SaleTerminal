@@ -1,1 +1,1 @@
-set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) Qsys_platform_config/Qsys_platform_config.qip]
+set_global_assignment -name QIP_FILE [file join $::quartus(qip_path) FP_MULT/FP_MULT.qip]

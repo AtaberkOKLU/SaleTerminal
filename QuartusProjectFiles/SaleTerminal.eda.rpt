@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SaleTerminal
-Fri Jun 04 16:52:34 2021
+Tue Jun 08 19:50:08 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -35,7 +35,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                                       ;
 +---------------------------+------------------------------------------------------+
-; EDA Netlist Writer Status ; No Output Files Generated - Fri Jun 04 16:52:34 2021 ;
+; EDA Netlist Writer Status ; No Output Files Generated - Tue Jun 08 19:50:08 2021 ;
 ; Revision Name             ; SaleTerminal                                         ;
 ; Top-level Entity Name     ; SaleTerminal                                         ;
 ; Family                    ; Cyclone V                                            ;
@@ -48,13 +48,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Jun 04 16:52:33 2021
+    Info: Processing started: Tue Jun 08 19:50:07 2021
 Info: Command: quartus_eda --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Warning (199027): Can't generate output files. Specify command-line options to generate output files, or update EDA tool settings using GUI or Tcl script.
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4715 megabytes
-    Info: Processing ended: Fri Jun 04 16:52:34 2021
+    Info: Peak virtual memory: 4716 megabytes
+    Info: Processing ended: Tue Jun 08 19:50:08 2021
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

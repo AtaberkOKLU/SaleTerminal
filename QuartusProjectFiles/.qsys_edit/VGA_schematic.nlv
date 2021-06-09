@@ -1,0 +1,14 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst unsaved.video_pll_0.reset_from_locked -pg 1
+preplace inst unsaved.video_pll_0 -pg 1 -lvl 1 -y 50
+preplace inst unsaved.video_pll_0.video_pll -pg 1
+preplace inst unsaved -pg 1 -lvl 1 -y 40 -regy -20
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)unsaved.vga_clk,(MASTER)video_pll_0.vga_clk) 1 1 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)video_pll_0.ref_reset,(SLAVE)unsaved.ref_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(SLAVE)video_pll_0.ref_clk,(SLAVE)unsaved.ref_clk) 1 0 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)unsaved.lcd_clk,(MASTER)video_pll_0.lcd_clk) 1 1 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)video_pll_0.video_in_clk,(MASTER)unsaved.video_in_clk) 1 1 1 NJ
+preplace netloc EXPORT<net_container>unsaved</net_container>(MASTER)video_pll_0.reset_source,(MASTER)unsaved.reset_source) 1 1 1 NJ
+levelinfo -pg 1 0 70 430
+levelinfo -hier unsaved 80 160 320

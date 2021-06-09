@@ -1,0 +1,78 @@
+Info: Start Nativelink Simulation process
+executing command line: ip-make-simscript --nativelink-mode --output-directory=SaleTerminal_iputf_input --spd=D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.spd 
+Internal error: Failed to run ip-make-simscript: 2021.06.08.21:56:10 Info: Doing: <b>ip-make-simscript --nativelink-mode --output-directory=SaleTerminal_iputf_input --spd=D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.spd</b>
+Exception in thread "main" java.lang.Error: Call to quartus_sh failed unexpectedly:
+------------------------------------------------
+can't read "family_all_lib_list(cyclonev,verýlog)": no such element in array
+    while executing
+"set my_lib_list $family_all_lib_list($family,$language)"
+    (procedure "::quartus::sim_lib_info::get_sim_models_for_family" line 12)
+    invoked from within
+"unknown_original ::quartus::sim_lib_info::get_sim_models_for_family cyclonev verýlog 1 modelsým"
+    ("eval" body line 1)
+    invoked from within
+"eval unknown_original $cmd $args"
+    (procedure "::unknown" line 7)
+    invoked from within
+"::quartus::sim_lib_info::get_sim_models_for_family $device_family $language 1 $simulator "
+    ("foreach" body line 16)
+    invoked from within
+"foreach filename $argv {
+    set information [ split $filename "#" ]
+    set language [ lindex $information 0 ]
+    set simulator [ lindex $informatio..."
+    (file "C:/Users/atabe/AppData/Local/Temp/alt8786_1253530028904824493.dir/0001_temporaryDirectory/script.tcl" line 66)
+------------------------------------------------
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.runTclScript(SimulationLibraryInformation.java:234)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.generateSpdFiles(SimulationLibraryInformation.java:147)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.initialize(SimulationLibraryInformation.java:194)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.<init>(SimulationLibraryInformation.java:115)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimScriptGen.act(SimScriptGen.java:211)
+	at com.altera.utilities.AltCmdLineToolBase.runTheTool(AltCmdLineToolBase.java:718)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimScriptGen.main(SimScriptGen.java:178)
+Internal error: Failed to run ip-make-simscript: 2021.06.08.21:56:10 Info: Doing: <b>ip-make-simscript --nativelink-mode --output-directory=SaleTerminal_iputf_input --spd=D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.spd</b>
+Exception in thread "main" java.lang.Error: Call to quartus_sh failed unexpectedly:
+------------------------------------------------
+can't read "family_all_lib_list(cyclonev,verýlog)": no such element in array
+    while executing
+"set my_lib_list $family_all_lib_list($family,$language)"
+    (procedure "::quartus::sim_lib_info::get_sim_models_for_family" line 12)
+    invoked from within
+"unknown_original ::quartus::sim_lib_info::get_sim_models_for_family cyclonev verýlog 1 modelsým"
+    ("eval" body line 1)
+    invoked from within
+"eval unknown_original $cmd $args"
+    (procedure "::unknown" line 7)
+    invoked from within
+"::quartus::sim_lib_info::get_sim_models_for_family $device_family $language 1 $simulator "
+    ("foreach" body line 16)
+    invoked from within
+"foreach filename $argv {
+    set information [ split $filename "#" ]
+    set language [ lindex $information 0 ]
+    set simulator [ lindex $informatio..."
+    (file "C:/Users/atabe/AppData/Local/Temp/alt8786_1253530028904824493.dir/0001_temporaryDirectory/script.tcl" line 66)
+------------------------------------------------
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.runTclScript(SimulationLibraryInformation.java:234)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.generateSpdFiles(SimulationLibraryInformation.java:147)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.initialize(SimulationLibraryInformation.java:194)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimulationLibraryInformation.<init>(SimulationLibraryInformation.java:115)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimScriptGen.act(SimScriptGen.java:211)
+	at com.altera.utilities.AltCmdLineToolBase.runTheTool(AltCmdLineToolBase.java:718)
+	at com.altera.sopcmodel.sbtools.simscriptgen.SimScriptGen.main(SimScriptGen.java:178)
+Error: NativeLink simulation flow was NOT successful
+
+
+
+================The following additional information is provided to help identify the cause of error while running nativelink scripts=================
+Nativelink TCL script failed with errorCode:  1
+Nativelink TCL script failed with errorInfo:  1
+    (procedure "iputf_call_script_gen" line 1)
+    invoked from within
+"iputf_call_script_gen $spd_file_list"
+    (procedure "iputf_setup_info" line 45)
+    invoked from within
+"iputf_setup_info"
+    (procedure "run_eda_simulation_tool" line 178)
+    invoked from within
+"run_eda_simulation_tool eda_opts_hash"
