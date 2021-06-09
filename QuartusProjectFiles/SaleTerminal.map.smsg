@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(8): object "VGA_HS" differs only in case from object "vga_HS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 8
-Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(9): object "VGA_VS" differs only in case from object "vga_VS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 9
+Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(18): object "VGA_HS" differs only in case from object "vga_HS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 18
+Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(19): object "VGA_VS" differs only in case from object "vga_VS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 19

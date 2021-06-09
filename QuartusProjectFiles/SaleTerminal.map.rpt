@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Wed Jun 09 14:37:26 2021
+Wed Jun 09 18:27:50 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -55,7 +55,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 09 14:37:26 2021       ;
+; Analysis & Synthesis Status     ; Successful - Wed Jun 09 18:27:50 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; VGA_Controller                              ;
@@ -324,15 +324,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 
 +--------------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: Top-level Entity: |VGA_Controller ;
-+----------------+-------+-------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                  ;
-+----------------+-------+-------------------------------------------------------+
-; R_WIDTH        ; 8     ; Signed Integer                                        ;
-; G_WIDTH        ; 8     ; Signed Integer                                        ;
-; B_WIDTH        ; 8     ; Signed Integer                                        ;
-; CNTR_WIDTH_V   ; 10    ; Signed Integer                                        ;
-; CNTR_WIDTH_H   ; 10    ; Signed Integer                                        ;
-+----------------+-------+-------------------------------------------------------+
++--------------------+-------+---------------------------------------------------+
+; Parameter Name     ; Value ; Type                                              ;
++--------------------+-------+---------------------------------------------------+
+; R_WIDTH            ; 8     ; Signed Integer                                    ;
+; G_WIDTH            ; 8     ; Signed Integer                                    ;
+; B_WIDTH            ; 8     ; Signed Integer                                    ;
+; CNTR_WIDTH_V       ; 10    ; Signed Integer                                    ;
+; CNTR_WIDTH_H       ; 10    ; Signed Integer                                    ;
+; FRONT_PORCH_H      ; 40    ; Signed Integer                                    ;
+; BACK_PORCH_H       ; 88    ; Signed Integer                                    ;
+; SYNC_PULSE_H       ; 128   ; Signed Integer                                    ;
+; VISIBLE_H          ; 800   ; Signed Integer                                    ;
+; FRONT_PORCH_V      ; 1     ; Signed Integer                                    ;
+; BACK_PORCH_V       ; 23    ; Signed Integer                                    ;
+; SYNC_PULSE_V       ; 4     ; Signed Integer                                    ;
+; VISIBLE_V          ; 600   ; Signed Integer                                    ;
+; PRDCT_PIC_WIDTH    ; 100   ; Signed Integer                                    ;
+; PRDCT_PIC_HEIGHT   ; 100   ; Signed Integer                                    ;
+; NUM_OF_PRDCT       ; 12    ; Signed Integer                                    ;
+; ROM_ADDR_BUS_WIDTH ; 17    ; Signed Integer                                    ;
++--------------------+-------+---------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -590,6 +602,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+-------+-------------------------------------------------------------+
 ; CNTR_WIDTH_V   ; 10    ; Signed Integer                                              ;
 ; CNTR_WIDTH_H   ; 10    ; Signed Integer                                              ;
+; FRONT_PORCH_H  ; 40    ; Signed Integer                                              ;
+; BACK_PORCH_H   ; 88    ; Signed Integer                                              ;
+; SYNC_PULSE_H   ; 128   ; Signed Integer                                              ;
+; VISIBLE_H      ; 800   ; Signed Integer                                              ;
+; FRONT_PORCH_V  ; 1     ; Signed Integer                                              ;
+; BACK_PORCH_V   ; 23    ; Signed Integer                                              ;
+; SYNC_PULSE_V   ; 4     ; Signed Integer                                              ;
+; VISIBLE_V      ; 600   ; Signed Integer                                              ;
 +----------------+-------+-------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -730,7 +750,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 09 14:37:15 2021
+    Info: Processing started: Wed Jun 09 18:27:39 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -753,8 +773,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_con
 Info (12021): Found 1 design units, including 1 entities, in source file buttoncontroller.v
     Info (12023): Found entity 1: ButtonController File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 1
 Info (12127): Elaborating entity "VGA_Controller" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VGA_Controller.v(61): truncated value with size 32 to match size of target (19) File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 61
-Info (12128): Elaborating entity "VGA_PLL" for hierarchy "VGA_PLL:VGA_PLL_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 36
+Warning (10230): Verilog HDL assignment warning at VGA_Controller.v(93): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 93
+Info (12128): Elaborating entity "VGA_PLL" for hierarchy "VGA_PLL:VGA_PLL_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 57
 Info (12128): Elaborating entity "VGA_PLL_0002" for hierarchy "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v Line: 20
 Info (12128): Elaborating entity "altera_pll" for hierarchy "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL/VGA_PLL_0002.v Line: 85
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "wire_to_nowhere_64" into its bus
@@ -820,10 +840,10 @@ Info (12133): Instantiated megafunction "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_
     Info (12134): Parameter "duty_cycle17" = "50"
     Info (12134): Parameter "pll_type" = "General"
     Info (12134): Parameter "pll_subtype" = "General"
-Info (12128): Elaborating entity "HVSync_Generator" for hierarchy "HVSync_Generator:HVSync_Generator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 46
-Warning (10230): Verilog HDL assignment warning at HVSync_Generator.v(35): truncated value with size 32 to match size of target (10) File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 35
-Warning (10230): Verilog HDL assignment warning at HVSync_Generator.v(44): truncated value with size 32 to match size of target (10) File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 44
-Info (12128): Elaborating entity "ImageROM" for hierarchy "ImageROM:ImageROM_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 52
+Info (12128): Elaborating entity "HVSync_Generator" for hierarchy "HVSync_Generator:HVSync_Generator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 78
+Warning (10230): Verilog HDL assignment warning at HVSync_Generator.v(37): truncated value with size 32 to match size of target (10) File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 37
+Warning (10230): Verilog HDL assignment warning at HVSync_Generator.v(46): truncated value with size 32 to match size of target (10) File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 46
+Info (12128): Elaborating entity "ImageROM" for hierarchy "ImageROM:ImageROM_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 84
 Info (12128): Elaborating entity "altsyncram" for hierarchy "ImageROM:ImageROM_inst0|altsyncram:altsyncram_component" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v Line: 82
 Info (12130): Elaborated megafunction instantiation "ImageROM:ImageROM_inst0|altsyncram:altsyncram_component" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v Line: 82
 Info (12133): Instantiated megafunction "ImageROM:ImageROM_inst0|altsyncram:altsyncram_component" with the following parameter: File: D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v Line: 82
@@ -862,8 +882,8 @@ Info (21057): Implemented 583 device resources after synthesis - the final resou
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 1 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4851 megabytes
-    Info: Processing ended: Wed Jun 09 14:37:26 2021
+    Info: Peak virtual memory: 4858 megabytes
+    Info: Processing ended: Wed Jun 09 18:27:50 2021
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:24
 
