@@ -12,6 +12,7 @@ module VGA_Controller
     output reg [R_WIDTH-1:0] VGA_R,
 	 output reg [G_WIDTH-1:0] VGA_G,
 	 output reg [B_WIDTH-1:0] VGA_B,
+	 output VGA_CLK,
     output VGA_HS,
     output VGA_VS,
 	 output VGA_BLANK_N
@@ -21,21 +22,22 @@ module VGA_Controller
 	 localparam NUM_OF_PRDCT = 12;
 
     wire inDisplayArea;
+	 wire VGA_CLK_W;
     wire [CNTR_WIDTH_H-1:0] CounterX;
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
 	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] VGA_RGB_Bus;
-	 wire VGA_CLK;
 	 reg 	[18:0] targetPixelAddr = 0;
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
 		.rst(RESET),
-		.outclk_0(VGA_CLK),
+		.outclk_0(VGA_CLK_W),
 		.locked()
 	 );
 
     HVSync_Generator HVSync_Generator_inst0(
-      .VGA_CLK(VGA_CLK),
+      .VGA_CLK(VGA_CLK_W),
+		.RST_N(RESET),
       .VGA_HS(VGA_HS),
       .VGA_VS(VGA_VS),
       .CounterX(CounterX),
@@ -45,11 +47,12 @@ module VGA_Controller
 	 
 	 ImageROM ImageROM_inst0(
 		.address(targetPixelAddr),
-		.clock(VGA_CLK),
+		.clock(VGA_CLK_W),
 		.q(VGA_RGB_Bus)
 	 );
 	 
 	 assign VGA_BLANK_N = inDisplayArea;
+	 assign VGA_CLK = VGA_CLK_W;
 
     always @(posedge VGA_CLK)
     begin

@@ -4,6 +4,7 @@ module HVSync_Generator
 	 parameter CNTR_WIDTH_H = 10
 )(
     input VGA_CLK,
+	 input RST_N,
     output VGA_HS,
     output VGA_VS,
     output reg inDisplayArea,
@@ -28,16 +29,16 @@ module HVSync_Generator
     wire CounterYmaxed = (CounterY == WHOLE_V);
 
     always @(posedge VGA_CLK)
-    if (CounterXmaxed)
+    if (CounterXmaxed || (!RST_N))
       CounterX <= 0;
     else
       CounterX <= CounterX + 1;
 
     always @(posedge VGA_CLK)
     begin
-      if (CounterXmaxed)
+      if (CounterXmaxed || (!RST_N))
       begin
-        if(CounterYmaxed)
+        if(CounterYmaxed || (!RST_N))
           CounterY <= 0;
         else
           CounterY <= CounterY + 1;
@@ -46,13 +47,28 @@ module HVSync_Generator
 
     always @(posedge VGA_CLK)
     begin
-      vga_HS <= (CounterX > (VISIBLE_H + FRONT_PORCH_H) && (CounterX < (VISIBLE_H + FRONT_PORCH_H + SYNC_PULSE_H)));   // active for SYNC_PULSE_H clocks
-      vga_VS <= (CounterY > (VISIBLE_V + FRONT_PORCH_V) && (CounterY < (VISIBLE_V + FRONT_PORCH_V + SYNC_PULSE_V)));   // active for SYNC_PULSE_V clocks
-    end
+		 if(!RST_N)
+			begin
+				vga_HS <= 0;
+				vga_VS <= 0;
+			end
+		 else
+			begin
+				vga_HS <= (CounterX > (VISIBLE_H + FRONT_PORCH_H) && (CounterX < (VISIBLE_H + FRONT_PORCH_H + SYNC_PULSE_H)));   // active for SYNC_PULSE_H clocks
+				vga_VS <= (CounterY > (VISIBLE_V + FRONT_PORCH_V) && (CounterY < (VISIBLE_V + FRONT_PORCH_V + SYNC_PULSE_V)));   // active for SYNC_PULSE_V clocks
+			end
+	 end
 
     always @(posedge VGA_CLK)
     begin
-        inDisplayArea <= (CounterX < VISIBLE_H) && (CounterY < VISIBLE_V);
+		if(!RST_N)
+			begin
+				inDisplayArea <= 0;
+			end
+		else
+			begin
+				inDisplayArea <= (CounterX < VISIBLE_H) && (CounterY < VISIBLE_V);
+			end
     end
 
     assign VGA_HS = ~vga_HS;
