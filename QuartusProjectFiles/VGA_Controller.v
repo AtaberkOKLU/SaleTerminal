@@ -58,10 +58,12 @@ module VGA_Controller
 
     wire inDisplayArea;
 	 wire VGA_CLK_W;
+	 wire isImage_wire;
+	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0]BW_Pix_wire;
     wire [CNTR_WIDTH_H-1:0] CounterX;
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
 	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] VGA_RGB_Bus;
-	 reg 	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr = 0;
+	 wire	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr;
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
@@ -96,25 +98,44 @@ module VGA_Controller
 		.clock(VGA_CLK_W),
 		.q(VGA_RGB_Bus)
 	 );
+
+
+	ImageLocator ImageLocator_inst0(
+		.CounterX(CounterX),
+		.CounterY(CounterY),
+		.ROM_Addr(targetPixelAddr),
+		.isImage(isImage_wire),
+		.black_white(BW_Pix_wire)
+	);
+	 
+	always @(posedge VGA_CLK)
+		begin
+			if (inDisplayArea)
+				begin
+					if(isImage_wire)
+						begin
+							VGA_R[R_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH-1:0];
+							VGA_G[G_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH-1:R_WIDTH];
+							VGA_B[B_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH+B_WIDTH-1:R_WIDTH+G_WIDTH];
+						end
+					else
+						begin
+							VGA_R[R_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH-1:0];
+							VGA_G[G_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH+G_WIDTH-1:R_WIDTH];
+							VGA_B[B_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH+G_WIDTH+B_WIDTH-1:R_WIDTH+G_WIDTH];
+						end
+				end
+			else // if it's not to display, go dark
+				begin
+					 VGA_R[R_WIDTH-1:0] <= 8'b0000_0000;
+					 VGA_G[G_WIDTH-1:0] <= 8'b0000_0000;
+					 VGA_B[B_WIDTH-1:0] <= 8'b0000_0000;
+				end
+		end
 	 
 	 assign VGA_BLANK_N = inDisplayArea;
 	 assign VGA_CLK = VGA_CLK_W;
 
-    always @(posedge VGA_CLK)
-    begin
-      if (inDisplayArea)
-			begin
-				 targetPixelAddr <= CounterY * VISIBLE_H + CounterX;				// Uses 1 DSP Block
-				 VGA_R[R_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH-1:0];
-				 VGA_G[G_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH-1:R_WIDTH];
-				 VGA_B[B_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH+B_WIDTH-1:R_WIDTH+G_WIDTH];
-			end
-      else // if it's not to display, go dark
-			begin
-				 VGA_R[R_WIDTH-1:0] <= 8'b0000_0000;
-				 VGA_G[G_WIDTH-1:0] <= 8'b0000_0000;
-				 VGA_B[B_WIDTH-1:0] <= 8'b0000_0000;
-			end
-    end
+
 
 endmodule
