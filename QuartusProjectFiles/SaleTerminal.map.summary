@@ -1,17 +1,17 @@
-Analysis & Synthesis Status : Successful - Wed Jun 09 00:17:58 2021
+Analysis & Synthesis Status : Successful - Wed Jun 09 14:30:35 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
-Top-level Entity Name : VGA_Controller
+Top-level Entity Name : ButtonController
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 61
-Total pins : 29
+Total registers : 0
+Total pins : 13
 Total virtual pins : 0
-Total block memory bits : 2,880,000
-Total DSP Blocks : 1
+Total block memory bits : 0
+Total DSP Blocks : 0
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
 Total HSSI PMA TX Serializers : 0
-Total PLLs : 1
+Total PLLs : 0
 Total DLLs : 0
