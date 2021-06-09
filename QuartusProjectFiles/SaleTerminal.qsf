@@ -62,7 +62,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name TOP_LEVEL_ENTITY ButtonController
+set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
 # Fitter Assignments
