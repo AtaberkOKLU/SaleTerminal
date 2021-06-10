@@ -127,9 +127,9 @@ module VGA_Controller
 				end
 			else // if it's not to display, go dark
 				begin
-					 VGA_R[R_WIDTH-1:0] <= 8'b0000_0000;
-					 VGA_G[G_WIDTH-1:0] <= 8'b0000_0000;
-					 VGA_B[B_WIDTH-1:0] <= 8'b0000_0000;
+					 VGA_R[R_WIDTH-1:0] <= {R_WIDTH{1'b0}};
+					 VGA_G[G_WIDTH-1:0] <= {G_WIDTH{1'b0}};
+					 VGA_B[B_WIDTH-1:0] <= {B_WIDTH{1'b0}};
 				end
 		end
 	 
