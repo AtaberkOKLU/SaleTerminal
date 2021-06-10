@@ -29,7 +29,7 @@ Visit Docs Folder
 +	3 Modes		:
 	+	Barcode : SW1 & SW2 OFF
 	+	Arrow   : SW1 ON & SW2 OFF
-	+	Basket Editing : SW2 ON 
+	+	Basket Editing : SW2 ON & SW1 X
 
 # System
 
@@ -55,7 +55,7 @@ Visit Docs Folder
 ## Switchs
 +	SW-1		: Mode Arrow
 +	SW-2		: Mode Editting
-+	SW-9 		: Button Managment Switch
++	SW-0 		: Button Managment Switch
 
 ## Segment Display
 + 	(TBD)

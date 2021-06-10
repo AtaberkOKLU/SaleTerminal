@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Wed Jun 09 23:01:44 2021
+Thu Jun 10 17:21:06 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -23,12 +23,14 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  15. Parameter Settings for User Entity Instance: VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i
  16. Parameter Settings for User Entity Instance: HVSync_Generator:HVSync_Generator_inst0
  17. Parameter Settings for User Entity Instance: ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
- 18. altsyncram Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "VGA_PLL:VGA_PLL_inst0"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
- 23. Analysis & Synthesis Suppressed Messages
+ 18. Parameter Settings for User Entity Instance: ImageLocator:ImageLocator_inst0
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0"
+ 21. Port Connectivity Checks: "VGA_PLL:VGA_PLL_inst0"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,7 +57,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 09 23:01:44 2021       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 10 17:21:06 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; VGA_Controller                              ;
@@ -83,6 +85,9 @@ https://fpgasoftware.intel.com/eula.
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
 ; Top-level entity name                                                           ; VGA_Controller     ; SaleTerminal       ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
+; Verilog Show LMF Mapping Messages                                               ; Off                ;                    ;
+; VHDL Version                                                                    ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                           ; Off                ; Off                ;
 ; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
 ; Enable compact report table                                                     ; Off                ; Off                ;
@@ -92,7 +97,6 @@ https://fpgasoftware.intel.com/eula.
 ; Preserve fewer node names                                                       ; On                 ; On                 ;
 ; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
 ; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
-; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
 ; State Machine Processing                                                        ; Auto               ; Auto               ;
 ; Safe State Machine                                                              ; Off                ; Off                ;
 ; Extract Verilog State Machines                                                  ; On                 ; On                 ;
@@ -181,33 +185,34 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                  ;
-+-----------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path                    ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
-+-----------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
-; BarcodeController.v                                 ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v                  ;         ;
-; VGA_PLL.v                                           ; yes             ; User Wizard-Generated File             ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v                            ; VGA_PLL ;
-; VGA_PLL/VGA_PLL_0002.v                              ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL/VGA_PLL_0002.v               ; VGA_PLL ;
-; ImageROM.v                                          ; yes             ; User Wizard-Generated File             ; D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v                           ;         ;
-; HVSync_Generator.v                                  ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v                   ;         ;
-; VGA_Controller.v                                    ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v                     ;         ;
-; ImageLocator.v                                      ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v                       ;         ;
-; altera_pll.v                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altera_pll.v          ;         ;
-; altsyncram.tdf                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
-; stratix_ram_block.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
-; lpm_mux.inc                                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
-; lpm_decode.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
-; aglobal201.inc                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
-; a_rdenreg.inc                                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
-; altrom.inc                                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
-; altram.inc                                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
-; altdpram.inc                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_s3i1.tdf                              ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_s3i1.tdf               ;         ;
-; /ee/ee314/project/resources/rom_init/rom_images.mif ; yes             ; Auto-Found Memory Initialization File  ; /ee/ee314/project/resources/rom_init/rom_images.mif                          ;         ;
-; db/decode_l2a.tdf                                   ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/decode_l2a.tdf                    ;         ;
-; db/mux_qib.tdf                                      ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf                       ;         ;
-+-----------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                   ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path     ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                 ; Library ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
+; BarcodeController.v                  ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v                  ;         ;
+; VGA_PLL.v                            ; yes             ; User Wizard-Generated File             ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v                            ; VGA_PLL ;
+; VGA_PLL/VGA_PLL_0002.v               ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL/VGA_PLL_0002.v               ; VGA_PLL ;
+; ImageROM.v                           ; yes             ; User Wizard-Generated File             ; D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v                           ;         ;
+; HVSync_Generator.v                   ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v                   ;         ;
+; VGA_Controller.v                     ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v                     ;         ;
+; ImageLocator.v                       ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v                       ;         ;
+; Encoder16x4.v                        ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v                        ;         ;
+; altera_pll.v                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altera_pll.v          ;         ;
+; altsyncram.tdf                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc                ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal201.inc                       ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/aglobal201.inc        ;         ;
+; a_rdenreg.inc                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                           ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                         ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_s3i1.tdf               ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_s3i1.tdf               ;         ;
+; ../Resources/ROM_Init/ROM_IMAGES.mif ; yes             ; Auto-Found Memory Initialization File  ; D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif                        ;         ;
+; db/decode_l2a.tdf                    ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/decode_l2a.tdf                    ;         ;
+; db/mux_qib.tdf                       ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf                       ;         ;
++--------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -215,14 +220,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 191                                                                                    ;
+; Estimate of Logic utilization (ALMs needed) ; 188                                                                                    ;
 ;                                             ;                                                                                        ;
-; Combinational ALUT usage for logic          ; 266                                                                                    ;
+; Combinational ALUT usage for logic          ; 245                                                                                    ;
 ;     -- 7 input functions                    ; 24                                                                                     ;
-;     -- 6 input functions                    ; 91                                                                                     ;
-;     -- 5 input functions                    ; 51                                                                                     ;
-;     -- 4 input functions                    ; 9                                                                                      ;
-;     -- <=3 input functions                  ; 91                                                                                     ;
+;     -- 6 input functions                    ; 106                                                                                    ;
+;     -- 5 input functions                    ; 48                                                                                     ;
+;     -- 4 input functions                    ; 3                                                                                      ;
+;     -- <=3 input functions                  ; 64                                                                                     ;
 ;                                             ;                                                                                        ;
 ; Dedicated logic registers                   ; 55                                                                                     ;
 ;                                             ;                                                                                        ;
@@ -237,8 +242,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 417                                                                                    ;
-; Total fan-out                               ; 6865                                                                                   ;
-; Average fan-out                             ; 9.21                                                                                   ;
+; Total fan-out                               ; 6856                                                                                   ;
+; Average fan-out                             ; 9.47                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
@@ -247,13 +252,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                           ; Entity Name      ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------+------------------+--------------+
-; |VGA_Controller                              ; 266 (121)           ; 55 (24)                   ; 2880000           ; 3          ; 30   ; 0            ; |VGA_Controller                                                                                                               ; VGA_Controller   ; work         ;
+; |VGA_Controller                              ; 245 (121)           ; 55 (24)                   ; 2880000           ; 3          ; 30   ; 0            ; |VGA_Controller                                                                                                               ; VGA_Controller   ; work         ;
 ;    |HVSync_Generator:HVSync_Generator_inst0| ; 30 (30)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|HVSync_Generator:HVSync_Generator_inst0                                                                       ; HVSync_Generator ; work         ;
-;    |ImageLocator:ImageLocator_inst0|         ; 100 (100)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |VGA_Controller|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator     ; work         ;
-;    |ImageROM:ImageROM_inst0|                 ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0                                                                                       ; ImageROM         ; work         ;
-;       |altsyncram:altsyncram_component|      ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component                                                       ; altsyncram       ; work         ;
-;          |altsyncram_s3i1:auto_generated|    ; 15 (0)              ; 8 (8)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated                        ; altsyncram_s3i1  ; work         ;
-;             |decode_l2a:rden_decode|         ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode ; decode_l2a       ; work         ;
+;    |ImageLocator:ImageLocator_inst0|         ; 78 (68)             ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |VGA_Controller|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator     ; work         ;
+;       |Encoder16x4:Encoder16x4_inst0|        ; 10 (10)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0                                                 ; Encoder16x4      ; work         ;
+;    |ImageROM:ImageROM_inst0|                 ; 16 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0                                                                                       ; ImageROM         ; work         ;
+;       |altsyncram:altsyncram_component|      ; 16 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component                                                       ; altsyncram       ; work         ;
+;          |altsyncram_s3i1:auto_generated|    ; 16 (0)              ; 8 (8)                     ; 2880000           ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated                        ; altsyncram_s3i1  ; work         ;
+;             |decode_l2a:rden_decode|         ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode ; decode_l2a       ; work         ;
 ;    |VGA_PLL:VGA_PLL_inst0|                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|VGA_PLL:VGA_PLL_inst0                                                                                         ; VGA_PLL          ; VGA_PLL      ;
 ;       |VGA_PLL_0002:vga_pll_inst|            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst                                                               ; VGA_PLL_0002     ; VGA_PLL      ;
 ;          |altera_pll:altera_pll_i|           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |VGA_Controller|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i                                       ; altera_pll       ; work         ;
@@ -309,14 +315,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
-; 17:1               ; 24 bits   ; 264 LEs       ; 240 LEs              ; 24 LEs                 ; Yes        ; |VGA_Controller|VGA_G[4]~reg0                              ;
-; 12:1               ; 3 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |VGA_Controller|ImageLocator:ImageLocator_inst0|ImageID[2] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
+; 17:1               ; 24 bits   ; 264 LEs       ; 240 LEs              ; 24 LEs                 ; Yes        ; |VGA_Controller|VGA_G[6]~reg0 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -681,6 +686,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ImageLocator:ImageLocator_inst0 ;
++--------------------+-------+-------------------------------------------------+
+; Parameter Name     ; Value ; Type                                            ;
++--------------------+-------+-------------------------------------------------+
+; R_WIDTH            ; 8     ; Signed Integer                                  ;
+; G_WIDTH            ; 8     ; Signed Integer                                  ;
+; B_WIDTH            ; 8     ; Signed Integer                                  ;
+; CNTR_WIDTH_V       ; 10    ; Signed Integer                                  ;
+; CNTR_WIDTH_H       ; 10    ; Signed Integer                                  ;
+; ROM_ADDR_BUS_WIDTH ; 17    ; Signed Integer                                  ;
+; PRDCT_PIC_WIDTH    ; 100   ; Signed Integer                                  ;
+; PRDCT_PIC_HEIGHT   ; 100   ; Signed Integer                                  ;
++--------------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +-----------------------------------------------------------------------------------------------------+
 ; altsyncram Parameter Settings by Entity Instance                                                    ;
 +-------------------------------------------+---------------------------------------------------------+
@@ -701,6 +723,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+---------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" ;
++------------+-------+----------+-----------------------------------------------------------+
+; Port       ; Type  ; Severity ; Details                                                   ;
++------------+-------+----------+-----------------------------------------------------------+
+; in[15..13] ; Input ; Info     ; Stuck at GND                                              ;
++------------+-------+----------+-----------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Port Connectivity Checks: "VGA_PLL:VGA_PLL_inst0"   ;
 +--------+--------+----------+------------------------+
@@ -719,29 +750,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 37                          ;
 ;     plain             ; 8                           ;
-; arriav_lcell_comb     ; 268                         ;
+; arriav_lcell_comb     ; 247                         ;
 ;     arith             ; 57                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 35                          ;
-;         2 data inputs ; 18                          ;
-;         4 data inputs ; 1                           ;
-;         5 data inputs ; 1                           ;
+;         2 data inputs ; 20                          ;
 ;     extend            ; 24                          ;
 ;         7 data inputs ; 24                          ;
-;     normal            ; 187                         ;
+;     normal            ; 166                         ;
 ;         1 data inputs ; 2                           ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 8                           ;
-;         5 data inputs ; 50                          ;
-;         6 data inputs ; 91                          ;
+;         2 data inputs ; 3                           ;
+;         3 data inputs ; 4                           ;
+;         4 data inputs ; 3                           ;
+;         5 data inputs ; 48                          ;
+;         6 data inputs ; 106                         ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 30                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 360                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.30                        ;
-; Average LUT depth     ; 2.57                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.52                        ;
 +-----------------------+-----------------------------+
 
 
@@ -760,7 +789,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 09 23:01:31 2021
+    Info: Processing started: Thu Jun 10 17:20:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -786,6 +815,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file barcode
     Info (12023): Found entity 1: BarcodeShiftRegister File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file imagelocator.v
     Info (12023): Found entity 1: ImageLocator File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 14
+Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.v
+    Info (12023): Found entity 1: Encoder16x4 File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 1
 Info (12127): Elaborating entity "VGA_Controller" for the top level hierarchy
 Info (12128): Elaborating entity "VGA_PLL" for hierarchy "VGA_PLL:VGA_PLL_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 73
 Info (12128): Elaborating entity "VGA_PLL_0002" for hierarchy "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v Line: 20
@@ -884,23 +915,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/mux_
     Info (12023): Found entity 1: mux_qib File: D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf Line: 23
 Info (12128): Elaborating entity "mux_qib" for hierarchy "ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_s3i1.tdf Line: 42
 Info (12128): Elaborating entity "ImageLocator" for hierarchy "ImageLocator:ImageLocator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 109
-Warning (10230): Verilog HDL assignment warning at ImageLocator.v(118): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 118
+Warning (10230): Verilog HDL assignment warning at ImageLocator.v(78): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 78
+Info (12128): Elaborating entity "Encoder16x4" for hierarchy "ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 71
+Info (10264): Verilog HDL Case Statement information at Encoder16x4.v(9): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 9
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 664 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 643 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 28 output pins
-    Info (21061): Implemented 270 logic cells
+    Info (21061): Implemented 249 logic cells
     Info (21064): Implemented 360 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 4856 megabytes
-    Info: Processing ended: Wed Jun 09 23:01:44 2021
+    Info: Peak virtual memory: 4878 megabytes
+    Info: Processing ended: Thu Jun 10 17:21:06 2021
     Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:28
+    Info: Total CPU time (on all processors): 00:00:26
 
 
 +------------------------------------------+
