@@ -95,6 +95,22 @@ Visit Docs Folder
 +	Quantity Enter State
 +	End Shopping State
 
+## TODO
++	VGA Controller                        : Ataberk ÖKLÜ - Ongoing
+	+	ImageLocator                      : Ataberk ÖKLÜ - Ongoing
+	+	HVSync Generator                  : Ataberk ÖKLÜ - Ongoing
+	+	ImageROM                          : Ataberk ÖKLÜ - Ongoing
+		+	16x4 Encoder                  : Ataberk ÖKLÜ - Ongoing
++	Button Controller                     : Ataberk ÖKLÜ - Ongoing
+	+	Button Debouncer                  : Ataberk ÖKLÜ - Ongoing
+	+	Button Level-Pulse Converter      : Ataberk ÖKLÜ - Ongoing
+	+	Key-SW Register                   : Ataberk ÖKLÜ - Ongoing
++ 	Barcode Controller                    : Ataberk ÖKLÜ - Ongoing
+	+	BarcodeShiftRegister              : Ataberk ÖKLÜ - Ongoing
+	+	7-Segment Controller              : Ataberk ÖKLÜ - Ongoing
++	State Machine                         : Ataberk ÖKLÜ - Ongoing
+	+	State Flowchart                   : Ataberk ÖKLÜ - Ongoing
+
 
 
 
