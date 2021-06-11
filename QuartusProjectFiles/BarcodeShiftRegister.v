@@ -43,10 +43,10 @@ begin
 		begin
 			if(ENABLE)
 				begin
-					Digit_Reg_3 = Digit_Reg_2;
-					Digit_Reg_2 = Digit_Reg_1;
-					Digit_Reg_1 = Digit_Reg_0;
-					Digit_Reg_0 = Digit_in;
+					Digit_Reg_3 <= Digit_Reg_2;
+					Digit_Reg_2 <= Digit_Reg_1;
+					Digit_Reg_1 <= Digit_Reg_0;
+					Digit_Reg_0 <= Digit_in;
 				end
 		end
 end

@@ -68,8 +68,8 @@ BarcodeShiftRegister BarcodeShiftRegister_inst0(
 
 	always @ (*)
 		if(Barcode_Digit_3 < 10)
-			BarcodeDigitCompleted <= 1;
+			BarcodeDigitCompleted = 1;
 		else
-			BarcodeDigitCompleted <= 0;
+			BarcodeDigitCompleted = 0;
 
 endmodule
