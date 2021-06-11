@@ -1,0 +1,27 @@
+/*
+ *		Module		:	Button Debouncer Module
+ * 	Description	: 	It samples the input signal and transfers 
+ * 						the input only when it is stable for BOUNCE_DELAY
+ *							times.
+ *		Inputs		: 	NoisyButtonIn	=> Raw button input
+ *						:	CLK 				=> Button Controller CLK
+ * 					:	RST_N 			=> Active Low Reset
+ *
+ *		Outputs		: 	CleanButtonOut	=> Debounced Button Output
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+ 
+ module button(
+input clk,in,
+output out
+);
+reg r1,r2,r3;
+always @(posedge clk)
+begin
+r1 <= in; // first reg in synchronizer
+r2 <= r1; // second reg in synchronizer, output is in sync!
+r3 <= r2; // remembers previous state of button
+end
+// rising edge = old value is 0, new value is 1
+assign out = ~r3 & r2;
+endmodule

@@ -50,7 +50,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller
+set_global_assignment -name TOP_LEVEL_ENTITY ButtonDebouncer
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
 # Fitter Assignments
@@ -138,6 +138,9 @@ set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "<None>"
 set_global_assignment -name EDA_INPUT_DATA_FORMAT VQM -section_id eda_design_synthesis
 set_global_assignment -name VERILOG_FILE ImageLocator.v
 set_global_assignment -name VERILOG_FILE Encoder16x4.v
+set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name VERILOG_FILE ButtonDebouncer.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -713,5 +716,4 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3]
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
-set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name VERILOG_FILE ButtonLevelPulseConverter.v
