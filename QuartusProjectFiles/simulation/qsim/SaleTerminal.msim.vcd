@@ -3,7 +3,7 @@ $comment
 		vcd file SaleTerminal.msim.vcd -direction
 $end
 $date
-	Wed Jun 09 20:41:32 2021
+	Fri Jun 11 23:38:44 2021
 $end
 $version
 	ModelSim Version 2020.1
@@ -654,11 +654,14 @@ b1000 "
 0*!
 11!
 #200000
+b0 "
 0#
 1!
+0)!
 0+!
 1'!
 0,!
+1*!
 0U!
 1a!
 0]!
@@ -724,8 +727,11 @@ b1000 "
 1N
 1O
 #210000
+b1000 "
 0!
+1)!
 0'!
+0*!
 #220000
 b0 "
 1!

@@ -72,7 +72,7 @@ module VGA_Controller
 		.locked()
 	 );
 
-    HVSync_Generator#(
+    HVSync_Generator #(
 			.CNTR_WIDTH_V(CNTR_WIDTH_V), 
 			.CNTR_WIDTH_H(CNTR_WIDTH_H),
 			.FRONT_PORCH_H(FRONT_PORCH_H),

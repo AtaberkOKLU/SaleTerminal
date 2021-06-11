@@ -1,3 +1,2 @@
 Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(32): object "VGA_HS" differs only in case from object "vga_HS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 32
 Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(33): object "VGA_VS" differs only in case from object "vga_VS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 33
-Warning (10273): Verilog HDL warning at Encoder16x4.v(26): extended using "x" or "z" File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 26

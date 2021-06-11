@@ -26,7 +26,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Jun 09 20:41:28 2021
+    Info: Processing started: Fri Jun 11 23:38:39 2021
 Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/BarcodeController.vwf.vt
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -34,7 +34,8 @@ Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not 
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
 Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+
+r source file when writing test bench files
 
 Completed successfully. 
 
@@ -61,7 +62,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Wed Jun 09 20:41:30 2021
+    Info: Processing started: Fri Jun 11 23:38:41 2021
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -69,12 +70,11 @@ Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not 
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
 Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
-Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file SaleTerminal.vo in folder "D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 6 warnings
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4722 megabytes
-    Info: Processing ended: Wed Jun 09 20:41:30 2021
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Fri Jun 11 23:38:42 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
@@ -98,27 +98,28 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:41:32 on Jun 09,2021
+# Start time: 23:38:43 on Jun 11,2021
 # vlog -work work SaleTerminal.vo 
+
 # -- Compiling module BarcodeController
 # 
 # Top level modules:
 # 	BarcodeController
-# End time: 20:41:32 on Jun 09,2021, Elapsed time: 0:00:00
+# End time: 23:38:43 on Jun 11,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
-
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 20:41:32 on Jun 09,2021
+# Start time: 23:38:43 on Jun 11,2021
 # vlog -work work BarcodeController.vwf.vt 
+
 # -- Compiling module BarcodeController_vlg_vec_tst
 # 
 # Top level modules:
 # 	BarcodeController_vlg_vec_tst
-# End time: 20:41:32 on Jun 09,2021, Elapsed time: 0:00:00
+# End time: 23:38:43 on Jun 11,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
 # vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.BarcodeController_vlg_vec_tst 
-# Start time: 20:41:32 on Jun 09,2021
+# Start time: 23:38:43 on Jun 11,2021
 # Loading work.BarcodeController_vlg_vec_tst
 # Loading work.BarcodeController
 # Loading cyclonev_ver.cyclonev_io_obuf
@@ -129,7 +130,7 @@ Reading pref.tcl
 # after#25
 # ** Note: $finish    : BarcodeController.vwf.vt(67)
 #    Time: 260 ns  Iteration: 0  Instance: /BarcodeController_vlg_vec_tst
-# End time: 20:41:32 on Jun 09,2021, Elapsed time: 0:00:00
+# End time: 23:38:44 on Jun 11,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
@@ -142,7 +143,7 @@ Reading D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal.msi
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210609204132.sim.vwf
+Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210611233844.sim.vwf
 
 Finished VCD to VWF conversion.
 

@@ -10,23 +10,23 @@ z2
 cModel Technology
 Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim
 vBarcodeController
-Z1 !s110 1623260492
+Z1 !s110 1623443923
 !i10b 1
 !s100 ]D@B;QJgE<iHfhI8Ma@Vf0
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
 IM`cYS1Tc_HoMjj1BTNH982
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1623260490
+w1623443922
 Z4 8SaleTerminal.vo
 Z5 FSaleTerminal.vo
-!i122 32
+!i122 36
 L0 32 2161
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1623260492.000000
+Z7 !s108 1623443923.000000
 Z8 !s107 SaleTerminal.vo|
 Z9 !s90 -work|work|SaleTerminal.vo|
 !i113 1
@@ -36,16 +36,16 @@ n@barcode@controller
 vBarcodeController_vlg_vec_tst
 R1
 !i10b 1
-!s100 ^TY@DE`zHjI7=an@IDi>D2
+!s100 Rm6NbAz5Sn:10aP8:E@1T3
 R2
-IS6mjP`A^JJ6GMS;=2dRV40
+IO3c[[APJC0f6d[I>C96H^3
 R3
 R0
-w1623260489
+w1623443920
 8BarcodeController.vwf.vt
 FBarcodeController.vwf.vt
-!i122 33
-L0 30 110
+!i122 37
+L0 30 112
 R6
 r1
 !s85 0

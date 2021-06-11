@@ -22,13 +22,13 @@ reg r1,r2,r3;
 always @(posedge CLK)
 	begin
 		// 2Bit Syncronizer
-		r1 <= in;
+		r1 <= CleanButtonIn;
 		r2 <= r1;
 		// Edge Detector
 		r3 <= r2;
 	end
 	
 // rising edge = old value is 0, new value is 1
-assign out = ~r3 & r2;
+assign ButtonPulseOut = ~r3 & r2;
 
 endmodule

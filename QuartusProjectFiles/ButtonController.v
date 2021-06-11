@@ -13,13 +13,12 @@
  */
 
 module ButtonController(
-	input wire [0:0] SW,
+	input wire [0:0] SW,		// SW0
 	input wire [3:0] KEY,
 	output reg [3:0] CMD_Reg,
 	output reg [3:0] KEY_Reg
 );
 
-wire SW_Wire = SW[0];
 
 initial
 begin
@@ -27,9 +26,9 @@ begin
 	KEY_Reg <= 0;
 end
 
-always @ (SW_Wire, KEY)
+always @ (SW, KEY)
 	begin
-		if(SW_Wire)
+		if(SW)
 			begin		
 				KEY_Reg = 0;
 				CMD_Reg = KEY;

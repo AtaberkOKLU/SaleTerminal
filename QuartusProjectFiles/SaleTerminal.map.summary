@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Fri Jun 11 20:46:17 2021
+Analysis & Synthesis Status : Successful - Fri Jun 11 23:12:39 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
-Top-level Entity Name : ButtonDebouncer
+Top-level Entity Name : BarcodeController
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 19
-Total pins : 4
+Total registers : 16
+Total pins : 52
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

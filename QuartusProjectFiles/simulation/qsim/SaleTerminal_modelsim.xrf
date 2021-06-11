@@ -1,4 +1,6 @@
 vendor_name = ModelSim
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.bdf
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.bdf
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.vwf
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.vwf
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
@@ -19,6 +21,9 @@ source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v
+source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v
 source_file = 1, D:/EE/EE314/Project/QuartusProjectFiles/db/SaleTerminal.cbx.xml
 design_name = BarcodeController
 instance = comp, \BarcodeDigitCompleted~output , BarcodeDigitCompleted~output, BarcodeController, 1
