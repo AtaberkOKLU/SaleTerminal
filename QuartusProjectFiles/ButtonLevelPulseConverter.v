@@ -28,7 +28,7 @@ always @(posedge CLK)
 		r3 <= r2;
 	end
 	
-// rising edge = old value is 0, new value is 1
-assign ButtonPulseOut = ~r3 & r2;
+// Falling Edge = old value is 1, new value is 0
+assign ButtonPulseOut = r3 & ~r2;
 
 endmodule
