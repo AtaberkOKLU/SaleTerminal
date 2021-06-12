@@ -1,182 +1,281 @@
-|BarcodeController
-ENABLE => ENABLE.IN1
-CLK => CLK.IN1
-RESET_N => RESET_N.IN1
-Digit_in[0] => Digit_in[0].IN1
-Digit_in[1] => Digit_in[1].IN1
-Digit_in[2] => Digit_in[2].IN1
-Digit_in[3] => Digit_in[3].IN1
-BarcodeDigitCompleted <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_0[0] <= Barcode_Digit_0[0].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_0[1] <= Barcode_Digit_0[1].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_0[2] <= Barcode_Digit_0[2].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_0[3] <= Barcode_Digit_0[3].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_1[0] <= Barcode_Digit_1[0].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_1[1] <= Barcode_Digit_1[1].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_1[2] <= Barcode_Digit_1[2].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_1[3] <= Barcode_Digit_1[3].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_2[0] <= Barcode_Digit_2[0].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_2[1] <= Barcode_Digit_2[1].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_2[2] <= Barcode_Digit_2[2].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_2[3] <= Barcode_Digit_2[3].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_3[0] <= Barcode_Digit_3[0].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_3[1] <= Barcode_Digit_3[1].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_3[2] <= Barcode_Digit_3[2].DB_MAX_OUTPUT_PORT_TYPE
-Barcode_Digit_3[3] <= Barcode_Digit_3[3].DB_MAX_OUTPUT_PORT_TYPE
-HEX0[0] <= Segment7:Segment0.seg
-HEX0[1] <= Segment7:Segment0.seg
-HEX0[2] <= Segment7:Segment0.seg
-HEX0[3] <= Segment7:Segment0.seg
-HEX0[4] <= Segment7:Segment0.seg
-HEX0[5] <= Segment7:Segment0.seg
-HEX0[6] <= Segment7:Segment0.seg
-HEX1[0] <= Segment7:Segment1.seg
-HEX1[1] <= Segment7:Segment1.seg
-HEX1[2] <= Segment7:Segment1.seg
-HEX1[3] <= Segment7:Segment1.seg
-HEX1[4] <= Segment7:Segment1.seg
-HEX1[5] <= Segment7:Segment1.seg
-HEX1[6] <= Segment7:Segment1.seg
-HEX2[0] <= Segment7:Segment2.seg
-HEX2[1] <= Segment7:Segment2.seg
-HEX2[2] <= Segment7:Segment2.seg
-HEX2[3] <= Segment7:Segment2.seg
-HEX2[4] <= Segment7:Segment2.seg
-HEX2[5] <= Segment7:Segment2.seg
-HEX2[6] <= Segment7:Segment2.seg
-HEX3[0] <= Segment7:Segment3.seg
-HEX3[1] <= Segment7:Segment3.seg
-HEX3[2] <= Segment7:Segment3.seg
-HEX3[3] <= Segment7:Segment3.seg
-HEX3[4] <= Segment7:Segment3.seg
-HEX3[5] <= Segment7:Segment3.seg
-HEX3[6] <= Segment7:Segment3.seg
+|ButtonController
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => KEY[2].IN1
+KEY[3] => KEY[3].IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+CLOCK_50 => CLOCK_50.IN15
+CMD_En[0] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0.ButtonPulseOut
+CMD_En[1] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1.ButtonPulseOut
+CMD_En[2] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2.ButtonPulseOut
+CMD_En[3] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3.ButtonPulseOut
+KEY_En[0] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0.ButtonPulseOut
+KEY_En[1] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1.ButtonPulseOut
+KEY_En[2] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2.ButtonPulseOut
+KEY_En[3] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3.ButtonPulseOut
+CMD_Reg[0] <= CMD_Reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[1] <= CMD_Reg[1].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[2] <= CMD_Reg[2].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[3] <= CMD_Reg[3].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[0] <= KEY_Reg[0].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[1] <= KEY_Reg[1].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[2] <= KEY_Reg[2].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[3] <= KEY_Reg[3].DB_MAX_OUTPUT_PORT_TYPE
+CleanSWOut[0] <= CleanSWOut[0].DB_MAX_OUTPUT_PORT_TYPE
+CleanSWOut[1] <= SwitchDebouncer:SwitchDebouncer_SW1.CleanSWOut
+CleanSWOut[2] <= SwitchDebouncer:SwitchDebouncer_SW2.CleanSWOut
 
 
-|BarcodeController|BarcodeShiftRegister:BarcodeShiftRegister_inst0
-Digit_in[0] => Digit_Reg_0.DATAB
-Digit_in[1] => Digit_Reg_0.DATAB
-Digit_in[2] => Digit_Reg_0.DATAB
-Digit_in[3] => Digit_Reg_0.DATAB
-CLOCK => Digit_Reg_3[0].CLK
-CLOCK => Digit_Reg_3[1].CLK
-CLOCK => Digit_Reg_3[2].CLK
-CLOCK => Digit_Reg_3[3].CLK
-CLOCK => Digit_Reg_2[0].CLK
-CLOCK => Digit_Reg_2[1].CLK
-CLOCK => Digit_Reg_2[2].CLK
-CLOCK => Digit_Reg_2[3].CLK
-CLOCK => Digit_Reg_1[0].CLK
-CLOCK => Digit_Reg_1[1].CLK
-CLOCK => Digit_Reg_1[2].CLK
-CLOCK => Digit_Reg_1[3].CLK
-CLOCK => Digit_Reg_0[0].CLK
-CLOCK => Digit_Reg_0[1].CLK
-CLOCK => Digit_Reg_0[2].CLK
-CLOCK => Digit_Reg_0[3].CLK
-RESET_N => Digit_Reg_0.OUTPUTSELECT
-RESET_N => Digit_Reg_0.OUTPUTSELECT
-RESET_N => Digit_Reg_0.OUTPUTSELECT
-RESET_N => Digit_Reg_0.OUTPUTSELECT
-RESET_N => Digit_Reg_1.OUTPUTSELECT
-RESET_N => Digit_Reg_1.OUTPUTSELECT
-RESET_N => Digit_Reg_1.OUTPUTSELECT
-RESET_N => Digit_Reg_1.OUTPUTSELECT
-RESET_N => Digit_Reg_2.OUTPUTSELECT
-RESET_N => Digit_Reg_2.OUTPUTSELECT
-RESET_N => Digit_Reg_2.OUTPUTSELECT
-RESET_N => Digit_Reg_2.OUTPUTSELECT
-RESET_N => Digit_Reg_3.OUTPUTSELECT
-RESET_N => Digit_Reg_3.OUTPUTSELECT
-RESET_N => Digit_Reg_3.OUTPUTSELECT
-RESET_N => Digit_Reg_3.OUTPUTSELECT
-ENABLE => Digit_Reg_3.OUTPUTSELECT
-ENABLE => Digit_Reg_3.OUTPUTSELECT
-ENABLE => Digit_Reg_3.OUTPUTSELECT
-ENABLE => Digit_Reg_3.OUTPUTSELECT
-ENABLE => Digit_Reg_2.OUTPUTSELECT
-ENABLE => Digit_Reg_2.OUTPUTSELECT
-ENABLE => Digit_Reg_2.OUTPUTSELECT
-ENABLE => Digit_Reg_2.OUTPUTSELECT
-ENABLE => Digit_Reg_1.OUTPUTSELECT
-ENABLE => Digit_Reg_1.OUTPUTSELECT
-ENABLE => Digit_Reg_1.OUTPUTSELECT
-ENABLE => Digit_Reg_1.OUTPUTSELECT
-ENABLE => Digit_Reg_0.OUTPUTSELECT
-ENABLE => Digit_Reg_0.OUTPUTSELECT
-ENABLE => Digit_Reg_0.OUTPUTSELECT
-ENABLE => Digit_Reg_0.OUTPUTSELECT
-Digit_0[0] <= Digit_Reg_0[0].DB_MAX_OUTPUT_PORT_TYPE
-Digit_0[1] <= Digit_Reg_0[1].DB_MAX_OUTPUT_PORT_TYPE
-Digit_0[2] <= Digit_Reg_0[2].DB_MAX_OUTPUT_PORT_TYPE
-Digit_0[3] <= Digit_Reg_0[3].DB_MAX_OUTPUT_PORT_TYPE
-Digit_1[0] <= Digit_Reg_1[0].DB_MAX_OUTPUT_PORT_TYPE
-Digit_1[1] <= Digit_Reg_1[1].DB_MAX_OUTPUT_PORT_TYPE
-Digit_1[2] <= Digit_Reg_1[2].DB_MAX_OUTPUT_PORT_TYPE
-Digit_1[3] <= Digit_Reg_1[3].DB_MAX_OUTPUT_PORT_TYPE
-Digit_2[0] <= Digit_Reg_2[0].DB_MAX_OUTPUT_PORT_TYPE
-Digit_2[1] <= Digit_Reg_2[1].DB_MAX_OUTPUT_PORT_TYPE
-Digit_2[2] <= Digit_Reg_2[2].DB_MAX_OUTPUT_PORT_TYPE
-Digit_2[3] <= Digit_Reg_2[3].DB_MAX_OUTPUT_PORT_TYPE
-Digit_3[0] <= Digit_Reg_3[0].DB_MAX_OUTPUT_PORT_TYPE
-Digit_3[1] <= Digit_Reg_3[1].DB_MAX_OUTPUT_PORT_TYPE
-Digit_3[2] <= Digit_Reg_3[2].DB_MAX_OUTPUT_PORT_TYPE
-Digit_3[3] <= Digit_Reg_3[3].DB_MAX_OUTPUT_PORT_TYPE
+|ButtonController|ButtonDebouncer:ButtonDebouncer_Key0
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BarcodeController|Segment7:Segment0
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|ButtonController|ButtonDebouncer:ButtonDebouncer_Key1
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BarcodeController|Segment7:Segment1
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|ButtonController|ButtonDebouncer:ButtonDebouncer_Key2
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BarcodeController|Segment7:Segment2
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|ButtonController|ButtonDebouncer:ButtonDebouncer_Key3
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|BarcodeController|Segment7:Segment3
-bcd[0] => Decoder0.IN3
-bcd[1] => Decoder0.IN2
-bcd[2] => Decoder0.IN1
-bcd[3] => Decoder0.IN0
-seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
-seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
-seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
-seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
-seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
-seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+|ButtonController|SwitchDebouncer:SwitchDebouncer_SW0
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|SwitchDebouncer:SwitchDebouncer_SW1
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|SwitchDebouncer:SwitchDebouncer_SW2
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonManager:ButtonManager_inst0
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+KEY[0] => KEY_Reg.DATAA
+KEY[0] => CMD_Reg.DATAB
+KEY[1] => KEY_Reg.DATAA
+KEY[1] => CMD_Reg.DATAB
+KEY[2] => KEY_Reg.DATAA
+KEY[2] => CMD_Reg.DATAB
+KEY[3] => KEY_Reg.DATAA
+KEY[3] => CMD_Reg.DATAB
+CMD_Reg[0] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[1] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[2] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[3] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[0] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[1] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[2] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[3] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
 
 

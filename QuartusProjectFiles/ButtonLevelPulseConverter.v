@@ -17,18 +17,17 @@ module ButtonLevelPulseConverter(
 	output ButtonPulseOut
 );
 
-reg r1,r2,r3;
+reg r1,r2;
 
 always @(posedge CLK)
 	begin
-		// 2Bit Syncronizer
+		// Prev. State Reg.
 		r1 <= CleanButtonIn;
-		r2 <= r1;
 		// Edge Detector
-		r3 <= r2;
+		r2	<= r1;
 	end
 	
-// Falling Edge = old value is 1, new value is 0
-assign ButtonPulseOut = r3 & ~r2;
+// Rising Edge = old value is 0, new value is 1
+assign ButtonPulseOut = ~r2 & r1;
 
 endmodule

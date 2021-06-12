@@ -50,7 +50,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name TOP_LEVEL_ENTITY BarcodeController
+set_global_assignment -name TOP_LEVEL_ENTITY ButtonController
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
 # Fitter Assignments
@@ -122,6 +122,7 @@ set_global_assignment -name EDA_DESIGN_ENTRY_SYNTHESIS_TOOL "<None>"
 set_global_assignment -name EDA_INPUT_DATA_FORMAT VQM -section_id eda_design_synthesis
 set_global_assignment -name TIMING_ANALYZER_MULTICORNER_ANALYSIS ON
 set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name VERILOG_FILE ButtonManager.v
 set_global_assignment -name BDF_FILE encoder8x3.bdf
 set_global_assignment -name BDF_FILE Encoder16x4.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeController.vwf
@@ -138,14 +139,11 @@ set_global_assignment -name VERILOG_FILE Segment7.v
 set_global_assignment -name QIP_FILE ImageROM.qip
 set_global_assignment -name VERILOG_FILE HVSync_Generator.v
 set_global_assignment -name VERILOG_FILE VGA_Controller.v
-set_global_assignment -name VERILOG_FILE ButtonController.v
 set_global_assignment -name VERILOG_FILE BarcodeShiftRegister.v
 set_global_assignment -name VERILOG_FILE ImageLocator.v
 set_global_assignment -name VERILOG_FILE ButtonDebouncer.v
 set_global_assignment -name VERILOG_FILE ButtonLevelPulseConverter.v
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE ButtonController.v
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[0]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[1]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[2]
@@ -717,4 +715,10 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3]
+set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonController.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonDebouncer.vwf
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE SwitchDebouncer.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

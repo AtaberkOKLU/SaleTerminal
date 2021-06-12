@@ -76,12 +76,12 @@ always @ (*)
 		if(isImage)
 			begin
 				ROM_Addr = ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-(307+ImageID[1:0]>>7)) + PRDCT_PIC_WIDTH*(CounterY-(19+((ImageID>>2)<<7)));
-				black_white = 24'b0;
+				black_white = {(R_WIDTH+G_WIDTH+B_WIDTH){1'b0}};
 			end
 		else
 			begin
 				ROM_Addr = 0;
-				black_white = 24'b0;
+				black_white = {(R_WIDTH+G_WIDTH+B_WIDTH){1'b0}};
 			end
 	end
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Fri Jun 11 23:12:39 2021
+Sun Jun 13 00:12:44 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -14,12 +14,18 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
- 14. Analysis & Synthesis Suppressed Messages
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ButtonController
+ 10. Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key0
+ 11. Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key1
+ 12. Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key2
+ 13. Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key3
+ 14. Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW0
+ 15. Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW1
+ 16. Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW2
+ 17. Post-Synthesis Netlist Statistics for Top Partition
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
+ 20. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -46,14 +52,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 11 23:12:39 2021       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 13 00:12:44 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
-; Top-level Entity Name           ; BarcodeController                           ;
+; Top-level Entity Name           ; ButtonController                            ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 16                                          ;
-; Total pins                      ; 52                                          ;
+; Total registers                 ; 149                                         ;
+; Total pins                      ; 27                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -72,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option                                                                          ; Setting            ; Default Value      ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
-; Top-level entity name                                                           ; BarcodeController  ; SaleTerminal       ;
+; Top-level entity name                                                           ; ButtonController   ; SaleTerminal       ;
 ; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
 ; Maximum processors allowed for parallel compilation                             ; All                ;                    ;
 ; VHDL Show LMF Mapping Messages                                                  ; Off                ;                    ;
@@ -173,56 +179,69 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                 ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                   ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
-; BarcodeController.v              ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v    ;         ;
-; Segment7.v                       ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v             ;         ;
-; BarcodeShiftRegister.v           ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
+; ButtonManager.v                  ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v             ;         ;
+; ButtonDebouncer.v                ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v           ;         ;
+; ButtonLevelPulseConverter.v      ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v ;         ;
+; ButtonController.v               ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v          ;         ;
+; SwitchDebouncer.v                ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v           ;         ;
++----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                 ;
-+---------------------------------------------+---------------+
-; Resource                                    ; Usage         ;
-+---------------------------------------------+---------------+
-; Estimate of Logic utilization (ALMs needed) ; 21            ;
-;                                             ;               ;
-; Combinational ALUT usage for logic          ; 38            ;
-;     -- 7 input functions                    ; 0             ;
-;     -- 6 input functions                    ; 0             ;
-;     -- 5 input functions                    ; 0             ;
-;     -- 4 input functions                    ; 28            ;
-;     -- <=3 input functions                  ; 10            ;
-;                                             ;               ;
-; Dedicated logic registers                   ; 16            ;
-;                                             ;               ;
-; I/O pins                                    ; 52            ;
-;                                             ;               ;
-; Total DSP Blocks                            ; 0             ;
-;                                             ;               ;
-; Maximum fan-out node                        ; RESET_N~input ;
-; Maximum fan-out                             ; 17            ;
-; Total fan-out                               ; 286           ;
-; Average fan-out                             ; 1.81          ;
-+---------------------------------------------+---------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 92             ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 167            ;
+;     -- 7 input functions                    ; 0              ;
+;     -- 6 input functions                    ; 14             ;
+;     -- 5 input functions                    ; 14             ;
+;     -- 4 input functions                    ; 0              ;
+;     -- <=3 input functions                  ; 139            ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 149            ;
+;                                             ;                ;
+; I/O pins                                    ; 27             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 149            ;
+; Total fan-out                               ; 877            ;
+; Average fan-out                             ; 2.37           ;
++---------------------------------------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                      ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node                           ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                ; Entity Name          ; Library Name ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+----------------------+--------------+
-; |BarcodeController                                   ; 38 (1)              ; 16 (0)                    ; 0                 ; 0          ; 52   ; 0            ; |BarcodeController                                                 ; BarcodeController    ; work         ;
-;    |BarcodeShiftRegister:BarcodeShiftRegister_inst0| ; 9 (9)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |BarcodeController|BarcodeShiftRegister:BarcodeShiftRegister_inst0 ; BarcodeShiftRegister ; work         ;
-;    |Segment7:Segment0|                               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |BarcodeController|Segment7:Segment0                               ; Segment7             ; work         ;
-;    |Segment7:Segment1|                               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |BarcodeController|Segment7:Segment1                               ; Segment7             ; work         ;
-;    |Segment7:Segment2|                               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |BarcodeController|Segment7:Segment2                               ; Segment7             ; work         ;
-;    |Segment7:Segment3|                               ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |BarcodeController|Segment7:Segment3                               ; Segment7             ; work         ;
-+------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------------------------------------------------+----------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                            ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                        ; Entity Name               ; Library Name ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+---------------------------+--------------+
+; |ButtonController                                             ; 167 (0)             ; 149 (0)                   ; 0                 ; 0          ; 27   ; 0            ; |ButtonController                                                          ; ButtonController          ; work         ;
+;    |ButtonDebouncer:ButtonDebouncer_Key0|                     ; 22 (22)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonDebouncer:ButtonDebouncer_Key0                     ; ButtonDebouncer           ; work         ;
+;    |ButtonDebouncer:ButtonDebouncer_Key1|                     ; 22 (22)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonDebouncer:ButtonDebouncer_Key1                     ; ButtonDebouncer           ; work         ;
+;    |ButtonDebouncer:ButtonDebouncer_Key2|                     ; 22 (22)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonDebouncer:ButtonDebouncer_Key2                     ; ButtonDebouncer           ; work         ;
+;    |ButtonDebouncer:ButtonDebouncer_Key3|                     ; 22 (22)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonDebouncer:ButtonDebouncer_Key3                     ; ButtonDebouncer           ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3| ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonManager:ButtonManager_inst0|                        ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|ButtonManager:ButtonManager_inst0                        ; ButtonManager             ; work         ;
+;    |SwitchDebouncer:SwitchDebouncer_SW0|                      ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|SwitchDebouncer:SwitchDebouncer_SW0                      ; SwitchDebouncer           ; work         ;
+;    |SwitchDebouncer:SwitchDebouncer_SW1|                      ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|SwitchDebouncer:SwitchDebouncer_SW1                      ; SwitchDebouncer           ; work         ;
+;    |SwitchDebouncer:SwitchDebouncer_SW2|                      ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |ButtonController|SwitchDebouncer:SwitchDebouncer_SW2                      ; SwitchDebouncer           ; work         ;
++---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -231,41 +250,94 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 16    ;
-; Number of registers using Synchronous Clear  ; 8     ;
+; Total registers                              ; 149   ;
+; Number of registers using Synchronous Clear  ; 112   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 16    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------+
-; Inverted Register Statistics                                             ;
-+----------------------------------------------------------------+---------+
-; Inverted Register                                              ; Fan out ;
-+----------------------------------------------------------------+---------+
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[2] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[3] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[2] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[3] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[2] ; 9       ;
-; BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[3] ; 9       ;
-; Total number of inverted registers = 8                         ;         ;
-+----------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ButtonController ;
++---------------------+-------+----------------------------------------------------+
+; Parameter Name      ; Value ; Type                                               ;
++---------------------+-------+----------------------------------------------------+
+; DBNCR_CNTR_REG_SIZE ; 16    ; Signed Integer                                     ;
++---------------------+-------+----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |BarcodeController|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[1] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |BarcodeController|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key0 ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                         ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key1 ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                         ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key2 ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                         ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ButtonDebouncer:ButtonDebouncer_Key3 ;
++------------------+-------+--------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                   ;
++------------------+-------+--------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                         ;
++------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW0 ;
++------------------+-------+-------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                  ;
++------------------+-------+-------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                        ;
++------------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW1 ;
++------------------+-------+-------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                  ;
++------------------+-------+-------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                        ;
++------------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: SwitchDebouncer:SwitchDebouncer_SW2 ;
++------------------+-------+-------------------------------------------------------+
+; Parameter Name   ; Value ; Type                                                  ;
++------------------+-------+-------------------------------------------------------+
+; COUNTER_REG_SIZE ; 16    ; Signed Integer                                        ;
++------------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -273,19 +345,21 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 16                          ;
-;     ENA               ; 8                           ;
-;     ENA SCLR          ; 8                           ;
-; arriav_lcell_comb     ; 50                          ;
-;     normal            ; 50                          ;
-;         1 data inputs ; 12                          ;
-;         2 data inputs ; 9                           ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 28                          ;
-; boundary_port         ; 52                          ;
+; arriav_ff             ; 149                         ;
+;     SCLR              ; 112                         ;
+;     plain             ; 37                          ;
+; arriav_lcell_comb     ; 167                         ;
+;     arith             ; 112                         ;
+;         1 data inputs ; 112                         ;
+;     normal            ; 55                          ;
+;         1 data inputs ; 4                           ;
+;         2 data inputs ; 23                          ;
+;         5 data inputs ; 14                          ;
+;         6 data inputs ; 14                          ;
+; boundary_port         ; 27                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 2.00                        ;
-; Average LUT depth     ; 1.29                        ;
+; Max LUT depth         ; 2.50                        ;
+; Average LUT depth     ; 1.91                        ;
 +-----------------------+-----------------------------+
 
 
@@ -304,9 +378,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Jun 11 23:12:27 2021
+    Info: Processing started: Sun Jun 13 00:12:34 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file buttonmanager.v
+    Info (12023): Found entity 1: ButtonManager File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file encoder8x3.bdf
     Info (12023): Found entity 1: encoder8x3
 Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.bdf
@@ -327,19 +403,23 @@ Info (12021): Found 1 design units, including 1 entities, in source file hvsync_
     Info (12023): Found entity 1: HVSync_Generator File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file vga_controller.v
     Info (12023): Found entity 1: VGA_Controller File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 15
-Info (12021): Found 1 design units, including 1 entities, in source file buttoncontroller.v
-    Info (12023): Found entity 1: ButtonController File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file barcodeshiftregister.v
     Info (12023): Found entity 1: BarcodeShiftRegister File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file imagelocator.v
     Info (12023): Found entity 1: ImageLocator File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file buttondebouncer.v
-    Info (12023): Found entity 1: ButtonDebouncer File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v Line: 14
+    Info (12023): Found entity 1: ButtonDebouncer File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file buttonlevelpulseconverter.v
     Info (12023): Found entity 1: ButtonLevelPulseConverter File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v Line: 14
-Info (12127): Elaborating entity "BarcodeController" for the top level hierarchy
-Info (12128): Elaborating entity "BarcodeShiftRegister" for hierarchy "BarcodeShiftRegister:BarcodeShiftRegister_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 46
-Info (12128): Elaborating entity "Segment7" for hierarchy "Segment7:Segment0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 52
+Info (12021): Found 1 design units, including 1 entities, in source file buttoncontroller.v
+    Info (12023): Found entity 1: ButtonController File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 21
+Info (12021): Found 1 design units, including 1 entities, in source file switchdebouncer.v
+    Info (12023): Found entity 1: SwitchDebouncer File: D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v Line: 15
+Info (12127): Elaborating entity "ButtonController" for the top level hierarchy
+Info (12128): Elaborating entity "ButtonDebouncer" for hierarchy "ButtonDebouncer:ButtonDebouncer_Key0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 48
+Info (12128): Elaborating entity "SwitchDebouncer" for hierarchy "SwitchDebouncer:SwitchDebouncer_SW0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 88
+Info (12128): Elaborating entity "ButtonManager" for hierarchy "ButtonManager:ButtonManager_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 118
+Info (12128): Elaborating entity "ButtonLevelPulseConverter" for hierarchy "ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 126
 Info (286030): Timing-Driven Synthesis is running
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -349,15 +429,15 @@ Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity doe
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 98 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 7 input pins
-    Info (21059): Implemented 45 output pins
-    Info (21061): Implemented 46 logic cells
+Info (21057): Implemented 220 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 8 input pins
+    Info (21059): Implemented 19 output pins
+    Info (21061): Implemented 193 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4826 megabytes
-    Info: Processing ended: Fri Jun 11 23:12:39 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4824 megabytes
+    Info: Processing ended: Sun Jun 13 00:12:44 2021
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:23
 
 
 +------------------------------------------+
