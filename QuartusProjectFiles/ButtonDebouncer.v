@@ -17,24 +17,20 @@ module ButtonDebouncer
 	parameter COUNTER_REG_SIZE = 16
 )(
     input CLK,
-    input NoisyButtonIn,  	
-    // from which we make three outputs, all synchronous to the clock
-    output reg CleanButtonOut = 1  // 1 as long as the push-button is active (down)
+    input NoisyButtonIn,  				// Active Low
+    output reg CleanButtonOut = 1   // Avtive High
 );
 
-// First use two flip-flops to synchronize the PB signal the "clk" clock domain
-reg PB_sync_0;  always @(posedge CLK) PB_sync_0 <= ~NoisyButtonIn;  // invert PB to make PB_sync_0 active high
+// Synchronization
+reg PB_sync_0;  always @(posedge CLK) PB_sync_0 <= ~NoisyButtonIn;
 reg PB_sync_1;  always @(posedge CLK) PB_sync_1 <= PB_sync_0;
 
-// Next declare a 16-bits counter
+// Counter
 reg [COUNTER_REG_SIZE-1:0] Counter = 0;
-
-// When the push-button is pushed or released, we increment the counter
-// The counter has to be maxed out before we decide that the push-button state has changed
 
 wire PB_idle = (CleanButtonOut==PB_sync_1);
 
-wire Counter_max = &Counter;	// True when all bits of Counter are 1's
+wire Counter_max = &Counter;	// Time out?
 
 always @(posedge CLK)
 	if(PB_idle)
