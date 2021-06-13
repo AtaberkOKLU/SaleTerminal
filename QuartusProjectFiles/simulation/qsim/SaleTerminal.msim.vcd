@@ -3,7 +3,7 @@ $comment
 		vcd file SaleTerminal.msim.vcd -direction
 $end
 $date
-	Sun Jun 13 12:31:13 2021
+	Sun Jun 13 20:03:04 2021
 $end
 $version
 	ModelSim Version 2020.1
@@ -12,272 +12,286 @@ $timescale
 	1ps
 $end
 
-$scope module ButtonController_vlg_vec_tst $end
-$var reg 1 ! CLOCK_50 $end
-$var reg 4 " KEY [3:0] $end
-$var reg 3 # SW [2:0] $end
-$var wire 1 $ CMD_En [3] $end
-$var wire 1 % CMD_En [2] $end
-$var wire 1 & CMD_En [1] $end
-$var wire 1 ' CMD_En [0] $end
-$var wire 1 ( CMD_Reg [3] $end
-$var wire 1 ) CMD_Reg [2] $end
-$var wire 1 * CMD_Reg [1] $end
-$var wire 1 + CMD_Reg [0] $end
-$var wire 1 , CleanSWOut [2] $end
-$var wire 1 - CleanSWOut [1] $end
-$var wire 1 . CleanSWOut [0] $end
-$var wire 1 / KEY_En [3] $end
-$var wire 1 0 KEY_En [2] $end
-$var wire 1 1 KEY_En [1] $end
-$var wire 1 2 KEY_En [0] $end
-$var wire 1 3 KEY_Reg [3] $end
-$var wire 1 4 KEY_Reg [2] $end
-$var wire 1 5 KEY_Reg [1] $end
-$var wire 1 6 KEY_Reg [0] $end
+$scope module BarcodeController_vlg_vec_tst $end
+$var reg 1 ! CLK $end
+$var reg 4 " Digit_in [3:0] $end
+$var reg 1 # ENABLE $end
+$var reg 1 $ RESET_N $end
+$var wire 1 % BarcodeDigitCompleted $end
+$var wire 1 & Barcode_Digit_0 [3] $end
+$var wire 1 ' Barcode_Digit_0 [2] $end
+$var wire 1 ( Barcode_Digit_0 [1] $end
+$var wire 1 ) Barcode_Digit_0 [0] $end
+$var wire 1 * Barcode_Digit_1 [3] $end
+$var wire 1 + Barcode_Digit_1 [2] $end
+$var wire 1 , Barcode_Digit_1 [1] $end
+$var wire 1 - Barcode_Digit_1 [0] $end
+$var wire 1 . Barcode_Digit_2 [3] $end
+$var wire 1 / Barcode_Digit_2 [2] $end
+$var wire 1 0 Barcode_Digit_2 [1] $end
+$var wire 1 1 Barcode_Digit_2 [0] $end
+$var wire 1 2 Barcode_Digit_3 [3] $end
+$var wire 1 3 Barcode_Digit_3 [2] $end
+$var wire 1 4 Barcode_Digit_3 [1] $end
+$var wire 1 5 Barcode_Digit_3 [0] $end
+$var wire 1 6 HEX0 [6] $end
+$var wire 1 7 HEX0 [5] $end
+$var wire 1 8 HEX0 [4] $end
+$var wire 1 9 HEX0 [3] $end
+$var wire 1 : HEX0 [2] $end
+$var wire 1 ; HEX0 [1] $end
+$var wire 1 < HEX0 [0] $end
+$var wire 1 = HEX1 [6] $end
+$var wire 1 > HEX1 [5] $end
+$var wire 1 ? HEX1 [4] $end
+$var wire 1 @ HEX1 [3] $end
+$var wire 1 A HEX1 [2] $end
+$var wire 1 B HEX1 [1] $end
+$var wire 1 C HEX1 [0] $end
+$var wire 1 D HEX2 [6] $end
+$var wire 1 E HEX2 [5] $end
+$var wire 1 F HEX2 [4] $end
+$var wire 1 G HEX2 [3] $end
+$var wire 1 H HEX2 [2] $end
+$var wire 1 I HEX2 [1] $end
+$var wire 1 J HEX2 [0] $end
+$var wire 1 K HEX3 [6] $end
+$var wire 1 L HEX3 [5] $end
+$var wire 1 M HEX3 [4] $end
+$var wire 1 N HEX3 [3] $end
+$var wire 1 O HEX3 [2] $end
+$var wire 1 P HEX3 [1] $end
+$var wire 1 Q HEX3 [0] $end
 
 $scope module i1 $end
-$var wire 1 7 gnd $end
-$var wire 1 8 vcc $end
-$var wire 1 9 unknown $end
-$var tri1 1 : devclrn $end
-$var tri1 1 ; devpor $end
-$var tri1 1 < devoe $end
-$var wire 1 = CMD_En[0]~output_o $end
-$var wire 1 > CMD_En[1]~output_o $end
-$var wire 1 ? CMD_En[2]~output_o $end
-$var wire 1 @ CMD_En[3]~output_o $end
-$var wire 1 A KEY_En[0]~output_o $end
-$var wire 1 B KEY_En[1]~output_o $end
-$var wire 1 C KEY_En[2]~output_o $end
-$var wire 1 D KEY_En[3]~output_o $end
-$var wire 1 E CMD_Reg[0]~output_o $end
-$var wire 1 F CMD_Reg[1]~output_o $end
-$var wire 1 G CMD_Reg[2]~output_o $end
-$var wire 1 H CMD_Reg[3]~output_o $end
-$var wire 1 I KEY_Reg[0]~output_o $end
-$var wire 1 J KEY_Reg[1]~output_o $end
-$var wire 1 K KEY_Reg[2]~output_o $end
-$var wire 1 L KEY_Reg[3]~output_o $end
-$var wire 1 M CleanSWOut[0]~output_o $end
-$var wire 1 N CleanSWOut[1]~output_o $end
-$var wire 1 O CleanSWOut[2]~output_o $end
-$var wire 1 P CLOCK_50~input_o $end
-$var wire 1 Q KEY[0]~input_o $end
-$var wire 1 R ButtonDebouncer_Key0|PB_sync_0~0_combout $end
-$var wire 1 S ButtonDebouncer_Key0|PB_sync_0~q $end
-$var wire 1 T ButtonDebouncer_Key0|PB_sync_1~q $end
-$var wire 1 U ButtonDebouncer_Key0|Counter~0_combout $end
-$var wire 1 V ButtonDebouncer_Key0|Counter~1_combout $end
-$var wire 1 W ButtonDebouncer_Key0|CleanButtonOut~0_combout $end
-$var wire 1 X ButtonDebouncer_Key0|CleanButtonOut~q $end
-$var wire 1 Y SW[0]~input_o $end
-$var wire 1 Z SwitchDebouncer_SW0|PB_sync_0~q $end
-$var wire 1 [ SwitchDebouncer_SW0|PB_sync_1~q $end
-$var wire 1 \ SwitchDebouncer_SW0|Counter~0_combout $end
-$var wire 1 ] SwitchDebouncer_SW0|Counter~1_combout $end
-$var wire 1 ^ SwitchDebouncer_SW0|CleanSWOut~0_combout $end
-$var wire 1 _ SwitchDebouncer_SW0|CleanSWOut~q $end
-$var wire 1 ` ButtonManager_inst0|CMD_Reg[0]~0_combout $end
-$var wire 1 a ButtonLevelPulseConverter_CMD0|r1~q $end
-$var wire 1 b ButtonLevelPulseConverter_CMD0|r2~q $end
-$var wire 1 c ButtonLevelPulseConverter_CMD0|ButtonPulseOut~combout $end
-$var wire 1 d KEY[1]~input_o $end
-$var wire 1 e ButtonDebouncer_Key1|PB_sync_0~0_combout $end
-$var wire 1 f ButtonDebouncer_Key1|PB_sync_0~q $end
-$var wire 1 g ButtonDebouncer_Key1|PB_sync_1~q $end
-$var wire 1 h ButtonDebouncer_Key1|Counter~0_combout $end
-$var wire 1 i ButtonDebouncer_Key1|Counter~1_combout $end
-$var wire 1 j ButtonDebouncer_Key1|CleanButtonOut~0_combout $end
-$var wire 1 k ButtonDebouncer_Key1|CleanButtonOut~q $end
-$var wire 1 l ButtonManager_inst0|CMD_Reg[1]~1_combout $end
-$var wire 1 m ButtonLevelPulseConverter_CMD1|r1~q $end
-$var wire 1 n ButtonLevelPulseConverter_CMD1|r2~q $end
-$var wire 1 o ButtonLevelPulseConverter_CMD1|ButtonPulseOut~combout $end
-$var wire 1 p KEY[2]~input_o $end
-$var wire 1 q ButtonDebouncer_Key2|PB_sync_0~0_combout $end
-$var wire 1 r ButtonDebouncer_Key2|PB_sync_0~q $end
-$var wire 1 s ButtonDebouncer_Key2|PB_sync_1~q $end
-$var wire 1 t ButtonDebouncer_Key2|Counter~0_combout $end
-$var wire 1 u ButtonDebouncer_Key2|Counter~1_combout $end
-$var wire 1 v ButtonDebouncer_Key2|CleanButtonOut~0_combout $end
-$var wire 1 w ButtonDebouncer_Key2|CleanButtonOut~q $end
-$var wire 1 x ButtonManager_inst0|CMD_Reg[2]~2_combout $end
-$var wire 1 y ButtonLevelPulseConverter_CMD2|r1~q $end
-$var wire 1 z ButtonLevelPulseConverter_CMD2|r2~q $end
-$var wire 1 { ButtonLevelPulseConverter_CMD2|ButtonPulseOut~combout $end
-$var wire 1 | KEY[3]~input_o $end
-$var wire 1 } ButtonDebouncer_Key3|PB_sync_0~0_combout $end
-$var wire 1 ~ ButtonDebouncer_Key3|PB_sync_0~q $end
-$var wire 1 !! ButtonDebouncer_Key3|PB_sync_1~q $end
-$var wire 1 "! ButtonDebouncer_Key3|Counter~0_combout $end
-$var wire 1 #! ButtonDebouncer_Key3|Counter~1_combout $end
-$var wire 1 $! ButtonDebouncer_Key3|CleanButtonOut~0_combout $end
-$var wire 1 %! ButtonDebouncer_Key3|CleanButtonOut~q $end
-$var wire 1 &! ButtonManager_inst0|CMD_Reg[3]~3_combout $end
-$var wire 1 '! ButtonLevelPulseConverter_CMD3|r1~q $end
-$var wire 1 (! ButtonLevelPulseConverter_CMD3|r2~q $end
-$var wire 1 )! ButtonLevelPulseConverter_CMD3|ButtonPulseOut~combout $end
-$var wire 1 *! ButtonManager_inst0|KEY_Reg[0]~0_combout $end
-$var wire 1 +! ButtonLevelPulseConverter_KEY0|r1~q $end
-$var wire 1 ,! ButtonLevelPulseConverter_KEY0|r2~q $end
-$var wire 1 -! ButtonLevelPulseConverter_KEY0|ButtonPulseOut~combout $end
-$var wire 1 .! ButtonManager_inst0|KEY_Reg[1]~1_combout $end
-$var wire 1 /! ButtonLevelPulseConverter_KEY1|r1~q $end
-$var wire 1 0! ButtonLevelPulseConverter_KEY1|r2~q $end
-$var wire 1 1! ButtonLevelPulseConverter_KEY1|ButtonPulseOut~combout $end
-$var wire 1 2! ButtonManager_inst0|KEY_Reg[2]~2_combout $end
-$var wire 1 3! ButtonLevelPulseConverter_KEY2|r1~q $end
-$var wire 1 4! ButtonLevelPulseConverter_KEY2|r2~q $end
-$var wire 1 5! ButtonLevelPulseConverter_KEY2|ButtonPulseOut~combout $end
-$var wire 1 6! ButtonManager_inst0|KEY_Reg[3]~3_combout $end
-$var wire 1 7! ButtonLevelPulseConverter_KEY3|r1~q $end
-$var wire 1 8! ButtonLevelPulseConverter_KEY3|r2~q $end
-$var wire 1 9! ButtonLevelPulseConverter_KEY3|ButtonPulseOut~combout $end
-$var wire 1 :! SW[1]~input_o $end
-$var wire 1 ;! SwitchDebouncer_SW1|PB_sync_0~q $end
-$var wire 1 <! SwitchDebouncer_SW1|PB_sync_1~q $end
-$var wire 1 =! SwitchDebouncer_SW1|Counter~0_combout $end
-$var wire 1 >! SwitchDebouncer_SW1|Counter~1_combout $end
-$var wire 1 ?! SwitchDebouncer_SW1|CleanSWOut~0_combout $end
-$var wire 1 @! SwitchDebouncer_SW1|CleanSWOut~q $end
-$var wire 1 A! SW[2]~input_o $end
-$var wire 1 B! SwitchDebouncer_SW2|PB_sync_0~q $end
-$var wire 1 C! SwitchDebouncer_SW2|PB_sync_1~q $end
-$var wire 1 D! SwitchDebouncer_SW2|Counter~0_combout $end
-$var wire 1 E! SwitchDebouncer_SW2|Counter~1_combout $end
-$var wire 1 F! SwitchDebouncer_SW2|CleanSWOut~0_combout $end
-$var wire 1 G! SwitchDebouncer_SW2|CleanSWOut~q $end
-$var wire 1 H! ButtonDebouncer_Key0|Counter [1] $end
-$var wire 1 I! ButtonDebouncer_Key0|Counter [0] $end
-$var wire 1 J! SwitchDebouncer_SW0|Counter [1] $end
-$var wire 1 K! SwitchDebouncer_SW0|Counter [0] $end
-$var wire 1 L! SwitchDebouncer_SW2|Counter [1] $end
-$var wire 1 M! SwitchDebouncer_SW2|Counter [0] $end
-$var wire 1 N! ButtonDebouncer_Key1|Counter [1] $end
-$var wire 1 O! ButtonDebouncer_Key1|Counter [0] $end
-$var wire 1 P! ButtonDebouncer_Key2|Counter [1] $end
-$var wire 1 Q! ButtonDebouncer_Key2|Counter [0] $end
-$var wire 1 R! ButtonDebouncer_Key3|Counter [1] $end
-$var wire 1 S! ButtonDebouncer_Key3|Counter [0] $end
-$var wire 1 T! SwitchDebouncer_SW1|Counter [1] $end
-$var wire 1 U! SwitchDebouncer_SW1|Counter [0] $end
+$var wire 1 R gnd $end
+$var wire 1 S vcc $end
+$var wire 1 T unknown $end
+$var tri1 1 U devclrn $end
+$var tri1 1 V devpor $end
+$var tri1 1 W devoe $end
+$var wire 1 X BarcodeDigitCompleted~output_o $end
+$var wire 1 Y Barcode_Digit_0[0]~output_o $end
+$var wire 1 Z Barcode_Digit_0[1]~output_o $end
+$var wire 1 [ Barcode_Digit_0[2]~output_o $end
+$var wire 1 \ Barcode_Digit_0[3]~output_o $end
+$var wire 1 ] Barcode_Digit_1[0]~output_o $end
+$var wire 1 ^ Barcode_Digit_1[1]~output_o $end
+$var wire 1 _ Barcode_Digit_1[2]~output_o $end
+$var wire 1 ` Barcode_Digit_1[3]~output_o $end
+$var wire 1 a Barcode_Digit_2[0]~output_o $end
+$var wire 1 b Barcode_Digit_2[1]~output_o $end
+$var wire 1 c Barcode_Digit_2[2]~output_o $end
+$var wire 1 d Barcode_Digit_2[3]~output_o $end
+$var wire 1 e Barcode_Digit_3[0]~output_o $end
+$var wire 1 f Barcode_Digit_3[1]~output_o $end
+$var wire 1 g Barcode_Digit_3[2]~output_o $end
+$var wire 1 h Barcode_Digit_3[3]~output_o $end
+$var wire 1 i HEX0[0]~output_o $end
+$var wire 1 j HEX0[1]~output_o $end
+$var wire 1 k HEX0[2]~output_o $end
+$var wire 1 l HEX0[3]~output_o $end
+$var wire 1 m HEX0[4]~output_o $end
+$var wire 1 n HEX0[5]~output_o $end
+$var wire 1 o HEX0[6]~output_o $end
+$var wire 1 p HEX1[0]~output_o $end
+$var wire 1 q HEX1[1]~output_o $end
+$var wire 1 r HEX1[2]~output_o $end
+$var wire 1 s HEX1[3]~output_o $end
+$var wire 1 t HEX1[4]~output_o $end
+$var wire 1 u HEX1[5]~output_o $end
+$var wire 1 v HEX1[6]~output_o $end
+$var wire 1 w HEX2[0]~output_o $end
+$var wire 1 x HEX2[1]~output_o $end
+$var wire 1 y HEX2[2]~output_o $end
+$var wire 1 z HEX2[3]~output_o $end
+$var wire 1 { HEX2[4]~output_o $end
+$var wire 1 | HEX2[5]~output_o $end
+$var wire 1 } HEX2[6]~output_o $end
+$var wire 1 ~ HEX3[0]~output_o $end
+$var wire 1 !! HEX3[1]~output_o $end
+$var wire 1 "! HEX3[2]~output_o $end
+$var wire 1 #! HEX3[3]~output_o $end
+$var wire 1 $! HEX3[4]~output_o $end
+$var wire 1 %! HEX3[5]~output_o $end
+$var wire 1 &! HEX3[6]~output_o $end
+$var wire 1 '! CLK~input_o $end
+$var wire 1 (! RESET_N~input_o $end
+$var wire 1 )! Digit_in[3]~input_o $end
+$var wire 1 *! BarcodeShiftRegister_inst0|Digit_Reg_0~1_combout $end
+$var wire 1 +! ENABLE~input_o $end
+$var wire 1 ,! BarcodeShiftRegister_inst0|Digit_Reg_3[3]~1_combout $end
+$var wire 1 -! BarcodeShiftRegister_inst0|Digit_Reg_1~1_combout $end
+$var wire 1 .! BarcodeShiftRegister_inst0|Digit_Reg_2~1_combout $end
+$var wire 1 /! BarcodeShiftRegister_inst0|Digit_Reg_3~0_combout $end
+$var wire 1 0! Digit_in[2]~input_o $end
+$var wire 1 1! BarcodeShiftRegister_inst0|Digit_Reg_0~0_combout $end
+$var wire 1 2! BarcodeShiftRegister_inst0|Digit_Reg_1~0_combout $end
+$var wire 1 3! BarcodeShiftRegister_inst0|Digit_Reg_2~0_combout $end
+$var wire 1 4! BarcodeShiftRegister_inst0|Digit_Reg_3~2_combout $end
+$var wire 1 5! Digit_in[1]~input_o $end
+$var wire 1 6! LessThan0~0_combout $end
+$var wire 1 7! Digit_in[0]~input_o $end
+$var wire 1 8! Segment0|WideOr6~0_combout $end
+$var wire 1 9! Segment0|WideOr5~0_combout $end
+$var wire 1 :! Segment0|WideOr4~0_combout $end
+$var wire 1 ;! Segment0|WideOr3~0_combout $end
+$var wire 1 <! Segment0|WideOr2~0_combout $end
+$var wire 1 =! Segment0|WideOr1~0_combout $end
+$var wire 1 >! Segment0|WideOr0~0_combout $end
+$var wire 1 ?! Segment1|WideOr6~0_combout $end
+$var wire 1 @! Segment1|WideOr5~0_combout $end
+$var wire 1 A! Segment1|WideOr4~0_combout $end
+$var wire 1 B! Segment1|WideOr3~0_combout $end
+$var wire 1 C! Segment1|WideOr2~0_combout $end
+$var wire 1 D! Segment1|WideOr1~0_combout $end
+$var wire 1 E! Segment1|WideOr0~0_combout $end
+$var wire 1 F! Segment2|WideOr6~0_combout $end
+$var wire 1 G! Segment2|WideOr5~0_combout $end
+$var wire 1 H! Segment2|WideOr4~0_combout $end
+$var wire 1 I! Segment2|WideOr3~0_combout $end
+$var wire 1 J! Segment2|WideOr2~0_combout $end
+$var wire 1 K! Segment2|WideOr1~0_combout $end
+$var wire 1 L! Segment2|WideOr0~0_combout $end
+$var wire 1 M! Segment3|WideOr6~0_combout $end
+$var wire 1 N! Segment3|WideOr5~0_combout $end
+$var wire 1 O! Segment3|WideOr4~0_combout $end
+$var wire 1 P! Segment3|WideOr3~0_combout $end
+$var wire 1 Q! Segment3|WideOr2~0_combout $end
+$var wire 1 R! Segment3|WideOr1~0_combout $end
+$var wire 1 S! Segment3|WideOr0~0_combout $end
+$var wire 1 T! BarcodeShiftRegister_inst0|Digit_Reg_3 [3] $end
+$var wire 1 U! BarcodeShiftRegister_inst0|Digit_Reg_3 [2] $end
+$var wire 1 V! BarcodeShiftRegister_inst0|Digit_Reg_3 [1] $end
+$var wire 1 W! BarcodeShiftRegister_inst0|Digit_Reg_3 [0] $end
+$var wire 1 X! BarcodeShiftRegister_inst0|Digit_Reg_0 [3] $end
+$var wire 1 Y! BarcodeShiftRegister_inst0|Digit_Reg_0 [2] $end
+$var wire 1 Z! BarcodeShiftRegister_inst0|Digit_Reg_0 [1] $end
+$var wire 1 [! BarcodeShiftRegister_inst0|Digit_Reg_0 [0] $end
+$var wire 1 \! BarcodeShiftRegister_inst0|Digit_Reg_1 [3] $end
+$var wire 1 ]! BarcodeShiftRegister_inst0|Digit_Reg_1 [2] $end
+$var wire 1 ^! BarcodeShiftRegister_inst0|Digit_Reg_1 [1] $end
+$var wire 1 _! BarcodeShiftRegister_inst0|Digit_Reg_1 [0] $end
+$var wire 1 `! BarcodeShiftRegister_inst0|Digit_Reg_2 [3] $end
+$var wire 1 a! BarcodeShiftRegister_inst0|Digit_Reg_2 [2] $end
+$var wire 1 b! BarcodeShiftRegister_inst0|Digit_Reg_2 [1] $end
+$var wire 1 c! BarcodeShiftRegister_inst0|Digit_Reg_2 [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
 1!
-b1111 "
-b0 #
-0'
-0&
+b0 "
+0#
+1$
 0%
-0$
-0+
-0*
 0)
 0(
-0.
+1'
+1&
 0-
 0,
-02
+1+
+1*
 01
 00
-0/
-06
+1/
+1.
 05
 04
-03
-07
-18
-x9
-1:
-1;
+13
+12
 1<
-0=
-0>
-0?
-0@
-0A
-0B
-0C
-0D
-0E
-0F
-0G
-0H
-0I
-0J
-0K
-0L
-0M
-0N
-0O
-1P
+1;
+1:
+19
+18
+17
+16
+1C
+1B
+1A
+1@
+1?
+1>
+1=
+1J
+1I
+1H
+1G
+1F
+1E
+1D
 1Q
+1P
+1O
+1N
+1M
+1L
+1K
 0R
-0S
-0T
-0U
-0V
-0W
+1S
+xT
+1U
+1V
+1W
 0X
 0Y
 0Z
-0[
-0\
+1[
+1\
 0]
 0^
-0_
-0`
+1_
+1`
 0a
 0b
-0c
+1c
 1d
 0e
 0f
-0g
-0h
-0i
-0j
-0k
-0l
-0m
-0n
-0o
+1g
+1h
+1i
+1j
+1k
+1l
+1m
+1n
+1o
 1p
-0q
-0r
-0s
-0t
-0u
-0v
-0w
-0x
-0y
-0z
-0{
+1q
+1r
+1s
+1t
+1u
+1v
+1w
+1x
+1y
+1z
+1{
 1|
-0}
-0~
-0!!
-0"!
-0#!
-0$!
-0%!
-0&!
-0'!
-0(!
+1}
+1~
+1!!
+1"!
+1#!
+1$!
+1%!
+1&!
+1'!
+1(!
 0)!
-0*!
+1*!
 0+!
 0,!
 0-!
 0.!
 0/!
 00!
-01!
+11!
 02!
 03!
 04!
@@ -285,548 +299,547 @@ x9
 06!
 07!
 08!
-09!
-0:!
-0;!
-0<!
-0=!
-0>!
+19!
+1:!
+1;!
+1<!
+1=!
+1>!
 0?!
-0@!
-0A!
-0B!
-0C!
-0D!
-0E!
+1@!
+1A!
+1B!
+1C!
+1D!
+1E!
 0F!
-0G!
-0I!
-0H!
-0K!
-0J!
+1G!
+1H!
+1I!
+1J!
+1K!
+1L!
 0M!
-0L!
-0O!
-0N!
-0Q!
-0P!
-0S!
-0R!
+1N!
+1O!
+1P!
+1Q!
+1R!
+1S!
+0W!
+0V!
 0U!
 0T!
+0[!
+0Z!
+0Y!
+0X!
+0_!
+0^!
+0]!
+0\!
+0c!
+0b!
+0a!
+0`!
 $end
-#5000
-0!
-0P
 #10000
-1!
-1P
-#15000
 0!
-0P
+b10 "
+1#
+1+!
+0'!
+15!
+1,!
 #20000
 1!
-1P
-#25000
-0!
-0P
+1'!
+1Y!
+1X!
+1Z!
+1Z
+0\
+0[
+18!
+0'
+0&
+1(
+0>!
+0=!
+0;!
+0:!
+1-!
+12!
+0k
+0l
+0n
+0o
+0i
+0<
+06
+07
+09
+0:
 #30000
-1!
-1P
-#35000
+b0 "
+0#
 0!
-0P
+0+!
+05!
+0'!
+0,!
 #40000
 1!
-1P
-#45000
-0!
-0P
+1'!
 #50000
-1!
-1P
-#55000
 0!
-0P
+0'!
 #60000
-b1011 "
 1!
-0p
-1P
-1q
-#65000
-0!
-0P
+1'!
 #70000
-1!
-1P
-1r
-#75000
 0!
-0P
+0'!
 #80000
 1!
-1P
-1s
-1t
-#85000
-0!
-0P
+1'!
 #90000
-1!
-1P
-1Q!
-1u
-0t
-#95000
+b100 "
+b101 "
+b111 "
+1#
 0!
-0P
+10!
+1+!
+17!
+15!
+0'!
+1,!
+01!
 #100000
 1!
-1P
-1P!
-0Q!
-1t
-#105000
-0!
-0P
-#110000
-1!
-1P
-1Q!
-1v
+1'!
+1]!
+0Y!
+1\!
+1[!
+1^!
+1^
+1Y
+0`
+1[
+0_
+1?!
+08!
+0+
+1'
+0*
+1)
+1,
+0E!
+0D!
+0B!
+0A!
+1.!
+0<!
+1;!
+1:!
+02!
+13!
+1k
+1l
+0m
+0r
+0s
 0u
-0t
-#115000
+0v
+1i
+0p
+0C
+1<
+0=
+0>
+0@
+0A
+08
+19
+1:
+#110000
+b11 "
+b10 "
+b0 "
+0#
 0!
-0P
+00!
+0+!
+07!
+05!
+0'!
+0,!
+11!
 #120000
 1!
-1P
-1w
-0P!
-0Q!
-12!
-1K
-14
-#125000
-0!
-0P
+1'!
 #130000
-1!
-1P
-13!
-15!
-1C
-10
-#135000
 0!
-0P
+0'!
 #140000
 1!
-1P
-14!
-05!
-0C
-00
-#145000
-0!
-0P
+1'!
 #150000
-1!
-1P
-#155000
+b1 "
+1#
 0!
-0P
+1+!
+17!
+0'!
+1,!
 #160000
 1!
-1P
-#165000
-0!
-0P
-#170000
-b1111 "
-1!
-1p
-1P
-0q
-#175000
-0!
-0P
-#180000
-1!
-1P
-0r
-#185000
-0!
-0P
-#190000
-1!
-1P
-0s
-1t
-#195000
-0!
-0P
-#200000
-1!
-1P
-1Q!
-1u
-0t
-#205000
-0!
-0P
-#210000
-1!
-1P
-1P!
-0Q!
-1t
-#215000
-0!
-0P
-#220000
-b1101 "
-1!
+1'!
+1a!
+0]!
+1Y!
+1`!
+1_!
+1b!
+0Z!
+0Z
+1b
+1]
 0d
-1P
-1e
-1Q!
-0v
-0u
+0[
+1_
+0c
+1F!
+0?!
+0/
+1+
+0'
+0.
+1-
+10
+0(
+0L!
+0K!
+0I!
+0H!
+1/!
+1>!
+12!
+0C!
+1B!
+1A!
+03!
+14!
+1r
+1s
 0t
-#225000
-0!
-0P
-#230000
-1!
-1P
+1o
+0y
+0z
+0|
+0}
+1p
 0w
-0P!
-0Q!
-1f
-02!
-0K
-04
-#235000
+0J
+1C
+0D
+0E
+0G
+0H
+16
+0?
+1@
+1A
+#170000
+b101 "
 0!
-0P
+10!
+0'!
+01!
+#180000
+0#
+1!
+0+!
+1'!
+0,!
+1U!
+0a!
+1]!
+0Y!
+1T!
+1c!
+1V!
+0^!
+0^
+1f
+1a
+0h
+1[
+0_
+1c
+0g
+1M!
+18!
+0F!
+03
+1/
+0+
+1'
+02
+11
+14
+0,
+0S!
+0R!
+0P!
+0O!
+16!
+0>!
+1=!
+0;!
+09!
+02!
+1E!
+13!
+0J!
+1I!
+1H!
+04!
+1y
+1z
+0{
+1v
+0j
+0l
+1n
+0o
+1X
+0"!
+0#!
+0%!
+0&!
+1w
+0i
+0~
+0Q
+0<
+1J
+0K
+0L
+0N
+0O
+1%
+06
+17
+09
+0;
+1=
+0F
+1G
+1H
+#190000
+b1101 "
+b1100 "
+b1000 "
+1#
+0!
+00!
+1)!
+1+!
+07!
+0'!
+1,!
+0*!
+11!
+#200000
+b0 "
+0#
+1!
+0)!
+0+!
+1'!
+0,!
+1*!
+0U!
+1a!
+0]!
+1Y!
+0X!
+1W!
+0[!
+0b!
+0b
+0Y
+1e
+1\
+0[
+1_
+0c
+1g
+1?!
+0M!
+13
+0/
+1+
+0'
+1&
+15
+0)
+00
+0=!
+0:!
+0-!
+12!
+0E!
+1D!
+0B!
+0@!
+03!
+1L!
+14!
+0Q!
+1P!
+1O!
+1"!
+1#!
+0$!
+1}
+0q
+0s
+1u
+0v
+0k
+0n
+1~
+0p
+0C
+1Q
+07
+0:
+0=
+1>
+0@
+0B
+1D
+0M
+1N
+1O
+#210000
+b1000 "
+0!
+1)!
+0'!
+0*!
+#220000
+b0 "
+1!
+0)!
+1'!
+1*!
+#230000
+0$
+0!
+0(!
+0'!
+1,!
+04!
+02!
+01!
+0/!
+0.!
+0*!
 #240000
 1!
-1P
-1g
-03!
-1h
-#245000
-0!
-0P
-#250000
-1!
-1P
-04!
-1O!
-1i
-0h
-#255000
-0!
-0P
-#260000
-1!
-1P
-1N!
-0O!
-1h
-#265000
-0!
-0P
-#270000
-b1111 "
-1!
-1d
-1P
-0e
-1O!
-1j
-0i
-0h
-#275000
-0!
-0P
-#280000
-1!
-1P
-1k
-0N!
-0O!
-0f
-1.!
-1J
-15
-#285000
-0!
-0P
-#290000
-1!
-1P
-0g
-1/!
-1h
-11!
-1B
-11
-#295000
-0!
-0P
-#300000
-b1 #
-1!
-1Y
-1P
-10!
-1O!
-1Z
-1i
-0h
-01!
-0B
-01
-#305000
-0!
-0P
-#310000
-1!
-1P
-1N!
-0O!
-1[
-1\
-1h
-#315000
-0!
-0P
-#320000
-1!
-1P
-1O!
-1K!
-1]
-0\
-0j
-0i
-0h
-#325000
-0!
-0P
-#330000
-1!
-1P
-0k
-0N!
-0O!
-1J!
-0K!
-1\
-0.!
-0J
-05
-#335000
-0!
-0P
-#340000
-1!
-1P
-1K!
-0/!
-1^
-0]
-0\
-#345000
-0!
-0P
-#350000
-b111 "
-1!
-0|
-1P
-1}
-00!
-0J!
-0K!
-1_
-1M
-1.
-#355000
-0!
-0P
-#360000
-1!
-1P
-1~
-#365000
-0!
-0P
-#370000
-1!
-1P
-1!!
-1"!
-#375000
-0!
-0P
-#380000
-1!
-1P
-1S!
-1#!
-0"!
-#385000
-0!
-0P
-#390000
-b1111 "
-1!
-1|
-1P
-0}
-1R!
-0S!
-1"!
-#395000
-0!
-0P
-#400000
-1!
-1P
-1S!
-0~
-1$!
-0#!
-0"!
-#405000
-0!
-0P
-#410000
-1!
-1P
-1%!
-0R!
-0S!
-0!!
-1"!
-1&!
-1H
-1(
-#415000
-0!
-0P
-#420000
-1!
-1P
-1S!
 1'!
-1#!
-0"!
-1)!
-1@
-1$
-#425000
-0!
-0P
-#430000
-b0 #
-1!
-0Y
-1P
-1(!
-1R!
-0S!
-0Z
-1"!
-0)!
-0@
-0$
-#435000
-0!
-0P
-#440000
-1!
-1P
-1S!
-0[
-1\
-0$!
-0#!
-0"!
-#445000
-0!
-0P
-#450000
-b111 "
-1!
-0|
-1P
-1}
-0%!
-0R!
-0S!
-1K!
-1]
-0\
-0&!
-0H
-0(
-#455000
-0!
-0P
-#460000
-1!
-1P
-1J!
-0K!
-0'!
-1~
-1\
-#465000
-0!
-0P
-#470000
-1!
-1P
-0(!
-1!!
-1K!
-0^
+0a!
+0Y!
+0T!
+0`!
+0\!
+0W!
+0c!
+0_!
+0V!
+0f
 0]
-0\
-1"!
-#475000
-0!
-0P
-#480000
-1!
-1P
+0a
+0e
+1`
+1d
+1h
+1[
+1c
+0?!
+08!
+1/
+1'
+12
+1.
+1*
+05
+01
+0-
+04
+1E!
+1C!
+1B!
+1@!
+1K!
+1J!
 1S!
-0J!
-0K!
-0_
-0M
-0.
-1#!
-0"!
-#485000
-0!
-0P
-#490000
-b1111 "
-1!
-1|
-1P
-0}
 1R!
-0S!
-1"!
-#495000
+1Q!
+06!
+1>!
+1=!
+1<!
+1;!
+1:!
+19!
+1j
+1k
+1l
+1m
+1n
+1o
+0X
+1$!
+1%!
+1&!
+1{
+1|
+1q
+1s
+1t
+1v
+1i
+1p
+1C
+1<
+1=
+1?
+1@
+1B
+1E
+1F
+1K
+1L
+1M
+0%
+16
+17
+18
+19
+1:
+1;
+#250000
+1$
 0!
-0P
-#500000
+1(!
+0'!
+0,!
+11!
+1*!
+#260000
