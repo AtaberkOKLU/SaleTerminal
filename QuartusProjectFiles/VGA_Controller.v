@@ -47,6 +47,7 @@ module VGA_Controller
 (
     input CLOCK_50,
 	 input RESET_N,
+	 input  wire[11:0] HighlightedProductList,
     output reg [R_WIDTH-1:0] VGA_R,
 	 output reg [G_WIDTH-1:0] VGA_G,
 	 output reg [B_WIDTH-1:0] VGA_B,
@@ -64,6 +65,7 @@ module VGA_Controller
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
 	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] VGA_RGB_Bus;
 	 wire	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr;
+	 wire isHighlight_wire;
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
@@ -103,8 +105,10 @@ module VGA_Controller
 	ImageLocator ImageLocator_inst0(
 		.CounterX(CounterX),
 		.CounterY(CounterY),
+		.HighlightedProductList(HighlightedProductList),
 		.ROM_Addr(targetPixelAddr),
 		.isImage(isImage_wire),
+		.isHighlight(isHighlight_wire),
 		.black_white(BW_Pix_wire)
 	);
 	 
@@ -112,7 +116,7 @@ module VGA_Controller
 		begin
 			if (inDisplayArea)
 				begin
-					if(isImage_wire)
+					if(isImage_wire && !isHighlight_wire)
 						begin
 							VGA_R[R_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH-1:0];
 							VGA_G[G_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH-1:R_WIDTH];
