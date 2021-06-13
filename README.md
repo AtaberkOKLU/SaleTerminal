@@ -96,21 +96,24 @@ Visit Docs Folder
 +	End Shopping State
 
 ## TO DO
-+	VGA Controller                        : Ataberk ÖKLÜ - Ongoing
-	+	ImageLocator                      : Ataberk ÖKLÜ - Ongoing
-	+	HVSync Generator                  : Ataberk ÖKLÜ - Ongoing
-	+	ImageROM                          : Ataberk ÖKLÜ - Ongoing
-		+	16x4 Encoder                  : Ataberk ÖKLÜ - Ongoing
-+	Button Controller                     : Ataberk ÖKLÜ - Ongoing
-	+	Button Debouncer                  : Ataberk ÖKLÜ - Ongoing
-	+	Button Level-Pulse Converter      : Ataberk ÖKLÜ - Ongoing
-	+	Key-SW Register                   : Ataberk ÖKLÜ - Ongoing
-+ 	Barcode Controller                    : Ataberk ÖKLÜ - Ongoing
-	+	BarcodeShiftRegister              : Ataberk ÖKLÜ - Ongoing
-	+	7-Segment Controller              : Ataberk ÖKLÜ - Ongoing
-+	State Machine                         : Ataberk ÖKLÜ - Ongoing
-	+	State Flowchart                   : Ataberk ÖKLÜ - Ongoing
-+	Basket Controller			: Ahsen TOPBAŞ - Ongoing
++	VGA Controller                      : Ataberk ÖKLÜ - Ongoing
+	+	ImageLocator                    : Ataberk ÖKLÜ - Ongoing
+	+	HVSync Generator                : Ataberk ÖKLÜ - Done
+	+	ImageROM                        : Ataberk ÖKLÜ - Ongoing
+		+	16x4 Encoder                : Alper SOYSAL - Done
+		+	Product Highlight			: Ataberk ÖKLÜ - Done
++	Button Controller                   : Ataberk ÖKLÜ - Done
+	+	Button Debouncer                : Ataberk ÖKLÜ - Done
+	+	Switch Debouncer				: Ataberk ÖKLÜ - Done
+	+	Button Level-Pulse Converter    : Ataberk ÖKLÜ - Done
+	+	Key-SW Register                 : Ataberk ÖKLÜ - Done
+	+	Report							: Ataberk ÖKLÜ - Done
++ 	Barcode Controller                  : Ataberk ÖKLÜ - Ongoing
+	+	BarcodeShiftRegister            : Ataberk ÖKLÜ - Done
+	+	7-Segment Controller            : Ataberk ÖKLÜ - Done
++	State Machine                       : Ataberk ÖKLÜ - Ongoing
+	+	State Flowchart                 : Ataberk ÖKLÜ - Ongoing
++	Basket Controller					: Ahsen TOPBAŞ - Ongoing
 
 
 
