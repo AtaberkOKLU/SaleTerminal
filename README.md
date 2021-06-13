@@ -95,7 +95,7 @@ Visit Docs Folder
 +	Quantity Enter State
 +	End Shopping State
 
-## TODO
+## TO DO
 +	VGA Controller                        : Ataberk ÖKLÜ - Ongoing
 	+	ImageLocator                      : Ataberk ÖKLÜ - Ongoing
 	+	HVSync Generator                  : Ataberk ÖKLÜ - Ongoing
@@ -110,6 +110,7 @@ Visit Docs Folder
 	+	7-Segment Controller              : Ataberk ÖKLÜ - Ongoing
 +	State Machine                         : Ataberk ÖKLÜ - Ongoing
 	+	State Flowchart                   : Ataberk ÖKLÜ - Ongoing
++	Basket Controller			: Ahsen TOPBAŞ - Ongoing
 
 
 
