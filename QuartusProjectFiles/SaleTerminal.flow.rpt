@@ -1,5 +1,5 @@
 Flow report for SaleTerminal
-Sun Jun 13 00:13:03 2021
+Sun Jun 13 12:31:11 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sun Jun 13 00:13:03 2021       ;
+; Flow Status                     ; Successful - Sun Jun 13 12:31:11 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; ButtonController                            ;
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 149                                         ;
+; Total registers                 ; 51                                          ;
 ; Total pins                      ; 27                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/13/2021 00:12:35 ;
+; Start date & time ; 06/13/2021 12:28:10 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SaleTerminal        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+------------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name      ; Section Id                        ;
 +-------------------------------------+----------------------------------------+---------------+------------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 141812761300711.162353235410976        ; --            ; --               ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 141812761300711.162357649015952        ; --            ; --               ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --               ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --               ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --               ; eda_board_design_signal_integrity ;
@@ -113,10 +113,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:09     ; 1.0                     ; 4824 MB             ; 00:00:22                           ;
-; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4718 MB             ; 00:00:01                           ;
-; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
-; Total                ; 00:00:10     ; --                      ; --                  ; 00:00:24                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 4825 MB             ; 00:00:23                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 4716 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4719 MB             ; 00:00:01                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4723 MB             ; 00:00:01                           ;
+; Total                ; 00:00:13     ; --                      ; --                  ; 00:00:27                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -128,6 +130,8 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
 ; EDA Netlist Writer   ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -135,6 +139,8 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ButtonController.vwf.vt
+quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
 quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ButtonController.vwf.vt
 quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
 
