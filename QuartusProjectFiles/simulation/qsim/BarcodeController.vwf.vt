@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/13/2021 20:03:01"
+// Generated on "06/15/2021 16:30:12"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          BarcodeController
 // 
@@ -44,6 +44,7 @@ wire [6:0] HEX0;
 wire [6:0] HEX1;
 wire [6:0] HEX2;
 wire [6:0] HEX3;
+wire [2:0] NumOfBarcodeDigitsEntered;
 
 // assign statements (if any)                          
 BarcodeController i1 (
@@ -60,6 +61,7 @@ BarcodeController i1 (
 	.HEX1(HEX1),
 	.HEX2(HEX2),
 	.HEX3(HEX3),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
 	.RESET_N(RESET_N)
 );
 initial 

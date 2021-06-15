@@ -10,194 +10,194 @@ z2
 cModel Technology
 Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim
 vBarcodeController
-!s110 1623603783
+Z1 !s110 1623763815
 !i10b 1
-!s100 ]D@B;QJgE<iHfhI8Ma@Vf0
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IM`cYS1Tc_HoMjj1BTNH982
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 4hVK?G@BmzkHjM]:J?GQz1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IkEWFbhF3VDUEVThb@C7j50
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1623603782
-Z3 8SaleTerminal.vo
-Z4 FSaleTerminal.vo
-!i122 128
-L0 32 2161
-Z5 OV;L;2020.1;71
+w1623763814
+Z4 8SaleTerminal.vo
+Z5 FSaleTerminal.vo
+!i122 138
+L0 32 2345
+Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1623603783.000000
-Z6 !s107 SaleTerminal.vo|
-Z7 !s90 -work|work|SaleTerminal.vo|
+Z7 !s108 1623763815.000000
+Z8 !s107 SaleTerminal.vo|
+Z9 !s90 -work|work|SaleTerminal.vo|
 !i113 1
-Z8 o-work work
-Z9 tCvgOpt 0
+Z10 o-work work
+Z11 tCvgOpt 0
 n@barcode@controller
 vBarcodeController_vlg_vec_tst
-!s110 1623603784
-!i10b 1
-!s100 Rm6NbAz5Sn:10aP8:E@1T3
 R1
-IO3c[[APJC0f6d[I>C96H^3
+!i10b 1
+!s100 <Ig6W:30[aMoRSc9768Be0
 R2
+IDFKO9^KhK5FToQ9:<]BYM2
+R3
 R0
-w1623603781
+w1623763813
 8BarcodeController.vwf.vt
 FBarcodeController.vwf.vt
-!i122 129
-L0 30 112
-R5
+!i122 139
+L0 30 114
+R6
 r1
 !s85 0
 31
-!s108 1623603784.000000
+R7
 !s107 BarcodeController.vwf.vt|
 !s90 -work|work|BarcodeController.vwf.vt|
 !i113 1
-R8
-R9
+R10
+R11
 n@barcode@controller_vlg_vec_tst
 vBarcodeShiftRegister
-!s110 1623257006
+Z12 !s110 1623738522
 !i10b 1
 !s100 8midmPcU8j]=T19X0RoZC0
-R1
-IeNgHOaLkigBmmJJME9`[<2
 R2
-R0
-w1623257005
+IeNgHOaLkigBmmJJME9`[<2
 R3
+R0
+w1623738520
 R4
-!i122 4
-L0 32 905
 R5
+!i122 130
+L0 32 905
+R6
 r1
 !s85 0
 31
-Z10 !s108 1623257006.000000
-R6
-R7
-!i113 1
+Z13 !s108 1623738522.000000
 R8
 R9
+!i113 1
+R10
+R11
 n@barcode@shift@register
 vBarcodeShiftRegister_vlg_vec_tst
-!s110 1623257007
+R12
 !i10b 1
 !s100 S@AY0@oceGdQR?7b;DgkK2
-R1
-IGgb;DQ90Vg59THhh``]JG0
 R2
+IGgb;DQ90Vg59THhh``]JG0
+R3
 R0
-w1623257004
+w1623738519
 8BarcodeShiftRegister.vwf.vt
 FBarcodeShiftRegister.vwf.vt
-!i122 5
+!i122 131
 L0 30 100
-R5
+R6
 r1
 !s85 0
 31
-R10
+R13
 !s107 BarcodeShiftRegister.vwf.vt|
 !s90 -work|work|BarcodeShiftRegister.vwf.vt|
 !i113 1
-R8
-R9
+R10
+R11
 n@barcode@shift@register_vlg_vec_tst
 vButtonController
-Z11 !s110 1623576672
+Z14 !s110 1623576672
 !i10b 1
 !s100 =AS=50Nl_D=oe:YSYPOfm0
-R1
-IX?]Zn?=a4bD<Ag4[Yf6ho0
 R2
+IX?]Zn?=a4bD<Ag4[Yf6ho0
+R3
 R0
 w1623576671
-R3
 R4
+R5
 !i122 124
 L0 32 2422
-R5
+R6
 r1
 !s85 0
 31
-Z12 !s108 1623576672.000000
-R6
-R7
-!i113 1
+Z15 !s108 1623576672.000000
 R8
 R9
+!i113 1
+R10
+R11
 n@button@controller
 vButtonController_vlg_vec_tst
-R11
+R14
 !i10b 1
 !s100 lSomkO9ckHYmnmAgcJmC:2
-R1
-INTTNBn_^Cl=fQJ_B]mP990
 R2
+INTTNBn_^Cl=fQJ_B]mP990
+R3
 R0
 w1623576670
 8ButtonController.vwf.vt
 FButtonController.vwf.vt
 !i122 125
 L0 30 91
-R5
+R6
 r1
 !s85 0
 31
-R12
+R15
 !s107 ButtonController.vwf.vt|
 !s90 -work|work|ButtonController.vwf.vt|
 !i113 1
-R8
-R9
+R10
+R11
 n@button@controller_vlg_vec_tst
 vButtonDebouncer
-Z13 !s110 1623571545
+Z16 !s110 1623571545
 !i10b 1
 !s100 1STWZ2G`YFUaa^1Bg9HkD0
-R1
-IWYzUS_Gh?7l;X6>Ha=RIF2
 R2
+IWYzUS_Gh?7l;X6>Ha=RIF2
+R3
 R0
 w1623571544
-R3
 R4
+R5
 !i122 120
 L0 32 252
-R5
+R6
 r1
 !s85 0
 31
-Z14 !s108 1623571545.000000
-R6
-R7
-!i113 1
+Z17 !s108 1623571545.000000
 R8
 R9
+!i113 1
+R10
+R11
 n@button@debouncer
 vButtonDebouncer_vlg_vec_tst
-R13
+R16
 !i10b 1
 !s100 J=^CG0kPgAzK8KC]HXTDm1
-R1
-ITBWLOjg34TfkbDSB=Eo]40
 R2
+ITBWLOjg34TfkbDSB=Eo]40
+R3
 R0
 w1623571543
 8ButtonDebouncer.vwf.vt
 FButtonDebouncer.vwf.vt
 !i122 121
 L0 30 50
-R5
+R6
 r1
 !s85 0
 31
-R14
+R17
 !s107 ButtonDebouncer.vwf.vt|
 !s90 -work|work|ButtonDebouncer.vwf.vt|
 !i113 1
-R8
-R9
+R10
+R11
 n@button@debouncer_vlg_vec_tst

@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "06/13/2021 20:03:02"
+// DATE "06/15/2021 16:30:14"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -35,6 +35,7 @@ module BarcodeController (
 	RESET_N,
 	Digit_in,
 	BarcodeDigitCompleted,
+	NumOfBarcodeDigitsEntered,
 	Barcode_Digit_0,
 	Barcode_Digit_1,
 	Barcode_Digit_2,
@@ -48,6 +49,7 @@ input 	CLK;
 input 	RESET_N;
 input 	[3:0] Digit_in;
 output 	BarcodeDigitCompleted;
+output 	[2:0] NumOfBarcodeDigitsEntered;
 output 	[3:0] Barcode_Digit_0;
 output 	[3:0] Barcode_Digit_1;
 output 	[3:0] Barcode_Digit_2;
@@ -69,6 +71,9 @@ tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
 wire \BarcodeDigitCompleted~output_o ;
+wire \NumOfBarcodeDigitsEntered[0]~output_o ;
+wire \NumOfBarcodeDigitsEntered[1]~output_o ;
+wire \NumOfBarcodeDigitsEntered[2]~output_o ;
 wire \Barcode_Digit_0[0]~output_o ;
 wire \Barcode_Digit_0[1]~output_o ;
 wire \Barcode_Digit_0[2]~output_o ;
@@ -129,6 +134,9 @@ wire \BarcodeShiftRegister_inst0|Digit_Reg_2~0_combout ;
 wire \BarcodeShiftRegister_inst0|Digit_Reg_3~2_combout ;
 wire \Digit_in[1]~input_o ;
 wire \LessThan0~0_combout ;
+wire \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1_combout ;
+wire \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2_combout ;
+wire \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0_combout ;
 wire \Digit_in[0]~input_o ;
 wire \Segment0|WideOr6~0_combout ;
 wire \Segment0|WideOr5~0_combout ;
@@ -159,6 +167,7 @@ wire \Segment3|WideOr2~0_combout ;
 wire \Segment3|WideOr1~0_combout ;
 wire \Segment3|WideOr0~0_combout ;
 wire [3:0] \BarcodeShiftRegister_inst0|Digit_Reg_3 ;
+wire [2:0] \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered ;
 wire [3:0] \BarcodeShiftRegister_inst0|Digit_Reg_0 ;
 wire [3:0] \BarcodeShiftRegister_inst0|Digit_Reg_1 ;
 wire [3:0] \BarcodeShiftRegister_inst0|Digit_Reg_2 ;
@@ -177,6 +186,51 @@ cyclonev_io_obuf \BarcodeDigitCompleted~output (
 defparam \BarcodeDigitCompleted~output .bus_hold = "false";
 defparam \BarcodeDigitCompleted~output .open_drain_output = "false";
 defparam \BarcodeDigitCompleted~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \NumOfBarcodeDigitsEntered[0]~output (
+	.i(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NumOfBarcodeDigitsEntered[0]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NumOfBarcodeDigitsEntered[0]~output .bus_hold = "false";
+defparam \NumOfBarcodeDigitsEntered[0]~output .open_drain_output = "false";
+defparam \NumOfBarcodeDigitsEntered[0]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \NumOfBarcodeDigitsEntered[1]~output (
+	.i(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NumOfBarcodeDigitsEntered[1]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NumOfBarcodeDigitsEntered[1]~output .bus_hold = "false";
+defparam \NumOfBarcodeDigitsEntered[1]~output .open_drain_output = "false";
+defparam \NumOfBarcodeDigitsEntered[1]~output .shift_series_termination_control = "false";
+// synopsys translate_on
+
+cyclonev_io_obuf \NumOfBarcodeDigitsEntered[2]~output (
+	.i(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2]),
+	.oe(vcc),
+	.dynamicterminationcontrol(gnd),
+	.seriesterminationcontrol(16'b0000000000000000),
+	.parallelterminationcontrol(16'b0000000000000000),
+	.devoe(devoe),
+	.o(\NumOfBarcodeDigitsEntered[2]~output_o ),
+	.obar());
+// synopsys translate_off
+defparam \NumOfBarcodeDigitsEntered[2]~output .bus_hold = "false";
+defparam \NumOfBarcodeDigitsEntered[2]~output .open_drain_output = "false";
+defparam \NumOfBarcodeDigitsEntered[2]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \Barcode_Digit_0[0]~output (
@@ -1345,6 +1399,130 @@ defparam \LessThan0~0 .lut_mask = 64'h7575757575757575;
 defparam \LessThan0~0 .shared_arith = "off";
 // synopsys translate_on
 
+cyclonev_lcell_comb \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1 (
+// Equation(s):
+// \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1_combout  = (!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2] & (\RESET_N~input_o  & (!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0] $ 
+// (!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1]))))
+
+	.dataa(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0]),
+	.datab(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1]),
+	.datac(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2]),
+	.datad(!\RESET_N~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1 .extended_lut = "off";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1 .lut_mask = 64'h0060006000600060;
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[1] (
+	.clk(\CLK~input_o ),
+	.d(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~1_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\BarcodeShiftRegister_inst0|Digit_Reg_3[3]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[1] .is_wysiwyg = "true";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[1] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2 (
+// Equation(s):
+// \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2_combout  = ((\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0] & \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1])) # (\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2])
+
+	.dataa(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0]),
+	.datab(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [1]),
+	.datac(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2 .extended_lut = "off";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2 .lut_mask = 64'h1F1F1F1F1F1F1F1F;
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[2] (
+	.clk(\CLK~input_o ),
+	.d(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(!\RESET_N~input_o ),
+	.sload(gnd),
+	.ena(\BarcodeShiftRegister_inst0|Digit_Reg_3[3]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[2] .is_wysiwyg = "true";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[2] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0 (
+// Equation(s):
+// \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0_combout  = (!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0] & (!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2] & \RESET_N~input_o ))
+
+	.dataa(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0]),
+	.datab(!\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [2]),
+	.datac(!\RESET_N~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0 .extended_lut = "off";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0 .lut_mask = 64'h0808080808080808;
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[0] (
+	.clk(\CLK~input_o ),
+	.d(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\BarcodeShiftRegister_inst0|Digit_Reg_3[3]~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(\BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered [0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[0] .is_wysiwyg = "true";
+defparam \BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[0] .power_up = "low";
+// synopsys translate_on
+
 cyclonev_io_ibuf \Digit_in[0]~input (
 	.i(Digit_in[0]),
 	.ibar(gnd),
@@ -2100,6 +2278,12 @@ defparam \Segment3|WideOr0~0 .shared_arith = "off";
 // synopsys translate_on
 
 assign BarcodeDigitCompleted = \BarcodeDigitCompleted~output_o ;
+
+assign NumOfBarcodeDigitsEntered[0] = \NumOfBarcodeDigitsEntered[0]~output_o ;
+
+assign NumOfBarcodeDigitsEntered[1] = \NumOfBarcodeDigitsEntered[1]~output_o ;
+
+assign NumOfBarcodeDigitsEntered[2] = \NumOfBarcodeDigitsEntered[2]~output_o ;
 
 assign Barcode_Digit_0[0] = \Barcode_Digit_0[0]~output_o ;
 

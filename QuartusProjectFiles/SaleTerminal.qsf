@@ -50,7 +50,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller
+set_global_assignment -name TOP_LEVEL_ENTITY BarcodeController
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
 # Fitter Assignments
@@ -128,7 +128,6 @@ set_global_assignment -name BDF_FILE Encoder16x4.bdf
 set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeController.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeShiftRegister.vwf
 set_global_assignment -name VERILOG_FILE BarcodeController.v
-set_global_assignment -name SOURCE_FILE image.mem
 set_global_assignment -name SIP_FILE VGA_PLL.sip
 set_global_assignment -name QSYS_FILE FP_MULT.qsys
 set_global_assignment -name SOURCE_FILE VGA_PLL.cmp
@@ -147,6 +146,7 @@ set_global_assignment -name VERILOG_FILE ButtonController.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonController.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonDebouncer.vwf
 set_global_assignment -name VERILOG_FILE SwitchDebouncer.v
+set_global_assignment -name VERILOG_FILE Barcode2ProductID.v
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[0]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[1]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[2]
