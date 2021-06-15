@@ -24,7 +24,7 @@ Visit Docs Folder
 	+	Basket List
 	+	Overall Price
 	+ 	Logo
-+	12	Product : banana(3124), patato(4132), tomato(4133), peach(3121), apple(3133), pineapple(3214), avocado(2134), cherry(2144), fig(3112), grape(4321), kiwi(1342), 			  lemon(1213)
++	12	Product : banana(3124), patato(4132), tomato(4133), peach(3121), apple(3133), pineapple(3214), avocado(2134), cherry(2144), fig(3112), grape(4321), kiwi(1342), lemon(1213)
 	+	Images	: Fixed Sized (100 x 100), Fixed Position
 +	3 Modes		:
 	+	Barcode : SW1 & SW2 OFF
