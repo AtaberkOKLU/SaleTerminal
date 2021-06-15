@@ -22,6 +22,7 @@ module BarcodeController(
 	input  wire[3:0] Digit_in,
 	
 	output reg BarcodeDigitCompleted,
+	output wire[2:0] NumOfBarcodeDigitsEntered,
 	
 	output wire[3:0] Barcode_Digit_0,
 	output wire[3:0] Barcode_Digit_1,
@@ -42,7 +43,8 @@ BarcodeShiftRegister BarcodeShiftRegister_inst0(
 	.Digit_0(Barcode_Digit_0),
 	.Digit_1(Barcode_Digit_1),
 	.Digit_2(Barcode_Digit_2),
-	.Digit_3(Barcode_Digit_3)
+	.Digit_3(Barcode_Digit_3),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered)
 );
 	
 	
@@ -66,6 +68,8 @@ BarcodeShiftRegister BarcodeShiftRegister_inst0(
 		.seg(HEX3)
 	);
 
+
+	
 	always @ (*)
 		if(Barcode_Digit_3 < 10)
 			BarcodeDigitCompleted = 1;

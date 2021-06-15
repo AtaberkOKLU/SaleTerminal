@@ -21,13 +21,18 @@ module BarcodeShiftRegister(
 	output wire[3:0] Digit_0,
 	output wire[3:0] Digit_1,
 	output wire[3:0] Digit_2,
-	output wire[3:0] Digit_3
+	output wire[3:0] Digit_3,
+	
+	output reg [2:0] NumOfBarcodeDigitsEntered
 );
 
 reg[3:0] Digit_Reg_0 = 12;
 reg[3:0] Digit_Reg_1 = 12;
 reg[3:0] Digit_Reg_2 = 12;
 reg[3:0] Digit_Reg_3 = 12;
+
+initial
+	NumOfBarcodeDigitsEntered = 0;
 		
 
 always @ (posedge CLOCK)
@@ -38,6 +43,7 @@ begin
 			Digit_Reg_1 <= 12;
 			Digit_Reg_2 <= 12;
 			Digit_Reg_3 <= 12;
+			NumOfBarcodeDigitsEntered <= 0;
 		end
 	else
 		begin
@@ -47,6 +53,10 @@ begin
 					Digit_Reg_2 <= Digit_Reg_1;
 					Digit_Reg_1 <= Digit_Reg_0;
 					Digit_Reg_0 <= Digit_in;
+					if(NumOfBarcodeDigitsEntered < 4)
+						NumOfBarcodeDigitsEntered <= NumOfBarcodeDigitsEntered + 3'd1;
+					else
+						NumOfBarcodeDigitsEntered <= 4;
 				end
 		end
 end
