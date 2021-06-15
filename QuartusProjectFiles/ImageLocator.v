@@ -120,7 +120,7 @@ always @ (*)
 						if (inHighlightedArea)
 							black_white = 24'h0000FF;		// RED
 						else
-							black_white = 24'hFFFFFFFF;	// White
+							black_white = 24'hFFFFFF;	// White
 					end
 			end
 		else
