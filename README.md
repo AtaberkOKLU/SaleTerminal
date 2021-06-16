@@ -96,27 +96,39 @@ Visit Docs Folder
 +	End Shopping State
 
 ## TO DO
-+	VGA Controller                      : Ataberk ÖKLÜ - Ongoing
-	+	ImageLocator                    : Ataberk ÖKLÜ - Ongoing
-	+	HVSync Generator                : Ataberk ÖKLÜ - Done
-	+	ImageROM                        : Ataberk ÖKLÜ - Ongoing
-		+	16x4 Encoder                : Alper SOYSAL - Done
-		+	Product Highlight			: Ataberk ÖKLÜ - Done
-+	Button Controller                   : Ataberk ÖKLÜ - Done
-	+	Button Debouncer                : Ataberk ÖKLÜ - Done
-	+	Switch Debouncer				: Ataberk ÖKLÜ - Done
-	+	Button Level-Pulse Converter    : Ataberk ÖKLÜ - Done
-	+	Key-SW Register                 : Ataberk ÖKLÜ - Done
-	+	Report							: Ataberk ÖKLÜ - Done
-+ 	Barcode Controller                  : Ataberk ÖKLÜ - Ongoing
-	+	BarcodeShiftRegister            : Ataberk ÖKLÜ - Done
-	+	7-Segment Controller            : Ataberk ÖKLÜ - Done
-+	State Machine                       : Ataberk ÖKLÜ - Ongoing
-	+	State Flowchart                 : Ataberk ÖKLÜ - Ongoing
-+	Basket Controller		    : Ahsen TOPBAŞ - Ongoing
-	+	Price Calculator 		: Ahsen Topbaş - Ongoing
-	+	BCD Multiplier 			: Ahsen Topbaş - Ongoing
-	+	Display Product 		: NOT STARTED
++	VGA Controller                      : Ataberk ÖKLÜ 	 - Ongoing
+	+	ImageLocator                    : Ataberk ÖKLÜ 	 - Ongoing
+	+	HVSync Generator                : Ataberk ÖKLÜ 	 - Done
+	+	ImageROM                        : Ataberk ÖKLÜ 	 - Ongoing
+		+	16x4 Encoder                : Alper SOYSAL 	 - Done
+		+	Product Highlight			: Ataberk ÖKLÜ 	 - Done
++	Button Controller                   : Ataberk ÖKLÜ 	 - Done
+	+	Button Debouncer                : Ataberk ÖKLÜ 	 - Done
+	+	Switch Debouncer				: Ataberk ÖKLÜ 	 - Done
+	+	Button Level-Pulse Converter    : Ataberk ÖKLÜ 	 - Done
+	+	Key-SW Register                 : Ataberk ÖKLÜ 	 - Done
+	+	Report							: Ataberk ÖKLÜ 	 - Done
++ 	Barcode Controller                  : Ataberk ÖKLÜ 	 - Ongoing
+	+	BarcodeShiftRegister            : Ataberk ÖKLÜ 	 - Done
+	+	7-Segment Controller            : Ataberk ÖKLÜ 	 - Done
++	State Machine                       : Ataberk ÖKLÜ 	 - Ongoing
+	+	State Flowchart                 : Ataberk ÖKLÜ 	 - Ongoing
+	+	Barcode2ProductID               : Ataberk ÖKLÜ 	 - Ongoing
+	+	Direciton2ProductID	            : Ataberk ÖKLÜ 	 - Ongoing
++	Basket Controller		    		: Ahsen TOPBAŞ 	 - Ongoing
+	+	Price Calculator 				: Ahsen TOPBAŞ 	 - Ongoing
+	+	BCD Multiplier 					: Ahsen TOPBAŞ 	 - Ongoing
+	+	Basket Shift Register 			: Ahsen TOPBAŞ 	 - Ongoing
+	+	Display Product 				: NOT STARTED
+		+	VGA Implementation			: NOT STARTED
++	Text Contoller						: Alper SOYSAL 	 - Ongoing             
+	+	Basket Implementation			: Alper SOYSAL 	 - Ongoing   
+	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing   
++	Barcode Hover Controller			: Göksu UZUNTÜRK - Ongoing
+	+	VGA Implementation				: Ataberk ÖKLÜ 	 - Done
++	Direction Hover Controller			: Göksu UZUNTÜRK - Ongoing
+	+	VGA Implementation				: Ataberk ÖKLÜ 	 - Done
++	Basket Edit Hover Controller 		: NOT STARTED
 
 
 
