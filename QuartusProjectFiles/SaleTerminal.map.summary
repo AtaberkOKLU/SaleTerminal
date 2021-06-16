@@ -1,11 +1,11 @@
-Analysis & Synthesis Status : Successful - Tue Jun 15 16:30:00 2021
+Analysis & Synthesis Status : Successful - Wed Jun 16 07:46:26 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
-Top-level Entity Name : BarcodeController
+Top-level Entity Name : Direction2ProductID
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 19
-Total pins : 55
+Total registers : 4
+Total pins : 9
 Total virtual pins : 0
 Total block memory bits : 0
 Total DSP Blocks : 0

@@ -2,52 +2,52 @@
 Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 16.356
+Type  : Slow 1100mV 85C Model Setup 'Dir_in[0]'
+Slack : -7.015
+TNS   : -20.771
+
+Type  : Slow 1100mV 85C Model Hold 'Dir_in[0]'
+Slack : 0.508
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.314
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'Dir_in[0]'
+Slack : -0.901
+TNS   : -13.411
+
+Type  : Slow 1100mV 0C Model Setup 'Dir_in[0]'
+Slack : -6.911
+TNS   : -20.385
+
+Type  : Slow 1100mV 0C Model Hold 'Dir_in[0]'
+Slack : 0.406
 TNS   : 0.000
 
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.225
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'Dir_in[0]'
+Slack : -0.910
+TNS   : -12.945
+
+Type  : Fast 1100mV 85C Model Setup 'Dir_in[0]'
+Slack : -4.362
+TNS   : -12.111
+
+Type  : Fast 1100mV 85C Model Hold 'Dir_in[0]'
+Slack : 0.399
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 16.441
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'Dir_in[0]'
+Slack : -0.557
+TNS   : -5.127
+
+Type  : Fast 1100mV 0C Model Setup 'Dir_in[0]'
+Slack : -3.954
+TNS   : -10.878
+
+Type  : Fast 1100mV 0C Model Hold 'Dir_in[0]'
+Slack : 0.303
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.301
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.283
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Setup 'CLOCK_50'
-Slack : 17.884
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Hold 'CLOCK_50'
-Slack : 0.181
-TNS   : 0.000
-
-Type  : Fast 1100mV 85C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.110
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Setup 'CLOCK_50'
-Slack : 18.072
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Hold 'CLOCK_50'
-Slack : 0.170
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'CLOCK_50'
-Slack : 9.072
-TNS   : 0.000
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'Dir_in[0]'
+Slack : -0.529
+TNS   : -4.820
 
 ------------------------------------------------------------

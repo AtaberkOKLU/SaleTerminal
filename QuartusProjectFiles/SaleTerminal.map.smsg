@@ -1,2 +1,3 @@
 Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(32): object "VGA_HS" differs only in case from object "vga_HS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 32
 Info (10281): Verilog HDL Declaration information at HVSync_Generator.v(33): object "VGA_VS" differs only in case from object "vga_VS" in the same scope File: D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v Line: 33
+Warning (10268): Verilog HDL information at Direction2ProductID.v(16): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 16

@@ -1,0 +1,10 @@
+
+State Machine - |StateMachine|State
+Name State.State6_EndShopping State.State5_BasketEdit State.State4_Quantity State.State3_Interactive State.State2_Barcode State.State1_Idle State.State0_Start 
+State.State0_Start 0 0 0 0 0 0 0 
+State.State1_Idle 0 0 0 0 0 1 1 
+State.State2_Barcode 0 0 0 0 1 0 1 
+State.State3_Interactive 0 0 0 1 0 0 1 
+State.State4_Quantity 0 0 1 0 0 0 1 
+State.State5_BasketEdit 0 1 0 0 0 0 1 
+State.State6_EndShopping 1 0 0 0 0 0 1 

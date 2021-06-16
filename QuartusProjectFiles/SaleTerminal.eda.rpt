@@ -1,5 +1,5 @@
 EDA Netlist Writer report for SaleTerminal
-Tue Jun 15 16:30:14 2021
+Wed Jun 16 07:51:33 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -37,9 +37,9 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Tue Jun 15 16:30:14 2021 ;
+; EDA Netlist Writer Status ; Successful - Wed Jun 16 07:51:33 2021 ;
 ; Revision Name             ; SaleTerminal                          ;
-; Top-level Entity Name     ; BarcodeController                     ;
+; Top-level Entity Name     ; Direction2ProductID                   ;
 ; Family                    ; Cyclone V                             ;
 ; Simulation Files Creation ; Successful                            ;
 +---------------------------+---------------------------------------+
@@ -95,7 +95,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Tue Jun 15 16:30:13 2021
+    Info: Processing started: Wed Jun 16 07:51:33 2021
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -106,8 +106,8 @@ Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
 Info (204019): Generated file SaleTerminal.vo in folder "D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4721 megabytes
-    Info: Processing ended: Tue Jun 15 16:30:14 2021
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Wed Jun 16 07:51:33 2021
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 
