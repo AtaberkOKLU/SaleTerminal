@@ -56,7 +56,10 @@ module StateMachine(
 	*/
 	
 	// Basket Quantity
-	output reg [2:0] ProductQuantity
+	output reg [2:0] ProductQuantity,
+	
+	// InteractiveController
+	output reg [1:0] Dir_out // (<- ^ v ->) (00 01 10 11) 
 	
 );
 
@@ -195,7 +198,13 @@ always @ (posedge CLOCK_50)
 							if(|KEY_Reg)							// Any Direction Key is pressed?
 								begin
 									// Highlight Controller Handle
-									;
+									case(KEY_Reg)
+										4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
+										4'b0010: Dir_out <= 2'b10;	// Down
+										4'b0100: Dir_out <= 2'b01;	// Up
+										4'b1000: Dir_out <= 2'b00; // Most Left Key is KEY[3]
+										default: Dir_out <= 2'bxx;	// Never Reached
+									endcase
 									State <= State3_Interactive;	// 	Stay in this State
 								end
 							else
