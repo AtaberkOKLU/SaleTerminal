@@ -4,39 +4,159 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "ProductID[0]",
+					"name" : "Barcode_Enable",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID[1]",
+					"name" : "RSTN_BarcodeController_Pulse",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID[2]",
+					"name" : "Barcode_Digit_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID[3]",
+					"name" : "Barcode_Digit_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "RESET_N",
+					"name" : "Barcode_Digit_in[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Dir_in[1]",
+					"name" : "Barcode_Digit_in[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Dir_in[0]",
+					"name" : "ProductQuantity[0]",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK",
+					"name" : "ProductQuantity[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Enable",
+					"name" : "ProductQuantity[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ProductID_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "ProductID_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "ProductID_out[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Dir_out[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Dir_out[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "KEY_Reg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY_Reg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY_Reg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY_Reg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "BarcodeDigitCompleted",
+					"strict" : false
+				},
+				{
+					"name" : "CleanSWOut[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CleanSWOut[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "Barcode_DigitIn_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "CMD_Reg[0]",
 					"strict" : false
 				}
 			]
