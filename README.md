@@ -113,7 +113,10 @@ Visit Docs Folder
 	+	7-Segment Controller            : Ataberk ÖKLÜ - Done
 +	State Machine                       : Ataberk ÖKLÜ - Ongoing
 	+	State Flowchart                 : Ataberk ÖKLÜ - Ongoing
-+	Basket Controller					: Ahsen TOPBAŞ - Ongoing
++	Basket Controller		    : Ahsen TOPBAŞ - Ongoing
+	+	Price Calculator 		: Ahsen Topbaş - Ongoing
+	+	BCD Multiplier 			: Ahsen Topbaş - Ongoing
+	+	Display Product 		: NOT STARTED
 
 
 
