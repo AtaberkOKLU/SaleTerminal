@@ -1,3 +1,14 @@
+/*
+ *		Module		:	Barcode-to-ProductID Helper Module
+ * 	Description	: 	This module provides ProductID output according
+ *							to BarcodeDigits, and checks it is a valid option
+ *		Inputs		: 	BarcodeDigit_# => From BarcodeController
+ *
+ *		Outputs		: 	ProductID	=> Corresponding ProdcutID
+ *							Valid			=> Is this barcode valid?
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module Barcode2ProductID(
 	input wire [3:0] 	BarcodeDigit_0,
 	input wire [3:0] 	BarcodeDigit_1,
@@ -8,6 +19,9 @@ module Barcode2ProductID(
 	output reg 			valid
 );
 
+
+// Combinational Circuit
+// 	? Can be Negedge?
 always @ (*)
 	case({BarcodeDigit_0, BarcodeDigit_1, BarcodeDigit_2, BarcodeDigit_3})
 		16'h3124: begin ProductID = 4'd0 ; valid = 1; end

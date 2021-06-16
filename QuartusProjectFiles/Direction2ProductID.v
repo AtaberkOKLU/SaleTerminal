@@ -1,3 +1,15 @@
+/*
+ *		Module		:	Direction-to-ProductID Helper Module
+ * 	Description	: 	Provides Current ProductID according to Direction input
+ *							for InteractiveController
+ *		Inputs		: 	Dir_in		=> Direction Input extracted by StateMachine
+ *						:	CLOCK 		=> CLK for negedge
+ * 					:	RESET_N 		=> Active Low Reset
+ *						:	Enable		=> Active High Enable
+ *
+ *		Outputs		: 	ProductID	=> Current ProductID selected
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
 module Direction2ProductID(
 	input wire RESET_N,
 	input wire Enable,
