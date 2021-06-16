@@ -1,3 +1,12 @@
+/*
+ *		Module		:	StateMachine
+ * 	Description	: 	This block handles state processes and State Transitions
+ *		Inputs		: 	Control inputs from various Controllers
+ *
+ *		Outputs		: 	Command outputs to various Controllers and Helper Modules
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module StateMachine(
 	// Button Controller
 	/*
@@ -55,20 +64,27 @@ module StateMachine(
 	output wire[3:0] Barcode_DigitOut_3,
 	*/
 	
-	// Basket Quantity
-	output reg [2:0] ProductQuantity,
+	// BasketController
+	output reg  [2:0] ProductQuantity,
+	output reg  [2:0] ProductID_out,
 	
 	// InteractiveController
-	output reg [1:0] Dir_out // (<- ^ v ->) (00 01 10 11) 
+	output reg  [1:0] Dir_out // (<- ^ v ->) (00 01 10 11) 
 	
 );
 
 reg RST_BarcodeController_Level 	= 0;	// Active High
+reg RST_Direction2ProductID_Level= 0;	// Active High
 reg EN_BarcodeController_Level 	= 0;	// Active High
+reg EN_Direction2ProductID_Level = 0;	// Active High
 
 wire RST_BarcodeController_Pulse;
-wire [3:0] 	ProductID;
+wire [2:0] 	ProductID_Barcode;
+wire [2:0] 	ProductID_Direction;
 wire 			Product_valid;
+wire Direction2ProductID_En;
+wire RST_Direction2ProductID_Pulse;
+wire RSTN_Direction2ProductID_Pulse;
 
 
 // BarcodeController Reset Pulse Generator
@@ -95,8 +111,34 @@ Barcode2ProductID Barcode2ProductID_inst0(
 	.BarcodeDigit_1(Barcode_DigitIn_1),
 	.BarcodeDigit_2(Barcode_DigitIn_2),
 	.BarcodeDigit_3(Barcode_DigitIn_3),
-	.ProductID(ProductID),					// Not Used
+	.ProductID(ProductID_Barcode),
 	.valid(Product_valid)
+);
+
+// Direction2ProductID Reset Pulse Generator
+ButtonLevelPulseConverter Direction2ProductIDResetPulseGenerator_inst0(
+	.CLK(CLOCK_50),
+	.CleanButtonIn(RST_Direction2ProductID_Level),
+	.ButtonPulseOut(RST_Direction2ProductID_Pulse)
+);
+// Since RST is Active Low, take inverse.
+assign RSTN_Direction2ProductID_Pulse = ~RST_Direction2ProductID_Pulse;
+
+
+// Direction2ProductID Enable Pulse Generator
+ButtonLevelPulseConverter Direction2ProductIDEnablePulseGenerator_inst0(
+	.CLK(CLOCK_50),
+	.CleanButtonIn(EN_Direction2ProductID_Level),
+	.ButtonPulseOut(Direction2ProductID_En)
+);
+
+// Interactive Selection  for BasketController
+Direction2ProductID Direction2ProductID_inst0(
+	.RESET_N(RSTN_Direction2ProductID_Pulse),
+	.Enable(Direction2ProductID_En),
+	.CLOCK(CLOCK_50),
+	.Dir_in(Dir_out),
+	.ProductID(ProductID_Direction)	// For Basket
 );
 
 
@@ -177,11 +219,19 @@ always @ (posedge CLOCK_50)
 							// Barcode Completed (Wait For Select Button)
 							if(CMD_Reg[0])									// Approved by Select Button 
 								if(Product_valid)							// Is Product is valid?
-									State <= State4_Quantity;			//		Then Go to Quantity Sel State
+									begin
+										// BasketController Handle
+										// Send ProductID
+										ProductID_out <= ProductID_Barcode;// ProdcutID From Barcode2ProductID
+										// Enable?
+										;
+										State <= State4_Quantity;			//		Then Go to Quantity Sel State
+									end
 								else											// Else
 									begin										// Reset the barcode & Show Err?
 										// Text Controller - Show Err?
 										;
+										// Reset Barcode
 										RST_BarcodeController_Level <= 1;
 										State <= State2_Barcode;
 									end
@@ -190,27 +240,45 @@ always @ (posedge CLOCK_50)
 								
 					end
 					
-		'd3	:	// Interactive Selection Mode State
-					if(CleanSWOut[1])								// SW1 still Active?
-						if(CMD_Reg[0])								// Select Button is Pressed?
-							State <= State4_Quantity;			// 	Go to Quantity Selection
-						else
-							if(|KEY_Reg)							// Any Direction Key is pressed?
+		'd3	:	
+					// Interactive Selection Mode State
+					begin
+						EN_Direction2ProductID_Level 	= 0;
+						RST_Direction2ProductID_Level = 0;
+						if(CleanSWOut[1])								// SW1 still Active?
+							if(CMD_Reg[0])								// Select Button is Pressed?
 								begin
-									// Highlight Controller Handle
-									case(KEY_Reg)
-										4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
-										4'b0010: Dir_out <= 2'b10;	// Down
-										4'b0100: Dir_out <= 2'b01;	// Up
-										4'b1000: Dir_out <= 2'b00; // Most Left Key is KEY[3]
-										default: Dir_out <= 2'bxx;	// Never Reached
-									endcase
-									State <= State3_Interactive;	// 	Stay in this State
+									// Basket Controller Send ProductID?
+									// 	Enable?
+									ProductID_out <= ProductID_Direction;
+									;
+									State <= State4_Quantity;			// 	Go to Quantity Selection
+									RST_Direction2ProductID_Level = 1;
 								end
 							else
-								State <= State3_Interactive;	// Wait Direction input in this State
-					else												// SW1 is Deactivated
-						State <= State1_Idle;					// 	Go to IDLE State
+								if(|KEY_Reg)							// Any Direction Key is pressed?
+									begin
+										// Highlight Controller Handle
+										// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
+										// Direction2Product ID Handle
+										EN_Direction2ProductID_Level = 1;
+										case(KEY_Reg)
+											4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
+											4'b0010: Dir_out <= 2'b10;	// Down
+											4'b0100: Dir_out <= 2'b01;	// Up
+											4'b1000: Dir_out <= 2'b00; // Most Left Key is KEY[3]
+											default: Dir_out <= 2'bxx;	// Never Reached
+										endcase
+										State <= State3_Interactive;	// 	Stay in this State
+									end
+								else
+									State <= State3_Interactive;	// Wait Direction input in this State
+						else												// SW1 is Deactivated
+							begin
+								RST_Direction2ProductID_Level = 1;	// 	Reset Current Position
+								State <= State1_Idle;					// 	Go to IDLE State
+							end
+					end
 					
 		'd4	:	// Quantity Selection State
 					begin
@@ -225,12 +293,13 @@ always @ (posedge CLOCK_50)
 										default: ProductQuantity <= 'd0;	// Never Reached
 									endcase
 									// TODO Basket Controller handling
+									//		Enable?
 									;
 									// Then Go to IDLE State for new interactions
 									State <= State1_Idle;
 								end
-						else											// Else wait Digit in this state
-							State <= State2_Barcode;
+						else										// Else wait Digit in this state
+							State <= State4_Quantity;
 					end
 		'd5	:	
 					if(CleanSWOut[2])								// SW2 still Active?
