@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/16/2021 07:51:32"
+// Generated on "06/19/2021 12:29:20"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          Direction2ProductID
 // 
@@ -30,7 +30,9 @@
 module Direction2ProductID_vlg_vec_tst();
 // constants                                           
 // general purpose registers
+reg [3:0] BasketProductNum;
 reg CLOCK;
+reg CleanSW2;
 reg [1:0] Dir_in;
 reg Enable;
 reg RESET_N;
@@ -40,7 +42,9 @@ wire [3:0] ProductID;
 // assign statements (if any)                          
 Direction2ProductID i1 (
 // port map - connection between master ports and signals/registers   
+	.BasketProductNum(BasketProductNum),
 	.CLOCK(CLOCK),
+	.CleanSW2(CleanSW2),
 	.Dir_in(Dir_in),
 	.Enable(Enable),
 	.ProductID(ProductID),
@@ -48,7 +52,7 @@ Direction2ProductID i1 (
 );
 initial 
 begin 
-#160000 $finish;
+#320000 $finish;
 end 
 
 // CLOCK
@@ -57,7 +61,7 @@ begin
 	CLOCK = 1'b1;
 	CLOCK = #5000 1'b0;
 	# 5000;
-	repeat(14)
+	repeat(30)
 	begin
 		CLOCK = 1'b1;
 		CLOCK = #5000 1'b0;
@@ -81,13 +85,17 @@ begin
 	Enable = #10000 1'b0;
 	Enable = #10000 1'b1;
 	Enable = #20000 1'b0;
+	Enable = #20000 1'b1;
+	Enable = #60000 1'b0;
+	Enable = #10000 1'b1;
+	Enable = #60000 1'b0;
 end 
 
 // RESET_N
 initial
 begin
 	RESET_N = 1'b1;
-	RESET_N = #140000 1'b0;
+	RESET_N = #300000 1'b0;
 	RESET_N = #10000 1'b1;
 end 
 // Dir_in[ 1 ]
@@ -104,6 +112,10 @@ begin
 	Dir_in[1] = #10000 1'b0;
 	Dir_in[1] = #10000 1'b1;
 	Dir_in[1] = #10000 1'b0;
+	Dir_in[1] = #30000 1'b1;
+	Dir_in[1] = #60000 1'b0;
+	Dir_in[1] = #60000 1'b1;
+	Dir_in[1] = #10000 1'b0;
 end 
 // Dir_in[ 0 ]
 initial
@@ -115,6 +127,38 @@ begin
 	Dir_in[0] = #10000 1'b0;
 	Dir_in[0] = #20000 1'b1;
 	Dir_in[0] = #10000 1'b0;
+	Dir_in[0] = #100000 1'b1;
+	Dir_in[0] = #30000 1'b0;
+	Dir_in[0] = #10000 1'b1;
+	Dir_in[0] = #10000 1'b0;
+end 
+// BasketProductNum[ 3 ]
+initial
+begin
+	BasketProductNum[3] = 1'b0;
+end 
+// BasketProductNum[ 2 ]
+initial
+begin
+	BasketProductNum[2] = 1'b1;
+end 
+// BasketProductNum[ 1 ]
+initial
+begin
+	BasketProductNum[1] = 1'b0;
+end 
+// BasketProductNum[ 0 ]
+initial
+begin
+	BasketProductNum[0] = 1'b1;
+end 
+
+// CleanSW2
+initial
+begin
+	CleanSW2 = 1'b0;
+	CleanSW2 = #150000 1'b1;
+	CleanSW2 = #140000 1'b0;
 end 
 endmodule
 

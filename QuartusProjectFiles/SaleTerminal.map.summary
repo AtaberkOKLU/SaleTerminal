@@ -1,10 +1,15 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 Analysis & Synthesis Status : Successful - Wed Jun 16 09:09:03 2021
+=======
+Analysis & Synthesis Status : Successful - Sat Jun 19 12:19:25 2021
+>>>>>>> Stashed changes
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
-Top-level Entity Name : StateMachine
+Top-level Entity Name : Direction2ProductID
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
+<<<<<<< Updated upstream
 Total registers : 35
 Total pins : 43
 =======
@@ -16,6 +21,10 @@ Family : Cyclone V
 Logic utilization (in ALMs) : N/A
 Total registers : 55
 Total pins : 30
+>>>>>>> Stashed changes
+=======
+Total registers : 8
+Total pins : 14
 >>>>>>> Stashed changes
 Total virtual pins : 0
 Total block memory bits : 2,880,000

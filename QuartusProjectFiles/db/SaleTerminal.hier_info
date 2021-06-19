@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 |StateMachine
 CMD_Reg[0] => State.OUTPUTSELECT
 CMD_Reg[0] => State.OUTPUTSELECT
@@ -344,14 +345,64 @@ CLOCK => ProductID[0]~reg0.CLK
 CLOCK => ProductID[1]~reg0.CLK
 CLOCK => ProductID[2]~reg0.CLK
 CLOCK => ProductID[3]~reg0.CLK
+=======
+|Direction2ProductID
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+CLOCK => BasketID[0].CLK
+CLOCK => BasketID[1].CLK
+CLOCK => BasketID[2].CLK
+CLOCK => BasketID[3].CLK
+CLOCK => ImgID[0].CLK
+CLOCK => ImgID[1].CLK
+CLOCK => ImgID[2].CLK
+CLOCK => ImgID[3].CLK
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+BasketProductNum[0] => LessThan5.IN4
+BasketProductNum[0] => BasketID.DATAA
+BasketProductNum[1] => LessThan5.IN3
+BasketProductNum[1] => BasketID.DATAA
+BasketProductNum[2] => LessThan5.IN2
+BasketProductNum[2] => BasketID.DATAA
+BasketProductNum[3] => LessThan5.IN1
+BasketProductNum[3] => BasketID.DATAA
+>>>>>>> Stashed changes
 Dir_in[0] => Mux0.IN5
 Dir_in[0] => Mux1.IN5
 Dir_in[0] => Mux2.IN5
 Dir_in[0] => Mux3.IN5
+Dir_in[0] => Equal0.IN3
+Dir_in[0] => Equal1.IN3
 Dir_in[1] => Mux0.IN4
 Dir_in[1] => Mux1.IN4
 Dir_in[1] => Mux2.IN4
 Dir_in[1] => Mux3.IN4
+<<<<<<< Updated upstream
 ProductID[0] <= ProductID[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ProductID[1] <= ProductID[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 ProductID[2] <= ProductID[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
@@ -7362,6 +7413,14 @@ X[6] => inst1.IN1
 X[7] => inst2.IN2
 X[7] => inst.IN2
 X[7] => inst1.IN2
+>>>>>>> Stashed changes
+=======
+Dir_in[1] => Equal0.IN2
+Dir_in[1] => Equal1.IN2
+ProductID[0] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[1] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[2] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[3] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
 >>>>>>> Stashed changes
 
 

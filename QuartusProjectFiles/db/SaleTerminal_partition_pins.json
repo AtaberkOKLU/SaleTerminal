@@ -5,58 +5,63 @@
 			"pins" : [
 				{
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 					"name" : "Barcode_Enable",
+=======
+					"name" : "ProductID[0]",
+>>>>>>> Stashed changes
 					"strict" : false
 				},
 				{
-					"name" : "RSTN_BarcodeController_Pulse",
+					"name" : "ProductID[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[0]",
+					"name" : "ProductID[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[1]",
+					"name" : "ProductID[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[2]",
+					"name" : "CleanSW2",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[3]",
+					"name" : "Dir_in[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[0]",
+					"name" : "Dir_in[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[1]",
+					"name" : "Enable",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[2]",
+					"name" : "RESET_N",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[0]",
+					"name" : "BasketProductNum[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[1]",
+					"name" : "BasketProductNum[3]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[2]",
+					"name" : "BasketProductNum[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Dir_out[0]",
+					"name" : "BasketProductNum[1]",
 					"strict" : false
 				},
 				{
+<<<<<<< Updated upstream
 					"name" : "Dir_out[1]",
 					"strict" : false
 				},
@@ -244,6 +249,9 @@
 				},
 				{
 					"name" : "RESET_N",
+>>>>>>> Stashed changes
+=======
+					"name" : "CLOCK",
 >>>>>>> Stashed changes
 					"strict" : false
 				}
