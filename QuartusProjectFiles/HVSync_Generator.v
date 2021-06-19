@@ -48,7 +48,7 @@ module HVSync_Generator
     if (CounterXmaxed || (!RST_N))
       CounterX <= 0;
     else
-      CounterX <= CounterX + 1;
+      CounterX <= CounterX + 10'd1;
 
     always @(posedge VGA_CLK)
     begin
@@ -57,7 +57,7 @@ module HVSync_Generator
         if(CounterYmaxed || (!RST_N))
           CounterY <= 0;
         else
-          CounterY <= CounterY + 1;
+          CounterY <= CounterY + 10'd1;
       end
     end
 

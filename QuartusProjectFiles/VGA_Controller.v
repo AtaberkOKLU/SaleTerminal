@@ -48,6 +48,8 @@ module VGA_Controller
     input CLOCK_50,
 	 input RESET_N,
 	 input  wire[11:0] HighlightedProductList,
+	 // Button Controller Interface
+	 input  wire SW2,
     output reg [R_WIDTH-1:0] VGA_R,
 	 output reg [G_WIDTH-1:0] VGA_G,
 	 output reg [B_WIDTH-1:0] VGA_B,
@@ -60,12 +62,12 @@ module VGA_Controller
     wire inDisplayArea;
 	 wire VGA_CLK_W;
 	 wire isImage_wire;
-	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0]BW_Pix_wire;
+	 wire inHighlightedArea_wire;
+	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0]PixBux_wire;
     wire [CNTR_WIDTH_H-1:0] CounterX;
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
-	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] VGA_RGB_Bus;
+	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] ROM_RGB_Bus;
 	 wire	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr;
-	 wire isHighlight_wire;
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
@@ -98,7 +100,7 @@ module VGA_Controller
 	 ImageROM ImageROM_inst0(
 		.address(targetPixelAddr),
 		.clock(VGA_CLK_W),
-		.q(VGA_RGB_Bus)
+		.q(ROM_RGB_Bus)
 	 );
 
 
@@ -108,38 +110,20 @@ module VGA_Controller
 		.HighlightedProductList(HighlightedProductList),
 		.ROM_Addr(targetPixelAddr),
 		.isImage(isImage_wire),
-		.isHighlight(isHighlight_wire),
-		.black_white(BW_Pix_wire)
+		.PixelBus(PixBux_wire),
+		.SW2(SW2),
+		.inHighlightedArea(inHighlightedArea_wire)
 	);
-	 
-	always @(posedge VGA_CLK)
-		begin
-			if (inDisplayArea)
-				begin
-					if(isImage_wire && !isHighlight_wire)
-						begin
-							VGA_R[R_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH-1:0];
-							VGA_G[G_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH-1:R_WIDTH];
-							VGA_B[B_WIDTH-1:0] <= VGA_RGB_Bus[R_WIDTH+G_WIDTH+B_WIDTH-1:R_WIDTH+G_WIDTH];
-						end
-					else
-						begin
-							VGA_R[R_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH-1:0];
-							VGA_G[G_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH+G_WIDTH-1:R_WIDTH];
-							VGA_B[B_WIDTH-1:0] <= BW_Pix_wire[R_WIDTH+G_WIDTH+B_WIDTH-1:R_WIDTH+G_WIDTH];
-						end
-				end
-			else // if it's not to display, go dark
-				begin
-					 VGA_R[R_WIDTH-1:0] <= {R_WIDTH{1'b0}};
-					 VGA_G[G_WIDTH-1:0] <= {G_WIDTH{1'b0}};
-					 VGA_B[B_WIDTH-1:0] <= {B_WIDTH{1'b0}};
-				end
-		end
-	 
-	 assign VGA_BLANK_N = inDisplayArea;
-	 assign VGA_CLK = VGA_CLK_W;
+	
+always @ (*)
+	if (inHighlightedArea_wire)
+		{VGA_B, VGA_G, VGA_R} = PixBux_wire;
+	else if (isImage_wire)
+		{VGA_B, VGA_G, VGA_R} = ROM_RGB_Bus;
+	else
+		{VGA_B, VGA_G, VGA_R} = 24'b0;
 
-
+assign VGA_BLANK_N = inDisplayArea;
+assign VGA_CLK = VGA_CLK_W;
 
 endmodule

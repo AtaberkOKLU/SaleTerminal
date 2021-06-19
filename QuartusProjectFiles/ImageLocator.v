@@ -7,7 +7,7 @@
  *						:	CounterY 	=> Y Posiiton in the Screen
  *		Outputs		: 	ROM_Addr		=> Provide ROM_Addr
  *						:	isImage 		=> Notify if Position is on an Image
- *						:	black_white => It is used for drawing lines
+ *						:	PixelBus => It is used for drawing lines
  *		Owner			: 	Ataberk ÖKLÜ
  */
 
@@ -27,16 +27,57 @@ module ImageLocator
 	parameter PRDCT_PIC_WIDTH 	= 100,
 	parameter PRDCT_PIC_HEIGHT = 100
 )(
+	// HVSync Interface
 	input  wire[CNTR_WIDTH_H-1:0] 	CounterX,
 	input  wire[CNTR_WIDTH_V-1:0] 	CounterY,
+	
+	// HoverController Interface
 	input  wire[11:0]						HighlightedProductList,
 	
-	output reg[ROM_ADDR_BUS_WIDTH-1:0]  ROM_Addr,
-	output wire 			isImage,
-	output wire				isHighlight,
-	output reg[R_WIDTH+G_WIDTH+B_WIDTH-1:0] black_white
+	// Button Controller Interface
+	input  wire SW2,
+	
+	output wire[ROM_ADDR_BUS_WIDTH-1:0]  ROM_Addr,
+	output wire[R_WIDTH+G_WIDTH+B_WIDTH-1:0] PixelBus,
+	output wire isImage,
+	output wire inHighlightedArea
 );
 
+
+/* BASKET LOCATION CONTROL BEGIN */
+wire w_x_indicator_p		= (CounterX > 19)  && (CounterX < 59) ;
+ 
+wire w_y_indicator_p0	= (CounterY > 59)  && (CounterY < 99) ;
+wire w_y_indicator_p1	= (CounterY > 99)  && (CounterY < 139);
+wire w_y_indicator_p2	= (CounterY > 139) && (CounterY < 179);
+wire w_y_indicator_p3	= (CounterY > 179) && (CounterY < 219);
+wire w_y_indicator_p4	= (CounterY > 219) && (CounterY < 259);
+wire w_y_indicator_p5	= (CounterY > 259) && (CounterY < 299);
+wire w_y_indicator_p6	= (CounterY > 299) && (CounterY < 339);
+wire w_y_indicator_p7	= (CounterY > 339) && (CounterY < 379);
+wire w_y_indicator_p8	= (CounterY > 379) && (CounterY < 419);
+wire w_y_indicator_p9	= (CounterY > 419) && (CounterY < 459);
+wire w_y_indicator_p10	= (CounterY > 459) && (CounterY < 499);
+wire w_y_indicator_p11	= (CounterY > 499) && (CounterY < 539);
+
+wire p_0_indicator  = w_x_indicator_p && w_y_indicator_p0;
+wire p_1_indicator  = w_x_indicator_p && w_y_indicator_p1;
+wire p_2_indicator  = w_x_indicator_p && w_y_indicator_p2;
+wire p_3_indicator  = w_x_indicator_p && w_y_indicator_p3;
+
+wire p_4_indicator  = w_x_indicator_p && w_y_indicator_p4;
+wire p_5_indicator  = w_x_indicator_p && w_y_indicator_p5;
+wire p_6_indicator  = w_x_indicator_p && w_y_indicator_p6;
+wire p_7_indicator  = w_x_indicator_p && w_y_indicator_p7;
+
+wire p_8_indicator  = w_x_indicator_p && w_y_indicator_p8;
+wire p_9_indicator  = w_x_indicator_p && w_y_indicator_p9;
+wire p_10_indicator = w_x_indicator_p && w_y_indicator_p10;
+wire p_11_indicator = w_x_indicator_p && w_y_indicator_p11;
+
+/* BASKET LOCATION CONTROL END */
+
+/* IMAGE LOCATION CONTROL BEGIN */
 wire [3:0] ImageID;
 
 
@@ -94,40 +135,38 @@ Encoder16x4 Encoder16x4_inst0(
 	.valid(isImage)
 );
 
-assign isHighlight = |HighlightedProductList;
+/* IMAGE LOCATION CONTROL END */
 
-wire inHighlightedArea = 	HighlightedProductList[0]  && im_0_indicator  ||
-									HighlightedProductList[1]  && im_1_indicator  ||
-									HighlightedProductList[2]  && im_2_indicator  ||
-									HighlightedProductList[3]  && im_3_indicator  ||
-									HighlightedProductList[4]  && im_4_indicator  ||
-									HighlightedProductList[5]  && im_5_indicator  ||
-									HighlightedProductList[6]  && im_6_indicator  ||
-									HighlightedProductList[7]  && im_7_indicator  ||
-									HighlightedProductList[8]  && im_8_indicator  ||
-									HighlightedProductList[9]  && im_9_indicator  ||
-									HighlightedProductList[10] && im_10_indicator ||
-									HighlightedProductList[11] && im_11_indicator;
+wire inHighlightedImgArea = 	HighlightedProductList[0]  && im_0_indicator  ||
+										HighlightedProductList[1]  && im_1_indicator  ||
+										HighlightedProductList[2]  && im_2_indicator  ||
+										HighlightedProductList[3]  && im_3_indicator  ||
+										HighlightedProductList[4]  && im_4_indicator  ||
+										HighlightedProductList[5]  && im_5_indicator  ||
+										HighlightedProductList[6]  && im_6_indicator  ||
+										HighlightedProductList[7]  && im_7_indicator  ||
+										HighlightedProductList[8]  && im_8_indicator  ||
+										HighlightedProductList[9]  && im_9_indicator  ||
+										HighlightedProductList[10] && im_10_indicator ||
+										HighlightedProductList[11] && im_11_indicator;
+									
+wire inHighlightedPrdArea = 	HighlightedProductList[0]  && p_0_indicator  ||
+										HighlightedProductList[1]  && p_1_indicator  ||
+										HighlightedProductList[2]  && p_2_indicator  ||
+										HighlightedProductList[3]  && p_3_indicator  ||
+										HighlightedProductList[4]  && p_4_indicator  ||
+										HighlightedProductList[5]  && p_5_indicator  ||
+										HighlightedProductList[6]  && p_6_indicator  ||
+										HighlightedProductList[7]  && p_7_indicator  ||
+										HighlightedProductList[8]  && p_8_indicator  ||
+										HighlightedProductList[9]  && p_9_indicator  ||
+										HighlightedProductList[10] && p_10_indicator ||
+										HighlightedProductList[11] && p_11_indicator;
+					
+assign inHighlightedArea = (SW2 && inHighlightedPrdArea) || (~SW2 && inHighlightedImgArea);
+									
+assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:{(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	// Red/White
+assign ROM_Addr 	= (isImage) ? ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-(307+ImageID[1:0]>>7)) + PRDCT_PIC_WIDTH*(CounterY-(19+((ImageID>>2)<<7))):{ROM_ADDR_BUS_WIDTH{1'b0}};
 
-always @ (*)
-	begin
-		if(isImage)
-			begin
-				ROM_Addr = ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-(307+ImageID[1:0]>>7)) + PRDCT_PIC_WIDTH*(CounterY-(19+((ImageID>>2)<<7)));
-				black_white = {(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	
-				if(isHighlight)
-					begin
-						if (inHighlightedArea)
-							black_white = 24'h0000FF;		// RED
-						else
-							black_white = 24'hFFFFFF;	// White
-					end
-			end
-		else
-			begin
-				ROM_Addr = 0;
-				black_white = {(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};
-			end
-	end
 
 endmodule
