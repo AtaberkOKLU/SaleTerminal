@@ -6,6 +6,7 @@
  *		Outputs		: 	HighlightedProductList	=> Highlited Products Vector
  *		Owner			: 	Ataberk ÖKLÜ & Göksu UZUNTÜRK
  */
+ 
 module HoverController(
 	// Generic
 	input wire CLK,

@@ -8,7 +8,7 @@
  *						:	RESET_N 	=> Reset Signal
  *
  *		Outputs		: 	VGA_RGB		=> 24-bit RBG values to the VGA Port Pins
- * 					:	VGA_HVSync 	=> 2 Sync Singanls to the VGA Port Pins
+ * 					:	VGA_HVSync 	=> 2 Sync Signals to the VGA Port Pins
  *		Owner			: 	Ataberk ÖKLÜ
  */
 
@@ -50,9 +50,9 @@ module VGA_Controller
 	 input  wire[11:0] HighlightedProductList,
 	 // Button Controller Interface
 	 input  wire SW2,
-    output reg [R_WIDTH-1:0] VGA_R,
-	 output reg [G_WIDTH-1:0] VGA_G,
-	 output reg [B_WIDTH-1:0] VGA_B,
+    output wire [R_WIDTH-1:0] VGA_R,
+	 output wire [G_WIDTH-1:0] VGA_G,
+	 output wire [B_WIDTH-1:0] VGA_B,
 	 output wire VGA_CLK,
     output wire VGA_HS,
     output wire VGA_VS,
@@ -68,6 +68,7 @@ module VGA_Controller
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
 	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] ROM_RGB_Bus;
 	 wire	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr;
+	 wire isFontBit;
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
@@ -97,31 +98,29 @@ module VGA_Controller
 			.inDisplayArea(inDisplayArea)
     );
 	 
-	 ImageROM ImageROM_inst0(
-		.address(targetPixelAddr),
-		.clock(VGA_CLK_W),
-		.q(ROM_RGB_Bus)
-	 );
 
+	PixelController#(
+		// Color Width = 8
+		// C5 Has 24-bit DAC
+		.R_WIDTH(R_WIDTH),
+		.G_WIDTH(G_WIDTH),
+		.B_WIDTH(B_WIDTH),
 
-	ImageLocator ImageLocator_inst0(
+		.CNTR_WIDTH_V(CNTR_WIDTH_V),			// Max CounterY Value = 2^CNTR_WIDTH_V
+		.CNTR_WIDTH_H(CNTR_WIDTH_H),			// Max CounterX Value = 2^CNTR_WIDTH_H
+
+		// ROM Block Memory Properties
+		.ROM_ADDR_BUS_WIDTH(ROM_ADDR_BUS_WIDTH)  	// Max Accessible Addresses 2^17 > (100x100x12):(3x8 bit)
+	) PixelController_inst0(
 		.CounterX(CounterX),
 		.CounterY(CounterY),
 		.HighlightedProductList(HighlightedProductList),
-		.ROM_Addr(targetPixelAddr),
-		.isImage(isImage_wire),
-		.PixelBus(PixBux_wire),
+		.CLOCK(VGA_CLK_W),
 		.SW2(SW2),
-		.inHighlightedArea(inHighlightedArea_wire)
+		.PixBus(PixBux_wire)
 	);
 	
-always @ (*)
-	if (inHighlightedArea_wire)
-		{VGA_B, VGA_G, VGA_R} = PixBux_wire;
-	else if (isImage_wire)
-		{VGA_B, VGA_G, VGA_R} = ROM_RGB_Bus;
-	else
-		{VGA_B, VGA_G, VGA_R} = 24'b0;
+assign {VGA_B, VGA_G, VGA_R} = PixBux_wire;
 
 assign VGA_BLANK_N = inDisplayArea;
 assign VGA_CLK = VGA_CLK_W;
