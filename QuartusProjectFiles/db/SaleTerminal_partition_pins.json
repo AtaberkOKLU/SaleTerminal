@@ -4,159 +4,167 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "Barcode_Enable",
+					"name" : "VGA_R[0]",
 					"strict" : false
 				},
 				{
-					"name" : "RSTN_BarcodeController_Pulse",
+					"name" : "VGA_R[1]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[0]",
+					"name" : "VGA_R[2]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[1]",
+					"name" : "VGA_R[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[2]",
+					"name" : "VGA_R[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_Digit_in[3]",
+					"name" : "VGA_R[5]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[0]",
+					"name" : "VGA_R[6]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[1]",
+					"name" : "VGA_R[7]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductQuantity[2]",
+					"name" : "VGA_G[0]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[0]",
+					"name" : "VGA_G[1]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[1]",
+					"name" : "VGA_G[2]",
 					"strict" : false
 				},
 				{
-					"name" : "ProductID_out[2]",
+					"name" : "VGA_G[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Dir_out[0]",
+					"name" : "VGA_G[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Dir_out[1]",
+					"name" : "VGA_G[5]",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "VGA_G[6]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY_Reg[0]",
+					"name" : "VGA_G[7]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY_Reg[1]",
+					"name" : "VGA_B[0]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY_Reg[2]",
+					"name" : "VGA_B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "KEY_Reg[3]",
+					"name" : "VGA_B[2]",
 					"strict" : false
 				},
 				{
-					"name" : "BarcodeDigitCompleted",
+					"name" : "VGA_B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "CleanSWOut[1]",
+					"name" : "VGA_B[4]",
 					"strict" : false
 				},
 				{
-					"name" : "CleanSWOut[2]",
+					"name" : "VGA_B[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_2[0]",
+					"name" : "VGA_B[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_1[1]",
+					"name" : "VGA_B[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_1[0]",
+					"name" : "VGA_HS",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_0[3]",
+					"name" : "VGA_VS",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_1[2]",
+					"name" : "VGA_BLANK_N",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_1[3]",
+					"name" : "SW2",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_2[3]",
+					"name" : "HighlightedProductList[10]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_3[3]",
+					"name" : "HighlightedProductList[9]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_3[2]",
+					"name" : "HighlightedProductList[8]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_0[0]",
+					"name" : "HighlightedProductList[6]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_2[1]",
+					"name" : "HighlightedProductList[5]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_0[2]",
+					"name" : "HighlightedProductList[7]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_3[0]",
+					"name" : "HighlightedProductList[4]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_2[2]",
+					"name" : "HighlightedProductList[3]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_0[1]",
+					"name" : "HighlightedProductList[0]",
 					"strict" : false
 				},
 				{
-					"name" : "Barcode_DigitIn_3[1]",
+					"name" : "HighlightedProductList[2]",
 					"strict" : false
 				},
 				{
-					"name" : "CMD_Reg[0]",
+					"name" : "HighlightedProductList[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HighlightedProductList[11]",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_N",
 					"strict" : false
 				}
 			]

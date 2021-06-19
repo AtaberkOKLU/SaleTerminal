@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "06/16/2021 07:51:33"
+// DATE "06/19/2021 12:54:15"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -33,11 +33,15 @@ module Direction2ProductID (
 	RESET_N,
 	Enable,
 	CLOCK,
+	CleanSW2,
+	BasketProductNum,
 	Dir_in,
 	ProductID);
 input 	RESET_N;
 input 	Enable;
 input 	CLOCK;
+input 	CleanSW2;
+input 	[3:0] BasketProductNum;
 input 	[1:0] Dir_in;
 output 	[3:0] ProductID;
 
@@ -57,27 +61,49 @@ wire \ProductID[1]~output_o ;
 wire \ProductID[2]~output_o ;
 wire \ProductID[3]~output_o ;
 wire \CLOCK~input_o ;
-wire \RESET_N~input_o ;
-wire \Dir_in[1]~input_o ;
+wire \CleanSW2~input_o ;
 wire \Dir_in[0]~input_o ;
-wire \Mux0~0_combout ;
-wire \ProductID~4_combout ;
+wire \Dir_in[1]~input_o ;
 wire \Enable~input_o ;
-wire \ProductID~1_combout ;
-wire \ProductID[3]~reg0_q ;
+wire \RESET_N~input_o ;
+wire \BasketID~1_combout ;
+wire \Equal1~0_combout ;
+wire \BasketProductNum[2]~input_o ;
+wire \BasketProductNum[1]~input_o ;
+wire \BasketID~3_combout ;
+wire \BasketProductNum[3]~input_o ;
+wire \Add4~1_combout ;
+wire \Add5~1_combout ;
+wire \BasketID~5_combout ;
+wire \LessThan4~0_combout ;
+wire \BasketID[1]~2_combout ;
+wire \Add4~0_combout ;
+wire \Add5~0_combout ;
+wire \BasketID~4_combout ;
+wire \BasketProductNum[0]~input_o ;
+wire \LessThan5~0_combout ;
+wire \LessThan5~1_combout ;
+wire \BasketID~0_combout ;
+wire \BasketID~6_combout ;
+wire \Mux0~0_combout ;
+wire \ImgID~4_combout ;
+wire \ImgID~1_combout ;
 wire \Mux1~0_combout ;
-wire \ProductID~3_combout ;
-wire \ProductID[2]~reg0_q ;
+wire \ImgID~3_combout ;
 wire \Mux2~0_combout ;
-wire \ProductID~2_combout ;
-wire \ProductID[1]~reg0_q ;
+wire \ImgID~2_combout ;
 wire \Mux3~0_combout ;
+wire \ImgID~0_combout ;
 wire \ProductID~0_combout ;
-wire \ProductID[0]~reg0_q ;
+wire \ProductID~1_combout ;
+wire \ProductID~2_combout ;
+wire \ProductID~3_combout ;
+wire [3:0] BasketID;
+wire [3:0] ImgID;
 
 
 cyclonev_io_obuf \ProductID[0]~output (
-	.i(\ProductID[0]~reg0_q ),
+	.i(\ProductID~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -92,7 +118,7 @@ defparam \ProductID[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \ProductID[1]~output (
-	.i(\ProductID[1]~reg0_q ),
+	.i(\ProductID~1_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -107,7 +133,7 @@ defparam \ProductID[1]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \ProductID[2]~output (
-	.i(\ProductID[2]~reg0_q ),
+	.i(\ProductID~2_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -122,7 +148,7 @@ defparam \ProductID[2]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
 cyclonev_io_obuf \ProductID[3]~output (
-	.i(\ProductID[3]~reg0_q ),
+	.i(\ProductID~3_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
@@ -146,24 +172,14 @@ defparam \CLOCK~input .bus_hold = "false";
 defparam \CLOCK~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \RESET_N~input (
-	.i(RESET_N),
+cyclonev_io_ibuf \CleanSW2~input (
+	.i(CleanSW2),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\RESET_N~input_o ));
+	.o(\CleanSW2~input_o ));
 // synopsys translate_off
-defparam \RESET_N~input .bus_hold = "false";
-defparam \RESET_N~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Dir_in[1]~input (
-	.i(Dir_in[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Dir_in[1]~input_o ));
-// synopsys translate_off
-defparam \Dir_in[1]~input .bus_hold = "false";
-defparam \Dir_in[1]~input .simulate_z_as = "z";
+defparam \CleanSW2~input .bus_hold = "false";
+defparam \CleanSW2~input .simulate_z_as = "z";
 // synopsys translate_on
 
 cyclonev_io_ibuf \Dir_in[0]~input (
@@ -176,16 +192,509 @@ defparam \Dir_in[0]~input .bus_hold = "false";
 defparam \Dir_in[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
+cyclonev_io_ibuf \Dir_in[1]~input (
+	.i(Dir_in[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Dir_in[1]~input_o ));
+// synopsys translate_off
+defparam \Dir_in[1]~input .bus_hold = "false";
+defparam \Dir_in[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \Enable~input (
+	.i(Enable),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Enable~input_o ));
+// synopsys translate_off
+defparam \Enable~input .bus_hold = "false";
+defparam \Enable~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \RESET_N~input (
+	.i(RESET_N),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\RESET_N~input_o ));
+// synopsys translate_off
+defparam \RESET_N~input .bus_hold = "false";
+defparam \RESET_N~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~1 (
+// Equation(s):
+// \BasketID~1_combout  = ( \RESET_N~input_o  & ( (!\Enable~input_o ) # ((\CleanSW2~input_o  & (!\Dir_in[0]~input_o  $ (\Dir_in[1]~input_o )))) ) )
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\Enable~input_o ),
+	.datae(!\RESET_N~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~1 .extended_lut = "off";
+defparam \BasketID~1 .lut_mask = 64'h0000FF410000FF41;
+defparam \BasketID~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Equal1~0 (
+// Equation(s):
+// \Equal1~0_combout  = (!\Dir_in[0]~input_o  & \Dir_in[1]~input_o )
+
+	.dataa(!\Dir_in[0]~input_o ),
+	.datab(!\Dir_in[1]~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Equal1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Equal1~0 .extended_lut = "off";
+defparam \Equal1~0 .lut_mask = 64'h2222222222222222;
+defparam \Equal1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_io_ibuf \BasketProductNum[2]~input (
+	.i(BasketProductNum[2]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[2]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[2]~input .bus_hold = "false";
+defparam \BasketProductNum[2]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \BasketProductNum[1]~input (
+	.i(BasketProductNum[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[1]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[1]~input .bus_hold = "false";
+defparam \BasketProductNum[1]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~3 (
+// Equation(s):
+// \BasketID~3_combout  = ( \LessThan5~1_combout  & ( \BasketID[1]~2_combout  & ( !BasketID[0] $ (!BasketID[1] $ (!\Equal1~0_combout )) ) ) ) # ( !\LessThan5~1_combout  & ( \BasketID[1]~2_combout  & ( (!\Equal1~0_combout  & (!BasketID[0] $ ((BasketID[1])))) 
+// # (\Equal1~0_combout  & (((\BasketProductNum[1]~input_o )))) ) ) )
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!\Equal1~0_combout ),
+	.datad(!\BasketProductNum[1]~input_o ),
+	.datae(!\LessThan5~1_combout ),
+	.dataf(!\BasketID[1]~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~3 .extended_lut = "off";
+defparam \BasketID~3 .lut_mask = 64'h00000000909F9696;
+defparam \BasketID~3 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[1] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[1] .is_wysiwyg = "true";
+defparam \BasketID[1] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_io_ibuf \BasketProductNum[3]~input (
+	.i(BasketProductNum[3]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[3]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[3]~input .bus_hold = "false";
+defparam \BasketProductNum[3]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Add4~1 (
+// Equation(s):
+// \Add4~1_combout  = !BasketID[3] $ (((!BasketID[0] & (!BasketID[1] & !BasketID[2]))))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add4~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add4~1 .extended_lut = "off";
+defparam \Add4~1 .lut_mask = 64'h7F807F807F807F80;
+defparam \Add4~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Add5~1 (
+// Equation(s):
+// \Add5~1_combout  = !BasketID[3] $ (((!BasketID[0]) # ((!BasketID[1]) # (!BasketID[2]))))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add5~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add5~1 .extended_lut = "off";
+defparam \Add5~1 .lut_mask = 64'h01FE01FE01FE01FE;
+defparam \Add5~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~5 (
+// Equation(s):
+// \BasketID~5_combout  = ( \Add4~1_combout  & ( \Add5~1_combout  & ( (\Equal1~0_combout  & (\BasketID[1]~2_combout  & ((\LessThan5~1_combout ) # (\BasketProductNum[3]~input_o )))) ) ) ) # ( !\Add4~1_combout  & ( \Add5~1_combout  & ( (\BasketID[1]~2_combout  
+// & ((!\Equal1~0_combout ) # ((\LessThan5~1_combout ) # (\BasketProductNum[3]~input_o )))) ) ) ) # ( \Add4~1_combout  & ( !\Add5~1_combout  & ( (\Equal1~0_combout  & (\BasketProductNum[3]~input_o  & (!\LessThan5~1_combout  & \BasketID[1]~2_combout ))) ) ) ) 
+// # ( !\Add4~1_combout  & ( !\Add5~1_combout  & ( (\BasketID[1]~2_combout  & ((!\Equal1~0_combout ) # ((\BasketProductNum[3]~input_o  & !\LessThan5~1_combout )))) ) ) )
+
+	.dataa(!\Equal1~0_combout ),
+	.datab(!\BasketProductNum[3]~input_o ),
+	.datac(!\LessThan5~1_combout ),
+	.datad(!\BasketID[1]~2_combout ),
+	.datae(!\Add4~1_combout ),
+	.dataf(!\Add5~1_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~5 .extended_lut = "off";
+defparam \BasketID~5 .lut_mask = 64'h00BA001000BF0015;
+defparam \BasketID~5 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[3] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[3] .is_wysiwyg = "true";
+defparam \BasketID[3] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \LessThan4~0 (
+// Equation(s):
+// \LessThan4~0_combout  = (((BasketID[3]) # (BasketID[2])) # (BasketID[1])) # (BasketID[0])
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan4~0 .extended_lut = "off";
+defparam \LessThan4~0 .lut_mask = 64'h7FFF7FFF7FFF7FFF;
+defparam \LessThan4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID[1]~2 (
+// Equation(s):
+// \BasketID[1]~2_combout  = ( \RESET_N~input_o  & ( (\CleanSW2~input_o  & (((!\Dir_in[0]~input_o  & \Dir_in[1]~input_o )) # (\LessThan4~0_combout ))) ) )
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\LessThan4~0_combout ),
+	.datae(!\RESET_N~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID[1]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID[1]~2 .extended_lut = "off";
+defparam \BasketID[1]~2 .lut_mask = 64'h0000045500000455;
+defparam \BasketID[1]~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Add4~0 (
+// Equation(s):
+// \Add4~0_combout  = !BasketID[2] $ (((!BasketID[0] & !BasketID[1])))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add4~0 .extended_lut = "off";
+defparam \Add4~0 .lut_mask = 64'h7878787878787878;
+defparam \Add4~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Add5~0 (
+// Equation(s):
+// \Add5~0_combout  = !BasketID[2] $ (((!BasketID[0]) # (!BasketID[1])))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add5~0 .extended_lut = "off";
+defparam \Add5~0 .lut_mask = 64'h1E1E1E1E1E1E1E1E;
+defparam \Add5~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~4 (
+// Equation(s):
+// \BasketID~4_combout  = ( \Add4~0_combout  & ( \Add5~0_combout  & ( (\Equal1~0_combout  & (\BasketID[1]~2_combout  & ((\LessThan5~1_combout ) # (\BasketProductNum[2]~input_o )))) ) ) ) # ( !\Add4~0_combout  & ( \Add5~0_combout  & ( (\BasketID[1]~2_combout  
+// & ((!\Equal1~0_combout ) # ((\LessThan5~1_combout ) # (\BasketProductNum[2]~input_o )))) ) ) ) # ( \Add4~0_combout  & ( !\Add5~0_combout  & ( (\Equal1~0_combout  & (\BasketProductNum[2]~input_o  & (!\LessThan5~1_combout  & \BasketID[1]~2_combout ))) ) ) ) 
+// # ( !\Add4~0_combout  & ( !\Add5~0_combout  & ( (\BasketID[1]~2_combout  & ((!\Equal1~0_combout ) # ((\BasketProductNum[2]~input_o  & !\LessThan5~1_combout )))) ) ) )
+
+	.dataa(!\Equal1~0_combout ),
+	.datab(!\BasketProductNum[2]~input_o ),
+	.datac(!\LessThan5~1_combout ),
+	.datad(!\BasketID[1]~2_combout ),
+	.datae(!\Add4~0_combout ),
+	.dataf(!\Add5~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~4 .extended_lut = "off";
+defparam \BasketID~4 .lut_mask = 64'h00BA001000BF0015;
+defparam \BasketID~4 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[2] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[2] .is_wysiwyg = "true";
+defparam \BasketID[2] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_io_ibuf \BasketProductNum[0]~input (
+	.i(BasketProductNum[0]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[0]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[0]~input .bus_hold = "false";
+defparam \BasketProductNum[0]~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \LessThan5~0 (
+// Equation(s):
+// \LessThan5~0_combout  = (!BasketID[1] & (((!BasketID[0] & \BasketProductNum[0]~input_o )) # (\BasketProductNum[1]~input_o ))) # (BasketID[1] & (!BasketID[0] & (\BasketProductNum[1]~input_o  & \BasketProductNum[0]~input_o )))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!\BasketProductNum[1]~input_o ),
+	.datad(!\BasketProductNum[0]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan5~0 .extended_lut = "off";
+defparam \LessThan5~0 .lut_mask = 64'h0C8E0C8E0C8E0C8E;
+defparam \LessThan5~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \LessThan5~1 (
+// Equation(s):
+// \LessThan5~1_combout  = ( \LessThan5~0_combout  & ( (!BasketID[3] & ((!BasketID[2]) # ((\BasketProductNum[2]~input_o ) # (\BasketProductNum[3]~input_o )))) # (BasketID[3] & (\BasketProductNum[3]~input_o  & ((!BasketID[2]) # (\BasketProductNum[2]~input_o 
+// )))) ) ) # ( !\LessThan5~0_combout  & ( (!BasketID[3] & (((!BasketID[2] & \BasketProductNum[2]~input_o )) # (\BasketProductNum[3]~input_o ))) # (BasketID[3] & (!BasketID[2] & (\BasketProductNum[3]~input_o  & \BasketProductNum[2]~input_o ))) ) )
+
+	.dataa(!BasketID[2]),
+	.datab(!BasketID[3]),
+	.datac(!\BasketProductNum[3]~input_o ),
+	.datad(!\BasketProductNum[2]~input_o ),
+	.datae(!\LessThan5~0_combout ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan5~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan5~1 .extended_lut = "off";
+defparam \LessThan5~1 .lut_mask = 64'h0C8E8ECF0C8E8ECF;
+defparam \LessThan5~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~0 (
+// Equation(s):
+// \BasketID~0_combout  = ( \RESET_N~input_o  & ( (\CleanSW2~input_o  & (\Enable~input_o  & (!\Dir_in[0]~input_o  $ (!\Dir_in[1]~input_o )))) ) )
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\Enable~input_o ),
+	.datae(!\RESET_N~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~0 .extended_lut = "off";
+defparam \BasketID~0 .lut_mask = 64'h0000001400000014;
+defparam \BasketID~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~6 (
+// Equation(s):
+// \BasketID~6_combout  = ( !\Equal1~0_combout  & ( ((!BasketID[0] & (((\LessThan4~0_combout  & \BasketID~0_combout )))) # (BasketID[0] & (\BasketID~1_combout ))) ) ) # ( \Equal1~0_combout  & ( (!BasketID[0] & (((\BasketID~0_combout  & 
+// ((\BasketProductNum[0]~input_o ) # (\LessThan5~1_combout )))))) # (BasketID[0] & (((!\LessThan5~1_combout  & (\BasketProductNum[0]~input_o  & \BasketID~0_combout ))) # (\BasketID~1_combout ))) ) )
+
+	.dataa(!\BasketID~1_combout ),
+	.datab(!\LessThan5~1_combout ),
+	.datac(!\BasketProductNum[0]~input_o ),
+	.datad(!\BasketID~0_combout ),
+	.datae(!\Equal1~0_combout ),
+	.dataf(!BasketID[0]),
+	.datag(!\LessThan4~0_combout ),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~6 .extended_lut = "on";
+defparam \BasketID~6 .lut_mask = 64'h000F003F5555555D;
+defparam \BasketID~6 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[0] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[0] .is_wysiwyg = "true";
+defparam \BasketID[0] .power_up = "low";
+// synopsys translate_on
+
 cyclonev_lcell_comb \Mux0~0 (
 // Equation(s):
-// \Mux0~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( ((\ProductID[1]~reg0_q  & (\ProductID[0]~reg0_q  & \ProductID[2]~reg0_q ))) # (\ProductID[3]~reg0_q ) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (\ProductID[3]~reg0_q  & 
-// \ProductID[2]~reg0_q ) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (\ProductID[2]~reg0_q ) # (\ProductID[3]~reg0_q ) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (\ProductID[3]~reg0_q  & (((\ProductID[2]~reg0_q ) # 
-// (\ProductID[0]~reg0_q )) # (\ProductID[1]~reg0_q ))) ) ) )
+// \Mux0~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( ((ImgID[1] & (ImgID[0] & ImgID[2]))) # (ImgID[3]) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[3] & ImgID[2]) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  
+// & ( (ImgID[2]) # (ImgID[3]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (ImgID[3] & (((ImgID[2]) # (ImgID[0])) # (ImgID[1]))) ) ) )
 
-	.dataa(!\ProductID[1]~reg0_q ),
-	.datab(!\ProductID[0]~reg0_q ),
-	.datac(!\ProductID[3]~reg0_q ),
-	.datad(!\ProductID[2]~reg0_q ),
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[2]),
 	.datae(!\Dir_in[1]~input_o ),
 	.dataf(!\Dir_in[0]~input_o ),
 	.datag(gnd),
@@ -201,12 +710,35 @@ defparam \Mux0~0 .lut_mask = 64'h070F0FFF000F0F1F;
 defparam \Mux0~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \ProductID~4 (
+cyclonev_lcell_comb \ImgID~4 (
 // Equation(s):
-// \ProductID~4_combout  = (\RESET_N~input_o  & \Mux0~0_combout )
+// \ImgID~4_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & \Mux0~0_combout ))
 
-	.dataa(!\RESET_N~input_o ),
-	.datab(!\Mux0~0_combout ),
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux0~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~4 .extended_lut = "off";
+defparam \ImgID~4 .lut_mask = 64'h0202020202020202;
+defparam \ImgID~4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~1 (
+// Equation(s):
+// \ImgID~1_combout  = (!\RESET_N~input_o ) # (\Enable~input_o )
+
+	.dataa(!\Enable~input_o ),
+	.datab(!\RESET_N~input_o ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
@@ -214,77 +746,43 @@ cyclonev_lcell_comb \ProductID~4 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ProductID~4_combout ),
+	.combout(\ImgID~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \ProductID~4 .extended_lut = "off";
-defparam \ProductID~4 .lut_mask = 64'h1111111111111111;
-defparam \ProductID~4 .shared_arith = "off";
+defparam \ImgID~1 .extended_lut = "off";
+defparam \ImgID~1 .lut_mask = 64'hDDDDDDDDDDDDDDDD;
+defparam \ImgID~1 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Enable~input (
-	.i(Enable),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Enable~input_o ));
-// synopsys translate_off
-defparam \Enable~input .bus_hold = "false";
-defparam \Enable~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \ProductID~1 (
-// Equation(s):
-// \ProductID~1_combout  = (!\RESET_N~input_o ) # (\Enable~input_o )
-
-	.dataa(!\RESET_N~input_o ),
-	.datab(!\Enable~input_o ),
-	.datac(gnd),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\ProductID~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \ProductID~1 .extended_lut = "off";
-defparam \ProductID~1 .lut_mask = 64'hBBBBBBBBBBBBBBBB;
-defparam \ProductID~1 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \ProductID[3]~reg0 (
+dffeas \ImgID[3] (
 	.clk(!\CLOCK~input_o ),
-	.d(\ProductID~4_combout ),
+	.d(\ImgID~4_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\ProductID~1_combout ),
+	.ena(\ImgID~1_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\ProductID[3]~reg0_q ),
+	.q(ImgID[3]),
 	.prn(vcc));
 // synopsys translate_off
-defparam \ProductID[3]~reg0 .is_wysiwyg = "true";
-defparam \ProductID[3]~reg0 .power_up = "low";
+defparam \ImgID[3] .is_wysiwyg = "true";
+defparam \ImgID[3] .power_up = "low";
 // synopsys translate_on
 
 cyclonev_lcell_comb \Mux1~0 (
 // Equation(s):
-// \Mux1~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!\ProductID[3]~reg0_q  & (!\ProductID[2]~reg0_q  $ (((!\ProductID[1]~reg0_q ) # (!\ProductID[0]~reg0_q ))))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( 
-// (\ProductID[3]~reg0_q  & !\ProductID[2]~reg0_q ) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!\ProductID[3]~reg0_q  & !\ProductID[2]~reg0_q ) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!\ProductID[1]~reg0_q  & 
-// ((!\ProductID[0]~reg0_q  & (\ProductID[3]~reg0_q  & !\ProductID[2]~reg0_q )) # (\ProductID[0]~reg0_q  & ((\ProductID[2]~reg0_q ))))) # (\ProductID[1]~reg0_q  & (((\ProductID[2]~reg0_q )))) ) ) )
+// \Mux1~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[3] & (!ImgID[2] $ (((!ImgID[1]) # (!ImgID[0]))))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[3] & !ImgID[2]) ) ) ) # ( \Dir_in[1]~input_o  & ( 
+// !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[2]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[1] & ((!ImgID[0] & (ImgID[3] & !ImgID[2])) # (ImgID[0] & ((ImgID[2]))))) # (ImgID[1] & (((ImgID[2])))) ) ) )
 
-	.dataa(!\ProductID[1]~reg0_q ),
-	.datab(!\ProductID[0]~reg0_q ),
-	.datac(!\ProductID[3]~reg0_q ),
-	.datad(!\ProductID[2]~reg0_q ),
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[2]),
 	.datae(!\Dir_in[1]~input_o ),
 	.dataf(!\Dir_in[0]~input_o ),
 	.datag(gnd),
@@ -300,57 +798,56 @@ defparam \Mux1~0 .lut_mask = 64'h0877F0000F0010E0;
 defparam \Mux1~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \ProductID~3 (
+cyclonev_lcell_comb \ImgID~3 (
 // Equation(s):
-// \ProductID~3_combout  = (\RESET_N~input_o  & \Mux1~0_combout )
+// \ImgID~3_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & \Mux1~0_combout ))
 
-	.dataa(!\RESET_N~input_o ),
-	.datab(!\Mux1~0_combout ),
-	.datac(gnd),
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux1~0_combout ),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ProductID~3_combout ),
+	.combout(\ImgID~3_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \ProductID~3 .extended_lut = "off";
-defparam \ProductID~3 .lut_mask = 64'h1111111111111111;
-defparam \ProductID~3 .shared_arith = "off";
+defparam \ImgID~3 .extended_lut = "off";
+defparam \ImgID~3 .lut_mask = 64'h0202020202020202;
+defparam \ImgID~3 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \ProductID[2]~reg0 (
+dffeas \ImgID[2] (
 	.clk(!\CLOCK~input_o ),
-	.d(\ProductID~3_combout ),
+	.d(\ImgID~3_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\ProductID~1_combout ),
+	.ena(\ImgID~1_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\ProductID[2]~reg0_q ),
+	.q(ImgID[2]),
 	.prn(vcc));
 // synopsys translate_off
-defparam \ProductID[2]~reg0 .is_wysiwyg = "true";
-defparam \ProductID[2]~reg0 .power_up = "low";
+defparam \ImgID[2] .is_wysiwyg = "true";
+defparam \ImgID[2] .power_up = "low";
 // synopsys translate_on
 
 cyclonev_lcell_comb \Mux2~0 (
 // Equation(s):
-// \Mux2~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!\ProductID[0]~reg0_q  & (!\ProductID[1]~reg0_q  & ((!\ProductID[2]~reg0_q ) # (!\ProductID[3]~reg0_q )))) # (\ProductID[0]~reg0_q  & (((!\ProductID[3]~reg0_q  & \ProductID[1]~reg0_q 
-// )))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!\ProductID[1]~reg0_q ) # ((!\ProductID[2]~reg0_q  & !\ProductID[3]~reg0_q )) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!\ProductID[3]~reg0_q  & !\ProductID[1]~reg0_q ) ) ) 
-// ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!\ProductID[0]~reg0_q  & (((!\ProductID[2]~reg0_q  & !\ProductID[3]~reg0_q )) # (\ProductID[1]~reg0_q ))) # (\ProductID[0]~reg0_q  & (((!\ProductID[1]~reg0_q )))) ) ) )
+// \Mux2~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[0] & (!ImgID[1] & ((!ImgID[2]) # (!ImgID[3])))) # (ImgID[0] & (((!ImgID[3] & ImgID[1])))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[1]) # ((!ImgID[2] & 
+// !ImgID[3])) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[1]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[0] & (((!ImgID[2] & !ImgID[3])) # (ImgID[1]))) # (ImgID[0] & (((!ImgID[1])))) ) ) )
 
-	.dataa(!\ProductID[2]~reg0_q ),
-	.datab(!\ProductID[0]~reg0_q ),
-	.datac(!\ProductID[3]~reg0_q ),
-	.datad(!\ProductID[1]~reg0_q ),
+	.dataa(!ImgID[2]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[1]),
 	.datae(!\Dir_in[1]~input_o ),
 	.dataf(!\Dir_in[0]~input_o ),
 	.datag(gnd),
@@ -366,57 +863,56 @@ defparam \Mux2~0 .lut_mask = 64'hB3CCF000FFA0C830;
 defparam \Mux2~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_lcell_comb \ProductID~2 (
+cyclonev_lcell_comb \ImgID~2 (
 // Equation(s):
-// \ProductID~2_combout  = (\RESET_N~input_o  & !\Mux2~0_combout )
+// \ImgID~2_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & !\Mux2~0_combout ))
 
-	.dataa(!\RESET_N~input_o ),
-	.datab(!\Mux2~0_combout ),
-	.datac(gnd),
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux2~0_combout ),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\ProductID~2_combout ),
+	.combout(\ImgID~2_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \ProductID~2 .extended_lut = "off";
-defparam \ProductID~2 .lut_mask = 64'h4444444444444444;
-defparam \ProductID~2 .shared_arith = "off";
+defparam \ImgID~2 .extended_lut = "off";
+defparam \ImgID~2 .lut_mask = 64'h2020202020202020;
+defparam \ImgID~2 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \ProductID[1]~reg0 (
+dffeas \ImgID[1] (
 	.clk(!\CLOCK~input_o ),
-	.d(\ProductID~2_combout ),
+	.d(\ImgID~2_combout ),
 	.asdata(vcc),
 	.clrn(vcc),
 	.aload(gnd),
 	.sclr(gnd),
 	.sload(gnd),
-	.ena(\ProductID~1_combout ),
+	.ena(\ImgID~1_combout ),
 	.devclrn(devclrn),
 	.devpor(devpor),
-	.q(\ProductID[1]~reg0_q ),
+	.q(ImgID[1]),
 	.prn(vcc));
 // synopsys translate_off
-defparam \ProductID[1]~reg0 .is_wysiwyg = "true";
-defparam \ProductID[1]~reg0 .power_up = "low";
+defparam \ImgID[1] .is_wysiwyg = "true";
+defparam \ImgID[1] .power_up = "low";
 // synopsys translate_on
 
 cyclonev_lcell_comb \Mux3~0 (
 // Equation(s):
-// \Mux3~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (\ProductID[0]~reg0_q  & ((!\ProductID[3]~reg0_q ) # ((!\ProductID[1]~reg0_q  & !\ProductID[2]~reg0_q )))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( 
-// (!\ProductID[0]~reg0_q ) # ((!\ProductID[2]~reg0_q  & !\ProductID[3]~reg0_q )) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!\ProductID[3]~reg0_q  & !\ProductID[0]~reg0_q ) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( 
-// ((!\ProductID[1]~reg0_q  & (!\ProductID[2]~reg0_q  & !\ProductID[3]~reg0_q ))) # (\ProductID[0]~reg0_q ) ) ) )
+// \Mux3~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[0] & ((!ImgID[3]) # ((!ImgID[1] & !ImgID[2])))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[0]) # ((!ImgID[2] & !ImgID[3])) ) ) ) # ( \Dir_in[1]~input_o  & 
+// ( !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[0]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( ((!ImgID[1] & (!ImgID[2] & !ImgID[3]))) # (ImgID[0]) ) ) )
 
-	.dataa(!\ProductID[1]~reg0_q ),
-	.datab(!\ProductID[2]~reg0_q ),
-	.datac(!\ProductID[3]~reg0_q ),
-	.datad(!\ProductID[0]~reg0_q ),
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[2]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[0]),
 	.datae(!\Dir_in[1]~input_o ),
 	.dataf(!\Dir_in[0]~input_o ),
 	.datag(gnd),
@@ -432,13 +928,54 @@ defparam \Mux3~0 .lut_mask = 64'h80FFF000FFC000F8;
 defparam \Mux3~0 .shared_arith = "off";
 // synopsys translate_on
 
+cyclonev_lcell_comb \ImgID~0 (
+// Equation(s):
+// \ImgID~0_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & !\Mux3~0_combout ))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~0 .extended_lut = "off";
+defparam \ImgID~0 .lut_mask = 64'h2020202020202020;
+defparam \ImgID~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ImgID[0] (
+	.clk(!\CLOCK~input_o ),
+	.d(\ImgID~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\ImgID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(ImgID[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ImgID[0] .is_wysiwyg = "true";
+defparam \ImgID[0] .power_up = "low";
+// synopsys translate_on
+
 cyclonev_lcell_comb \ProductID~0 (
 // Equation(s):
-// \ProductID~0_combout  = (\RESET_N~input_o  & !\Mux3~0_combout )
+// \ProductID~0_combout  = (!\CleanSW2~input_o  & ((ImgID[0]))) # (\CleanSW2~input_o  & (BasketID[0]))
 
-	.dataa(!\RESET_N~input_o ),
-	.datab(!\Mux3~0_combout ),
-	.datac(gnd),
+	.dataa(!BasketID[0]),
+	.datab(!\CleanSW2~input_o ),
+	.datac(!ImgID[0]),
 	.datad(gnd),
 	.datae(gnd),
 	.dataf(gnd),
@@ -451,26 +988,77 @@ cyclonev_lcell_comb \ProductID~0 (
 	.shareout());
 // synopsys translate_off
 defparam \ProductID~0 .extended_lut = "off";
-defparam \ProductID~0 .lut_mask = 64'h4444444444444444;
+defparam \ProductID~0 .lut_mask = 64'h1D1D1D1D1D1D1D1D;
 defparam \ProductID~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \ProductID[0]~reg0 (
-	.clk(!\CLOCK~input_o ),
-	.d(\ProductID~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(\ProductID~1_combout ),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\ProductID[0]~reg0_q ),
-	.prn(vcc));
+cyclonev_lcell_comb \ProductID~1 (
+// Equation(s):
+// \ProductID~1_combout  = (!\CleanSW2~input_o  & ((ImgID[1]))) # (\CleanSW2~input_o  & (BasketID[1]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[1]),
+	.datac(!ImgID[1]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
 // synopsys translate_off
-defparam \ProductID[0]~reg0 .is_wysiwyg = "true";
-defparam \ProductID[0]~reg0 .power_up = "low";
+defparam \ProductID~1 .extended_lut = "off";
+defparam \ProductID~1 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~2 (
+// Equation(s):
+// \ProductID~2_combout  = (!\CleanSW2~input_o  & ((ImgID[2]))) # (\CleanSW2~input_o  & (BasketID[2]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[2]),
+	.datac(!ImgID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~2 .extended_lut = "off";
+defparam \ProductID~2 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~3 (
+// Equation(s):
+// \ProductID~3_combout  = (!\CleanSW2~input_o  & ((ImgID[3]))) # (\CleanSW2~input_o  & (BasketID[3]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[3]),
+	.datac(!ImgID[3]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~3 .extended_lut = "off";
+defparam \ProductID~3 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~3 .shared_arith = "off";
 // synopsys translate_on
 
 assign ProductID[0] = \ProductID[0]~output_o ;
