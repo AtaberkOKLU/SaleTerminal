@@ -14,30 +14,30 @@ HighlightedProductList[9] => HighlightedProductList[9].IN1
 HighlightedProductList[10] => HighlightedProductList[10].IN1
 HighlightedProductList[11] => HighlightedProductList[11].IN1
 SW2 => SW2.IN1
-VGA_R[0] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[1] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[2] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[3] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[4] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[5] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[6] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_R[7] <= VGA_R.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[0] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[1] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[2] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[3] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[4] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[5] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[6] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_G[7] <= VGA_G.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[0] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[1] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[2] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[3] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[4] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[5] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[6] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
-VGA_B[7] <= VGA_B.DB_MAX_OUTPUT_PORT_TYPE
+VGA_R[0] <= PixelController:PixelController_inst0.PixBus
+VGA_R[1] <= PixelController:PixelController_inst0.PixBus
+VGA_R[2] <= PixelController:PixelController_inst0.PixBus
+VGA_R[3] <= PixelController:PixelController_inst0.PixBus
+VGA_R[4] <= PixelController:PixelController_inst0.PixBus
+VGA_R[5] <= PixelController:PixelController_inst0.PixBus
+VGA_R[6] <= PixelController:PixelController_inst0.PixBus
+VGA_R[7] <= PixelController:PixelController_inst0.PixBus
+VGA_G[0] <= PixelController:PixelController_inst0.PixBus
+VGA_G[1] <= PixelController:PixelController_inst0.PixBus
+VGA_G[2] <= PixelController:PixelController_inst0.PixBus
+VGA_G[3] <= PixelController:PixelController_inst0.PixBus
+VGA_G[4] <= PixelController:PixelController_inst0.PixBus
+VGA_G[5] <= PixelController:PixelController_inst0.PixBus
+VGA_G[6] <= PixelController:PixelController_inst0.PixBus
+VGA_G[7] <= PixelController:PixelController_inst0.PixBus
+VGA_B[0] <= PixelController:PixelController_inst0.PixBus
+VGA_B[1] <= PixelController:PixelController_inst0.PixBus
+VGA_B[2] <= PixelController:PixelController_inst0.PixBus
+VGA_B[3] <= PixelController:PixelController_inst0.PixBus
+VGA_B[4] <= PixelController:PixelController_inst0.PixBus
+VGA_B[5] <= PixelController:PixelController_inst0.PixBus
+VGA_B[6] <= PixelController:PixelController_inst0.PixBus
+VGA_B[7] <= PixelController:PixelController_inst0.PixBus
 VGA_CLK <= VGA_CLK_W.DB_MAX_OUTPUT_PORT_TYPE
 VGA_HS <= HVSync_Generator:HVSync_Generator_inst0.VGA_HS
 VGA_VS <= HVSync_Generator:HVSync_Generator_inst0.VGA_VS
@@ -303,7 +303,129 @@ CounterY[8] <= CounterY[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CounterY[9] <= CounterY[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|ImageROM:ImageROM_inst0
+|VGA_Controller|PixelController:PixelController_inst0
+CounterX[0] => CounterX[0].IN1
+CounterX[1] => CounterX[1].IN1
+CounterX[2] => CounterX[2].IN1
+CounterX[3] => CounterX[3].IN1
+CounterX[4] => CounterX[4].IN1
+CounterX[5] => CounterX[5].IN1
+CounterX[6] => CounterX[6].IN1
+CounterX[7] => CounterX[7].IN1
+CounterX[8] => CounterX[8].IN1
+CounterX[9] => CounterX[9].IN1
+CounterY[0] => CounterY[0].IN1
+CounterY[1] => CounterY[1].IN1
+CounterY[2] => CounterY[2].IN1
+CounterY[3] => CounterY[3].IN1
+CounterY[4] => CounterY[4].IN1
+CounterY[5] => CounterY[5].IN1
+CounterY[6] => CounterY[6].IN1
+CounterY[7] => CounterY[7].IN1
+CounterY[8] => CounterY[8].IN1
+CounterY[9] => CounterY[9].IN1
+HighlightedProductList[0] => HighlightedProductList[0].IN1
+HighlightedProductList[1] => HighlightedProductList[1].IN1
+HighlightedProductList[2] => HighlightedProductList[2].IN1
+HighlightedProductList[3] => HighlightedProductList[3].IN1
+HighlightedProductList[4] => HighlightedProductList[4].IN1
+HighlightedProductList[5] => HighlightedProductList[5].IN1
+HighlightedProductList[6] => HighlightedProductList[6].IN1
+HighlightedProductList[7] => HighlightedProductList[7].IN1
+HighlightedProductList[8] => HighlightedProductList[8].IN1
+HighlightedProductList[9] => HighlightedProductList[9].IN1
+HighlightedProductList[10] => HighlightedProductList[10].IN1
+HighlightedProductList[11] => HighlightedProductList[11].IN1
+CLOCK => CLOCK.IN1
+SW2 => SW2.IN1
+PixBus[0] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[1] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[2] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[3] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[4] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[5] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[6] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[7] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[8] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[9] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[10] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[11] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[12] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[13] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[14] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[15] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[16] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[17] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[18] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[19] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[20] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[21] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[22] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+PixBus[23] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
+
+
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0
+CounterX[0] => CounterX[0].IN1
+CounterX[1] => CounterX[1].IN1
+CounterX[2] => CounterX[2].IN1
+CounterX[3] => CounterX[3].IN1
+CounterX[4] => CounterX[4].IN1
+CounterX[5] => CounterX[5].IN1
+CounterX[6] => CounterX[6].IN1
+CounterX[7] => CounterX[7].IN1
+CounterX[8] => CounterX[8].IN1
+CounterX[9] => CounterX[9].IN1
+CounterY[0] => CounterY[0].IN1
+CounterY[1] => CounterY[1].IN1
+CounterY[2] => CounterY[2].IN1
+CounterY[3] => CounterY[3].IN1
+CounterY[4] => CounterY[4].IN1
+CounterY[5] => CounterY[5].IN1
+CounterY[6] => CounterY[6].IN1
+CounterY[7] => CounterY[7].IN1
+CounterY[8] => CounterY[8].IN1
+CounterY[9] => CounterY[9].IN1
+HighlightedProductList[0] => HighlightedProductList[0].IN1
+HighlightedProductList[1] => HighlightedProductList[1].IN1
+HighlightedProductList[2] => HighlightedProductList[2].IN1
+HighlightedProductList[3] => HighlightedProductList[3].IN1
+HighlightedProductList[4] => HighlightedProductList[4].IN1
+HighlightedProductList[5] => HighlightedProductList[5].IN1
+HighlightedProductList[6] => HighlightedProductList[6].IN1
+HighlightedProductList[7] => HighlightedProductList[7].IN1
+HighlightedProductList[8] => HighlightedProductList[8].IN1
+HighlightedProductList[9] => HighlightedProductList[9].IN1
+HighlightedProductList[10] => HighlightedProductList[10].IN1
+HighlightedProductList[11] => HighlightedProductList[11].IN1
+CLOCK => CLOCK.IN1
+SW2 => SW2.IN1
+RGB_Bus[0] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[1] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[2] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[3] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[4] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[5] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[6] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[7] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[8] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[9] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[10] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[11] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[12] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[13] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[14] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[15] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[16] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[17] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[18] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[19] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[20] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[21] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[22] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+RGB_Bus[23] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -348,7 +470,7 @@ q[22] <= altsyncram:altsyncram_component.q_a
 q[23] <= altsyncram:altsyncram_component.q_a
 
 
-|VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -438,7 +560,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -5521,7 +5643,7 @@ q_a[22] <= mux_qib:mux2.result[22]
 q_a[23] <= mux_qib:mux2.result[23]
 
 
-|VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode
 data[0] => w_anode1479w[1].IN0
 data[0] => w_anode1496w[1].IN1
 data[0] => w_anode1506w[1].IN0
@@ -5596,7 +5718,7 @@ eq[13] <= w_anode1617w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[14] <= w_anode1627w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -6703,7 +6825,7 @@ sel[3] => l4_w9_n0_mux_dataout.IN0
 sel[3] => _.IN0
 
 
-|VGA_Controller|ImageLocator:ImageLocator_inst0
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0
 CounterX[0] => LessThan0.IN20
 CounterX[0] => LessThan25.IN20
 CounterX[0] => LessThan26.IN20
@@ -7365,7 +7487,7 @@ isImage <= Encoder16x4:Encoder16x4_inst0.valid
 inHighlightedArea <= inHighlightedArea.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0
 valid <= inst7.DB_MAX_OUTPUT_PORT_TYPE
 in[0] => inst9.IN2
 in[0] => encoder8x3:inst3.X[0]
@@ -7397,7 +7519,7 @@ out[2] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= inst14.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst
 Y[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
@@ -7416,7 +7538,7 @@ X[7] => inst.IN2
 X[7] => inst1.IN2
 
 
-|VGA_Controller|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst3
+|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst3
 Y[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
