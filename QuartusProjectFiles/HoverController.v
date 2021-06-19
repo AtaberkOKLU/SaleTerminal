@@ -26,7 +26,7 @@ module HoverController(
 	input wire [3:0] SelectedProductID,
 	
 	// VGA Contoller Interface
-	output wire [11:0] HighlightedProductList
+	output reg [11:0] HighlightedProductList
 );
 
 wire [11:0] HighlightedBarcodeOut;
@@ -37,8 +37,8 @@ wire [11:0] HighlightedBarcodeOut;
  *
  */
  
- 
- 
+reg  [1:0] SW12 = 0; 
+
 wire [15:0] DecoderOut;
 wire [11:0] HighlightedDecoderOut;
 /*
@@ -47,12 +47,21 @@ wire [11:0] HighlightedDecoderOut;
  */
 
 Decoder4x16 Decoder4x16_inst0(
-	.d_in(SelectedProductID),
-	.d_out(DecoderOut)
+	.in(SelectedProductID),
+	.out(DecoderOut)
 );
+
+
 assign HighlightedDecoderOut = DecoderOut[11:0];
 
-assign HighlightedProductList = (|CleanSWOut) ? HighlightedDecoderOut:HighlightedBarcodeOut;
+always @ (negedge CLK)
+	SW12 <= CleanSWOut;
+
+always @ (negedge CLK)
+	if(|SW12)
+		HighlightedProductList <= HighlightedDecoderOut;
+	else
+		HighlightedProductList <= HighlightedBarcodeOut;
 
 
 endmodule

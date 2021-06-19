@@ -1,3 +1,9 @@
+/*
+ *		Module		:	SaleTerminal
+ * 	Description	: 	TOP LEVEL IMPLEMENTATION
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module SaleTerminal( 
 	// DE1 - SoC Pins
 	// Generic
@@ -21,8 +27,9 @@ module SaleTerminal(
 	output wire[6:0] 	HEX0,
 	output wire[6:0] 	HEX1,
 	output wire[6:0] 	HEX2,
-	output wire[6:0] 	HEX3
+	output wire[6:0] 	HEX3,
 	
+	output wire[9:0] 	LEDR	
 	
 );
 
@@ -95,6 +102,7 @@ wire [3:0] ProductQuantity;
 wire [3:0] ProductID_out;
 wire BasketController_Enable_Pulse;
 wire [1:0] Dir_in;
+wire [3:0] State;
 
 StateMachine StateMachine_inst0(
 	.CLOCK_50(CLOCK_50),
@@ -115,6 +123,8 @@ StateMachine StateMachine_inst0(
 	.ProductQuantity(ProductQuantity),
 	.ProductID_out(ProductID_out),
 	.BasketController_Enable_Pulse(BasketController_Enable_Pulse),
+	
+	.State(State),
 
 	.Dir_out(Dir_in)	// To Direction2ProductID
 );
@@ -152,5 +162,13 @@ BarcodeController BarcodeController_inst0(
 );
 /* BARCODE CONTROLLER END */
 
+
+/* LED CONTROLLER BEGIN */
+LED_Controller LED_Controller_inst0(
+	.State(State),
+	.CleanSWOut(CleanSWOut),
+	.LEDR(LEDR)
+);
+/* LED CONTROLLER END */
 
 endmodule

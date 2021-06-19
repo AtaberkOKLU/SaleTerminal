@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source="D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.vwf" --testbench_file="D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/Direction2ProductID.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source="D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.vwf" --testbench_file="D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/Decoder4x16.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,14 +26,20 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Jun 19 12:54:13 2021
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/Direction2ProductID.vwf.vt
+    Info: Processing started: Sun Jun 20 02:11:37 2021
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/Decoder4x16.vwf.vt
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 20.1 -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
 Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
+
+e EDA Netlist Writer was successful. 0 errors, 22 warnings
+    Info: Peak virtual memory: 4716 megabytes
+    Info: Processing ended: Sun Jun 20 02:11:37 2021
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -60,7 +66,7 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sat Jun 19 12:54:14 2021
+    Info: Processing started: Sun Jun 20 02:11:38 2021
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -71,7 +77,7 @@ Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
 Info (204019): Generated file SaleTerminal.vo in folder "D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 4721 megabytes
-    Info: Processing ended: Sat Jun 19 12:54:15 2021
+    Info: Processing ended: Sun Jun 20 02:11:39 2021
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -96,52 +102,50 @@ Reading pref.tcl
 # ** Warning: (vlib-34) Library already exists at "work".
 
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:54:16 on Jun 19,2021
+# Start time: 02:11:40 on Jun 20,2021
 # vlog -work work SaleTerminal.vo 
+# -- Compiling module Decoder4x16
 
-# -- Compiling module Direction2ProductID
 # 
 # Top level modules:
-# 	Direction2ProductID
-# End time: 12:54:16 on Jun 19,2021, Elapsed time: 0:00:00
+# 	Decoder4x16
+# End time: 02:11:40 on Jun 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 12:54:16 on Jun 19,2021
-# vlog -work work Direction2ProductID.vwf.vt 
+# Start time: 02:11:40 on Jun 20,2021
+# vlog -work work Decoder4x16.vwf.vt 
 
-# -- Compiling module Direction2ProductID_vlg_vec_tst
+# -- Compiling module Decoder4x16_vlg_vec_tst
 # 
 # Top level modules:
-# 	Direction2ProductID_vlg_vec_tst
-# End time: 12:54:16 on Jun 19,2021, Elapsed time: 0:00:00
+# 	Decoder4x16_vlg_vec_tst
+# End time: 02:11:40 on Jun 20,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Direction2ProductID_vlg_vec_tst 
-# Start time: 12:54:16 on Jun 19,2021
-# Loading work.Direction2ProductID_vlg_vec_tst
-# Loading work.Direction2ProductID
+# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.Decoder4x16_vlg_vec_tst 
+# Start time: 02:11:40 on Jun 20,2021
+# Loading work.Decoder4x16_vlg_vec_tst
+# Loading work.Decoder4x16
 # Loading cyclonev_ver.cyclonev_io_obuf
 # Loading cyclonev_ver.cyclonev_io_ibuf
 # Loading cyclonev_ver.cyclonev_lcell_comb
-# Loading altera_ver.dffeas
-# Loading altera_ver.PRIM_GDFF_LOW
 # after#25
-# ** Note: $finish    : Direction2ProductID.vwf.vt(55)
-#    Time: 320 ns  Iteration: 0  Instance: /Direction2ProductID_vlg_vec_tst
-# End time: 12:54:17 on Jun 19,2021, Elapsed time: 0:00:01
+# ** Note: $finish    : Decoder4x16.vwf.vt(45)
+#    Time: 160 ns  Iteration: 0  Instance: /Decoder4x16_vlg_vec_tst
+# End time: 02:11:41 on Jun 20,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.vwf...
+Reading D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.vwf...
 
 Reading D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210619125417.sim.vwf
+Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210620021141.sim.vwf
 
 Finished VCD to VWF conversion.
 

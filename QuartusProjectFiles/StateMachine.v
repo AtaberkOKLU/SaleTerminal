@@ -67,6 +67,9 @@ module StateMachine(
 	output wire[3:0] Barcode_DigitOut_3,
 	*/
 	
+	// LED Controller
+	output reg  [2:0] State,
+	
 	// BasketController
 	output reg  [3:0] ProductQuantity,
 	output reg  [3:0] ProductID_out,
@@ -156,20 +159,17 @@ ButtonLevelPulseConverter BasketControllerEnablePulseGenerator_inst0(
 );
 
 
-// State Holder Register
-reg [3:0] State;
-
 initial 
 	State <= State0_Start;
 
 // State List
-localparam State0_Start 		= 'd0;
-localparam State1_Idle 			= 'd1;
-localparam State2_Barcode 		= 'd2;
-localparam State3_Interactive = 'd3;
-localparam State4_Quantity 	= 'd4;
-localparam State5_BasketEdit 	= 'd5;
-localparam State6_EndShopping = 'd6;
+localparam State0_Start 		= 4'd0;
+localparam State1_Idle 			= 4'd1;
+localparam State2_Barcode 		= 4'd2;
+localparam State3_Interactive = 4'd3;
+localparam State4_Quantity 	= 4'd4;
+localparam State5_BasketEdit 	= 4'd5;
+localparam State6_EndShopping = 4'd6;
 
 
 // State Machine

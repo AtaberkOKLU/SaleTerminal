@@ -27,6 +27,8 @@ module ImageLocator
 	parameter PRDCT_PIC_WIDTH 	= 100,
 	parameter PRDCT_PIC_HEIGHT = 100
 )(
+	input wire CLK,
+
 	// HVSync Interface
 	input  wire[CNTR_WIDTH_H-1:0] 	CounterX,
 	input  wire[CNTR_WIDTH_V-1:0] 	CounterY,
@@ -42,7 +44,9 @@ module ImageLocator
 	output wire isImage,
 	output wire inHighlightedArea
 );
-
+reg inHighlightedPrdArea_Reg 	= 0;
+reg inHighlightedImgArea_Reg 	= 0;
+reg SW2_Reg							= 0;
 
 /* BASKET LOCATION CONTROL BEGIN */
 wire w_x_indicator_p		= (CounterX > 19)  && (CounterX < 59) ;
@@ -162,8 +166,14 @@ wire inHighlightedPrdArea = 	HighlightedProductList[0]  && p_0_indicator  ||
 										HighlightedProductList[9]  && p_9_indicator  ||
 										HighlightedProductList[10] && p_10_indicator ||
 										HighlightedProductList[11] && p_11_indicator;
+always @ (negedge CLK)
+	begin
+		inHighlightedPrdArea_Reg 	<= inHighlightedPrdArea;
+		inHighlightedImgArea_Reg 	<= inHighlightedImgArea;
+		SW2_Reg 							<= SW2;
+	end
 					
-assign inHighlightedArea = (SW2 && inHighlightedPrdArea) || (~SW2 && inHighlightedImgArea);
+assign inHighlightedArea = (SW2_Reg && inHighlightedPrdArea_Reg) || (~SW2_Reg && inHighlightedImgArea_Reg);
 									
 assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:{(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	// Red/White
 assign ROM_Addr 	= (isImage) ? ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-(307+ImageID[1:0]>>7)) + PRDCT_PIC_WIDTH*(CounterY-(19+((ImageID>>2)<<7))):{ROM_ADDR_BUS_WIDTH{1'b0}};

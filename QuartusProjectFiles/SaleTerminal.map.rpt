@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Sun Jun 20 01:00:31 2021
+Sun Jun 20 02:44:41 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -16,28 +16,28 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. Analysis & Synthesis DSP Block Usage Summary
  10. Analysis & Synthesis IP Cores Summary
- 11. State Machine - |SaleTerminal|StateMachine:StateMachine_inst0|State
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
- 17. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0
- 18. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0
- 19. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key1
- 20. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key2
- 21. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key3
- 22. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0
- 23. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1
- 24. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2
- 25. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0
- 26. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i
- 27. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0
- 28. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0
- 29. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0
- 30. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
- 31. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0
- 32. altsyncram Parameter Settings by Entity Instance
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
+ 16. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0
+ 17. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0
+ 18. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key1
+ 19. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key2
+ 20. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key3
+ 21. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0
+ 22. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1
+ 23. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2
+ 24. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0
+ 25. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i
+ 26. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0
+ 27. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0
+ 28. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0
+ 29. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
+ 30. Parameter Settings for User Entity Instance: VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0
+ 31. altsyncram Parameter Settings by Entity Instance
+ 32. Port Connectivity Checks: "LED_Controller:LED_Controller_inst0"
  33. Port Connectivity Checks: "BarcodeController:BarcodeController_inst0"
  34. Port Connectivity Checks: "StateMachine:StateMachine_inst0"
  35. Port Connectivity Checks: "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0"
@@ -73,14 +73,14 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 20 01:00:31 2021       ;
+; Analysis & Synthesis Status     ; Successful - Sun Jun 20 02:44:41 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 217                                         ;
-; Total pins                      ; 65                                          ;
+; Total registers                 ; 253                                         ;
+; Total pins                      ; 75                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,880,000                                   ;
 ; Total DSP Blocks                ; 3                                           ;
@@ -231,6 +231,8 @@ https://fpgasoftware.intel.com/eula.
 ; Image_Shape_Submodule.v                             ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v              ;         ;
 ; PixelController.v                                   ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v                    ;         ;
 ; SaleTerminal.v                                      ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v                       ;         ;
+; LED_Controller.v                                    ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v                     ;         ;
+; Decoder3x8.v                                        ; yes             ; User Verilog HDL File                  ; D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v                         ;         ;
 ; altera_pll.v                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altera_pll.v          ;         ;
 ; altsyncram.tdf                                      ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
 ; stratix_ram_block.inc                               ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
@@ -253,18 +255,18 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 385                                                                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 393                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Combinational ALUT usage for logic          ; 564                                                                                                                        ;
+; Combinational ALUT usage for logic          ; 575                                                                                                                        ;
 ;     -- 7 input functions                    ; 24                                                                                                                         ;
-;     -- 6 input functions                    ; 178                                                                                                                        ;
-;     -- 5 input functions                    ; 43                                                                                                                         ;
-;     -- 4 input functions                    ; 75                                                                                                                         ;
-;     -- <=3 input functions                  ; 244                                                                                                                        ;
+;     -- 6 input functions                    ; 182                                                                                                                        ;
+;     -- 5 input functions                    ; 49                                                                                                                         ;
+;     -- 4 input functions                    ; 79                                                                                                                         ;
+;     -- <=3 input functions                  ; 241                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Dedicated logic registers                   ; 217                                                                                                                        ;
+; Dedicated logic registers                   ; 253                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; I/O pins                                    ; 65                                                                                                                         ;
+; I/O pins                                    ; 75                                                                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                                                                          ;
 ; Total block memory bits                     ; 2880000                                                                                                                    ;
 ;                                             ;                                                                                                                            ;
@@ -274,9 +276,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                                                          ;
 ;                                             ;                                                                                                                            ;
 ; Maximum fan-out node                        ; VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 393                                                                                                                        ;
-; Total fan-out                               ; 8450                                                                                                                       ;
-; Average fan-out                             ; 6.63                                                                                                                       ;
+; Maximum fan-out                             ; 419                                                                                                                        ;
+; Total fan-out                               ; 8631                                                                                                                       ;
+; Average fan-out                             ; 6.43                                                                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -285,7 +287,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                     ; Entity Name               ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SaleTerminal                                                                   ; 564 (0)             ; 217 (0)                   ; 2880000           ; 3          ; 65   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
+; |SaleTerminal                                                                   ; 575 (0)             ; 253 (0)                   ; 2880000           ; 3          ; 75   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
 ;    |BarcodeController:BarcodeController_inst0|                                  ; 38 (1)              ; 16 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0                                                                                                                                                                                                 ; BarcodeController         ; work         ;
 ;       |BarcodeShiftRegister:BarcodeShiftRegister_inst0|                         ; 9 (9)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0                                                                                                                                                 ; BarcodeShiftRegister      ; work         ;
 ;       |Segment7:Segment0|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0                                                                                                                                                                               ; Segment7                  ; work         ;
@@ -301,18 +303,21 @@ https://fpgasoftware.intel.com/eula.
 ;       |SwitchDebouncer:SwitchDebouncer_SW0|                                     ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW1|                                     ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW2|                                     ; 21 (21)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2                                                                                                                                                               ; SwitchDebouncer           ; work         ;
-;    |StateMachine:StateMachine_inst0|                                            ; 88 (34)             ; 37 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
-;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 36 (36)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
+;    |HoverController:HoverController_inst0|                                      ; 13 (1)              ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
+;       |Decoder4x16:Decoder4x16_inst0|                                           ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0                                                                                                                                                                       ; Decoder4x16               ; work         ;
+;          |Decoder3x8:d1|                                                        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1                                                                                                                                                         ; Decoder3x8                ; work         ;
+;    |StateMachine:StateMachine_inst0|                                            ; 88 (39)             ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
+;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 31 (31)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0                                                                                                                                     ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0                                                                                                                                   ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0|  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0                                                                                                                                    ; ButtonLevelPulseConverter ; work         ;
 ;       |Direction2ProductID:Direction2ProductID_inst0|                           ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0                                                                                                                                                             ; Direction2ProductID       ; work         ;
-;    |VGA_Controller:VGA_Controller_inst0|                                        ; 282 (0)             ; 31 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
-;       |HVSync_Generator:HVSync_Generator_inst0|                                 ; 31 (31)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0                                                                                                                                                               ; HVSync_Generator          ; work         ;
-;       |PixelController:PixelController_inst0|                                   ; 251 (0)             ; 8 (0)                     ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
-;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 251 (123)           ; 8 (0)                     ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
-;             |ImageLocator:ImageLocator_inst0|                                   ; 113 (104)           ; 0 (0)                     ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
+;    |VGA_Controller:VGA_Controller_inst0|                                        ; 280 (0)             ; 57 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
+;       |HVSync_Generator:HVSync_Generator_inst0|                                 ; 32 (32)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0                                                                                                                                                               ; HVSync_Generator          ; work         ;
+;       |PixelController:PixelController_inst0|                                   ; 248 (0)             ; 34 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
+;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 248 (123)           ; 34 (24)                   ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
+;             |ImageLocator:ImageLocator_inst0|                                   ; 110 (101)           ; 2 (2)                     ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
 ;                |Encoder16x4:Encoder16x4_inst0|                                  ; 9 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0                                                 ; Encoder16x4               ; work         ;
 ;                   |encoder8x3:inst3|                                            ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst3                                ; encoder8x3                ; work         ;
 ;             |ImageROM:ImageROM_inst0|                                           ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0                                                                                       ; ImageROM                  ; work         ;
@@ -359,33 +364,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------+
 
 
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |SaleTerminal|StateMachine:StateMachine_inst0|State                                                                                                                              ;
-+--------------------------+--------------------------+-------------------------+-----------------------+--------------------------+----------------------+-------------------+--------------------+
-; Name                     ; State.State6_EndShopping ; State.State5_BasketEdit ; State.State4_Quantity ; State.State3_Interactive ; State.State2_Barcode ; State.State1_Idle ; State.State0_Start ;
-+--------------------------+--------------------------+-------------------------+-----------------------+--------------------------+----------------------+-------------------+--------------------+
-; State.State0_Start       ; 0                        ; 0                       ; 0                     ; 0                        ; 0                    ; 0                 ; 0                  ;
-; State.State1_Idle        ; 0                        ; 0                       ; 0                     ; 0                        ; 0                    ; 1                 ; 1                  ;
-; State.State2_Barcode     ; 0                        ; 0                       ; 0                     ; 0                        ; 1                    ; 0                 ; 1                  ;
-; State.State3_Interactive ; 0                        ; 0                       ; 0                     ; 1                        ; 0                    ; 0                 ; 1                  ;
-; State.State4_Quantity    ; 0                        ; 0                       ; 1                     ; 0                        ; 0                    ; 0                 ; 1                  ;
-; State.State5_BasketEdit  ; 0                        ; 1                       ; 0                     ; 0                        ; 0                    ; 0                 ; 1                  ;
-; State.State6_EndShopping ; 1                        ; 0                       ; 0                     ; 0                        ; 0                    ; 0                 ; 1                  ;
-+--------------------------+--------------------------+-------------------------+-----------------------+--------------------------+----------------------+-------------------+--------------------+
-
-
-+---------------------------------------------------------------+
-; Registers Removed During Synthesis                            ;
-+------------------------------------------+--------------------+
-; Register name                            ; Reason for Removal ;
-+------------------------------------------+--------------------+
-; StateMachine:StateMachine_inst0|State~9  ; Lost fanout        ;
-; StateMachine:StateMachine_inst0|State~10 ; Lost fanout        ;
-; StateMachine:StateMachine_inst0|State~11 ; Lost fanout        ;
-; StateMachine:StateMachine_inst0|State~12 ; Lost fanout        ;
-; Total Number of Removed Registers = 4    ;                    ;
-+------------------------------------------+--------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                            ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; Register name                                                                                                                                                                        ; Reason for Removal                     ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
+; VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|inHighlightedImgArea_Reg ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 1                                                                                                                                                ;                                        ;
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -393,8 +379,8 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 217   ;
-; Number of registers using Synchronous Clear  ; 143   ;
+; Total registers                              ; 253   ;
+; Number of registers using Synchronous Clear  ; 171   ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -408,14 +394,14 @@ Encoding Type:  One-Hot
 +----------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                        ; Fan out ;
 +----------------------------------------------------------------------------------------------------------+---------+
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[2] ; 18      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[2] ; 12      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[3] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[2] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[3] ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[2] ; 10      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[2] ; 12      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[3] ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2] ; 17      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3] ; 11      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2] ; 21      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3] ; 13      ;
 ; Total number of inverted registers = 8                                                                   ;         ;
 +----------------------------------------------------------------------------------------------------------+---------+
 
@@ -426,12 +412,11 @@ Encoding Type:  One-Hot
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_0[0]                                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[3]                                                                                        ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[3]                                               ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2]                                ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SaleTerminal|StateMachine:StateMachine_inst0|State                                                                                                   ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; No         ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[3]  ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; No         ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[11] ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[0]                                                                                        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[2]                                               ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[6]  ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[18] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[3]                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -944,6 +929,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "LED_Controller:LED_Controller_inst0"                                                                                                                                             ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                                                          ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State ; Input ; Warning  ; Input port expression (4 bits) is wider than the input port (3 bits) it drives.  The 1 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "BarcodeController:BarcodeController_inst0"                                                               ;
 +---------------------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -953,25 +947,26 @@ Note: In order to hide this table in the UI and the text report file, please set
 +---------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "StateMachine:StateMachine_inst0"                                                                                                                                      ;
-+-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                          ; Type   ; Severity ; Details                                                                                                                                      ;
-+-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; ProductQuantity               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; BasketController_Enable_Pulse ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; Dir_out                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; BasketProductNum              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------------------------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "StateMachine:StateMachine_inst0"                                                                                                                                                               ;
++-------------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port                          ; Type   ; Severity ; Details                                                                                                                                                               ;
++-------------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; ProductQuantity               ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; BasketController_Enable_Pulse ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; State                         ; Output ; Warning  ; Output or bidir port (3 bits) is smaller than the port expression (4 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
+; Dir_out                       ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                   ;
+; BasketProductNum              ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND.                          ;
++-------------------------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0"                         ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; d_out[15..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0"                       ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port        ; Type   ; Severity ; Details                                                                             ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
+; out[15..12] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -983,15 +978,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +--------+--------+----------+----------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ButtonController:ButtonController_inst0"                                                     ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port          ; Type   ; Severity ; Details                                                                             ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
-; CMD_En        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; KEY_En        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; CleanSWOut[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------------+--------+----------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "ButtonController:ButtonController_inst0"                                              ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; Port   ; Type   ; Severity ; Details                                                                             ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
+; CMD_En ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; KEY_En ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -999,12 +993,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 217                         ;
+; arriav_ff             ; 253                         ;
 ;     ENA               ; 28                          ;
 ;     ENA SCLR          ; 18                          ;
-;     SCLR              ; 125                         ;
-;     plain             ; 46                          ;
-; arriav_lcell_comb     ; 570                         ;
+;     SCLR              ; 153                         ;
+;     plain             ; 54                          ;
+; arriav_lcell_comb     ; 582                         ;
 ;     arith             ; 169                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 147                         ;
@@ -1012,20 +1006,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 1                           ;
 ;     extend            ; 24                          ;
 ;         7 data inputs ; 24                          ;
-;     normal            ; 377                         ;
-;         1 data inputs ; 11                          ;
-;         2 data inputs ; 35                          ;
+;     normal            ; 389                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 10                          ;
+;         2 data inputs ; 33                          ;
 ;         3 data inputs ; 35                          ;
-;         4 data inputs ; 75                          ;
-;         5 data inputs ; 43                          ;
-;         6 data inputs ; 178                         ;
+;         4 data inputs ; 79                          ;
+;         5 data inputs ; 49                          ;
+;         6 data inputs ; 182                         ;
 ; arriav_mac            ; 3                           ;
-; boundary_port         ; 65                          ;
+; boundary_port         ; 75                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 360                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.49                        ;
+; Average LUT depth     ; 2.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1044,7 +1039,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Jun 20 01:00:18 2021
+    Info: Processing started: Sun Jun 20 02:44:26 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file buttonmanager.v
@@ -1094,14 +1089,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file image_s
 Info (12021): Found 1 design units, including 1 entities, in source file pixelcontroller.v
     Info (12023): Found entity 1: PixelController File: D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file saleterminal.v
-    Info (12023): Found entity 1: SaleTerminal File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 1
+    Info (12023): Found entity 1: SaleTerminal File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file led_controller.v
+    Info (12023): Found entity 1: LED_Controller File: D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file decoder3x8.v
+    Info (12023): Found entity 1: Decoder3x8 File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v Line: 1
 Info (12127): Elaborating entity "SaleTerminal" for the top level hierarchy
-Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:ButtonController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 47
+Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:ButtonController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 54
 Info (12128): Elaborating entity "ButtonDebouncer" for hierarchy "ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 48
 Info (12128): Elaborating entity "SwitchDebouncer" for hierarchy "ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 88
 Info (12128): Elaborating entity "ButtonManager" for hierarchy "ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 118
 Info (12128): Elaborating entity "ButtonLevelPulseConverter" for hierarchy "ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 126
-Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 74
+Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 81
 Info (12128): Elaborating entity "VGA_PLL" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 78
 Info (12128): Elaborating entity "VGA_PLL_0002" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v Line: 20
 Info (12128): Elaborating entity "altera_pll" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL/VGA_PLL_0002.v Line: 85
@@ -1200,42 +1199,79 @@ Info (12128): Elaborating entity "decode_l2a" for hierarchy "VGA_Controller:VGA_
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qib.tdf
     Info (12023): Found entity 1: mux_qib File: D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf Line: 23
 Info (12128): Elaborating entity "mux_qib" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_s3i1.tdf Line: 42
-Info (12128): Elaborating entity "ImageLocator" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v Line: 60
-Warning (10230): Verilog HDL assignment warning at ImageLocator.v(169): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 169
-Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 136
+Info (12128): Elaborating entity "ImageLocator" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v Line: 61
+Warning (10230): Verilog HDL assignment warning at ImageLocator.v(179): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 179
+Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 140
 Info (12128): Elaborating entity "encoder8x3" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst"
-Info (12128): Elaborating entity "HoverController" for hierarchy "HoverController:HoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 89
+Info (12128): Elaborating entity "HoverController" for hierarchy "HoverController:HoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 96
 Warning (10858): Verilog HDL warning at HoverController.v(32): object HighlightedBarcodeOut used but never assigned File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 32
 Warning (10030): Net "HighlightedBarcodeOut" at HoverController.v(32) has no driver or initial value, using a default initial value '0' File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 32
 Info (12128): Elaborating entity "Decoder4x16" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 52
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 120
+Info (12128): Elaborating entity "Decoder3x8" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1" File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 6
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 130
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(163): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 163
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(189): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 189
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(198): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 198
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(200): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 200
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(202): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 202
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(204): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 204
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(215): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 215
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(222): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 222
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(231): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 231
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(242): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 242
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(250): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 250
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(253): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 253
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(269): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 269
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(279): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 279
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(286): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 286
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(289): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 289
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(293): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 293
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(303): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 303
-Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 121
-Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 149
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(315): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 315
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(318): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 318
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(327): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 327
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(334): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 334
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(337): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 337
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(339): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 339
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(344): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 344
+Warning (10230): Verilog HDL assignment warning at StateMachine.v(347): truncated value with size 4 to match size of target (3) File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 347
+Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 124
+Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 152
 Info (10264): Verilog HDL Case Statement information at Direction2ProductID.v(58): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 58
-Info (12128): Elaborating entity "BarcodeController" for hierarchy "BarcodeController:BarcodeController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 152
+Info (12128): Elaborating entity "BarcodeController" for hierarchy "BarcodeController:BarcodeController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 162
 Info (12128): Elaborating entity "BarcodeShiftRegister" for hierarchy "BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 48
 Info (12128): Elaborating entity "Segment7" for hierarchy "BarcodeController:BarcodeController_inst0|Segment7:Segment0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 54
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (12128): Elaborating entity "LED_Controller" for hierarchy "LED_Controller:LED_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 171
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "State[3]" is missing source, defaulting to GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 105
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "State[3]" is missing source, defaulting to GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 105
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "State[3]" is missing source, defaulting to GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 105
+Warning (12011): Net is missing source, defaulting to GND
+    Warning (12110): Net "State[3]" is missing source, defaulting to GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 105
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 34
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 34
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 34
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 34
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1024 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1048 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 56 output pins
-    Info (21061): Implemented 595 logic cells
+    Info (21059): Implemented 66 output pins
+    Info (21061): Implemented 609 logic cells
     Info (21064): Implemented 360 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 4855 megabytes
-    Info: Processing ended: Sun Jun 20 01:00:31 2021
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:27
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 42 warnings
+    Info: Peak virtual memory: 4879 megabytes
+    Info: Processing ended: Sun Jun 20 02:44:41 2021
+    Info: Elapsed time: 00:00:15
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+

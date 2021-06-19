@@ -56,10 +56,11 @@ ImageLocator ImageLocator_inst0(
 	.isImage(isImage_wire),
 	.PixelBus(PixBux_wire),
 	.SW2(SW2),
+	.CLK(CLOCK),
 	.inHighlightedArea(inHighlightedArea_wire)
 );
 
-always @ (*)
+always @ (posedge CLOCK)
 	if (inHighlightedArea_wire)
 		RGB_Bus = PixBux_wire;
 	else if (isImage_wire)
