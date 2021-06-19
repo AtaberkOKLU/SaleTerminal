@@ -161,7 +161,7 @@ localparam State6_EndShopping = 'd6;
 // State Machine
 always @ (posedge CLOCK_50)
 	case(State)
-		'd0	:	// Start State
+		State0_Start:	// Start State
 					begin
 						// Reset Barcode
 						RST_BarcodeController_Level <= 1;
@@ -175,7 +175,7 @@ always @ (posedge CLOCK_50)
 						State <= State1_Idle;
 					end
 					
-		'd1	:	// IDLE State
+		State1_Idle	:	// IDLE State
 					begin
 						// Deactivate Barcode Reset Level for further usages.
 						RST_BarcodeController_Level <= 0;
@@ -190,7 +190,7 @@ always @ (posedge CLOCK_50)
 							State <= State2_Barcode;		// 	Go to Barcode Mode
 					end
 					
-		'd2	:	// Barcode Mode State
+		State2_Barcode	:	// Barcode Mode State
 					begin
 						// Deactivate Barcode Reset Level for further usages.
 						RST_BarcodeController_Level 	<= 0;
@@ -240,7 +240,7 @@ always @ (posedge CLOCK_50)
 								
 					end
 					
-		'd3	:	
+		State3_Interactive	:	
 					// Interactive Selection Mode State
 					begin
 						EN_Direction2ProductID_Level 	= 0;
@@ -280,7 +280,7 @@ always @ (posedge CLOCK_50)
 							end
 					end
 					
-		'd4	:	// Quantity Selection State
+		State4_Quantity	:	// Quantity Selection State
 					begin
 						if(|KEY_Reg)								// Any Digit is Pressed?
 							begin
@@ -301,7 +301,7 @@ always @ (posedge CLOCK_50)
 						else										// Else wait Digit in this state
 							State <= State4_Quantity;
 					end
-		'd5	:	
+		State5_BasketEdit	:	
 					if(CleanSWOut[2])								// SW2 still Active?
 						if(CMD_Reg[0])								// Select Button is Pressed?
 							begin
@@ -321,7 +321,7 @@ always @ (posedge CLOCK_50)
 								State <= State5_BasketEdit;	// Else Stay in this State
 					else												// SW1 is Deactivated
 						State <= State1_Idle;					// 	Go to IDLE State
-		'd6	: 	
+		State6_EndShopping	: 	
 					// End Shopping Story
 					/***/
 					// Then a Fresh Start
