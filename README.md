@@ -119,7 +119,8 @@ Visit Docs Folder
 	+	Price Calculator 				: Ahsen TOPBAŞ 	 - Ongoing
 	+	BCD Multiplier 					: Ahsen TOPBAŞ 	 - Ongoing
 	+	Basket Shift Register 			: Ahsen TOPBAŞ 	 - Ongoing
-	+	Display Product 				: w/ Text Controller
+	+	Display Product 				: NOT STARTED
+		+	VGA Implementation			: NOT STARTED
 +	Text Contoller						: Alper SOYSAL 	 - Ongoing             
 	+	Basket Implementation			: Alper SOYSAL 	 - Ongoing   
 	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing
