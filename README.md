@@ -83,17 +83,6 @@ Visit Docs Folder
 
 ## States List
 +	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
-+	Start State
-+	? Waiting State
-+	Barcode Product Selection State
-+	Interactive Product Selection (SW-1) State
-	+	4-Direction Buttons
-	+	Select Button
-+	Basket Edit (SW-2 -> OverWrites interactive mode but only in Basket) State
-	+	Cancel Button =? Select Button
-	+ ?	Edit Button -> Edit Quantity
-+	Quantity Enter State
-+	End Shopping State
 
 ## TO DO
 +	VGA Controller                      : Ataberk ÖKLÜ 	 - Ongoing
@@ -102,36 +91,45 @@ Visit Docs Folder
 	+	ImageROM                        : Ataberk ÖKLÜ 	 - Ongoing
 		+	16x4 Encoder                : Alper SOYSAL 	 - Done
 		+	Product Highlight			: Ataberk ÖKLÜ 	 - Done
+	+	Hover Item Support				: Ataberk ÖKLÜ	 - Done
 +	Button Controller                   : Ataberk ÖKLÜ 	 - Done
 	+	Button Debouncer                : Ataberk ÖKLÜ 	 - Done
 	+	Switch Debouncer				: Ataberk ÖKLÜ 	 - Done
 	+	Button Level-Pulse Converter    : Ataberk ÖKLÜ 	 - Done
 	+	Key-SW Register                 : Ataberk ÖKLÜ 	 - Done
 	+	Report							: Ataberk ÖKLÜ 	 - Done
+	
 + 	Barcode Controller                  : Ataberk ÖKLÜ 	 - Ongoing
 	+	BarcodeShiftRegister            : Ataberk ÖKLÜ 	 - Done
 	+	7-Segment Controller            : Ataberk ÖKLÜ 	 - Done
+	
 +	State Machine                       : Ataberk ÖKLÜ 	 - Ongoing
 	+	State Flowchart                 : Ataberk ÖKLÜ 	 - Ongoing
-	+	Barcode2ProductID               : Ataberk ÖKLÜ 	 - Ongoing
-	+	Direciton2ProductID	            : Ataberk ÖKLÜ 	 - Ongoing
+	+	Barcode2ProductID               : Ataberk ÖKLÜ 	 - Done
+	+	Direciton2ProductID	            : Ataberk ÖKLÜ 	 - Done
+		+	Interactive Select Support 	: Ataberk ÖKLÜ 	 - Done
+		+	Basket Edit Support			: Ataberk ÖKLÜ 	 - Done
+	
 +	Basket Controller		    		: Ahsen TOPBAŞ 	 - Ongoing
 	+	Price Calculator 				: Ahsen TOPBAŞ 	 - Ongoing
 	+	BCD Multiplier 					: Ahsen TOPBAŞ 	 - Ongoing
 	+	Basket Shift Register 			: Ahsen TOPBAŞ 	 - Ongoing
 	+	Display Product 				: w/ Text Controller
+	
 +	Text Contoller						: Alper SOYSAL 	 - Ongoing             
 	+	Basket Implementation			: Alper SOYSAL 	 - Ongoing   
 	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing
+	+	VGA Implementation				: Alper SOYSAL 	 - Ongoing
+	
 +	Hover Controller					: Göksu&Ataberk	 - Ongoing
 	+	Barcode Hover Controller		: Göksu UZUNTÜRK - Ongoing
-		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
-	+	Interactive Hover Controller	: Göksu UZUNTÜRK - Ongoing
+	+	Interactive Hover Controller	: Ataberk ÖKLÜ   - Done
 		+	Direction2ProdcutID			: Ataberk ÖKLÜ   - Done
-		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
-	+	Basket Edit Hover Controller 	: Ataberk ÖKLÜ   - Ongoing
+		+	4x16 Decoder				: Ataberk ÖKLÜ   - Done
+	+	Basket Edit Hover Controller 	: Ataberk ÖKLÜ   - Done
 		+	Direction2ProdcutID			: Ataberk ÖKLÜ   - Done
-		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
+		+	4x16 Decoder				: Ataberk ÖKLÜ   - Done
+	+	VGA Implementation				: Ataberk ÖKLÜ   - Done
 	
 
 
