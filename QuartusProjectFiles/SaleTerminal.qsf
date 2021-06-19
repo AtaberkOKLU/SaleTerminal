@@ -50,7 +50,7 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # Analysis & Synthesis Assignments
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
-set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller
+set_global_assignment -name TOP_LEVEL_ENTITY SaleTerminal
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 
 # Fitter Assignments
@@ -133,7 +133,6 @@ set_global_assignment -name QSYS_FILE FP_MULT.qsys
 set_global_assignment -name SOURCE_FILE VGA_PLL.cmp
 set_global_assignment -name SDC_FILE SaleTerminal.sdc
 set_global_assignment -name QIP_FILE VGA_PLL.qip
-set_global_assignment -name BDF_FILE SaleTerminal.bdf
 set_global_assignment -name VERILOG_FILE Segment7.v
 set_global_assignment -name QIP_FILE ImageROM.qip
 set_global_assignment -name VERILOG_FILE HVSync_Generator.v
@@ -153,6 +152,9 @@ set_global_assignment -name VERILOG_FILE StateMachine.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Direction2ProductID.vwf
 set_global_assignment -name VERILOG_FILE HoverController.v
 set_global_assignment -name VERILOG_FILE Decoder4x16.v
+set_global_assignment -name VERILOG_FILE Image_Shape_Submodule.v
+set_global_assignment -name VERILOG_FILE PixelController.v
+set_global_assignment -name VERILOG_FILE SaleTerminal.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
@@ -727,6 +729,4 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3]
-set_global_assignment -name VERILOG_FILE Image_Shape_Submodule.v
-set_global_assignment -name VERILOG_FILE PixelController.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

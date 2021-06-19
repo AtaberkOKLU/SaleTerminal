@@ -100,6 +100,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "VGA_BLANK_N",
+					"strict" : false
+				},
+				{
 					"name" : "VGA_HS",
 					"strict" : false
 				},
@@ -108,63 +112,151 @@
 					"strict" : false
 				},
 				{
-					"name" : "VGA_BLANK_N",
+					"name" : "HEX0[0]",
 					"strict" : false
 				},
 				{
-					"name" : "SW2",
+					"name" : "HEX0[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[8]",
+					"name" : "HEX0[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[10]",
+					"name" : "HEX0[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[9]",
+					"name" : "HEX0[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[6]",
+					"name" : "HEX0[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[5]",
+					"name" : "HEX0[6]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[7]",
+					"name" : "HEX1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[4]",
+					"name" : "HEX1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[3]",
+					"name" : "HEX1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[0]",
+					"name" : "HEX1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[2]",
+					"name" : "HEX1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[1]",
+					"name" : "HEX1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "HighlightedProductList[11]",
+					"name" : "HEX1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
 					"name" : "RESET_N",
+					"strict" : false
+				},
+				{
+					"name" : "SW[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SW[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[3]",
 					"strict" : false
 				}
 			]

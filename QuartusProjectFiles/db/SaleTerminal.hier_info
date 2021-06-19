@@ -1,4 +1,353 @@
-|VGA_Controller
+|SaleTerminal
+CLOCK_50 => CLOCK_50.IN5
+RESET_N => VGA_Controller_RSTN.IN1
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => KEY[2].IN1
+KEY[3] => KEY[3].IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+VGA_R[0] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[1] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[2] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[3] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[4] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[5] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[6] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_R[7] << VGA_Controller:VGA_Controller_inst0.VGA_R
+VGA_G[0] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[1] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[2] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[3] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[4] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[5] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[6] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_G[7] << VGA_Controller:VGA_Controller_inst0.VGA_G
+VGA_B[0] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[1] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[2] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[3] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[4] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[5] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[6] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_B[7] << VGA_Controller:VGA_Controller_inst0.VGA_B
+VGA_BLANK_N << VGA_Controller:VGA_Controller_inst0.VGA_BLANK_N
+VGA_CLK << VGA_Controller:VGA_Controller_inst0.VGA_CLK
+VGA_HS << VGA_Controller:VGA_Controller_inst0.VGA_HS
+VGA_VS << VGA_Controller:VGA_Controller_inst0.VGA_VS
+HEX0[0] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[1] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[2] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[3] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[4] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[5] << BarcodeController:BarcodeController_inst0.HEX0
+HEX0[6] << BarcodeController:BarcodeController_inst0.HEX0
+HEX1[0] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[1] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[2] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[3] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[4] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[5] << BarcodeController:BarcodeController_inst0.HEX1
+HEX1[6] << BarcodeController:BarcodeController_inst0.HEX1
+HEX2[0] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[1] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[2] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[3] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[4] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[5] << BarcodeController:BarcodeController_inst0.HEX2
+HEX2[6] << BarcodeController:BarcodeController_inst0.HEX2
+HEX3[0] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[1] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[2] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[3] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[4] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[5] << BarcodeController:BarcodeController_inst0.HEX3
+HEX3[6] << BarcodeController:BarcodeController_inst0.HEX3
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0
+KEY[0] => KEY[0].IN1
+KEY[1] => KEY[1].IN1
+KEY[2] => KEY[2].IN1
+KEY[3] => KEY[3].IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+CLOCK_50 => CLOCK_50.IN15
+CMD_En[0] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0.ButtonPulseOut
+CMD_En[1] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1.ButtonPulseOut
+CMD_En[2] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2.ButtonPulseOut
+CMD_En[3] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3.ButtonPulseOut
+KEY_En[0] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0.ButtonPulseOut
+KEY_En[1] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1.ButtonPulseOut
+KEY_En[2] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2.ButtonPulseOut
+KEY_En[3] <= ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3.ButtonPulseOut
+CMD_Reg[0] <= CMD_Reg[0].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[1] <= CMD_Reg[1].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[2] <= CMD_Reg[2].DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[3] <= CMD_Reg[3].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[0] <= KEY_Reg[0].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[1] <= KEY_Reg[1].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[2] <= KEY_Reg[2].DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[3] <= KEY_Reg[3].DB_MAX_OUTPUT_PORT_TYPE
+CleanSWOut[0] <= CleanSWOut[0].DB_MAX_OUTPUT_PORT_TYPE
+CleanSWOut[1] <= SwitchDebouncer:SwitchDebouncer_SW1.CleanSWOut
+CleanSWOut[2] <= SwitchDebouncer:SwitchDebouncer_SW2.CleanSWOut
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key1
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key2
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key3
+CLK => CleanButtonOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisyButtonIn => PB_sync_0.DATAIN
+CleanButtonOut <= CleanButtonOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2
+CLK => CleanSWOut~reg0.CLK
+CLK => Counter[0].CLK
+CLK => Counter[1].CLK
+CLK => Counter[2].CLK
+CLK => Counter[3].CLK
+CLK => Counter[4].CLK
+CLK => Counter[5].CLK
+CLK => Counter[6].CLK
+CLK => Counter[7].CLK
+CLK => Counter[8].CLK
+CLK => Counter[9].CLK
+CLK => Counter[10].CLK
+CLK => Counter[11].CLK
+CLK => Counter[12].CLK
+CLK => Counter[13].CLK
+CLK => Counter[14].CLK
+CLK => Counter[15].CLK
+CLK => PB_sync_1.CLK
+CLK => PB_sync_0.CLK
+NoisySWIn => PB_sync_0.DATAIN
+CleanSWOut <= CleanSWOut~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => KEY_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+SW[0] => CMD_Reg.OUTPUTSELECT
+KEY[0] => KEY_Reg.DATAA
+KEY[0] => CMD_Reg.DATAB
+KEY[1] => KEY_Reg.DATAA
+KEY[1] => CMD_Reg.DATAB
+KEY[2] => KEY_Reg.DATAA
+KEY[2] => CMD_Reg.DATAB
+KEY[3] => KEY_Reg.DATAA
+KEY[3] => CMD_Reg.DATAB
+CMD_Reg[0] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[1] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[2] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+CMD_Reg[3] <= CMD_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[0] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[1] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[2] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+KEY_Reg[3] <= KEY_Reg.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD2
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0
 CLOCK_50 => CLOCK_50.IN1
 RESET_N => RESET_N.IN2
 HighlightedProductList[0] => HighlightedProductList[0].IN1
@@ -44,21 +393,21 @@ VGA_VS <= HVSync_Generator:HVSync_Generator_inst0.VGA_VS
 VGA_BLANK_N <= HVSync_Generator:HVSync_Generator_inst0.inDisplayArea
 
 
-|VGA_Controller|VGA_PLL:VGA_PLL_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= VGA_PLL_0002:vga_pll_inst.outclk_0
 locked <= VGA_PLL_0002:vga_pll_inst.locked
 
 
-|VGA_Controller|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst
 refclk => refclk.IN1
 rst => rst.IN1
 outclk_0 <= altera_pll:altera_pll_i.outclk
 locked <= altera_pll:altera_pll_i.locked
 
 
-|VGA_Controller|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i
 refclk => general[0].gpll.I_REFCLK
 refclk1 => ~NO_FANOUT~
 fbclk => ~NO_FANOUT~
@@ -230,7 +579,7 @@ cascade_out[0] <= <GND>
 zdbfbclk <> <GND>
 
 
-|VGA_Controller|HVSync_Generator:HVSync_Generator_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0
 VGA_CLK => inDisplayArea~reg0.CLK
 VGA_CLK => vga_VS.CLK
 VGA_CLK => vga_HS.CLK
@@ -303,7 +652,7 @@ CounterY[8] <= CounterY[8]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 CounterY[9] <= CounterY[9]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|PixelController:PixelController_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0
 CounterX[0] => CounterX[0].IN1
 CounterX[1] => CounterX[1].IN1
 CounterX[2] => CounterX[2].IN1
@@ -364,7 +713,7 @@ PixBus[22] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
 PixBus[23] <= Image_Shape_Submodule:Image_Shape_Submodule_inst0.RGB_Bus
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0
 CounterX[0] => CounterX[0].IN1
 CounterX[1] => CounterX[1].IN1
 CounterX[2] => CounterX[2].IN1
@@ -425,7 +774,7 @@ RGB_Bus[22] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
 RGB_Bus[23] <= RGB_Bus.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0
 address[0] => address[0].IN1
 address[1] => address[1].IN1
 address[2] => address[2].IN1
@@ -470,7 +819,7 @@ q[22] <= altsyncram:altsyncram_component.q_a
 q[23] <= altsyncram:altsyncram_component.q_a
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component
 wren_a => ~NO_FANOUT~
 rden_a => ~NO_FANOUT~
 wren_b => ~NO_FANOUT~
@@ -560,7 +909,7 @@ eccstatus[1] <= <GND>
 eccstatus[2] <= <GND>
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated
 address_a[0] => ram_block1a0.PORTAADDR
 address_a[0] => ram_block1a1.PORTAADDR
 address_a[0] => ram_block1a2.PORTAADDR
@@ -5643,7 +5992,7 @@ q_a[22] <= mux_qib:mux2.result[22]
 q_a[23] <= mux_qib:mux2.result[23]
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|decode_l2a:rden_decode
 data[0] => w_anode1479w[1].IN0
 data[0] => w_anode1496w[1].IN1
 data[0] => w_anode1506w[1].IN0
@@ -5718,7 +6067,7 @@ eq[13] <= w_anode1617w[3].DB_MAX_OUTPUT_PORT_TYPE
 eq[14] <= w_anode1627w[3].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_s3i1:auto_generated|mux_qib:mux2
 data[0] => l1_w0_n0_mux_dataout.IN1
 data[1] => l1_w1_n0_mux_dataout.IN1
 data[2] => l1_w2_n0_mux_dataout.IN1
@@ -6825,7 +7174,7 @@ sel[3] => l4_w9_n0_mux_dataout.IN0
 sel[3] => _.IN0
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0
 CounterX[0] => LessThan0.IN20
 CounterX[0] => LessThan25.IN20
 CounterX[0] => LessThan26.IN20
@@ -7487,7 +7836,7 @@ isImage <= Encoder16x4:Encoder16x4_inst0.valid
 inHighlightedArea <= inHighlightedArea.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0
 valid <= inst7.DB_MAX_OUTPUT_PORT_TYPE
 in[0] => inst9.IN2
 in[0] => encoder8x3:inst3.X[0]
@@ -7519,7 +7868,7 @@ out[2] <= inst5.DB_MAX_OUTPUT_PORT_TYPE
 out[3] <= inst14.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst
 Y[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
@@ -7538,7 +7887,7 @@ X[7] => inst.IN2
 X[7] => inst1.IN2
 
 
-|VGA_Controller|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst3
+|SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:inst3
 Y[0] <= inst.DB_MAX_OUTPUT_PORT_TYPE
 Y[1] <= inst1.DB_MAX_OUTPUT_PORT_TYPE
 Y[2] <= inst2.DB_MAX_OUTPUT_PORT_TYPE
@@ -7555,5 +7904,727 @@ X[6] => inst1.IN1
 X[7] => inst2.IN2
 X[7] => inst.IN2
 X[7] => inst1.IN2
+
+
+|SaleTerminal|HoverController:HoverController_inst0
+CLK => ~NO_FANOUT~
+CleanSWOut[1] => WideOr0.IN0
+CleanSWOut[2] => WideOr0.IN1
+Barcode_Digit_0[0] => ~NO_FANOUT~
+Barcode_Digit_0[1] => ~NO_FANOUT~
+Barcode_Digit_0[2] => ~NO_FANOUT~
+Barcode_Digit_0[3] => ~NO_FANOUT~
+Barcode_Digit_1[0] => ~NO_FANOUT~
+Barcode_Digit_1[1] => ~NO_FANOUT~
+Barcode_Digit_1[2] => ~NO_FANOUT~
+Barcode_Digit_1[3] => ~NO_FANOUT~
+Barcode_Digit_2[0] => ~NO_FANOUT~
+Barcode_Digit_2[1] => ~NO_FANOUT~
+Barcode_Digit_2[2] => ~NO_FANOUT~
+Barcode_Digit_2[3] => ~NO_FANOUT~
+Barcode_Digit_3[0] => ~NO_FANOUT~
+Barcode_Digit_3[1] => ~NO_FANOUT~
+Barcode_Digit_3[2] => ~NO_FANOUT~
+Barcode_Digit_3[3] => ~NO_FANOUT~
+BarcodeCompleted => ~NO_FANOUT~
+SelectedProductID[0] => SelectedProductID[0].IN1
+SelectedProductID[1] => SelectedProductID[1].IN1
+SelectedProductID[2] => SelectedProductID[2].IN1
+SelectedProductID[3] => SelectedProductID[3].IN1
+HighlightedProductList[0] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[1] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[2] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[3] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[4] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[5] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[6] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[7] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[8] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[9] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[10] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+HighlightedProductList[11] <= HighlightedProductList.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0
+d_in[0] => Equal0.IN3
+d_in[0] => Equal1.IN0
+d_in[0] => Equal2.IN3
+d_in[0] => Equal3.IN1
+d_in[0] => Equal4.IN3
+d_in[0] => Equal5.IN1
+d_in[0] => Equal6.IN3
+d_in[0] => Equal7.IN2
+d_in[0] => Equal8.IN3
+d_in[0] => Equal9.IN1
+d_in[0] => Equal10.IN3
+d_in[0] => Equal11.IN2
+d_in[0] => Equal12.IN3
+d_in[0] => Equal13.IN2
+d_in[0] => Equal14.IN3
+d_in[1] => Equal0.IN2
+d_in[1] => Equal1.IN3
+d_in[1] => Equal2.IN0
+d_in[1] => Equal3.IN0
+d_in[1] => Equal4.IN2
+d_in[1] => Equal5.IN3
+d_in[1] => Equal6.IN1
+d_in[1] => Equal7.IN1
+d_in[1] => Equal8.IN2
+d_in[1] => Equal9.IN3
+d_in[1] => Equal10.IN1
+d_in[1] => Equal11.IN1
+d_in[1] => Equal12.IN2
+d_in[1] => Equal13.IN3
+d_in[1] => Equal14.IN2
+d_in[2] => Equal0.IN1
+d_in[2] => Equal1.IN2
+d_in[2] => Equal2.IN2
+d_in[2] => Equal3.IN3
+d_in[2] => Equal4.IN0
+d_in[2] => Equal5.IN0
+d_in[2] => Equal6.IN0
+d_in[2] => Equal7.IN0
+d_in[2] => Equal8.IN1
+d_in[2] => Equal9.IN2
+d_in[2] => Equal10.IN2
+d_in[2] => Equal11.IN3
+d_in[2] => Equal12.IN1
+d_in[2] => Equal13.IN1
+d_in[2] => Equal14.IN1
+d_in[3] => Equal0.IN0
+d_in[3] => Equal1.IN1
+d_in[3] => Equal2.IN1
+d_in[3] => Equal3.IN2
+d_in[3] => Equal4.IN1
+d_in[3] => Equal5.IN2
+d_in[3] => Equal6.IN2
+d_in[3] => Equal7.IN3
+d_in[3] => Equal8.IN0
+d_in[3] => Equal9.IN0
+d_in[3] => Equal10.IN0
+d_in[3] => Equal11.IN0
+d_in[3] => Equal12.IN0
+d_in[3] => Equal13.IN0
+d_in[3] => Equal14.IN0
+d_out[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+d_out[1] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[2] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[3] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[4] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[5] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[6] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[7] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[8] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[9] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[10] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[11] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[12] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[13] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[14] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+d_out[15] <= d_out.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0
+CMD_Reg[0] => State.OUTPUTSELECT
+CMD_Reg[0] => State.OUTPUTSELECT
+CMD_Reg[0] => State.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => State.OUTPUTSELECT
+CMD_Reg[0] => State.OUTPUTSELECT
+CMD_Reg[0] => RST_BarcodeController_Level.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => ProductID_out.OUTPUTSELECT
+CMD_Reg[0] => EN_Direction2ProductID_Level.OUTPUTSELECT
+CMD_Reg[0] => Dir_out.OUTPUTSELECT
+CMD_Reg[0] => Dir_out.OUTPUTSELECT
+CMD_Reg[0] => Selector7.IN3
+CMD_Reg[0] => State.DATAB
+CMD_Reg[0] => RST_Direction2ProductID_Level.DATAB
+CMD_Reg[0] => State.DATAB
+CMD_Reg[1] => ~NO_FANOUT~
+CMD_Reg[2] => ~NO_FANOUT~
+CMD_Reg[3] => ~NO_FANOUT~
+KEY_Reg[0] => WideOr0.IN0
+KEY_Reg[0] => Decoder0.IN3
+KEY_Reg[1] => WideOr0.IN1
+KEY_Reg[1] => Decoder0.IN2
+KEY_Reg[1] => Mux1.IN5
+KEY_Reg[2] => WideOr0.IN2
+KEY_Reg[2] => Decoder0.IN1
+KEY_Reg[2] => Mux0.IN5
+KEY_Reg[3] => WideOr0.IN3
+KEY_Reg[3] => Decoder0.IN0
+KEY_Reg[3] => Mux0.IN4
+KEY_Reg[3] => Mux1.IN4
+CleanSWOut[1] => always0.IN0
+CleanSWOut[1] => ProductID_out.OUTPUTSELECT
+CleanSWOut[1] => ProductID_out.OUTPUTSELECT
+CleanSWOut[1] => ProductID_out.OUTPUTSELECT
+CleanSWOut[1] => ProductID_out.OUTPUTSELECT
+CleanSWOut[1] => State.OUTPUTSELECT
+CleanSWOut[1] => State.OUTPUTSELECT
+CleanSWOut[1] => RST_Direction2ProductID_Level.OUTPUTSELECT
+CleanSWOut[1] => EN_Direction2ProductID_Level.OUTPUTSELECT
+CleanSWOut[1] => Dir_out.OUTPUTSELECT
+CleanSWOut[1] => Dir_out.OUTPUTSELECT
+CleanSWOut[1] => State.DATAA
+CleanSWOut[1] => State.DATAA
+CleanSWOut[1] => Selector2.IN2
+CleanSWOut[2] => CleanSWOut[2].IN1
+BarcodeDigitCompleted => EN_BarcodeController_Level.OUTPUTSELECT
+BarcodeDigitCompleted => Barcode_Digit_out.OUTPUTSELECT
+BarcodeDigitCompleted => Barcode_Digit_out.OUTPUTSELECT
+BarcodeDigitCompleted => Barcode_Digit_out.OUTPUTSELECT
+BarcodeDigitCompleted => Barcode_Digit_out.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => State.OUTPUTSELECT
+BarcodeDigitCompleted => ProductID_out.OUTPUTSELECT
+BarcodeDigitCompleted => ProductID_out.OUTPUTSELECT
+BarcodeDigitCompleted => ProductID_out.OUTPUTSELECT
+BarcodeDigitCompleted => ProductID_out.OUTPUTSELECT
+BarcodeDigitCompleted => RST_BarcodeController_Level.OUTPUTSELECT
+Barcode_DigitIn_0[0] => Barcode_DigitIn_0[0].IN1
+Barcode_DigitIn_0[1] => Barcode_DigitIn_0[1].IN1
+Barcode_DigitIn_0[2] => Barcode_DigitIn_0[2].IN1
+Barcode_DigitIn_0[3] => Barcode_DigitIn_0[3].IN1
+Barcode_DigitIn_1[0] => Barcode_DigitIn_1[0].IN1
+Barcode_DigitIn_1[1] => Barcode_DigitIn_1[1].IN1
+Barcode_DigitIn_1[2] => Barcode_DigitIn_1[2].IN1
+Barcode_DigitIn_1[3] => Barcode_DigitIn_1[3].IN1
+Barcode_DigitIn_2[0] => Barcode_DigitIn_2[0].IN1
+Barcode_DigitIn_2[1] => Barcode_DigitIn_2[1].IN1
+Barcode_DigitIn_2[2] => Barcode_DigitIn_2[2].IN1
+Barcode_DigitIn_2[3] => Barcode_DigitIn_2[3].IN1
+Barcode_DigitIn_3[0] => Barcode_DigitIn_3[0].IN1
+Barcode_DigitIn_3[1] => Barcode_DigitIn_3[1].IN1
+Barcode_DigitIn_3[2] => Barcode_DigitIn_3[2].IN1
+Barcode_DigitIn_3[3] => Barcode_DigitIn_3[3].IN1
+BasketProductNum[0] => BasketProductNum[0].IN1
+BasketProductNum[1] => BasketProductNum[1].IN1
+BasketProductNum[2] => BasketProductNum[2].IN1
+BasketProductNum[3] => BasketProductNum[3].IN1
+CLOCK_50 => CLOCK_50.IN1
+Barcode_Enable_Pulse <= ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0.ButtonPulseOut
+RSTN_BarcodeController_Pulse <= ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0.ButtonPulseOut
+Barcode_Digit_out[0] <= Barcode_Digit_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_out[1] <= Barcode_Digit_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_out[2] <= Barcode_Digit_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_out[3] <= Barcode_Digit_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductQuantity[0] <= ProductQuantity[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductQuantity[1] <= ProductQuantity[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductQuantity[2] <= ProductQuantity[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductQuantity[3] <= ProductQuantity[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductID_out[0] <= ProductID_out[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductID_out[1] <= ProductID_out[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductID_out[2] <= ProductID_out[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+ProductID_out[3] <= ProductID_out[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+BasketController_Enable_Pulse <= ButtonLevelPulseConverter:BasketControllerEnablePulseGenerator_inst0.ButtonPulseOut
+Dir_out[0] <= Dir_out[0].DB_MAX_OUTPUT_PORT_TYPE
+Dir_out[1] <= Dir_out[1].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0
+BarcodeDigit_0[0] => Equal0.IN19
+BarcodeDigit_0[0] => Equal1.IN19
+BarcodeDigit_0[0] => Equal2.IN19
+BarcodeDigit_0[0] => Equal3.IN19
+BarcodeDigit_0[0] => Equal4.IN19
+BarcodeDigit_0[0] => Equal5.IN19
+BarcodeDigit_0[0] => Equal6.IN19
+BarcodeDigit_0[0] => Equal7.IN19
+BarcodeDigit_0[0] => Equal8.IN19
+BarcodeDigit_0[0] => Equal9.IN19
+BarcodeDigit_0[0] => Equal10.IN19
+BarcodeDigit_0[0] => Equal11.IN19
+BarcodeDigit_0[1] => Equal0.IN18
+BarcodeDigit_0[1] => Equal1.IN18
+BarcodeDigit_0[1] => Equal2.IN18
+BarcodeDigit_0[1] => Equal3.IN18
+BarcodeDigit_0[1] => Equal4.IN18
+BarcodeDigit_0[1] => Equal5.IN18
+BarcodeDigit_0[1] => Equal6.IN18
+BarcodeDigit_0[1] => Equal7.IN18
+BarcodeDigit_0[1] => Equal8.IN18
+BarcodeDigit_0[1] => Equal9.IN18
+BarcodeDigit_0[1] => Equal10.IN18
+BarcodeDigit_0[1] => Equal11.IN18
+BarcodeDigit_0[2] => Equal0.IN17
+BarcodeDigit_0[2] => Equal1.IN17
+BarcodeDigit_0[2] => Equal2.IN17
+BarcodeDigit_0[2] => Equal3.IN17
+BarcodeDigit_0[2] => Equal4.IN17
+BarcodeDigit_0[2] => Equal5.IN17
+BarcodeDigit_0[2] => Equal6.IN17
+BarcodeDigit_0[2] => Equal7.IN17
+BarcodeDigit_0[2] => Equal8.IN17
+BarcodeDigit_0[2] => Equal9.IN17
+BarcodeDigit_0[2] => Equal10.IN17
+BarcodeDigit_0[2] => Equal11.IN17
+BarcodeDigit_0[3] => Equal0.IN16
+BarcodeDigit_0[3] => Equal1.IN16
+BarcodeDigit_0[3] => Equal2.IN16
+BarcodeDigit_0[3] => Equal3.IN16
+BarcodeDigit_0[3] => Equal4.IN16
+BarcodeDigit_0[3] => Equal5.IN16
+BarcodeDigit_0[3] => Equal6.IN16
+BarcodeDigit_0[3] => Equal7.IN16
+BarcodeDigit_0[3] => Equal8.IN16
+BarcodeDigit_0[3] => Equal9.IN16
+BarcodeDigit_0[3] => Equal10.IN16
+BarcodeDigit_0[3] => Equal11.IN16
+BarcodeDigit_1[0] => Equal0.IN23
+BarcodeDigit_1[0] => Equal1.IN23
+BarcodeDigit_1[0] => Equal2.IN23
+BarcodeDigit_1[0] => Equal3.IN23
+BarcodeDigit_1[0] => Equal4.IN23
+BarcodeDigit_1[0] => Equal5.IN23
+BarcodeDigit_1[0] => Equal6.IN23
+BarcodeDigit_1[0] => Equal7.IN23
+BarcodeDigit_1[0] => Equal8.IN23
+BarcodeDigit_1[0] => Equal9.IN23
+BarcodeDigit_1[0] => Equal10.IN23
+BarcodeDigit_1[0] => Equal11.IN23
+BarcodeDigit_1[1] => Equal0.IN22
+BarcodeDigit_1[1] => Equal1.IN22
+BarcodeDigit_1[1] => Equal2.IN22
+BarcodeDigit_1[1] => Equal3.IN22
+BarcodeDigit_1[1] => Equal4.IN22
+BarcodeDigit_1[1] => Equal5.IN22
+BarcodeDigit_1[1] => Equal6.IN22
+BarcodeDigit_1[1] => Equal7.IN22
+BarcodeDigit_1[1] => Equal8.IN22
+BarcodeDigit_1[1] => Equal9.IN22
+BarcodeDigit_1[1] => Equal10.IN22
+BarcodeDigit_1[1] => Equal11.IN22
+BarcodeDigit_1[2] => Equal0.IN21
+BarcodeDigit_1[2] => Equal1.IN21
+BarcodeDigit_1[2] => Equal2.IN21
+BarcodeDigit_1[2] => Equal3.IN21
+BarcodeDigit_1[2] => Equal4.IN21
+BarcodeDigit_1[2] => Equal5.IN21
+BarcodeDigit_1[2] => Equal6.IN21
+BarcodeDigit_1[2] => Equal7.IN21
+BarcodeDigit_1[2] => Equal8.IN21
+BarcodeDigit_1[2] => Equal9.IN21
+BarcodeDigit_1[2] => Equal10.IN21
+BarcodeDigit_1[2] => Equal11.IN21
+BarcodeDigit_1[3] => Equal0.IN20
+BarcodeDigit_1[3] => Equal1.IN20
+BarcodeDigit_1[3] => Equal2.IN20
+BarcodeDigit_1[3] => Equal3.IN20
+BarcodeDigit_1[3] => Equal4.IN20
+BarcodeDigit_1[3] => Equal5.IN20
+BarcodeDigit_1[3] => Equal6.IN20
+BarcodeDigit_1[3] => Equal7.IN20
+BarcodeDigit_1[3] => Equal8.IN20
+BarcodeDigit_1[3] => Equal9.IN20
+BarcodeDigit_1[3] => Equal10.IN20
+BarcodeDigit_1[3] => Equal11.IN20
+BarcodeDigit_2[0] => Equal0.IN27
+BarcodeDigit_2[0] => Equal1.IN27
+BarcodeDigit_2[0] => Equal2.IN27
+BarcodeDigit_2[0] => Equal3.IN27
+BarcodeDigit_2[0] => Equal4.IN27
+BarcodeDigit_2[0] => Equal5.IN27
+BarcodeDigit_2[0] => Equal6.IN27
+BarcodeDigit_2[0] => Equal7.IN27
+BarcodeDigit_2[0] => Equal8.IN27
+BarcodeDigit_2[0] => Equal9.IN27
+BarcodeDigit_2[0] => Equal10.IN27
+BarcodeDigit_2[0] => Equal11.IN27
+BarcodeDigit_2[1] => Equal0.IN26
+BarcodeDigit_2[1] => Equal1.IN26
+BarcodeDigit_2[1] => Equal2.IN26
+BarcodeDigit_2[1] => Equal3.IN26
+BarcodeDigit_2[1] => Equal4.IN26
+BarcodeDigit_2[1] => Equal5.IN26
+BarcodeDigit_2[1] => Equal6.IN26
+BarcodeDigit_2[1] => Equal7.IN26
+BarcodeDigit_2[1] => Equal8.IN26
+BarcodeDigit_2[1] => Equal9.IN26
+BarcodeDigit_2[1] => Equal10.IN26
+BarcodeDigit_2[1] => Equal11.IN26
+BarcodeDigit_2[2] => Equal0.IN25
+BarcodeDigit_2[2] => Equal1.IN25
+BarcodeDigit_2[2] => Equal2.IN25
+BarcodeDigit_2[2] => Equal3.IN25
+BarcodeDigit_2[2] => Equal4.IN25
+BarcodeDigit_2[2] => Equal5.IN25
+BarcodeDigit_2[2] => Equal6.IN25
+BarcodeDigit_2[2] => Equal7.IN25
+BarcodeDigit_2[2] => Equal8.IN25
+BarcodeDigit_2[2] => Equal9.IN25
+BarcodeDigit_2[2] => Equal10.IN25
+BarcodeDigit_2[2] => Equal11.IN25
+BarcodeDigit_2[3] => Equal0.IN24
+BarcodeDigit_2[3] => Equal1.IN24
+BarcodeDigit_2[3] => Equal2.IN24
+BarcodeDigit_2[3] => Equal3.IN24
+BarcodeDigit_2[3] => Equal4.IN24
+BarcodeDigit_2[3] => Equal5.IN24
+BarcodeDigit_2[3] => Equal6.IN24
+BarcodeDigit_2[3] => Equal7.IN24
+BarcodeDigit_2[3] => Equal8.IN24
+BarcodeDigit_2[3] => Equal9.IN24
+BarcodeDigit_2[3] => Equal10.IN24
+BarcodeDigit_2[3] => Equal11.IN24
+BarcodeDigit_3[0] => Equal0.IN31
+BarcodeDigit_3[0] => Equal1.IN31
+BarcodeDigit_3[0] => Equal2.IN31
+BarcodeDigit_3[0] => Equal3.IN31
+BarcodeDigit_3[0] => Equal4.IN31
+BarcodeDigit_3[0] => Equal5.IN31
+BarcodeDigit_3[0] => Equal6.IN31
+BarcodeDigit_3[0] => Equal7.IN31
+BarcodeDigit_3[0] => Equal8.IN31
+BarcodeDigit_3[0] => Equal9.IN31
+BarcodeDigit_3[0] => Equal10.IN31
+BarcodeDigit_3[0] => Equal11.IN31
+BarcodeDigit_3[1] => Equal0.IN30
+BarcodeDigit_3[1] => Equal1.IN30
+BarcodeDigit_3[1] => Equal2.IN30
+BarcodeDigit_3[1] => Equal3.IN30
+BarcodeDigit_3[1] => Equal4.IN30
+BarcodeDigit_3[1] => Equal5.IN30
+BarcodeDigit_3[1] => Equal6.IN30
+BarcodeDigit_3[1] => Equal7.IN30
+BarcodeDigit_3[1] => Equal8.IN30
+BarcodeDigit_3[1] => Equal9.IN30
+BarcodeDigit_3[1] => Equal10.IN30
+BarcodeDigit_3[1] => Equal11.IN30
+BarcodeDigit_3[2] => Equal0.IN29
+BarcodeDigit_3[2] => Equal1.IN29
+BarcodeDigit_3[2] => Equal2.IN29
+BarcodeDigit_3[2] => Equal3.IN29
+BarcodeDigit_3[2] => Equal4.IN29
+BarcodeDigit_3[2] => Equal5.IN29
+BarcodeDigit_3[2] => Equal6.IN29
+BarcodeDigit_3[2] => Equal7.IN29
+BarcodeDigit_3[2] => Equal8.IN29
+BarcodeDigit_3[2] => Equal9.IN29
+BarcodeDigit_3[2] => Equal10.IN29
+BarcodeDigit_3[2] => Equal11.IN29
+BarcodeDigit_3[3] => Equal0.IN28
+BarcodeDigit_3[3] => Equal1.IN28
+BarcodeDigit_3[3] => Equal2.IN28
+BarcodeDigit_3[3] => Equal3.IN28
+BarcodeDigit_3[3] => Equal4.IN28
+BarcodeDigit_3[3] => Equal5.IN28
+BarcodeDigit_3[3] => Equal6.IN28
+BarcodeDigit_3[3] => Equal7.IN28
+BarcodeDigit_3[3] => Equal8.IN28
+BarcodeDigit_3[3] => Equal9.IN28
+BarcodeDigit_3[3] => Equal10.IN28
+BarcodeDigit_3[3] => Equal11.IN28
+ProductID[0] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[1] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[2] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[3] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+valid <= WideNor0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => ImgID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+RESET_N => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => BasketID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+Enable => ImgID.OUTPUTSELECT
+CLOCK => BasketID[0].CLK
+CLOCK => BasketID[1].CLK
+CLOCK => BasketID[2].CLK
+CLOCK => BasketID[3].CLK
+CLOCK => ImgID[0].CLK
+CLOCK => ImgID[1].CLK
+CLOCK => ImgID[2].CLK
+CLOCK => ImgID[3].CLK
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => ProductID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => BasketID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+CleanSW2 => ImgID.OUTPUTSELECT
+BasketProductNum[0] => LessThan5.IN4
+BasketProductNum[0] => BasketID.DATAA
+BasketProductNum[1] => LessThan5.IN3
+BasketProductNum[1] => BasketID.DATAA
+BasketProductNum[2] => LessThan5.IN2
+BasketProductNum[2] => BasketID.DATAA
+BasketProductNum[3] => LessThan5.IN1
+BasketProductNum[3] => BasketID.DATAA
+Dir_in[0] => Mux0.IN5
+Dir_in[0] => Mux1.IN5
+Dir_in[0] => Mux2.IN5
+Dir_in[0] => Mux3.IN5
+Dir_in[0] => Equal0.IN3
+Dir_in[0] => Equal1.IN3
+Dir_in[1] => Mux0.IN4
+Dir_in[1] => Mux1.IN4
+Dir_in[1] => Mux2.IN4
+Dir_in[1] => Mux3.IN4
+Dir_in[1] => Equal0.IN2
+Dir_in[1] => Equal1.IN2
+ProductID[0] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[1] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[2] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+ProductID[3] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BasketControllerEnablePulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0
+ENABLE => ENABLE.IN1
+CLK => CLK.IN1
+RESET_N => RESET_N.IN1
+Digit_in[0] => Digit_in[0].IN1
+Digit_in[1] => Digit_in[1].IN1
+Digit_in[2] => Digit_in[2].IN1
+Digit_in[3] => Digit_in[3].IN1
+BarcodeDigitCompleted <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
+NumOfBarcodeDigitsEntered[0] <= BarcodeShiftRegister:BarcodeShiftRegister_inst0.NumOfBarcodeDigitsEntered
+NumOfBarcodeDigitsEntered[1] <= BarcodeShiftRegister:BarcodeShiftRegister_inst0.NumOfBarcodeDigitsEntered
+NumOfBarcodeDigitsEntered[2] <= BarcodeShiftRegister:BarcodeShiftRegister_inst0.NumOfBarcodeDigitsEntered
+Barcode_Digit_0[0] <= Barcode_Digit_0[0].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_0[1] <= Barcode_Digit_0[1].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_0[2] <= Barcode_Digit_0[2].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_0[3] <= Barcode_Digit_0[3].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_1[0] <= Barcode_Digit_1[0].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_1[1] <= Barcode_Digit_1[1].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_1[2] <= Barcode_Digit_1[2].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_1[3] <= Barcode_Digit_1[3].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_2[0] <= Barcode_Digit_2[0].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_2[1] <= Barcode_Digit_2[1].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_2[2] <= Barcode_Digit_2[2].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_2[3] <= Barcode_Digit_2[3].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_3[0] <= Barcode_Digit_3[0].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_3[1] <= Barcode_Digit_3[1].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_3[2] <= Barcode_Digit_3[2].DB_MAX_OUTPUT_PORT_TYPE
+Barcode_Digit_3[3] <= Barcode_Digit_3[3].DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= Segment7:Segment0.seg
+HEX0[1] <= Segment7:Segment0.seg
+HEX0[2] <= Segment7:Segment0.seg
+HEX0[3] <= Segment7:Segment0.seg
+HEX0[4] <= Segment7:Segment0.seg
+HEX0[5] <= Segment7:Segment0.seg
+HEX0[6] <= Segment7:Segment0.seg
+HEX1[0] <= Segment7:Segment1.seg
+HEX1[1] <= Segment7:Segment1.seg
+HEX1[2] <= Segment7:Segment1.seg
+HEX1[3] <= Segment7:Segment1.seg
+HEX1[4] <= Segment7:Segment1.seg
+HEX1[5] <= Segment7:Segment1.seg
+HEX1[6] <= Segment7:Segment1.seg
+HEX2[0] <= Segment7:Segment2.seg
+HEX2[1] <= Segment7:Segment2.seg
+HEX2[2] <= Segment7:Segment2.seg
+HEX2[3] <= Segment7:Segment2.seg
+HEX2[4] <= Segment7:Segment2.seg
+HEX2[5] <= Segment7:Segment2.seg
+HEX2[6] <= Segment7:Segment2.seg
+HEX3[0] <= Segment7:Segment3.seg
+HEX3[1] <= Segment7:Segment3.seg
+HEX3[2] <= Segment7:Segment3.seg
+HEX3[3] <= Segment7:Segment3.seg
+HEX3[4] <= Segment7:Segment3.seg
+HEX3[5] <= Segment7:Segment3.seg
+HEX3[6] <= Segment7:Segment3.seg
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0
+Digit_in[0] => Digit_Reg_0.DATAB
+Digit_in[1] => Digit_Reg_0.DATAB
+Digit_in[2] => Digit_Reg_0.DATAB
+Digit_in[3] => Digit_Reg_0.DATAB
+CLOCK => NumOfBarcodeDigitsEntered[0]~reg0.CLK
+CLOCK => NumOfBarcodeDigitsEntered[1]~reg0.CLK
+CLOCK => NumOfBarcodeDigitsEntered[2]~reg0.CLK
+CLOCK => Digit_Reg_3[0].CLK
+CLOCK => Digit_Reg_3[1].CLK
+CLOCK => Digit_Reg_3[2].CLK
+CLOCK => Digit_Reg_3[3].CLK
+CLOCK => Digit_Reg_2[0].CLK
+CLOCK => Digit_Reg_2[1].CLK
+CLOCK => Digit_Reg_2[2].CLK
+CLOCK => Digit_Reg_2[3].CLK
+CLOCK => Digit_Reg_1[0].CLK
+CLOCK => Digit_Reg_1[1].CLK
+CLOCK => Digit_Reg_1[2].CLK
+CLOCK => Digit_Reg_1[3].CLK
+CLOCK => Digit_Reg_0[0].CLK
+CLOCK => Digit_Reg_0[1].CLK
+CLOCK => Digit_Reg_0[2].CLK
+CLOCK => Digit_Reg_0[3].CLK
+RESET_N => Digit_Reg_0.OUTPUTSELECT
+RESET_N => Digit_Reg_0.OUTPUTSELECT
+RESET_N => Digit_Reg_0.OUTPUTSELECT
+RESET_N => Digit_Reg_0.OUTPUTSELECT
+RESET_N => Digit_Reg_1.OUTPUTSELECT
+RESET_N => Digit_Reg_1.OUTPUTSELECT
+RESET_N => Digit_Reg_1.OUTPUTSELECT
+RESET_N => Digit_Reg_1.OUTPUTSELECT
+RESET_N => Digit_Reg_2.OUTPUTSELECT
+RESET_N => Digit_Reg_2.OUTPUTSELECT
+RESET_N => Digit_Reg_2.OUTPUTSELECT
+RESET_N => Digit_Reg_2.OUTPUTSELECT
+RESET_N => Digit_Reg_3.OUTPUTSELECT
+RESET_N => Digit_Reg_3.OUTPUTSELECT
+RESET_N => Digit_Reg_3.OUTPUTSELECT
+RESET_N => Digit_Reg_3.OUTPUTSELECT
+RESET_N => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+RESET_N => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+RESET_N => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+ENABLE => Digit_Reg_3.OUTPUTSELECT
+ENABLE => Digit_Reg_3.OUTPUTSELECT
+ENABLE => Digit_Reg_3.OUTPUTSELECT
+ENABLE => Digit_Reg_3.OUTPUTSELECT
+ENABLE => Digit_Reg_2.OUTPUTSELECT
+ENABLE => Digit_Reg_2.OUTPUTSELECT
+ENABLE => Digit_Reg_2.OUTPUTSELECT
+ENABLE => Digit_Reg_2.OUTPUTSELECT
+ENABLE => Digit_Reg_1.OUTPUTSELECT
+ENABLE => Digit_Reg_1.OUTPUTSELECT
+ENABLE => Digit_Reg_1.OUTPUTSELECT
+ENABLE => Digit_Reg_1.OUTPUTSELECT
+ENABLE => Digit_Reg_0.OUTPUTSELECT
+ENABLE => Digit_Reg_0.OUTPUTSELECT
+ENABLE => Digit_Reg_0.OUTPUTSELECT
+ENABLE => Digit_Reg_0.OUTPUTSELECT
+ENABLE => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+ENABLE => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+ENABLE => NumOfBarcodeDigitsEntered.OUTPUTSELECT
+Digit_0[0] <= Digit_Reg_0[0].DB_MAX_OUTPUT_PORT_TYPE
+Digit_0[1] <= Digit_Reg_0[1].DB_MAX_OUTPUT_PORT_TYPE
+Digit_0[2] <= Digit_Reg_0[2].DB_MAX_OUTPUT_PORT_TYPE
+Digit_0[3] <= Digit_Reg_0[3].DB_MAX_OUTPUT_PORT_TYPE
+Digit_1[0] <= Digit_Reg_1[0].DB_MAX_OUTPUT_PORT_TYPE
+Digit_1[1] <= Digit_Reg_1[1].DB_MAX_OUTPUT_PORT_TYPE
+Digit_1[2] <= Digit_Reg_1[2].DB_MAX_OUTPUT_PORT_TYPE
+Digit_1[3] <= Digit_Reg_1[3].DB_MAX_OUTPUT_PORT_TYPE
+Digit_2[0] <= Digit_Reg_2[0].DB_MAX_OUTPUT_PORT_TYPE
+Digit_2[1] <= Digit_Reg_2[1].DB_MAX_OUTPUT_PORT_TYPE
+Digit_2[2] <= Digit_Reg_2[2].DB_MAX_OUTPUT_PORT_TYPE
+Digit_2[3] <= Digit_Reg_2[3].DB_MAX_OUTPUT_PORT_TYPE
+Digit_3[0] <= Digit_Reg_3[0].DB_MAX_OUTPUT_PORT_TYPE
+Digit_3[1] <= Digit_Reg_3[1].DB_MAX_OUTPUT_PORT_TYPE
+Digit_3[2] <= Digit_Reg_3[2].DB_MAX_OUTPUT_PORT_TYPE
+Digit_3[3] <= Digit_Reg_3[3].DB_MAX_OUTPUT_PORT_TYPE
+NumOfBarcodeDigitsEntered[0] <= NumOfBarcodeDigitsEntered[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+NumOfBarcodeDigitsEntered[1] <= NumOfBarcodeDigitsEntered[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+NumOfBarcodeDigitsEntered[2] <= NumOfBarcodeDigitsEntered[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment1
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment2
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment3
+bcd[0] => Decoder0.IN3
+bcd[1] => Decoder0.IN2
+bcd[2] => Decoder0.IN1
+bcd[3] => Decoder0.IN0
+seg[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+seg[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+seg[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+seg[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+seg[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+seg[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+seg[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 

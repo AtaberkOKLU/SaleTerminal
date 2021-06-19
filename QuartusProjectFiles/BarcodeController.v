@@ -16,23 +16,23 @@
  */
 
 module BarcodeController(
-	input  wire ENABLE,
-	input  wire CLK,
-	input  wire RESET_N,
-	input  wire[3:0] Digit_in,
+	input  wire 		ENABLE,
+	input  wire 		CLK,
+	input  wire 		RESET_N,
+	input  wire[3:0] 	Digit_in,
 	
-	output reg BarcodeDigitCompleted,
-	output wire[2:0] NumOfBarcodeDigitsEntered,
+	output reg 			BarcodeDigitCompleted,
+	output wire[2:0] 	NumOfBarcodeDigitsEntered,
 	
-	output wire[3:0] Barcode_Digit_0,
-	output wire[3:0] Barcode_Digit_1,
-	output wire[3:0] Barcode_Digit_2,
-	output wire[3:0] Barcode_Digit_3,
+	output wire[3:0] 	Barcode_Digit_0,
+	output wire[3:0] 	Barcode_Digit_1,
+	output wire[3:0] 	Barcode_Digit_2,
+	output wire[3:0] 	Barcode_Digit_3,
 	
-	output wire[6:0] HEX0,
-	output wire[6:0] HEX1,
-	output wire[6:0] HEX2,
-	output wire[6:0] HEX3
+	output wire[6:0] 	HEX0,
+	output wire[6:0] 	HEX1,
+	output wire[6:0] 	HEX2,
+	output wire[6:0] 	HEX3
 );
 
 BarcodeShiftRegister BarcodeShiftRegister_inst0(

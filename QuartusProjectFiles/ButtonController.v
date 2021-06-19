@@ -25,7 +25,7 @@ module ButtonController
 )(
 		input  wire [3:0] KEY,
 		input  wire [2:0] SW,
-		input  wire CLOCK_50,
+		input  wire 		CLOCK_50,
 		output wire [3:0] CMD_En,
 		output wire [3:0] KEY_En,
 		output wire [3:0] CMD_Reg,

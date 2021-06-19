@@ -33,9 +33,12 @@ module StateMachine(
 	input wire 			valid,
 	*/
 	
+	// BasketController
+	input wire [3:0] BasketProductNum,
+	
 	// Generic
 	input wire CLOCK_50,
-	input wire RESET_N,
+	// input wire RESET_N,
 	
 	// Button Controller
 	/*
@@ -43,12 +46,12 @@ module StateMachine(
 	*/
 	
 	// Barcode Controller
-	output  wire Barcode_Enable,
+	output  wire Barcode_Enable_Pulse,
 	/*
 	output  wire CLK_BarcodeController,
 	*/
 	output  wire RSTN_BarcodeController_Pulse,
-	output  reg[3:0] Barcode_Digit_in,
+	output  reg[3:0] Barcode_Digit_out,
 	
 	// VGA Controller
 	/*
@@ -65,11 +68,13 @@ module StateMachine(
 	*/
 	
 	// BasketController
-	output reg  [2:0] ProductQuantity,
-	output reg  [2:0] ProductID_out,
+	output reg  [3:0] ProductQuantity,
+	output reg  [3:0] ProductID_out,
+	output wire BasketController_Enable_Pulse,
 	
 	// InteractiveController
-	output reg  [1:0] Dir_out // (<- ^ v ->) (00 01 10 11) 
+	output reg  [1:0] Dir_out // (<- ^ v ->) (00 01 10 11)
+
 	
 );
 
@@ -77,15 +82,15 @@ reg RST_BarcodeController_Level 	= 0;	// Active High
 reg RST_Direction2ProductID_Level= 0;	// Active High
 reg EN_BarcodeController_Level 	= 0;	// Active High
 reg EN_Direction2ProductID_Level = 0;	// Active High
+reg EN_BasketController_Level 	= 0;	// Active High
 
 wire RST_BarcodeController_Pulse;
-wire [2:0] 	ProductID_Barcode;
-wire [2:0] 	ProductID_Direction;
+wire [3:0] 	ProductID_Barcode;
+wire [3:0] 	ProductID_Direction;
 wire 			Product_valid;
 wire Direction2ProductID_En;
 wire RST_Direction2ProductID_Pulse;
 wire RSTN_Direction2ProductID_Pulse;
-
 
 // BarcodeController Reset Pulse Generator
 ButtonLevelPulseConverter BarcodeControllerResetPulseGenerator_inst0(
@@ -101,7 +106,7 @@ assign RSTN_BarcodeController_Pulse = ~RST_BarcodeController_Pulse;
 ButtonLevelPulseConverter BarcodeControllerEnablePulseGenerator_inst0(
 	.CLK(CLOCK_50),
 	.CleanButtonIn(EN_BarcodeController_Level),
-	.ButtonPulseOut(Barcode_Enable)
+	.ButtonPulseOut(Barcode_Enable_Pulse)
 );
 
 
@@ -138,7 +143,16 @@ Direction2ProductID Direction2ProductID_inst0(
 	.Enable(Direction2ProductID_En),
 	.CLOCK(CLOCK_50),
 	.Dir_in(Dir_out),
+	.CleanSW2(CleanSWOut[2]),
+	.BasketProductNum(BasketProductNum),	// From Basket Controller
 	.ProductID(ProductID_Direction)	// For Basket
+);
+
+// BasketController Enable Pulse Generator
+ButtonLevelPulseConverter BasketControllerEnablePulseGenerator_inst0(
+	.CLK(CLOCK_50),
+	.CleanButtonIn(EN_BasketController_Level),
+	.ButtonPulseOut(BasketController_Enable_Pulse)
 );
 
 
@@ -206,11 +220,11 @@ always @ (posedge CLOCK_50)
 									EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
-										4'b0001: Barcode_Digit_in <= 'd1;
-										4'b0010: Barcode_Digit_in <= 'd2;
-										4'b0100: Barcode_Digit_in <= 'd3;
-										4'b1000: Barcode_Digit_in <= 'd4;
-										default: Barcode_Digit_in <= 'd12;	// Never Reached
+										4'b0001: Barcode_Digit_out <= 'd1;
+										4'b0010: Barcode_Digit_out <= 'd2;
+										4'b0100: Barcode_Digit_out <= 'd3;
+										4'b1000: Barcode_Digit_out <= 'd4;
+										default: Barcode_Digit_out <= 'd15;	// Never Reached
 									endcase
 								end
 							else
@@ -282,6 +296,7 @@ always @ (posedge CLOCK_50)
 					
 		State4_Quantity	:	// Quantity Selection State
 					begin
+						EN_BasketController_Level <= 0;
 						if(|KEY_Reg)								// Any Digit is Pressed?
 							begin
 									// Case or Simple Encoder to extract the pressed key
@@ -294,6 +309,7 @@ always @ (posedge CLOCK_50)
 									endcase
 									// TODO Basket Controller handling
 									//		Enable?
+									EN_BasketController_Level <= 1;
 									;
 									// Then Go to IDLE State for new interactions
 									State <= State1_Idle;
