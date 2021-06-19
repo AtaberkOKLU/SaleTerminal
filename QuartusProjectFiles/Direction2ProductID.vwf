@@ -20,6 +20,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
@@ -38,6 +39,7 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
+
 </modelsim_script_timing>
 <hdl_lang>verilog</hdl_lang>
 </simulation_settings>*/
@@ -69,7 +71,7 @@ HEADER
 	VERSION = 1;
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
-	DATA_DURATION = 160.0;
+	DATA_DURATION = 320.0;
 	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
@@ -117,6 +119,76 @@ SIGNAL("Dir_in[0]")
 }
 
 SIGNAL("Enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("RESET_N")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("BasketProductNum")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = BUS;
+	WIDTH = 4;
+	LSB_INDEX = 0;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("BasketProductNum[3]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "BasketProductNum";
+}
+
+SIGNAL("BasketProductNum[2]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "BasketProductNum";
+}
+
+SIGNAL("BasketProductNum[1]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "BasketProductNum";
+}
+
+SIGNAL("BasketProductNum[0]")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "BasketProductNum";
+}
+
+SIGNAL("CleanSW2")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -176,16 +248,6 @@ SIGNAL("ProductID[0]")
 	PARENT = "ProductID";
 }
 
-SIGNAL("RESET_N")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 TRANSITION_LIST("CLOCK")
 {
 	NODE
@@ -195,7 +257,7 @@ TRANSITION_LIST("CLOCK")
 		LEVEL 0 FOR 5.0;
 		NODE
 		{
-			REPEAT = 14;
+			REPEAT = 30;
 			LEVEL 1 FOR 5.0;
 			LEVEL 0 FOR 5.0;
 		}
@@ -220,6 +282,10 @@ TRANSITION_LIST("Dir_in[1]")
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 30.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 60.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 30.0;
 	}
 }
 
@@ -234,7 +300,11 @@ TRANSITION_LIST("Dir_in[0]")
 		LEVEL 1 FOR 10.0;
 		LEVEL 0 FOR 20.0;
 		LEVEL 1 FOR 10.0;
-		LEVEL 0 FOR 20.0;
+		LEVEL 0 FOR 100.0;
+		LEVEL 1 FOR 30.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 10.0;
+		LEVEL 0 FOR 30.0;
 	}
 }
 
@@ -254,42 +324,10 @@ TRANSITION_LIST("Enable")
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 20.0;
 		LEVEL 0 FOR 20.0;
-	}
-}
-
-TRANSITION_LIST("ProductID[3]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 160.0;
-	}
-}
-
-TRANSITION_LIST("ProductID[2]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 160.0;
-	}
-}
-
-TRANSITION_LIST("ProductID[1]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 160.0;
-	}
-}
-
-TRANSITION_LIST("ProductID[0]")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL X FOR 160.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 10.0;
+		LEVEL 1 FOR 60.0;
+		LEVEL 0 FOR 30.0;
 	}
 }
 
@@ -298,9 +336,92 @@ TRANSITION_LIST("RESET_N")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 1 FOR 140.0;
+		LEVEL 1 FOR 300.0;
 		LEVEL 0 FOR 10.0;
 		LEVEL 1 FOR 10.0;
+	}
+}
+
+TRANSITION_LIST("BasketProductNum[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("BasketProductNum[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("BasketProductNum[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("BasketProductNum[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("CleanSW2")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 0 FOR 150.0;
+		LEVEL 1 FOR 140.0;
+		LEVEL 0 FOR 30.0;
+	}
+}
+
+TRANSITION_LIST("ProductID[3]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("ProductID[2]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("ProductID[1]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 320.0;
+	}
+}
+
+TRANSITION_LIST("ProductID[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 320.0;
 	}
 }
 
@@ -363,7 +484,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ProductID";
+	CHANNEL = "BasketProductNum";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 6;
@@ -373,7 +494,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ProductID[3]";
+	CHANNEL = "BasketProductNum[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 7;
@@ -383,7 +504,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ProductID[2]";
+	CHANNEL = "BasketProductNum[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 8;
@@ -393,7 +514,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ProductID[1]";
+	CHANNEL = "BasketProductNum[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 9;
@@ -403,12 +524,71 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "ProductID[0]";
+	CHANNEL = "BasketProductNum[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 10;
 	TREE_LEVEL = 1;
 	PARENT = 6;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "CleanSW2";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ProductID";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 0;
+	CHILDREN = 13, 14, 15, 16;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ProductID[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 13;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ProductID[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 14;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ProductID[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 15;
+	TREE_LEVEL = 1;
+	PARENT = 12;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "ProductID[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 16;
+	TREE_LEVEL = 1;
+	PARENT = 12;
 }
 
 TIME_BAR
