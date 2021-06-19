@@ -1,9 +1,5 @@
 Flow report for SaleTerminal
-<<<<<<< Updated upstream
 Wed Jun 16 09:09:03 2021
-=======
-Sun Jun 13 20:22:54 2021
->>>>>>> Stashed changes
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -45,36 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-<<<<<<< Updated upstream
 ; Flow Status                     ; Successful - Wed Jun 16 09:09:03 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; StateMachine                                ;
-=======
-; Flow Status                     ; Successful - Sun Jun 13 20:22:54 2021       ;
-; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
-; Revision Name                   ; SaleTerminal                                ;
-; Top-level Entity Name           ; VGA_Controller                              ;
->>>>>>> Stashed changes
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-<<<<<<< Updated upstream
 ; Total registers                 ; 35                                          ;
 ; Total pins                      ; 43                                          ;
-=======
-; Total registers                 ; 55                                          ;
-; Total pins                      ; 30                                          ;
->>>>>>> Stashed changes
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 2,880,000                                   ;
-; Total DSP Blocks                ; 3                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 1                                           ;
+; Total PLLs                      ; 0                                           ;
 ; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
@@ -84,17 +68,12 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-<<<<<<< Updated upstream
 ; Start date & time ; 06/16/2021 09:08:52 ;
-=======
-; Start date & time ; 06/13/2021 20:22:35 ;
->>>>>>> Stashed changes
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SaleTerminal        ;
 +-------------------+---------------------+
 
 
-<<<<<<< Updated upstream
 +-------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Flow Non-Default Global Settings                                                                                                                ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
@@ -127,40 +106,6 @@ https://fpgasoftware.intel.com/eula.
 ; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --           ; --                                ;
 ; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --           ; --                                ;
 +-------------------------------------+----------------------------------------+---------------+--------------+-----------------------------------+
-=======
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                  ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
-; Assignment Name                     ; Value                                  ; Default Value ; Entity Name    ; Section Id                        ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 193989699161148.162360495519724        ; --            ; --             ; --                                ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_timing           ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_boundary_scan    ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_signal_integrity ;
-; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --            ; --             ; eda_board_design_symbol           ;
-; EDA_INPUT_DATA_FORMAT               ; Vqm                                    ; --            ; --             ; eda_design_synthesis              ;
-; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --             ; eda_simulation                    ;
-; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --             ; --                                ;
-; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --             ; eda_simulation                    ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --             ; --                                ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --             ; --                                ;
-; MISC_FILE                           ; VGA_PLL_sim/VGA_PLL.vo                 ; --            ; --             ; --                                ;
-; MISC_FILE                           ; VGA_PLL.cmp                            ; --            ; --             ; --                                ;
-; MISC_FILE                           ; ImageROM.bsf                           ; --            ; --             ; --                                ;
-; NUM_PARALLEL_PROCESSORS             ; All                                    ; --            ; --             ; --                                ;
-; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; VGA_Controller ; Top                               ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; VGA_Controller ; Top                               ;
-; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; VGA_Controller ; Top                               ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --             ; --                                ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --             ; --                                ;
-; SPD_FILE                            ; VGA_PLL.spd                            ; --            ; --             ; --                                ;
-; SYNTHESIS_ONLY_QIP                  ; On                                     ; --            ; --             ; --                                ;
-; TOP_LEVEL_ENTITY                    ; VGA_Controller                         ; SaleTerminal  ; --             ; --                                ;
-; VERILOG_SHOW_LMF_MAPPING_MESSAGES   ; Off                                    ; --            ; --             ; --                                ;
-; VHDL_INPUT_VERSION                  ; VHDL_2008                              ; VHDL_1993     ; --             ; --                                ;
-; VHDL_SHOW_LMF_MAPPING_MESSAGES      ; Off                                    ; --            ; --             ; --                                ;
-+-------------------------------------+----------------------------------------+---------------+----------------+-----------------------------------+
->>>>>>> Stashed changes
 
 
 +--------------------------------------------------------------------------------------------------------------------------+
@@ -168,13 +113,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-<<<<<<< Updated upstream
 ; Analysis & Synthesis ; 00:00:11     ; 1.0                     ; 4823 MB             ; 00:00:26                           ;
 ; Total                ; 00:00:11     ; --                      ; --                  ; 00:00:26                           ;
-=======
-; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4874 MB             ; 00:00:37                           ;
-; Total                ; 00:00:18     ; --                      ; --                  ; 00:00:37                           ;
->>>>>>> Stashed changes
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -183,11 +123,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-<<<<<<< Updated upstream
 ; Analysis & Synthesis ; Ataberk-PC       ; Windows 10 ; 10.0       ; x86_64         ;
-=======
-; Analysis & Synthesis ; DESKTOP-43SJ629  ; Windows 10 ; 10.0       ; x86_64         ;
->>>>>>> Stashed changes
 +----------------------+------------------+------------+------------+----------------+
 
 
