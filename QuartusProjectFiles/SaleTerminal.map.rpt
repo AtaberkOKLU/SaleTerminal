@@ -1,12 +1,8 @@
 Analysis & Synthesis report for SaleTerminal
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 Wed Jun 16 09:09:03 2021
 =======
 Sun Jun 13 20:22:54 2021
->>>>>>> Stashed changes
-=======
-Sat Jun 19 12:19:25 2021
 >>>>>>> Stashed changes
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
@@ -21,7 +17,6 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
   8. State Machine - |StateMachine|State
   9. Registers Removed During Synthesis
@@ -52,14 +47,6 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  23. Analysis & Synthesis Messages
  24. Analysis & Synthesis Suppressed Messages
 >>>>>>> Stashed changes
-=======
-  8. General Register Statistics
-  9. Multiplexer Restructuring Statistics (Restructuring Performed)
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
- 13. Analysis & Synthesis Suppressed Messages
->>>>>>> Stashed changes
 
 
 
@@ -87,17 +74,12 @@ https://fpgasoftware.intel.com/eula.
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 ; Analysis & Synthesis Status     ; Successful - Wed Jun 16 09:09:03 2021       ;
-=======
-; Analysis & Synthesis Status     ; Successful - Sat Jun 19 12:19:25 2021       ;
->>>>>>> Stashed changes
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
-; Top-level Entity Name           ; Direction2ProductID                         ;
+; Top-level Entity Name           ; StateMachine                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-<<<<<<< Updated upstream
 ; Total registers                 ; 35                                          ;
 ; Total pins                      ; 43                                          ;
 =======
@@ -109,10 +91,6 @@ https://fpgasoftware.intel.com/eula.
 ; Logic utilization (in ALMs)     ; N/A                                         ;
 ; Total registers                 ; 55                                          ;
 ; Total pins                      ; 30                                          ;
->>>>>>> Stashed changes
-=======
-; Total registers                 ; 8                                           ;
-; Total pins                      ; 14                                          ;
 >>>>>>> Stashed changes
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,880,000                                   ;
@@ -126,7 +104,6 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------+---------------------------------------------+
 
 
-<<<<<<< Updated upstream
 +---------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Settings                                                                                             ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
@@ -219,96 +196,6 @@ https://fpgasoftware.intel.com/eula.
 ; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
 ; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
 +---------------------------------------------------------------------------------+--------------------+--------------------+
-=======
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Settings                                                                                              ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Option                                                                          ; Setting             ; Default Value      ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
-; Device                                                                          ; 5CSEMA5F31C6        ;                    ;
-; Top-level entity name                                                           ; Direction2ProductID ; SaleTerminal       ;
-; Family name                                                                     ; Cyclone V           ; Cyclone V          ;
-; Maximum processors allowed for parallel compilation                             ; All                 ;                    ;
-; VHDL Show LMF Mapping Messages                                                  ; Off                 ;                    ;
-; Verilog Show LMF Mapping Messages                                               ; Off                 ;                    ;
-; VHDL Version                                                                    ; VHDL_2008           ; VHDL_1993          ;
-; Use smart compilation                                                           ; Off                 ; Off                ;
-; Enable parallel Assembler and Timing Analyzer during compilation                ; On                  ; On                 ;
-; Enable compact report table                                                     ; Off                 ; Off                ;
-; Restructure Multiplexers                                                        ; Auto                ; Auto               ;
-; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                 ; Off                ;
-; Create Debugging Nodes for IP Cores                                             ; Off                 ; Off                ;
-; Preserve fewer node names                                                       ; On                  ; On                 ;
-; Intel FPGA IP Evaluation Mode                                                   ; Enable              ; Enable             ;
-; Verilog Version                                                                 ; Verilog_2001        ; Verilog_2001       ;
-; State Machine Processing                                                        ; Auto                ; Auto               ;
-; Safe State Machine                                                              ; Off                 ; Off                ;
-; Extract Verilog State Machines                                                  ; On                  ; On                 ;
-; Extract VHDL State Machines                                                     ; On                  ; On                 ;
-; Ignore Verilog initial constructs                                               ; Off                 ; Off                ;
-; Iteration limit for constant Verilog loops                                      ; 5000                ; 5000               ;
-; Iteration limit for non-constant Verilog loops                                  ; 250                 ; 250                ;
-; Add Pass-Through Logic to Inferred RAMs                                         ; On                  ; On                 ;
-; Infer RAMs from Raw Logic                                                       ; On                  ; On                 ;
-; Parallel Synthesis                                                              ; On                  ; On                 ;
-; DSP Block Balancing                                                             ; Auto                ; Auto               ;
-; NOT Gate Push-Back                                                              ; On                  ; On                 ;
-; Power-Up Don't Care                                                             ; On                  ; On                 ;
-; Remove Redundant Logic Cells                                                    ; Off                 ; Off                ;
-; Remove Duplicate Registers                                                      ; On                  ; On                 ;
-; Ignore CARRY Buffers                                                            ; Off                 ; Off                ;
-; Ignore CASCADE Buffers                                                          ; Off                 ; Off                ;
-; Ignore GLOBAL Buffers                                                           ; Off                 ; Off                ;
-; Ignore ROW GLOBAL Buffers                                                       ; Off                 ; Off                ;
-; Ignore LCELL Buffers                                                            ; Off                 ; Off                ;
-; Ignore SOFT Buffers                                                             ; On                  ; On                 ;
-; Limit AHDL Integers to 32 Bits                                                  ; Off                 ; Off                ;
-; Optimization Technique                                                          ; Balanced            ; Balanced           ;
-; Carry Chain Length                                                              ; 70                  ; 70                 ;
-; Auto Carry Chains                                                               ; On                  ; On                 ;
-; Auto Open-Drain Pins                                                            ; On                  ; On                 ;
-; Perform WYSIWYG Primitive Resynthesis                                           ; Off                 ; Off                ;
-; Auto ROM Replacement                                                            ; On                  ; On                 ;
-; Auto RAM Replacement                                                            ; On                  ; On                 ;
-; Auto DSP Block Replacement                                                      ; On                  ; On                 ;
-; Auto Shift Register Replacement                                                 ; Auto                ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                                 ; Auto                ; Auto               ;
-; Auto Clock Enable Replacement                                                   ; On                  ; On                 ;
-; Strict RAM Replacement                                                          ; Off                 ; Off                ;
-; Allow Synchronous Control Signals                                               ; On                  ; On                 ;
-; Force Use of Synchronous Clear Signals                                          ; Off                 ; Off                ;
-; Auto Resource Sharing                                                           ; Off                 ; Off                ;
-; Allow Any RAM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any ROM Size For Recognition                                              ; Off                 ; Off                ;
-; Allow Any Shift Register Size For Recognition                                   ; Off                 ; Off                ;
-; Use LogicLock Constraints during Resource Balancing                             ; On                  ; On                 ;
-; Ignore translate_off and synthesis_off directives                               ; Off                 ; Off                ;
-; Timing-Driven Synthesis                                                         ; On                  ; On                 ;
-; Report Parameter Settings                                                       ; On                  ; On                 ;
-; Report Source Assignments                                                       ; On                  ; On                 ;
-; Report Connectivity Checks                                                      ; On                  ; On                 ;
-; Ignore Maximum Fan-Out Assignments                                              ; Off                 ; Off                ;
-; Synchronization Register Chain Length                                           ; 3                   ; 3                  ;
-; Power Optimization During Synthesis                                             ; Normal compilation  ; Normal compilation ;
-; HDL message level                                                               ; Level2              ; Level2             ;
-; Suppress Register Optimization Related Messages                                 ; Off                 ; Off                ;
-; Number of Removed Registers Reported in Synthesis Report                        ; 5000                ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                ; 5000               ;
-; Number of Inverted Registers Reported in Synthesis Report                       ; 100                 ; 100                ;
-; Clock MUX Protection                                                            ; On                  ; On                 ;
-; Auto Gated Clock Conversion                                                     ; Off                 ; Off                ;
-; Block Design Naming                                                             ; Auto                ; Auto               ;
-; SDC constraint protection                                                       ; Off                 ; Off                ;
-; Synthesis Effort                                                                ; Auto                ; Auto               ;
-; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                  ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                            ; Off                 ; Off                ;
-; Analysis & Synthesis Message Level                                              ; Medium              ; Medium             ;
-; Disable Register Merging Across Hierarchies                                     ; Auto                ; Auto               ;
-; Resource Aware Inference For Block RAM                                          ; On                  ; On                 ;
-; Automatic Parallel Synthesis                                                    ; On                  ; On                 ;
-; Partial Reconfiguration Bitstream ID                                            ; Off                 ; Off                ;
-+---------------------------------------------------------------------------------+---------------------+--------------------+
->>>>>>> Stashed changes
 
 
 +------------------------------------------+
@@ -331,7 +218,6 @@ https://fpgasoftware.intel.com/eula.
 
 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Source Files Read                                                                                                                      ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
@@ -342,15 +228,6 @@ https://fpgasoftware.intel.com/eula.
 ; Direction2ProductID.v            ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v       ;         ;
 ; StateMachine.v                   ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v              ;         ;
 +----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-=======
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
-; Direction2ProductID.v            ; yes             ; User Verilog HDL File  ; D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------+---------+
->>>>>>> Stashed changes
 
 
 +--------------------------------------------------------------+
@@ -358,39 +235,44 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 18             ;
+; Estimate of Logic utilization (ALMs needed) ; 47             ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 28             ;
+; Combinational ALUT usage for logic          ; 73             ;
 ;     -- 7 input functions                    ; 1              ;
-;     -- 6 input functions                    ; 7              ;
-;     -- 5 input functions                    ; 4              ;
-;     -- 4 input functions                    ; 4              ;
-;     -- <=3 input functions                  ; 12             ;
+;     -- 6 input functions                    ; 18             ;
+;     -- 5 input functions                    ; 18             ;
+;     -- 4 input functions                    ; 16             ;
+;     -- <=3 input functions                  ; 20             ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 8              ;
+; Dedicated logic registers                   ; 35             ;
 ;                                             ;                ;
-; I/O pins                                    ; 14             ;
+; I/O pins                                    ; 43             ;
 ;                                             ;                ;
 ; Total DSP Blocks                            ; 0              ;
 ;                                             ;                ;
-; Maximum fan-out node                        ; CleanSW2~input ;
-; Maximum fan-out                             ; 11             ;
-; Total fan-out                               ; 160            ;
-; Average fan-out                             ; 2.50           ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 35             ;
+; Total fan-out                               ; 464            ;
+; Average fan-out                             ; 2.39           ;
 +---------------------------------------------+----------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                             ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name         ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
-; |Direction2ProductID       ; 28 (28)             ; 8 (8)                     ; 0                 ; 0          ; 14   ; 0            ; |Direction2ProductID ; Direction2ProductID ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+---------------------------+--------------+
+; Compilation Hierarchy Node                                                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                   ; Entity Name               ; Library Name ;
++------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+---------------------------+--------------+
+; |StateMachine                                                                ; 73 (38)             ; 35 (23)                   ; 0                 ; 0          ; 43   ; 0            ; |StateMachine                                                                         ; StateMachine              ; work         ;
+;    |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|Barcode2ProductID:Barcode2ProductID_inst0                               ; Barcode2ProductID         ; work         ;
+;    |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0   ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0    ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0 ; ButtonLevelPulseConverter ; work         ;
+;    |ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0|  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0  ; ButtonLevelPulseConverter ; work         ;
+;    |Direction2ProductID:Direction2ProductID_inst0|                           ; 9 (9)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |StateMachine|Direction2ProductID:Direction2ProductID_inst0                           ; Direction2ProductID       ; work         ;
++------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------+---------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-<<<<<<< Updated upstream
 Encoding Type:  One-Hot
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |StateMachine|State                                                                                                                                                              ;
@@ -537,24 +419,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 >>>>>>> Stashed changes
 
 
-=======
->>>>>>> Stashed changes
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 ; Total registers                              ; 35    ;
-=======
-; Total registers                              ; 8     ;
->>>>>>> Stashed changes
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-<<<<<<< Updated upstream
 ; Number of registers using Clock Enable       ; 18    ;
 =======
 ; Total registers                              ; 55    ;
@@ -564,14 +439,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 10    ;
 >>>>>>> Stashed changes
-=======
-; Number of registers using Clock Enable       ; 7     ;
->>>>>>> Stashed changes
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-<<<<<<< Updated upstream
 <<<<<<< Updated upstream
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
@@ -1016,15 +887,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; locked ; Output ; Info     ; Explicitly unconnected ;
 +--------+--------+----------+------------------------+
 >>>>>>> Stashed changes
-=======
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
-; 8:1                ; 3 bits    ; 15 LEs        ; 12 LEs               ; 3 LEs                  ; Yes        ; |Direction2ProductID|BasketID[1] ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------+
->>>>>>> Stashed changes
 
 
 +-----------------------------------------------------+
@@ -1033,28 +895,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 ; arriav_ff             ; 35                          ;
 ;     ENA               ; 18                          ;
 ;     plain             ; 17                          ;
 ; arriav_lcell_comb     ; 74                          ;
-=======
-; arriav_ff             ; 8                           ;
-;     ENA               ; 7                           ;
-;     plain             ; 1                           ;
-; arriav_lcell_comb     ; 28                          ;
->>>>>>> Stashed changes
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 27                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 10                          ;
-;         4 data inputs ; 4                           ;
-;         5 data inputs ; 4                           ;
-;         6 data inputs ; 7                           ;
-; boundary_port         ; 14                          ;
+;     normal            ; 73                          ;
+;         1 data inputs ; 2                           ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 11                          ;
+;         4 data inputs ; 16                          ;
+;         5 data inputs ; 18                          ;
+;         6 data inputs ; 18                          ;
+; boundary_port         ; 43                          ;
 ;                       ;                             ;
-<<<<<<< Updated upstream
 ; Max LUT depth         ; 4.00                        ;
 ; Average LUT depth     ; 2.38                        ;
 =======
@@ -1085,10 +940,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Max LUT depth         ; 4.30                        ;
 ; Average LUT depth     ; 2.33                        ;
 >>>>>>> Stashed changes
-=======
-; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 2.15                        ;
->>>>>>> Stashed changes
 +-----------------------+-----------------------------+
 
 
@@ -1108,13 +959,9 @@ Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
     Info: Processing started: Wed Jun 16 09:08:52 2021
 =======
     Info: Processing started: Sun Jun 13 20:22:34 2021
->>>>>>> Stashed changes
-=======
-    Info: Processing started: Sat Jun 19 12:19:13 2021
 >>>>>>> Stashed changes
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -1159,9 +1006,16 @@ Info (12021): Found 1 design units, including 1 entities, in source file directi
     Info (12023): Found entity 1: Direction2ProductID File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 13
 Info (12021): Found 1 design units, including 1 entities, in source file statemachine.v
     Info (12023): Found entity 1: StateMachine File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 10
-Info (12127): Elaborating entity "Direction2ProductID" for the top level hierarchy
-Info (10264): Verilog HDL Case Statement information at Direction2ProductID.v(58): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 58
+Info (12127): Elaborating entity "StateMachine" for the top level hierarchy
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(208): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 208
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(265): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 265
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(288): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 288
+Info (12128): Elaborating entity "ButtonLevelPulseConverter" for hierarchy "ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 95
+Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 116
+Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 142
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 4 registers lost all their fanouts during netlist optimizations.
 Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
     Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 20.1 -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
@@ -1170,7 +1024,6 @@ Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity doe
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-<<<<<<< Updated upstream
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CMD_Reg[1]" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 16
     Warning (15610): No output dependent on input pin "CMD_Reg[2]" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 16
@@ -1304,17 +1157,6 @@ Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
     Info: Processing ended: Sun Jun 13 20:22:54 2021
     Info: Elapsed time: 00:00:20
     Info: Total CPU time (on all processors): 00:00:38
->>>>>>> Stashed changes
-=======
-Info (21057): Implemented 42 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 10 input pins
-    Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 28 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 4815 megabytes
-    Info: Processing ended: Sat Jun 19 12:19:25 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:28
 >>>>>>> Stashed changes
 
 

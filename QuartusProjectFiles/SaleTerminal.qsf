@@ -51,13 +51,9 @@ set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
 # ================================
 set_global_assignment -name FAMILY "Cyclone V"
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
 set_global_assignment -name TOP_LEVEL_ENTITY StateMachine
 =======
 set_global_assignment -name TOP_LEVEL_ENTITY VGA_Controller
->>>>>>> Stashed changes
-=======
-set_global_assignment -name TOP_LEVEL_ENTITY Direction2ProductID
 >>>>>>> Stashed changes
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 

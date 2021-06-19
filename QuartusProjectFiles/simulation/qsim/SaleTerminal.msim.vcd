@@ -3,7 +3,7 @@ $comment
 		vcd file SaleTerminal.msim.vcd -direction
 $end
 $date
-	Sat Jun 19 12:29:24 2021
+	Wed Jun 16 07:51:35 2021
 $end
 $version
 	ModelSim Version 2020.1
@@ -13,713 +13,367 @@ $timescale
 $end
 
 $scope module Direction2ProductID_vlg_vec_tst $end
-$var reg 4 ! BasketProductNum [3:0] $end
-$var reg 1 " CLOCK $end
-$var reg 1 # CleanSW2 $end
-$var reg 2 $ Dir_in [1:0] $end
-$var reg 1 % Enable $end
-$var reg 1 & RESET_N $end
-$var wire 1 ' ProductID [3] $end
-$var wire 1 ( ProductID [2] $end
-$var wire 1 ) ProductID [1] $end
-$var wire 1 * ProductID [0] $end
+$var reg 1 ! CLOCK $end
+$var reg 2 " Dir_in [1:0] $end
+$var reg 1 # Enable $end
+$var reg 1 $ RESET_N $end
+$var wire 1 % ProductID [3] $end
+$var wire 1 & ProductID [2] $end
+$var wire 1 ' ProductID [1] $end
+$var wire 1 ( ProductID [0] $end
 
 $scope module i1 $end
-$var wire 1 + gnd $end
-$var wire 1 , vcc $end
-$var wire 1 - unknown $end
-$var tri1 1 . devclrn $end
-$var tri1 1 / devpor $end
-$var tri1 1 0 devoe $end
-$var wire 1 1 ProductID[0]~output_o $end
-$var wire 1 2 ProductID[1]~output_o $end
-$var wire 1 3 ProductID[2]~output_o $end
-$var wire 1 4 ProductID[3]~output_o $end
-$var wire 1 5 CLOCK~input_o $end
-$var wire 1 6 CleanSW2~input_o $end
-$var wire 1 7 Dir_in[0]~input_o $end
-$var wire 1 8 Dir_in[1]~input_o $end
+$var wire 1 ) gnd $end
+$var wire 1 * vcc $end
+$var wire 1 + unknown $end
+$var tri1 1 , devclrn $end
+$var tri1 1 - devpor $end
+$var tri1 1 . devoe $end
+$var wire 1 / ProductID[0]~output_o $end
+$var wire 1 0 ProductID[1]~output_o $end
+$var wire 1 1 ProductID[2]~output_o $end
+$var wire 1 2 ProductID[3]~output_o $end
+$var wire 1 3 CLOCK~input_o $end
+$var wire 1 4 RESET_N~input_o $end
+$var wire 1 5 Dir_in[1]~input_o $end
+$var wire 1 6 Dir_in[0]~input_o $end
+$var wire 1 7 Mux0~0_combout $end
+$var wire 1 8 ProductID~4_combout $end
 $var wire 1 9 Enable~input_o $end
-$var wire 1 : RESET_N~input_o $end
-$var wire 1 ; BasketID~1_combout $end
-$var wire 1 < Equal1~0_combout $end
-$var wire 1 = BasketProductNum[2]~input_o $end
-$var wire 1 > BasketProductNum[1]~input_o $end
-$var wire 1 ? BasketID~3_combout $end
-$var wire 1 @ BasketProductNum[3]~input_o $end
-$var wire 1 A Add4~1_combout $end
-$var wire 1 B Add5~1_combout $end
-$var wire 1 C BasketID~5_combout $end
-$var wire 1 D LessThan4~0_combout $end
-$var wire 1 E BasketID[1]~2_combout $end
-$var wire 1 F Add4~0_combout $end
-$var wire 1 G Add5~0_combout $end
-$var wire 1 H BasketID~4_combout $end
-$var wire 1 I BasketProductNum[0]~input_o $end
-$var wire 1 J LessThan5~0_combout $end
-$var wire 1 K LessThan5~1_combout $end
-$var wire 1 L BasketID~0_combout $end
-$var wire 1 M BasketID~6_combout $end
-$var wire 1 N Mux0~0_combout $end
-$var wire 1 O ImgID~4_combout $end
-$var wire 1 P ImgID~1_combout $end
-$var wire 1 Q Mux1~0_combout $end
-$var wire 1 R ImgID~3_combout $end
-$var wire 1 S Mux2~0_combout $end
-$var wire 1 T ImgID~2_combout $end
-$var wire 1 U Mux3~0_combout $end
-$var wire 1 V ImgID~0_combout $end
-$var wire 1 W ProductID~0_combout $end
-$var wire 1 X ProductID~1_combout $end
-$var wire 1 Y ProductID~2_combout $end
-$var wire 1 Z ProductID~3_combout $end
-$var wire 1 [ BasketID [3] $end
-$var wire 1 \ BasketID [2] $end
-$var wire 1 ] BasketID [1] $end
-$var wire 1 ^ BasketID [0] $end
-$var wire 1 _ ImgID [3] $end
-$var wire 1 ` ImgID [2] $end
-$var wire 1 a ImgID [1] $end
-$var wire 1 b ImgID [0] $end
+$var wire 1 : ProductID~1_combout $end
+$var wire 1 ; ProductID[3]~reg0_q $end
+$var wire 1 < Mux1~0_combout $end
+$var wire 1 = ProductID~3_combout $end
+$var wire 1 > ProductID[2]~reg0_q $end
+$var wire 1 ? Mux2~0_combout $end
+$var wire 1 @ ProductID~2_combout $end
+$var wire 1 A ProductID[1]~reg0_q $end
+$var wire 1 B Mux3~0_combout $end
+$var wire 1 C ProductID~0_combout $end
+$var wire 1 D ProductID[0]~reg0_q $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-b101 !
-1"
+1!
+b0 "
 0#
-b0 $
-0%
-1&
-0*
-0)
+1$
 0(
 0'
-0+
+0&
+0%
+0)
+1*
+x+
 1,
-x-
+1-
 1.
-1/
-10
+0/
+00
 01
 02
-03
-04
-15
+13
+14
+05
 06
 07
 08
 09
-1:
-1;
+0:
+0;
 0<
-1=
+0=
 0>
-0?
+1?
 0@
 0A
-0B
+1B
 0C
 0D
-0E
-0F
-0G
-0H
-1I
-1J
-1K
-0L
-0M
-0N
-0O
-0P
-0Q
-0R
-1S
-0T
-1U
-0V
-0W
-0X
-0Y
-0Z
-0^
-0]
-0\
-0[
-0b
-0a
-0`
-0_
 $end
 #5000
-0"
-05
+0!
+03
 #10000
-1"
-15
+1!
+13
 #15000
-0"
-05
+0!
+03
 #20000
-1%
-b10 $
-1"
-19
-18
-15
-1Q
-1<
-0;
-1P
-1R
-#25000
-0"
-05
-1`
-0Q
-1N
-1Y
-13
-1(
-1O
-0R
-#30000
-0%
-b0 $
-1"
-09
-08
-15
-0U
-0S
-0N
-0<
-1;
-0P
-0O
-1T
-1V
-#35000
-0"
-05
-#40000
-1"
-15
-#45000
-0"
-05
-#50000
-1%
-b10 $
-1"
-19
-18
-15
-1U
-1S
-1N
-1<
-0;
-1P
-1O
-0T
-0V
-#55000
-0"
-05
-1_
-0`
-0U
-0S
-0Y
-1Z
-14
-03
-0(
-1'
-1T
-1V
-#60000
-0%
-b0 $
-1"
-09
-08
-15
-1Q
-0N
-0<
-1;
-0P
-0O
-1R
-#65000
-0"
-05
-#70000
-b1 $
-b11 $
-1"
-17
-18
-15
-1S
-0Q
-1N
-1O
-0R
-0T
-#75000
-0"
-05
-#80000
-1%
-b10 $
-b0 $
-1"
-19
-07
-08
-15
-0S
-1Q
-0N
-0;
-1P
-0O
-1R
-1T
-#85000
-0"
-05
-0_
-1`
-1a
-1b
-1U
-1W
-1X
-1Y
-0Z
-04
-13
-12
-11
-1*
-1)
-1(
-0'
-0V
-#90000
-0%
-1"
-09
-15
-0P
-1;
-#95000
-0"
-05
-#100000
-b1 $
-b11 $
-1%
-1"
-17
-18
-19
-15
-1P
-0;
-1S
-0Q
-1N
-1O
-0R
-0T
-#105000
-0"
-05
-1_
-0`
-0a
-0b
-0U
-0W
-0X
-0Y
-1Z
-14
-03
-02
-01
-0*
-0)
-0(
-1'
-1V
-#110000
-b10 $
-b0 $
-0%
-1"
-07
-08
-09
-15
-0P
-1;
-0S
-1Q
-0N
-0O
-1R
-1T
-#115000
-0"
-05
-#120000
-b10 $
-1%
-1"
-18
-19
-15
-1P
-0;
-0Q
-1N
-1<
-1O
-0R
-#125000
-0"
-05
-1a
-1b
-1W
-1X
-12
-11
-1*
-1)
-#130000
-b11 $
-b1 $
-1"
-17
-08
-15
-1Q
-0N
-0<
-0O
-1R
-#135000
-0"
-05
-0_
-1`
-0Q
-1Y
-0Z
-04
-13
-1(
-0'
-0R
-#140000
-0%
-b0 $
-1"
-09
-07
-15
-1U
-1Q
-1;
-0P
-1R
-0V
-#145000
-0"
-05
-#150000
 1#
-1"
+b10 "
+1!
+19
+15
+13
+1<
+1:
+1=
+#25000
+0!
+03
+1>
+11
+0<
+17
+1&
+18
+0=
+#30000
+0#
+b0 "
+1!
+09
+05
+13
+0B
+0?
+07
+0:
+08
+1@
+1C
+#35000
+0!
+03
+#40000
+1!
+13
+#45000
+0!
+03
+#50000
+1#
+b10 "
+1!
+19
+15
+13
+1B
+1?
+17
+1:
+18
+0@
+0C
+#55000
+0!
+03
+1;
+0>
+01
+12
+0B
+0?
+1%
+0&
+1@
+1C
+#60000
+0#
+b0 "
+1!
+09
+05
+13
+1<
+07
+0:
+08
+1=
+#65000
+0!
+03
+#70000
+b1 "
+b11 "
+1!
 16
 15
-0Y
-0X
-0W
-0T
-0R
-01
-02
-03
-0(
-0)
-0*
-#155000
-0"
-05
-#160000
-b10 $
-1%
-1"
-18
-19
-15
-1P
-1L
-0;
-0U
-0Q
-1N
-1E
-1<
-1M
-#165000
-0"
-05
-1^
-0`
-0a
-0b
-1U
-1S
-1Q
-0N
-0J
-1F
-1D
-1A
-1W
-0M
-1?
-11
-1*
-#170000
-1"
-15
-#175000
-0"
-05
-1]
-0^
-0W
-1M
-1X
-12
-01
-0*
-1)
-#180000
-1"
-15
-#185000
-0"
-05
-1^
-1G
-1W
-0M
-0?
-11
-1*
-1H
-#190000
-1"
-15
-#195000
-0"
-05
-0]
-1\
-0^
-1J
-0K
-0W
-1M
-1Y
-0X
-02
 13
-01
-1K
-0*
-1(
-0)
-#200000
-1"
-15
-#205000
-0"
-05
-1^
-0J
-0F
-1W
-0M
 1?
-11
-0K
-1*
-1M
-0?
-#210000
-1"
-15
-#215000
-0"
-05
-#220000
-b0 $
-0%
-1"
-08
-09
-15
-0P
-0L
-1;
-0Q
 0<
-#225000
-0"
-05
-#230000
-1%
-1"
-19
-15
-1P
-#235000
-0"
-05
-#240000
-b1 $
-1"
-17
-15
-1L
-0;
-0M
-#245000
-0"
-05
-0^
-1J
-1F
-0W
-1M
-1?
-01
-1K
-0*
-0H
-#250000
-1"
-15
-#255000
-0"
-05
-1]
-0\
-1^
-0J
-1W
-0M
-0Y
-1X
-12
-03
-11
-1*
-0(
-1)
-#260000
-1"
-15
-#265000
-0"
-05
-0^
-0G
-0W
-1M
-0?
-01
-0*
-#270000
-b0 $
-1"
-07
-15
-0L
-1;
-0M
-#275000
-0"
-05
-#280000
-b10 $
-b11 $
-1"
 17
 18
-15
-0U
-#285000
-0"
-05
-#290000
-0#
-0%
-b1 $
-b0 $
-1"
+0=
+0@
+#75000
+0!
+03
+#80000
+1#
+b10 "
+b0 "
+1!
+19
 06
+05
+13
+0?
+1<
+07
+1:
+08
+1=
+1@
+#85000
+0!
+03
+0;
+1>
+1A
+1D
+1/
+10
+11
+02
+1B
+0%
+1&
+1'
+1(
+0C
+#90000
+0#
+1!
 09
+13
+0:
+#95000
+0!
+03
+#100000
+b1 "
+b11 "
+1#
+1!
+16
+15
+19
+13
+1:
+1?
+0<
+17
+18
+0=
+0@
+#105000
+0!
+03
+1;
+0>
+0A
+0D
+0/
+00
+01
+12
+0B
+1%
+0&
+0'
+0(
+1C
+#110000
+b10 "
+b0 "
+0#
+1!
+06
+05
+09
+13
+0:
+0?
+1<
 07
 08
+1=
+1@
+#115000
+0!
+03
+#120000
+b10 "
+1#
+1!
 15
-1U
-0E
-0P
-0X
-1V
-02
-0)
-0V
-#295000
-0"
-05
-#300000
-0&
-1"
-0:
-15
-1P
-0;
-#305000
-0"
-05
-0]
-1J
-0F
-0D
-0A
-#310000
-1&
-1"
+19
+13
 1:
-15
-0P
-1;
-#315000
-0"
+0<
+17
+18
+0=
+#125000
+0!
+03
+1A
+1D
+1/
+10
+1'
+1(
+#130000
+b11 "
+b1 "
+1!
+16
 05
-#320000
+13
+1<
+07
+08
+1=
+#135000
+0!
+03
+0;
+1>
+11
+02
+0<
+0%
+1&
+0=
+#140000
+0$
+0#
+b0 "
+1!
+04
+09
+06
+13
+1B
+1<
+0C
+0@
+#145000
+0!
+03
+0>
+0A
+0D
+0/
+00
+01
+1?
+0<
+0&
+0'
+0(
+#150000
+1$
+1!
+14
+13
+0:
+#155000
+0!
+03
+#160000
