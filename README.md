@@ -123,12 +123,17 @@ Visit Docs Folder
 		+	VGA Implementation			: NOT STARTED
 +	Text Contoller						: Alper SOYSAL 	 - Ongoing             
 	+	Basket Implementation			: Alper SOYSAL 	 - Ongoing   
-	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing   
-+	Barcode Hover Controller			: Göksu UZUNTÜRK - Ongoing
-	+	VGA Implementation				: Ataberk ÖKLÜ 	 - Done
-+	Direction Hover Controller			: Göksu UZUNTÜRK - Ongoing
-	+	VGA Implementation				: Ataberk ÖKLÜ 	 - Done
-+	Basket Edit Hover Controller 		: NOT STARTED
+	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing
++	Hover Controller					: Göksu&Ataberk	 - Ongoing
+	+	Barcode Hover Controller		: Göksu UZUNTÜRK - Ongoing
+		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
+	+	Interactive Hover Controller	: Göksu UZUNTÜRK - Ongoing
+		+	Direction2ProdcutID			: Ataberk ÖKLÜ   - Done
+		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
+	+	Basket Edit Hover Controller 	: Ataberk ÖKLÜ   - Ongoing
+		+	Direction2ProdcutID			: Ataberk ÖKLÜ   - Done
+		+	VGA Implementation			: Ataberk ÖKLÜ 	 - Done
+	
 
 
 
