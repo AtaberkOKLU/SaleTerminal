@@ -47,14 +47,14 @@ for j = 1:number_of_images
     I = imread(target_file);
 	
     %Extract RED, GREEN and BLUE components from the image
-    R = I(:,:,1);			
-    G = I(:,:,2);
-    B = I(:,:,3);
+    R = I(:,:,1).';			
+    G = I(:,:,2).';
+    B = I(:,:,3).';
     
     %Save values to .mif file in HEX format
     for i = 1:size(R(:), 1)
         fprintf (fileID, '%d : %02x%02x%02x;\n', ...
-            i+PRDC_IMG_WIDTH*PRDC_IMG_HEIGHT*(j-1)-1, R(i), G(i), B(i)); 
+            i+PRDC_IMG_WIDTH*PRDC_IMG_HEIGHT*(j-1)-1, B(i), G(i), R(i)); 
     end
 
 end
