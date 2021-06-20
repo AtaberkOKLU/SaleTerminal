@@ -11,8 +11,8 @@ module StateMachine(
 	// Button Controller
 	/*
 	input wire [3:0] CMD_En,
-	input wire [3:0] KEY_En,
 	*/
+	input wire [3:0] KEY_En,
 	input wire [3:0] CMD_Reg,
 	input wire [3:0] KEY_Reg,
 	input wire [2:1] CleanSWOut,
@@ -163,13 +163,13 @@ initial
 	State <= State0_Start;
 
 // State List
-localparam State0_Start 		= 4'd0;
-localparam State1_Idle 			= 4'd1;
-localparam State2_Barcode 		= 4'd2;
-localparam State3_Interactive = 4'd3;
-localparam State4_Quantity 	= 4'd4;
-localparam State5_BasketEdit 	= 4'd5;
-localparam State6_EndShopping = 4'd6;
+localparam State0_Start 		= 3'd0;
+localparam State1_Idle 			= 3'd1;
+localparam State2_Barcode 		= 3'd2;
+localparam State3_Interactive = 3'd3;
+localparam State4_Quantity 	= 3'd4;
+localparam State5_BasketEdit 	= 3'd5;
+localparam State6_EndShopping = 3'd6;
 
 
 // State Machine
@@ -197,9 +197,15 @@ always @ (posedge CLOCK_50)
 						if (CMD_Reg[0]) 						// Select Button is Pressed?
 							State <= State6_EndShopping;	// 	End the Shopping
 						else if(CleanSWOut[2])				// SW2 is Active?
-							State <= State5_BasketEdit;	// 	Go to Basket Editing Mode
+							begin
+								RST_BarcodeController_Level <= 1;
+								State <= State5_BasketEdit;	// 	Go to Basket Editing Mode
+							end
 						else if (CleanSWOut[1])				// SW1 is Active?
-							State <= State3_Interactive;	// 	Go to Interactive Mode
+							begin
+								RST_BarcodeController_Level <= 1;
+								State <= State3_Interactive;	// 	Go to Interactive Mode
+							end
 						else										// None is active?
 							State <= State2_Barcode;		// 	Go to Barcode Mode
 					end
@@ -214,16 +220,16 @@ always @ (posedge CLOCK_50)
 						if(CleanSWOut[1] || CleanSWOut[2])			// SW1 or SW2 active?
 							State <= State1_Idle;						// 	Go to IDLE State for proper handling
 						else if(!BarcodeDigitCompleted)				// Barcode is NOT completed?
-							if(|KEY_Reg)									// 	If any Digit Key is pressed
+							if(|KEY_Reg)				// 	If any Digit Key is pressed
 								begin											// 		Then Add to Barcode Register
 									// Add to shift register
 									EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
-										4'b0001: Barcode_Digit_out <= 'd1;
-										4'b0010: Barcode_Digit_out <= 'd2;
-										4'b0100: Barcode_Digit_out <= 'd3;
-										4'b1000: Barcode_Digit_out <= 'd4;
+										4'b0001: Barcode_Digit_out <= 'd4;
+										4'b0010: Barcode_Digit_out <= 'd3;
+										4'b0100: Barcode_Digit_out <= 'd2;
+										4'b1000: Barcode_Digit_out <= 'd1;
 										default: Barcode_Digit_out <= 'd15;	// Never Reached
 									endcase
 								end
@@ -239,6 +245,7 @@ always @ (posedge CLOCK_50)
 										ProductID_out <= ProductID_Barcode;// ProdcutID From Barcode2ProductID
 										// Enable?
 										;
+										RST_BarcodeController_Level 	<= 1;
 										State <= State4_Quantity;			//		Then Go to Quantity Sel State
 									end
 								else											// Else
@@ -257,8 +264,9 @@ always @ (posedge CLOCK_50)
 		State3_Interactive	:	
 					// Interactive Selection Mode State
 					begin
-						EN_Direction2ProductID_Level 	= 0;
-						RST_Direction2ProductID_Level = 0;
+						EN_Direction2ProductID_Level 	<= 0;
+						RST_Direction2ProductID_Level <= 0;
+						RST_BarcodeController_Level  <= 0;
 						if(CleanSWOut[1])								// SW1 still Active?
 							if(CMD_Reg[0])								// Select Button is Pressed?
 								begin
@@ -267,7 +275,7 @@ always @ (posedge CLOCK_50)
 									ProductID_out <= ProductID_Direction;
 									;
 									State <= State4_Quantity;			// 	Go to Quantity Selection
-									RST_Direction2ProductID_Level = 1;
+									RST_Direction2ProductID_Level <= 1;
 								end
 							else
 								if(|KEY_Reg)							// Any Direction Key is pressed?
@@ -275,7 +283,7 @@ always @ (posedge CLOCK_50)
 										// Highlight Controller Handle
 										// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
 										// Direction2Product ID Handle
-										EN_Direction2ProductID_Level = 1;
+										EN_Direction2ProductID_Level <= 1;
 										case(KEY_Reg)
 											4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
 											4'b0010: Dir_out <= 2'b10;	// Down
@@ -289,13 +297,14 @@ always @ (posedge CLOCK_50)
 									State <= State3_Interactive;	// Wait Direction input in this State
 						else												// SW1 is Deactivated
 							begin
-								RST_Direction2ProductID_Level = 1;	// 	Reset Current Position
+								//RST_Direction2ProductID_Level <= 1;	// 	Reset Current Position
 								State <= State1_Idle;					// 	Go to IDLE State
 							end
 					end
 					
 		State4_Quantity	:	// Quantity Selection State
 					begin
+						RST_BarcodeController_Level 	<= 0;
 						EN_BasketController_Level <= 0;
 						if(|KEY_Reg)								// Any Digit is Pressed?
 							begin
@@ -310,6 +319,7 @@ always @ (posedge CLOCK_50)
 									// TODO Basket Controller handling
 									//		Enable?
 									EN_BasketController_Level <= 1;
+									RST_BarcodeController_Level <= 1;
 									;
 									// Then Go to IDLE State for new interactions
 									State <= State1_Idle;
@@ -318,25 +328,28 @@ always @ (posedge CLOCK_50)
 							State <= State4_Quantity;
 					end
 		State5_BasketEdit	:	
-					if(CleanSWOut[2])								// SW2 still Active?
-						if(CMD_Reg[0])								// Select Button is Pressed?
-							begin
-								// Basket Controller Cancel Prd
-								;
-								// Stay in the Same State
-								State <= State5_BasketEdit;	// Stay in the Same State
-							end
-						else		
-							if(|KEY_Reg)							// Any Direction Key is pressed?
+					begin
+						RST_BarcodeController_Level <= 0;
+						if(CleanSWOut[2])								// SW2 still Active?
+							if(CMD_Reg[0])								// Select Button is Pressed?
 								begin
-									// Highlight Controller Handle
+									// Basket Controller Cancel Prd
 									;
-									State <= State5_BasketEdit;// 	And Stay in this State
+									// Stay in the Same State
+									State <= State5_BasketEdit;	// Stay in the Same State
 								end
-							else
-								State <= State5_BasketEdit;	// Else Stay in this State
-					else												// SW1 is Deactivated
-						State <= State1_Idle;					// 	Go to IDLE State
+							else		
+								if(|KEY_Reg)							// Any Direction Key is pressed?
+									begin
+										// Highlight Controller Handle
+										;
+										State <= State5_BasketEdit;// 	And Stay in this State
+									end
+								else
+									State <= State5_BasketEdit;	// Else Stay in this State
+						else												// SW1 is Deactivated
+							State <= State1_Idle;					// 	Go to IDLE State
+					end
 		State6_EndShopping	: 	
 					// End Shopping Story
 					/***/
