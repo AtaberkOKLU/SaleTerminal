@@ -10,5 +10,5 @@
  <library
    expandedCategories="Library/Memory Interfaces and Controllers/Memory Interfaces with UniPHY,Library/University Program/Clock,Library/University Program/Memory,Library/DSP,Library/Memory Interfaces and Controllers,Project,Library/University Program,Library/DSP/Video and Image Processing,Library,Library/Basic Functions,Library/Memory Interfaces and Controllers/SDRAM,Library/Basic Functions/On Chip Memory" />
  <window width="1920" height="1030" x="0" y="0" />
- <generation greybox="1" simulation="VERILOG" />
+ <generation greybox="1" simulation="verilog" />
 </preferences>

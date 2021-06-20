@@ -248,11 +248,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "RESET_N",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_50",
+					"name" : "RESET_N",
 					"strict" : false
 				},
 				{

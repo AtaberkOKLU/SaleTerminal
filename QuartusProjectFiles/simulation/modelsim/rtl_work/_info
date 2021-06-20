@@ -1,0 +1,274 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/modelsim
+vBarcodeController
+Z1 !s110 1624210410
+!i10b 1
+!s100 cCI1Rd[R5ieoYXHGI4_nM0
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+ImojMG]kZVDz_gf1:J9^`X2
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1624187210
+8D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
+!i122 1
+L0 18 69
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1624210410.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles
+Z6 tCvgOpt 0
+n@barcode@controller
+vEncoder16x4
+!s110 1624210438
+!i10b 1
+!s100 HR[f=T[l<:^OTI`YC4DYZ2
+R2
+IJdF6bUE^nM[P12A`_A=]l2
+R3
+R0
+w1624199595
+8D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v
+!i122 9
+L0 20 47
+R4
+r1
+!s85 0
+31
+!s108 1624210438.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v|
+!i113 1
+Z7 o-work work
+R6
+n@encoder16x4
+vencoder8x3
+!s110 1624210441
+!i10b 1
+!s100 HgI=XeJU2^W=gP;F]Zb2V3
+R2
+Ibjb199lf7L[mo;f:NKn9b3
+R3
+R0
+w1624199730
+8D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v
+FD:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v
+!i122 10
+L0 20 23
+R4
+r1
+!s85 0
+31
+!s108 1624210441.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v|
+!i113 1
+R7
+R6
+vHVSync_Generator
+!s110 1624210703
+!i10b 1
+!s100 <04Zh;c;QYnihfSMRdlzO2
+R2
+IAXim>fF4gQSK;6gi=5Q?W3
+R3
+R0
+w1624210145
+8D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v
+FD:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v
+!i122 19
+L0 15 74
+R4
+r1
+!s85 0
+31
+!s108 1624210703.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v|
+!i113 1
+R7
+R6
+n@h@v@sync_@generator
+vImage_Shape_Submodule
+!s110 1624210786
+!i10b 1
+!s100 A@KZ>HmZ;<108zk?^gjm<0
+R2
+IlO@N<^G;:kh;8;WbCV=6E2
+R3
+R0
+w1624210641
+8D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v
+!i122 20
+L0 15 57
+R4
+r1
+!s85 0
+31
+!s108 1624210786.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v|
+!i113 1
+R7
+R6
+n@image_@shape_@submodule
+vImageLocator
+!s110 1624210788
+!i10b 1
+!s100 Vb@79CIo_d17HXYJ]<>@D0
+R2
+IB3L;K^zL25>PHYD5=U8zN0
+R3
+R0
+w1624210751
+8D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v
+!i122 21
+L0 14 169
+R4
+r1
+!s85 0
+31
+!s108 1624210788.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v|
+!i113 1
+R7
+R6
+n@image@locator
+vImageROM
+!s110 1624210692
+!i10b 1
+!s100 ZBMGl8Y5[SMaF;8L2lEF00
+R2
+IY]9g=Z]77F@h;1c`E`hP?2
+R3
+R0
+w1624207716
+8D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v
+!i122 16
+L0 40 61
+R4
+r1
+!s85 0
+31
+!s108 1624210692.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v|
+!i113 1
+R7
+R6
+n@image@r@o@m
+vPixelController
+!s110 1624210688
+!i10b 1
+!s100 XSmHN1;eRL4CBmZAzj>4m2
+R2
+IWPQBQ@A<oHPFg=eke3]9H2
+R3
+R0
+w1624133331
+8D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/PixelController.v
+!i122 15
+L0 16 53
+R4
+r1
+!s85 0
+31
+!s108 1624210688.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v|
+!i113 1
+R7
+R6
+n@pixel@controller
+vVGA_Contoller_tb
+!s110 1624210681
+!i10b 1
+!s100 cJ<Y<ga`C;8R;XV1nHj8H2
+R2
+I=Si=ZJbl69zN[lFZ9[?LI0
+R3
+R0
+w1624209290
+8D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v
+FD:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v
+!i122 14
+L0 3 56
+R4
+r1
+!s85 0
+31
+!s108 1624210681.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v|
+!i113 1
+R7
+R6
+n@v@g@a_@contoller_tb
+vVGA_Controller
+!s110 1624210678
+!i10b 1
+!s100 <>`2JFGj<^_@KmY:4?^j00
+R2
+I@@@6fzH:PS?^iU1OoR;nD2
+R3
+R0
+w1624210646
+8D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v
+FD:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v
+!i122 13
+L0 15 112
+R4
+r1
+!s85 0
+31
+!s108 1624210678.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v|
+!s90 -reportprogress|300|-work|work|D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v|
+!i113 1
+R7
+R6
+n@v@g@a_@controller
+vVGA_PLL
+R1
+!i10b 1
+!s100 Nm]MoCj9i]]zHnIgBT4gO2
+R2
+IDCMVi>Ni`RLbDgZ`WzT3c0
+R3
+R0
+w1624203622
+8D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo
+FD:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo
+!i122 0
+L0 32 264
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo|
+!s90 -reportprogress|300|D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo|
+!i113 1
+R6
+n@v@g@a_@p@l@l
