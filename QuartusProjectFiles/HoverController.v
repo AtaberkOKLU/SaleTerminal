@@ -40,7 +40,7 @@ wire [11:0] HighlightedBarcodeOut;
 reg  [1:0] SW12 = 0; 
 
 wire [15:0] DecoderOut;
-wire [11:0] HighlightedDecoderOut;
+reg [11:0] HighlightedDecoderOut;
 /*
  *		Basket And Interactive Selection Hover by Ataberk ÖKLÜ
  *
@@ -52,16 +52,21 @@ Decoder4x16 Decoder4x16_inst0(
 );
 
 
-assign HighlightedDecoderOut = DecoderOut[11:0];
+
 
 always @ (negedge CLK)
 	SW12 <= CleanSWOut;
 
+always @ (posedge CLK)
+	HighlightedDecoderOut <= DecoderOut[11:0];
+	
 always @ (negedge CLK)
-	if(|SW12)
-		HighlightedProductList <= HighlightedDecoderOut;
-	else
-		HighlightedProductList <= HighlightedBarcodeOut;
+	begin
+		if(|SW12)
+			HighlightedProductList <= HighlightedDecoderOut;
+		else
+			HighlightedProductList <= HighlightedBarcodeOut;
+	end
 
 
 endmodule
