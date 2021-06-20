@@ -111,7 +111,7 @@ SwitchDebouncer_SW2(
 // Button Manager
 
 ButtonManager ButtonManager_inst0(
-	.SW(CleanSWOut[0]),
+	.SW0(CleanSWOut[0]),
 	.KEY(CleanButtonOut),
 	.CMD_Reg(CMD_Reg),
 	.KEY_Reg(KEY_Reg)

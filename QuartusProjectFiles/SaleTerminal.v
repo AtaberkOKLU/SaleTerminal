@@ -47,7 +47,7 @@ ButtonController ButtonController_inst0(
 	.KEY(KEY),
    .SW(SW),
    .CLOCK_50(CLOCK_50),
-	// .ButtonSsampleCLK?
+	// .ButtonSampleCLK?
    .CMD_En(CMD_En),
    .KEY_En(KEY_En),
    .CMD_Reg(CMD_Reg),
@@ -86,27 +86,22 @@ VGA_Controller VGA_Controller_inst0(
 
 /* VGA CONTROLLER END */
 
-/* HOVER CONTROLLER BEGIN */
-HoverController HoverController_inst0(
-	.CLK(CLOCK_50),
-	.CleanSWOut(CleanSWOut[2:1]),
-	.Barcode_Digit_0(Barcode_Digit_0),
-	.Barcode_Digit_1(Barcode_Digit_1),
-	.Barcode_Digit_2(Barcode_Digit_2),
-	.Barcode_Digit_3(Barcode_Digit_3),
-	.BarcodeCompleted(BarcodeDigitCompleted),
-	.SelectedProductID(ProductID_out),				// From Direction2ProductID
-	.HighlightedProductList(HighlightedProductList)
-);
-/* HOVER CONTROLLER END */
-
 
 /* STATE MACHINE BEGIN */
 wire [3:0] ProductQuantity;
-wire [3:0] ProductID_out;
 wire BasketController_Enable_Pulse;
 wire [1:0] Dir_in;
 wire [2:0] State;
+wire Barcode_Enable_Pulse;				// From StateMachine
+wire RSTN_BarcodeController_Pulse;	// From StateMachine
+wire [3:0] Barcode_Digit_out;			// From StateMachine
+wire [3:0] ProductID_out;
+
+wire 			BarcodeDigitCompleted;
+wire[3:0] 	Barcode_Digit_0;
+wire[3:0] 	Barcode_Digit_1;
+wire[3:0] 	Barcode_Digit_2;
+wire[3:0] 	Barcode_Digit_3;
 
 StateMachine StateMachine_inst0(
 	.CLOCK_50(CLOCK_50),
@@ -137,16 +132,7 @@ StateMachine StateMachine_inst0(
 
 
 /* BARCODE CONTROLLER BEGIN */
-wire Barcode_Enable_Pulse;				// From StateMachine
-wire RSTN_BarcodeController_Pulse;	// From StateMachine
-wire [3:0] Barcode_Digit_out;			// From StateMachine
-
 wire[2:0] 	NumOfBarcodeDigitsEntered;
-wire 			BarcodeDigitCompleted;
-wire[3:0] 	Barcode_Digit_0;
-wire[3:0] 	Barcode_Digit_1;
-wire[3:0] 	Barcode_Digit_2;
-wire[3:0] 	Barcode_Digit_3;
 
 BarcodeController BarcodeController_inst0(
 	.ENABLE(Barcode_Enable_Pulse),
@@ -166,6 +152,20 @@ BarcodeController BarcodeController_inst0(
 	.HEX5(HEX5)
 );
 /* BARCODE CONTROLLER END */
+
+/* HOVER CONTROLLER BEGIN */
+HoverController HoverController_inst0(
+	.CLK(CLOCK_50),
+	.CleanSWOut(CleanSWOut[2:1]),
+	.Barcode_Digit_0(Barcode_Digit_0),
+	.Barcode_Digit_1(Barcode_Digit_1),
+	.Barcode_Digit_2(Barcode_Digit_2),
+	.Barcode_Digit_3(Barcode_Digit_3),
+	.BarcodeCompleted(BarcodeDigitCompleted),
+	.SelectedProductID(ProductID_out),				// From Direction2ProductID
+	.HighlightedProductList(HighlightedProductList)
+);
+/* HOVER CONTROLLER END */
 
 
 /* LED CONTROLLER BEGIN */

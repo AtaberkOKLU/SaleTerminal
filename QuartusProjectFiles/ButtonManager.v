@@ -13,7 +13,7 @@
  */
 
 module ButtonManager(
-	input wire [0:0] SW,		// SW0
+	input wire  	  SW0,		// SW0
 	input wire [3:0] KEY,
 	output reg [3:0] CMD_Reg,
 	output reg [3:0] KEY_Reg
@@ -26,9 +26,9 @@ begin
 	KEY_Reg <= 4'b0;
 end
 
-always @ (SW, KEY)
+always @ (SW0, KEY)
 	begin
-		if(SW)
+		if(SW0)
 			begin		
 				KEY_Reg = 4'b0;
 				CMD_Reg = KEY;

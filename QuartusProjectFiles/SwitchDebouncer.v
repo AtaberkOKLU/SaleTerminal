@@ -14,7 +14,7 @@
  
 module SwitchDebouncer
 #(
-	parameter COUNTER_REG_SIZE = 16
+	parameter COUNTER_REG_SIZE = 2
 )(
     input CLK,
     input NoisySWIn,  		// Active High

@@ -158,10 +158,6 @@ ButtonLevelPulseConverter BasketControllerEnablePulseGenerator_inst0(
 	.ButtonPulseOut(BasketController_Enable_Pulse)
 );
 
-
-initial 
-	State <= State0_Start;
-
 // State List
 localparam State0_Start 		= 3'd0;
 localparam State1_Idle 			= 3'd1;
@@ -170,6 +166,9 @@ localparam State3_Interactive = 3'd3;
 localparam State4_Quantity 	= 3'd4;
 localparam State5_BasketEdit 	= 3'd5;
 localparam State6_EndShopping = 3'd6;
+
+initial 
+	State <= State0_Start;
 
 
 // State Machine
@@ -180,11 +179,11 @@ always @ (posedge CLOCK_50)
 						// Reset Barcode
 						RST_BarcodeController_Level <= 1;
 						// Reset Basket
-						;
+						
 						// Reset Quantity (if stored)
-						;
+						
 						// Reset ***
-						;
+						
 						// Go to IDLE State
 						State <= State1_Idle;
 					end
@@ -244,14 +243,14 @@ always @ (posedge CLOCK_50)
 										// Send ProductID
 										ProductID_out <= ProductID_Barcode;// ProdcutID From Barcode2ProductID
 										// Enable?
-										;
+										
 										RST_BarcodeController_Level 	<= 1;
 										State <= State4_Quantity;			//		Then Go to Quantity Sel State
 									end
 								else											// Else
 									begin										// Reset the barcode & Show Err?
 										// Text Controller - Show Err?
-										;
+										
 										// Reset Barcode
 										RST_BarcodeController_Level <= 1;
 										State <= State2_Barcode;
@@ -273,28 +272,31 @@ always @ (posedge CLOCK_50)
 									// Basket Controller Send ProductID?
 									// 	Enable?
 									ProductID_out <= ProductID_Direction;
-									;
+									
 									State <= State4_Quantity;			// 	Go to Quantity Selection
 									RST_Direction2ProductID_Level <= 1;
 								end
 							else
-								if(|KEY_Reg)							// Any Direction Key is pressed?
-									begin
-										// Highlight Controller Handle
-										// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
-										// Direction2Product ID Handle
-										EN_Direction2ProductID_Level <= 1;
-										case(KEY_Reg)
-											4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
-											4'b0010: Dir_out <= 2'b10;	// Down
-											4'b0100: Dir_out <= 2'b01;	// Up
-											4'b1000: Dir_out <= 2'b00; // Most Left Key is KEY[3]
-											default: Dir_out <= 2'bxx;	// Never Reached
-										endcase
-										State <= State3_Interactive;	// 	Stay in this State
-									end
-								else
-									State <= State3_Interactive;	// Wait Direction input in this State
+								begin
+									ProductID_out <= ProductID_Direction;
+									if(|KEY_Reg)							// Any Direction Key is pressed?
+										begin
+											// Highlight Controller Handle
+											// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
+											// Direction2Product ID Handle
+											EN_Direction2ProductID_Level <= 1;
+											case(KEY_Reg)
+												4'b0001: Dir_out <= 2'b11;	// Most Right Key is KEY[0]
+												4'b0010: Dir_out <= 2'b10;	// Down
+												4'b0100: Dir_out <= 2'b01;	// Up
+												4'b1000: Dir_out <= 2'b00; // Most Left Key is KEY[3]
+												default: Dir_out <= 2'bxx;	// Never Reached
+											endcase
+											State <= State3_Interactive;	// 	Stay in this State
+										end
+									else
+										State <= State3_Interactive;	// Wait Direction input in this State
+								end
 						else												// SW1 is Deactivated
 							begin
 								//RST_Direction2ProductID_Level <= 1;	// 	Reset Current Position
@@ -320,7 +322,7 @@ always @ (posedge CLOCK_50)
 									//		Enable?
 									EN_BasketController_Level <= 1;
 									RST_BarcodeController_Level <= 1;
-									;
+									
 									// Then Go to IDLE State for new interactions
 									State <= State1_Idle;
 								end
@@ -334,7 +336,7 @@ always @ (posedge CLOCK_50)
 							if(CMD_Reg[0])								// Select Button is Pressed?
 								begin
 									// Basket Controller Cancel Prd
-									;
+									
 									// Stay in the Same State
 									State <= State5_BasketEdit;	// Stay in the Same State
 								end
@@ -342,7 +344,7 @@ always @ (posedge CLOCK_50)
 								if(|KEY_Reg)							// Any Direction Key is pressed?
 									begin
 										// Highlight Controller Handle
-										;
+										
 										State <= State5_BasketEdit;// 	And Stay in this State
 									end
 								else
