@@ -21,7 +21,7 @@ module PixelController#(
 	parameter B_WIDTH 		= 8,
 	
 	parameter CNTR_WIDTH_V 	= 10,			// Max CounterY Value = 2^CNTR_WIDTH_V
-	parameter CNTR_WIDTH_H 	= 10,			// Max CounterX Value = 2^CNTR_WIDTH_H
+	parameter CNTR_WIDTH_H 	= 11,			// Max CounterX Value = 2^CNTR_WIDTH_H
 	
 	// ROM Block Memory Properties
 	parameter ROM_ADDR_BUS_WIDTH = 17  	// Max Accessible Addresses 2^17 > (100x100x12):(3x8 bit)

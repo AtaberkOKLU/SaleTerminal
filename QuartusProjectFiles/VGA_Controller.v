@@ -21,7 +21,7 @@ module VGA_Controller
 	parameter B_WIDTH 		= 8,
 	
 	parameter CNTR_WIDTH_V 	= 10,			// Max CounterY Value = 2^CNTR_WIDTH_V
-	parameter CNTR_WIDTH_H 	= 10,			// Max CounterX Value = 2^CNTR_WIDTH_H
+	parameter CNTR_WIDTH_H 	= 11,			// Max CounterX Value = 2^CNTR_WIDTH_H
 	
 	// Timing Constants For 800x600@60Hz
 	// Horizontal Timing
@@ -50,32 +50,31 @@ module VGA_Controller
 	 input  wire[11:0] HighlightedProductList,
 	 // Button Controller Interface
 	 input  wire SW2,
+	 
     output wire [R_WIDTH-1:0] VGA_R,
 	 output wire [G_WIDTH-1:0] VGA_G,
 	 output wire [B_WIDTH-1:0] VGA_B,
 	 output wire VGA_CLK,
     output wire VGA_HS,
     output wire VGA_VS,
-	 output wire VGA_BLANK_N
+	 output wire VGA_BLANK_N,
+	 output wire VGA_SYNC_N
 );
 
-    wire inDisplayArea;
 	 wire VGA_CLK_W;
-	 wire isImage_wire;
-	 wire inHighlightedArea_wire;
 	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0]PixBux_wire;
     wire [CNTR_WIDTH_H-1:0] CounterX;
 	 wire [CNTR_WIDTH_V-1:0] CounterY;
-	 wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] ROM_RGB_Bus;
-	 wire	[ROM_ADDR_BUS_WIDTH-1:0] targetPixelAddr;
-	 wire isFontBit;
+	 
 	 
 	 VGA_PLL VGA_PLL_inst0(
 		.refclk(CLOCK_50),
-		.rst(RESET_N),
+		.rst(~RESET_N),
 		.outclk_0(VGA_CLK_W),
 		.locked()
 	 );
+	 
+	 assign VGA_CLK = VGA_CLK_W;
 
     HVSync_Generator #(
 			.CNTR_WIDTH_V(CNTR_WIDTH_V), 
@@ -95,7 +94,7 @@ module VGA_Controller
 			.VGA_VS(VGA_VS),
 			.CounterX(CounterX),
 			.CounterY(CounterY),
-			.inDisplayArea(inDisplayArea)
+			.VGA_BLANK_N(VGA_BLANK_N)
     );
 	 
 
@@ -122,7 +121,6 @@ module VGA_Controller
 	
 assign {VGA_B, VGA_G, VGA_R} = PixBux_wire;
 
-assign VGA_BLANK_N = inDisplayArea;
-assign VGA_CLK = VGA_CLK_W;
+assign VGA_SYNC_N = 0;
 
 endmodule

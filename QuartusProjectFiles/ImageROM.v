@@ -84,7 +84,7 @@ module ImageROM (
 		altsyncram_component.address_aclr_a = "NONE",
 		altsyncram_component.clock_enable_input_a = "BYPASS",
 		altsyncram_component.clock_enable_output_a = "BYPASS",
-		altsyncram_component.init_file = "../Resources/ROM_Init/ROM_IMAGES.mif",
+		altsyncram_component.init_file = "D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif",
 		altsyncram_component.intended_device_family = "Cyclone V",
 		altsyncram_component.lpm_hint = "ENABLE_RUNTIME_MOD=NO",
 		altsyncram_component.lpm_type = "altsyncram",
@@ -119,12 +119,12 @@ endmodule
 // Retrieval info: PRIVATE: JTAG_ENABLED NUMERIC "0"
 // Retrieval info: PRIVATE: JTAG_ID STRING "NONE"
 // Retrieval info: PRIVATE: MAXIMUM_DEPTH NUMERIC "0"
-// Retrieval info: PRIVATE: MIFfilename STRING "../Resources/ROM_Init/ROM_IMAGES.mif"
+// Retrieval info: PRIVATE: MIFfilename STRING "D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif"
 // Retrieval info: PRIVATE: NUMWORDS_A NUMERIC "120000"
 // Retrieval info: PRIVATE: RAM_BLOCK_TYPE NUMERIC "0"
 // Retrieval info: PRIVATE: RegAddr NUMERIC "1"
 // Retrieval info: PRIVATE: RegOutput NUMERIC "1"
-// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "0"
+// Retrieval info: PRIVATE: SYNTH_WRAPPER_GEN_POSTFIX STRING "1"
 // Retrieval info: PRIVATE: SingleClock NUMERIC "1"
 // Retrieval info: PRIVATE: UseDQRAM NUMERIC "0"
 // Retrieval info: PRIVATE: WidthAddr NUMERIC "17"
@@ -134,7 +134,7 @@ endmodule
 // Retrieval info: CONSTANT: ADDRESS_ACLR_A STRING "NONE"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_INPUT_A STRING "BYPASS"
 // Retrieval info: CONSTANT: CLOCK_ENABLE_OUTPUT_A STRING "BYPASS"
-// Retrieval info: CONSTANT: INIT_FILE STRING "../Resources/ROM_Init/ROM_IMAGES.mif"
+// Retrieval info: CONSTANT: INIT_FILE STRING "D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif"
 // Retrieval info: CONSTANT: INTENDED_DEVICE_FAMILY STRING "Cyclone V"
 // Retrieval info: CONSTANT: LPM_HINT STRING "ENABLE_RUNTIME_MOD=NO"
 // Retrieval info: CONSTANT: LPM_TYPE STRING "altsyncram"
@@ -157,4 +157,5 @@ endmodule
 // Retrieval info: GEN_FILE: TYPE_NORMAL ImageROM.bsf TRUE
 // Retrieval info: GEN_FILE: TYPE_NORMAL ImageROM_inst.v FALSE
 // Retrieval info: GEN_FILE: TYPE_NORMAL ImageROM_bb.v FALSE
+// Retrieval info: GEN_FILE: TYPE_NORMAL ImageROM_syn.v TRUE
 // Retrieval info: LIB_FILE: altera_mf

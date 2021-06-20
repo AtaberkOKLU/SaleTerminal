@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <simPackage>
- <file path="VGA_PLL_sim/VGA_PLL.vo" type="VERILOG" />
+ <file path="VGA_PLL_sim/VGA_PLL.vo" type="verilog" />
  <topLevel name="VGA_PLL" />
  <deviceFamily name="cyclonev" />
 </simPackage>
