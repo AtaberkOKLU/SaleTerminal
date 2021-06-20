@@ -43,6 +43,7 @@ wire [3:0] CMD_Reg;
 wire [3:0] KEY_En;
 wire [3:0] KEY_Reg;
 wire [2:0] CleanSWOut;
+wire [3:0] CleanButtonOut;
 ButtonController ButtonController_inst0(
 	.KEY(KEY),
    .SW(SW),
@@ -52,7 +53,8 @@ ButtonController ButtonController_inst0(
    .KEY_En(KEY_En),
    .CMD_Reg(CMD_Reg),
    .KEY_Reg(KEY_Reg),
-   .CleanSWOut(CleanSWOut)
+   .CleanSWOut(CleanSWOut),
+	.CleanButtonOut(CleanButtonOut)
 );
 
 /* BUTTON CONTROLLER END */
@@ -137,7 +139,7 @@ wire[2:0] 	NumOfBarcodeDigitsEntered;
 BarcodeController BarcodeController_inst0(
 	.ENABLE(Barcode_Enable_Pulse),
 	.CLK(CLOCK_50),
-	.RESET_N(RSTN_BarcodeController_Pulse),
+	.RESET_N(RSTN_BarcodeController_Pulse || RESET_N),
 	.Digit_in(Barcode_Digit_out),
 	.BarcodeDigitCompleted(BarcodeDigitCompleted),
 	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
@@ -172,6 +174,7 @@ HoverController HoverController_inst0(
 LED_Controller LED_Controller_inst0(
 	.State(State),
 	.CleanSWOut(CleanSWOut),
+	.CleanButtonOut(CleanButtonOut),
 	.LEDR(LEDR)
 );
 /* LED CONTROLLER END */

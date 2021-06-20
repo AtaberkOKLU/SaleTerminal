@@ -30,12 +30,11 @@ module ButtonController
 		output wire [3:0] KEY_En,
 		output wire [3:0] CMD_Reg,
 		output wire [3:0] KEY_Reg,
-		output wire [2:0] CleanSWOut
+		output wire [2:0] CleanSWOut,
+		output wire [3:0] CleanButtonOut
 );
 
 // Button and SW Debouncers
-
-wire [3:0] CleanButtonOut;
 
 ButtonDebouncer
 #(

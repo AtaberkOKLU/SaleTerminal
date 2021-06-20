@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Sun Jun 20 23:34:21 2021
+Mon Jun 21 00:16:09 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sun Jun 20 23:34:21 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 21 00:16:09 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -261,9 +261,9 @@ https://fpgasoftware.intel.com/eula.
 ; Combinational ALUT usage for logic          ; 464                                                                                                                        ;
 ;     -- 7 input functions                    ; 26                                                                                                                         ;
 ;     -- 6 input functions                    ; 154                                                                                                                        ;
-;     -- 5 input functions                    ; 72                                                                                                                         ;
-;     -- 4 input functions                    ; 91                                                                                                                         ;
-;     -- <=3 input functions                  ; 121                                                                                                                        ;
+;     -- 5 input functions                    ; 73                                                                                                                         ;
+;     -- 4 input functions                    ; 98                                                                                                                         ;
+;     -- <=3 input functions                  ; 113                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
 ; Dedicated logic registers                   ; 168                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
@@ -278,8 +278,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                            ;
 ; Maximum fan-out node                        ; VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 420                                                                                                                        ;
-; Total fan-out                               ; 8123                                                                                                                       ;
-; Average fan-out                             ; 6.99                                                                                                                       ;
+; Total fan-out                               ; 8145                                                                                                                       ;
+; Average fan-out                             ; 7.01                                                                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -288,7 +288,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                     ; Entity Name               ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SaleTerminal                                                                   ; 464 (0)             ; 168 (0)                   ; 2880000           ; 3          ; 83   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
+; |SaleTerminal                                                                   ; 464 (1)             ; 168 (0)                   ; 2880000           ; 3          ; 83   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
 ;    |BarcodeController:BarcodeController_inst0|                                  ; 38 (1)              ; 16 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0                                                                                                                                                                                                 ; BarcodeController         ; work         ;
 ;       |BarcodeShiftRegister:BarcodeShiftRegister_inst0|                         ; 9 (9)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0                                                                                                                                                 ; BarcodeShiftRegister      ; work         ;
 ;       |Segment7:Segment0|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0                                                                                                                                                                               ; Segment7                  ; work         ;
@@ -307,10 +307,10 @@ https://fpgasoftware.intel.com/eula.
 ;    |HoverController:HoverController_inst0|                                      ; 13 (1)              ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
 ;       |Decoder4x16:Decoder4x16_inst0|                                           ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0                                                                                                                                                                       ; Decoder4x16               ; work         ;
 ;          |Decoder3x8:d1|                                                        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1                                                                                                                                                         ; Decoder3x8                ; work         ;
-;    |StateMachine:StateMachine_inst0|                                            ; 89 (42)             ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
+;    |StateMachine:StateMachine_inst0|                                            ; 88 (42)             ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
 ;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0                                                                                                                                     ; ButtonLevelPulseConverter ; work         ;
-;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
+;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0                                                                                                                                   ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0|  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0                                                                                                                                    ; ButtonLevelPulseConverter ; work         ;
 ;       |Direction2ProductID:Direction2ProductID_inst0|                           ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0                                                                                                                                                             ; Direction2ProductID       ; work         ;
@@ -1022,10 +1022,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     normal            ; 385                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 9                           ;
-;         2 data inputs ; 31                          ;
-;         3 data inputs ; 27                          ;
-;         4 data inputs ; 90                          ;
-;         5 data inputs ; 72                          ;
+;         2 data inputs ; 22                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 97                          ;
+;         5 data inputs ; 73                          ;
 ;         6 data inputs ; 154                         ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 83                          ;
@@ -1033,7 +1033,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 360                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 2.40                        ;
+; Average LUT depth     ; 2.39                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1052,7 +1052,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Sun Jun 20 23:34:09 2021
+    Info: Processing started: Mon Jun 21 00:15:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.v
@@ -1112,14 +1112,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_con
 Info (12021): Found 1 design units, including 1 entities, in source file saleterminal_tb.v
     Info (12023): Found entity 1: SaleTerminal_tb File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v Line: 3
 Info (12127): Elaborating entity "SaleTerminal" for the top level hierarchy
-Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:ButtonController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 56
-Info (12128): Elaborating entity "ButtonDebouncer" for hierarchy "ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 48
+Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:ButtonController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 58
+Info (12128): Elaborating entity "ButtonDebouncer" for hierarchy "ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 47
 Warning (10230): Verilog HDL assignment warning at ButtonDebouncer.v(42): truncated value with size 16 to match size of target (2) File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v Line: 42
-Info (12128): Elaborating entity "SwitchDebouncer" for hierarchy "ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 88
+Info (12128): Elaborating entity "SwitchDebouncer" for hierarchy "ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 87
 Warning (10230): Verilog HDL assignment warning at SwitchDebouncer.v(42): truncated value with size 16 to match size of target (2) File: D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v Line: 42
-Info (12128): Elaborating entity "ButtonManager" for hierarchy "ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 118
-Info (12128): Elaborating entity "ButtonLevelPulseConverter" for hierarchy "ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 126
-Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 85
+Info (12128): Elaborating entity "ButtonManager" for hierarchy "ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 117
+Info (12128): Elaborating entity "ButtonLevelPulseConverter" for hierarchy "ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 125
+Info (12128): Elaborating entity "VGA_Controller" for hierarchy "VGA_Controller:VGA_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 87
 Info (12128): Elaborating entity "VGA_PLL" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v Line: 75
 Info (12128): Elaborating entity "VGA_PLL_0002" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL.v Line: 20
 Info (12128): Elaborating entity "altera_pll" for hierarchy "VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i" File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL/VGA_PLL_0002.v Line: 85
@@ -1222,22 +1222,22 @@ Info (12128): Elaborating entity "ImageLocator" for hierarchy "VGA_Controller:VG
 Warning (10230): Verilog HDL assignment warning at ImageLocator.v(179): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 179
 Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 140
 Info (12128): Elaborating entity "encoder8x3" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:b2v_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 43
-Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 129
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 131
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(227): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 227
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(288): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 288
 Info (10264): Verilog HDL Case Statement information at StateMachine.v(314): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 314
 Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 124
 Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 152
 Info (10264): Verilog HDL Case Statement information at Direction2ProductID.v(58): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 58
-Info (12128): Elaborating entity "BarcodeController" for hierarchy "BarcodeController:BarcodeController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 153
+Info (12128): Elaborating entity "BarcodeController" for hierarchy "BarcodeController:BarcodeController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 155
 Info (12128): Elaborating entity "BarcodeShiftRegister" for hierarchy "BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 50
 Info (12128): Elaborating entity "Segment7" for hierarchy "BarcodeController:BarcodeController_inst0|Segment7:Segment0" File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v Line: 56
-Info (12128): Elaborating entity "HoverController" for hierarchy "HoverController:HoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 167
+Info (12128): Elaborating entity "HoverController" for hierarchy "HoverController:HoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 169
 Warning (10858): Verilog HDL warning at HoverController.v(32): object HighlightedBarcodeOut used but never assigned File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 32
 Warning (10030): Net "HighlightedBarcodeOut" at HoverController.v(32) has no driver or initial value, using a default initial value '0' File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 32
 Info (12128): Elaborating entity "Decoder4x16" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 52
 Info (12128): Elaborating entity "Decoder3x8" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1" File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 6
-Info (12128): Elaborating entity "LED_Controller" for hierarchy "LED_Controller:LED_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 176
+Info (12128): Elaborating entity "LED_Controller" for hierarchy "LED_Controller:LED_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 179
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "VGA_SYNC_N" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 25
@@ -1248,10 +1248,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX5[4]" is stuck at VCC File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 32
     Warning (13410): Pin "HEX5[5]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 32
     Warning (13410): Pin "HEX5[6]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 32
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 36
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 36
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 36
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 36
 Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
@@ -1263,9 +1259,9 @@ Info (21057): Implemented 958 device resources after synthesis - the final resou
     Info (21064): Implemented 360 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 21 warnings
-    Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Sun Jun 20 23:34:21 2021
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
+    Info: Peak virtual memory: 4854 megabytes
+    Info: Processing ended: Mon Jun 21 00:16:09 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:25
 
