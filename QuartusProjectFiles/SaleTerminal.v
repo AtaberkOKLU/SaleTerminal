@@ -139,7 +139,7 @@ wire[2:0] 	NumOfBarcodeDigitsEntered;
 BarcodeController BarcodeController_inst0(
 	.ENABLE(Barcode_Enable_Pulse),
 	.CLK(CLOCK_50),
-	.RESET_N(RSTN_BarcodeController_Pulse || RESET_N),
+	.RESET_N(RSTN_BarcodeController_Pulse && RESET_N),
 	.Digit_in(Barcode_Digit_out),
 	.BarcodeDigitCompleted(BarcodeDigitCompleted),
 	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),

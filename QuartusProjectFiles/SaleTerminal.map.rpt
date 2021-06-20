@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Mon Jun 21 00:16:09 2021
+Mon Jun 21 00:27:38 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -74,7 +74,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 21 00:16:09 2021       ;
+; Analysis & Synthesis Status     ; Successful - Mon Jun 21 00:27:38 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -258,11 +258,11 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 ; Estimate of Logic utilization (ALMs needed) ; 325                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Combinational ALUT usage for logic          ; 464                                                                                                                        ;
+; Combinational ALUT usage for logic          ; 465                                                                                                                        ;
 ;     -- 7 input functions                    ; 26                                                                                                                         ;
-;     -- 6 input functions                    ; 154                                                                                                                        ;
-;     -- 5 input functions                    ; 73                                                                                                                         ;
-;     -- 4 input functions                    ; 98                                                                                                                         ;
+;     -- 6 input functions                    ; 153                                                                                                                        ;
+;     -- 5 input functions                    ; 76                                                                                                                         ;
+;     -- 4 input functions                    ; 97                                                                                                                         ;
 ;     -- <=3 input functions                  ; 113                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
 ; Dedicated logic registers                   ; 168                                                                                                                        ;
@@ -278,7 +278,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                            ;
 ; Maximum fan-out node                        ; VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 420                                                                                                                        ;
-; Total fan-out                               ; 8145                                                                                                                       ;
+; Total fan-out                               ; 8150                                                                                                                       ;
 ; Average fan-out                             ; 7.01                                                                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
@@ -288,7 +288,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                     ; Entity Name               ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SaleTerminal                                                                   ; 464 (1)             ; 168 (0)                   ; 2880000           ; 3          ; 83   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
+; |SaleTerminal                                                                   ; 465 (1)             ; 168 (0)                   ; 2880000           ; 3          ; 83   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
 ;    |BarcodeController:BarcodeController_inst0|                                  ; 38 (1)              ; 16 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0                                                                                                                                                                                                 ; BarcodeController         ; work         ;
 ;       |BarcodeShiftRegister:BarcodeShiftRegister_inst0|                         ; 9 (9)               ; 16 (16)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0                                                                                                                                                 ; BarcodeShiftRegister      ; work         ;
 ;       |Segment7:Segment0|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0                                                                                                                                                                               ; Segment7                  ; work         ;
@@ -307,8 +307,8 @@ https://fpgasoftware.intel.com/eula.
 ;    |HoverController:HoverController_inst0|                                      ; 13 (1)              ; 26 (26)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
 ;       |Decoder4x16:Decoder4x16_inst0|                                           ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0                                                                                                                                                                       ; Decoder4x16               ; work         ;
 ;          |Decoder3x8:d1|                                                        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1                                                                                                                                                         ; Decoder3x8                ; work         ;
-;    |StateMachine:StateMachine_inst0|                                            ; 88 (42)             ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
-;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
+;    |StateMachine:StateMachine_inst0|                                            ; 89 (42)             ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
+;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0                                                                                                                                     ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0                                                                                                                                   ; ButtonLevelPulseConverter ; work         ;
@@ -401,24 +401,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_1[3] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[2] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[3] ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2] ; 12      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[2] ; 13      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3] ; 10      ;
 ; Total number of inverted registers = 8                                                                   ;         ;
 +----------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_2[0]                               ;
-; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[2]                                                                                       ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[0]                                              ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[2] ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[9] ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3]                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[0]                                ;
+; 11:1               ; 4 bits    ; 28 LEs        ; 8 LEs                ; 20 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[3]                                                                                        ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[0]                                               ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[3]  ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[16] ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Digit_Reg_3[3]                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1010,7 +1010,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SCLR          ; 18                          ;
 ;     SCLR              ; 39                          ;
 ;     plain             ; 83                          ;
-; arriav_lcell_comb     ; 470                         ;
+; arriav_lcell_comb     ; 471                         ;
 ;     arith             ; 59                          ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 37                          ;
@@ -1019,14 +1019,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         4 data inputs ; 1                           ;
 ;     extend            ; 26                          ;
 ;         7 data inputs ; 26                          ;
-;     normal            ; 385                         ;
+;     normal            ; 386                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 9                           ;
 ;         2 data inputs ; 22                          ;
 ;         3 data inputs ; 28                          ;
-;         4 data inputs ; 97                          ;
-;         5 data inputs ; 73                          ;
-;         6 data inputs ; 154                         ;
+;         4 data inputs ; 96                          ;
+;         5 data inputs ; 76                          ;
+;         6 data inputs ; 153                         ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 83                          ;
 ; generic_pll           ; 1                           ;
@@ -1052,7 +1052,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jun 21 00:15:57 2021
+    Info: Processing started: Mon Jun 21 00:27:26 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.v
@@ -1223,9 +1223,9 @@ Warning (10230): Verilog HDL assignment warning at ImageLocator.v(179): truncate
 Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 140
 Info (12128): Elaborating entity "encoder8x3" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:b2v_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 43
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 131
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(227): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 227
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(288): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 288
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(314): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 314
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(232): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 232
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(293): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 293
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(319): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 319
 Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 124
 Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 152
 Info (10264): Verilog HDL Case Statement information at Direction2ProductID.v(58): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 58
@@ -1252,16 +1252,16 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 958 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 959 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 74 output pins
-    Info (21061): Implemented 511 logic cells
+    Info (21061): Implemented 512 logic cells
     Info (21064): Implemented 360 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 17 warnings
-    Info: Peak virtual memory: 4854 megabytes
-    Info: Processing ended: Mon Jun 21 00:16:09 2021
+    Info: Peak virtual memory: 4864 megabytes
+    Info: Processing ended: Mon Jun 21 00:27:38 2021
     Info: Elapsed time: 00:00:12
     Info: Total CPU time (on all processors): 00:00:25
 

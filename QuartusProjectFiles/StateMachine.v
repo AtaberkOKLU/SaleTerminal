@@ -205,6 +205,8 @@ always @ (posedge CLOCK_50)
 								RST_BarcodeController_Level <= 1;
 								State <= State3_Interactive;	// 	Go to Interactive Mode
 							end
+						else if (|KEY_Reg)			// If a Key Button is still pressed
+							State <= State1_Idle;	// Wait in Idle until released
 						else										// None is active?
 							State <= State2_Barcode;		// 	Go to Barcode Mode
 					end
@@ -217,7 +219,10 @@ always @ (posedge CLOCK_50)
 						EN_BarcodeController_Level 	<= 0;
 								
 						if(CleanSWOut[1] || CleanSWOut[2])			// SW1 or SW2 active?
-							State <= State1_Idle;						// 	Go to IDLE State for proper handling
+							begin
+								RST_BarcodeController_Level 	<= 1;
+								State <= State1_Idle;						// 	Go to IDLE State for proper handling
+							end
 						else if(!BarcodeDigitCompleted)				// Barcode is NOT completed?
 							if(|KEY_Reg)				// 	If any Digit Key is pressed
 								begin											// 		Then Add to Barcode Register
