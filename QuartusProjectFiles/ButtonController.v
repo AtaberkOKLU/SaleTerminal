@@ -20,7 +20,7 @@
 
 module ButtonController
 #(
-	parameter DBNCR_CNTR_REG_SIZE = 16
+	parameter DBNCR_CNTR_REG_SIZE = 2
 
 )(
 		input  wire [3:0] KEY,
