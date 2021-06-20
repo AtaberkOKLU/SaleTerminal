@@ -23,7 +23,7 @@ module Barcode2ProductID(
 // Combinational Circuit
 // 	? Can be Negedge?
 always @ (*)
-	case({BarcodeDigit_0, BarcodeDigit_1, BarcodeDigit_2, BarcodeDigit_3})
+	case({BarcodeDigit_3, BarcodeDigit_2, BarcodeDigit_1, BarcodeDigit_0})
 		16'h3124: begin ProductID = 4'd0 ; valid = 1; end
 		16'h4132: begin ProductID = 4'd1 ; valid = 1; end
 		16'h4133: begin ProductID = 4'd2 ; valid = 1; end
