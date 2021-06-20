@@ -22,12 +22,14 @@ module SaleTerminal(
 	output wire VGA_CLK,
 	output wire VGA_HS,
 	output wire VGA_VS,
+	output wire VGA_SYNC_N,
 	
 	// BarcodeController
 	output wire[6:0] 	HEX0,
 	output wire[6:0] 	HEX1,
 	output wire[6:0] 	HEX2,
 	output wire[6:0] 	HEX3,
+	output wire[6:0] 	HEX5,
 	
 	output wire[9:0] 	LEDR	
 	
@@ -57,7 +59,8 @@ ButtonController ButtonController_inst0(
 
 
 /* VGA CONTROLLER BEGIN */
-wire VGA_Controller_RSTN = RESET_N;
+wire VGA_Controller_RSTN;
+assign VGA_Controller_RSTN = RESET_N;
 wire [11:0] HighlightedProductList;
 
 VGA_Controller VGA_Controller_inst0(
@@ -77,7 +80,8 @@ VGA_Controller VGA_Controller_inst0(
 	.VGA_CLK(VGA_CLK),
    .VGA_HS(VGA_HS),
    .VGA_VS(VGA_VS),
-   .VGA_BLANK_N(VGA_BLANK_N)
+   .VGA_BLANK_N(VGA_BLANK_N),
+	.VGA_SYNC_N(VGA_SYNC_N)
 );
 
 /* VGA CONTROLLER END */
@@ -102,7 +106,7 @@ wire [3:0] ProductQuantity;
 wire [3:0] ProductID_out;
 wire BasketController_Enable_Pulse;
 wire [1:0] Dir_in;
-wire [3:0] State;
+wire [2:0] State;
 
 StateMachine StateMachine_inst0(
 	.CLOCK_50(CLOCK_50),
@@ -158,7 +162,8 @@ BarcodeController BarcodeController_inst0(
 	.HEX0(HEX0),
 	.HEX1(HEX1),
 	.HEX2(HEX2),
-	.HEX3(HEX3)
+	.HEX3(HEX3),
+	.HEX5(HEX5)
 );
 /* BARCODE CONTROLLER END */
 
