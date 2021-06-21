@@ -26,44 +26,39 @@ module BarcodeShiftRegister(
 	output reg [2:0] NumOfBarcodeDigitsEntered
 );
 
-reg[3:0] Digit_Reg_0 = 12;
-reg[3:0] Digit_Reg_1 = 12;
-reg[3:0] Digit_Reg_2 = 12;
-reg[3:0] Digit_Reg_3 = 12;
+reg [15:0] Barcode;
+
 
 initial
-	NumOfBarcodeDigitsEntered = 0;
+	begin
+		NumOfBarcodeDigitsEntered = 0;
+		Barcode = 16'hFFFF;
+	end
 		
 
 always @ (posedge CLOCK)
 begin
 	if(!RESET_N)
 		begin
-			Digit_Reg_0 <= 12;
-			Digit_Reg_1 <= 12;
-			Digit_Reg_2 <= 12;
-			Digit_Reg_3 <= 12;
+			Barcode <= 16'hFFFF;
 			NumOfBarcodeDigitsEntered <= 0;
 		end
 	else
 		begin
 			if(ENABLE)
 				begin
-					Digit_Reg_3 <= Digit_Reg_2;
-					Digit_Reg_2 <= Digit_Reg_1;
-					Digit_Reg_1 <= Digit_Reg_0;
-					Digit_Reg_0 <= Digit_in;
+					case(NumOfBarcodeDigitsEntered)
+						3'd3: Barcode[3:0]   <= Digit_in;
+						3'd2: Barcode[7:4]   <= Digit_in;
+						3'd1: Barcode[11:8]  <= Digit_in;
+						3'd0: Barcode[15:12] <= Digit_in;
+					endcase
 					if(NumOfBarcodeDigitsEntered < 4)
-						NumOfBarcodeDigitsEntered <= NumOfBarcodeDigitsEntered + 3'd1;
-					else
-						NumOfBarcodeDigitsEntered <= 4;
+						NumOfBarcodeDigitsEntered = NumOfBarcodeDigitsEntered + 3'd1;
 				end
 		end
 end
 	
-assign Digit_0 = Digit_Reg_0;
-assign Digit_1 = Digit_Reg_1;
-assign Digit_2 = Digit_Reg_2;
-assign Digit_3 = Digit_Reg_3;
+assign {Digit_3, Digit_2, Digit_1, Digit_0} = Barcode;
 	
 endmodule
