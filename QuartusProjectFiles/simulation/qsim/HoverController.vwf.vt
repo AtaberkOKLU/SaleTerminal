@@ -1,0 +1,286 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/21/2021 22:00:37"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          HoverController
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module HoverController_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg BarcodeCompleted;
+reg [3:0] Barcode_Digit_0;
+reg [3:0] Barcode_Digit_1;
+reg [3:0] Barcode_Digit_2;
+reg [3:0] Barcode_Digit_3;
+reg CLK;
+reg [2:1] CleanSWOut;
+reg [2:0] NumOfBarcodeDigitsEntered;
+reg [3:0] SelectedProductID;
+reg ValidID;
+// wires                                               
+wire [6:0] HEX4;
+wire [6:0] HEX5;
+wire [11:0] HighlightedProductList;
+
+// assign statements (if any)                          
+HoverController i1 (
+// port map - connection between master ports and signals/registers   
+	.BarcodeCompleted(BarcodeCompleted),
+	.Barcode_Digit_0(Barcode_Digit_0),
+	.Barcode_Digit_1(Barcode_Digit_1),
+	.Barcode_Digit_2(Barcode_Digit_2),
+	.Barcode_Digit_3(Barcode_Digit_3),
+	.CLK(CLK),
+	.CleanSWOut(CleanSWOut),
+	.HEX4(HEX4),
+	.HEX5(HEX5),
+	.HighlightedProductList(HighlightedProductList),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
+	.SelectedProductID(SelectedProductID),
+	.ValidID(ValidID)
+);
+initial 
+begin 
+#320000 $finish;
+end 
+
+// CLK
+always
+begin
+	CLK = 1'b0;
+	CLK = #5000 1'b1;
+	#5000;
+end 
+
+// BarcodeCompleted
+initial
+begin
+	BarcodeCompleted = 1'b0;
+	BarcodeCompleted = #150000 1'b1;
+	BarcodeCompleted = #60000 1'b0;
+end 
+// Barcode_Digit_0[ 3 ]
+initial
+begin
+	Barcode_Digit_0[3] = 1'b1;
+	Barcode_Digit_0[3] = #150000 1'b0;
+	Barcode_Digit_0[3] = #60000 1'b1;
+	Barcode_Digit_0[3] = #30000 1'b0;
+	Barcode_Digit_0[3] = #20000 1'b1;
+end 
+// Barcode_Digit_0[ 2 ]
+initial
+begin
+	Barcode_Digit_0[2] = 1'b1;
+	Barcode_Digit_0[2] = #150000 1'b0;
+	Barcode_Digit_0[2] = #60000 1'b1;
+	Barcode_Digit_0[2] = #30000 1'b0;
+	Barcode_Digit_0[2] = #20000 1'b1;
+end 
+// Barcode_Digit_0[ 1 ]
+initial
+begin
+	Barcode_Digit_0[1] = 1'b1;
+	Barcode_Digit_0[1] = #150000 1'b0;
+	Barcode_Digit_0[1] = #60000 1'b1;
+	Barcode_Digit_0[1] = #30000 1'b0;
+	Barcode_Digit_0[1] = #20000 1'b1;
+end 
+// Barcode_Digit_0[ 0 ]
+initial
+begin
+	Barcode_Digit_0[0] = 1'b1;
+end 
+// Barcode_Digit_1[ 3 ]
+initial
+begin
+	Barcode_Digit_1[3] = 1'b1;
+	Barcode_Digit_1[3] = #110000 1'b0;
+	Barcode_Digit_1[3] = #100000 1'b1;
+	Barcode_Digit_1[3] = #30000 1'b0;
+	Barcode_Digit_1[3] = #20000 1'b1;
+end 
+// Barcode_Digit_1[ 2 ]
+initial
+begin
+	Barcode_Digit_1[2] = 1'b1;
+	Barcode_Digit_1[2] = #110000 1'b0;
+	Barcode_Digit_1[2] = #100000 1'b1;
+	Barcode_Digit_1[2] = #30000 1'b0;
+	Barcode_Digit_1[2] = #20000 1'b1;
+end 
+// Barcode_Digit_1[ 1 ]
+initial
+begin
+	Barcode_Digit_1[1] = 1'b1;
+end 
+// Barcode_Digit_1[ 0 ]
+initial
+begin
+	Barcode_Digit_1[0] = 1'b1;
+	Barcode_Digit_1[0] = #110000 1'b0;
+	Barcode_Digit_1[0] = #100000 1'b1;
+	Barcode_Digit_1[0] = #30000 1'b0;
+	Barcode_Digit_1[0] = #20000 1'b1;
+end 
+// Barcode_Digit_2[ 3 ]
+initial
+begin
+	Barcode_Digit_2[3] = 1'b1;
+	Barcode_Digit_2[3] = #60000 1'b0;
+	Barcode_Digit_2[3] = #150000 1'b1;
+	Barcode_Digit_2[3] = #30000 1'b0;
+	Barcode_Digit_2[3] = #20000 1'b1;
+end 
+// Barcode_Digit_2[ 2 ]
+initial
+begin
+	Barcode_Digit_2[2] = 1'b1;
+	Barcode_Digit_2[2] = #60000 1'b0;
+	Barcode_Digit_2[2] = #150000 1'b1;
+	Barcode_Digit_2[2] = #30000 1'b0;
+	Barcode_Digit_2[2] = #20000 1'b1;
+end 
+// Barcode_Digit_2[ 1 ]
+initial
+begin
+	Barcode_Digit_2[1] = 1'b1;
+	Barcode_Digit_2[1] = #60000 1'b0;
+	Barcode_Digit_2[1] = #150000 1'b1;
+	Barcode_Digit_2[1] = #30000 1'b0;
+	Barcode_Digit_2[1] = #20000 1'b1;
+end 
+// Barcode_Digit_2[ 0 ]
+initial
+begin
+	Barcode_Digit_2[0] = 1'b1;
+end 
+// Barcode_Digit_3[ 3 ]
+initial
+begin
+	Barcode_Digit_3[3] = 1'b1;
+	Barcode_Digit_3[3] = #20000 1'b0;
+	Barcode_Digit_3[3] = #190000 1'b1;
+	Barcode_Digit_3[3] = #30000 1'b0;
+	Barcode_Digit_3[3] = #20000 1'b1;
+end 
+// Barcode_Digit_3[ 2 ]
+initial
+begin
+	Barcode_Digit_3[2] = 1'b1;
+	Barcode_Digit_3[2] = #20000 1'b0;
+	Barcode_Digit_3[2] = #190000 1'b1;
+	Barcode_Digit_3[2] = #30000 1'b0;
+	Barcode_Digit_3[2] = #20000 1'b1;
+end 
+// Barcode_Digit_3[ 1 ]
+initial
+begin
+	Barcode_Digit_3[1] = 1'b1;
+end 
+// Barcode_Digit_3[ 0 ]
+initial
+begin
+	Barcode_Digit_3[0] = 1'b1;
+end 
+
+// CleanSWOut[1]
+initial
+begin
+	CleanSWOut[1] = 1'b0;
+	CleanSWOut[1] = #230000 1'b1;
+end 
+
+// CleanSWOut[2]
+initial
+begin
+	CleanSWOut[2] = 1'b0;
+end 
+// NumOfBarcodeDigitsEntered[ 2 ]
+initial
+begin
+	NumOfBarcodeDigitsEntered[2] = 1'b0;
+	NumOfBarcodeDigitsEntered[2] = #150000 1'b1;
+	NumOfBarcodeDigitsEntered[2] = #60000 1'b0;
+	NumOfBarcodeDigitsEntered[2] = #30000 1'b1;
+	NumOfBarcodeDigitsEntered[2] = #20000 1'b0;
+end 
+// NumOfBarcodeDigitsEntered[ 1 ]
+initial
+begin
+	NumOfBarcodeDigitsEntered[1] = 1'b0;
+	NumOfBarcodeDigitsEntered[1] = #60000 1'b1;
+	NumOfBarcodeDigitsEntered[1] = #90000 1'b0;
+end 
+// NumOfBarcodeDigitsEntered[ 0 ]
+initial
+begin
+	NumOfBarcodeDigitsEntered[0] = 1'b0;
+	NumOfBarcodeDigitsEntered[0] = #20000 1'b1;
+	NumOfBarcodeDigitsEntered[0] = #40000 1'b0;
+	NumOfBarcodeDigitsEntered[0] = #50000 1'b1;
+	NumOfBarcodeDigitsEntered[0] = #40000 1'b0;
+end 
+// SelectedProductID[ 3 ]
+initial
+begin
+	SelectedProductID[3] = 1'b0;
+end 
+// SelectedProductID[ 2 ]
+initial
+begin
+	SelectedProductID[2] = 1'b0;
+end 
+// SelectedProductID[ 1 ]
+initial
+begin
+	SelectedProductID[1] = 1'b0;
+	SelectedProductID[1] = #150000 1'b1;
+	SelectedProductID[1] = #60000 1'b0;
+	SelectedProductID[1] = #30000 1'b1;
+	SelectedProductID[1] = #20000 1'b0;
+end 
+// SelectedProductID[ 0 ]
+initial
+begin
+	SelectedProductID[0] = 1'b0;
+	SelectedProductID[0] = #150000 1'b1;
+	SelectedProductID[0] = #60000 1'b0;
+	SelectedProductID[0] = #30000 1'b1;
+	SelectedProductID[0] = #20000 1'b0;
+end 
+
+// ValidID
+initial
+begin
+	ValidID = 1'b0;
+	ValidID = #150000 1'b1;
+	ValidID = #60000 1'b0;
+	ValidID = #30000 1'b1;
+	ValidID = #20000 1'b0;
+end 
+endmodule
+
