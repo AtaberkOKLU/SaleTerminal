@@ -7871,8 +7871,12 @@ CMD_Reg[0] => State.OUTPUTSELECT
 CMD_Reg[0] => State.OUTPUTSELECT
 CMD_Reg[0] => RST_Direction2ProductID_Level.OUTPUTSELECT
 CMD_Reg[0] => always0.IN1
+CMD_Reg[0] => EN_Direction2ProductID_Level.OUTPUTSELECT
+CMD_Reg[0] => Dir_out.OUTPUTSELECT
+CMD_Reg[0] => Dir_out.OUTPUTSELECT
 CMD_Reg[0] => RST_BarcodeController_Level.DATAB
 CMD_Reg[0] => State.DATAB
+CMD_Reg[0] => CNL_BasketController_Level.DATAB
 CMD_Reg[0] => State.DATAB
 CMD_Reg[1] => ~NO_FANOUT~
 CMD_Reg[2] => ~NO_FANOUT~
@@ -7880,19 +7884,27 @@ CMD_Reg[3] => ~NO_FANOUT~
 KEY_Reg[0] => WideOr0.IN0
 KEY_Reg[0] => always0.IN1
 KEY_Reg[0] => Decoder0.IN3
+KEY_Reg[0] => Equal0.IN7
+KEY_Reg[0] => Equal1.IN7
 KEY_Reg[1] => WideOr0.IN1
 KEY_Reg[1] => always0.IN1
 KEY_Reg[1] => Decoder0.IN2
 KEY_Reg[1] => Mux1.IN5
+KEY_Reg[1] => Equal0.IN6
+KEY_Reg[1] => Equal1.IN6
 KEY_Reg[2] => WideOr0.IN2
 KEY_Reg[2] => always0.IN1
 KEY_Reg[2] => Decoder0.IN1
 KEY_Reg[2] => Mux0.IN5
+KEY_Reg[2] => Equal0.IN5
+KEY_Reg[2] => Equal1.IN5
 KEY_Reg[3] => WideOr0.IN3
 KEY_Reg[3] => always0.IN1
 KEY_Reg[3] => Decoder0.IN0
 KEY_Reg[3] => Mux0.IN4
 KEY_Reg[3] => Mux1.IN4
+KEY_Reg[3] => Equal0.IN4
+KEY_Reg[3] => Equal1.IN4
 CleanSWOut[1] => always0.IN0
 CleanSWOut[1] => ProductID_out.OUTPUTSELECT
 CleanSWOut[1] => ProductID_out.OUTPUTSELECT
@@ -8255,6 +8267,13 @@ ProductID[3] <= ProductID.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BasketControllerEnablePulseGenerator_inst0
+CLK => r2.CLK
+CLK => r1.CLK
+CleanButtonIn => r1.DATAIN
+ButtonPulseOut <= ButtonPulseOut.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BasketControllerCancelPulseGenerator_inst0
 CLK => r2.CLK
 CLK => r1.CLK
 CleanButtonIn => r1.DATAIN
