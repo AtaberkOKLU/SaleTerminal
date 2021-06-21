@@ -1,0 +1,74 @@
+// Copyright (C) 2020  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and any partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details, at
+// https://fpgasoftware.intel.com/eula.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/21/2021 12:20:06"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          Binary2BCD_2D
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module Binary2BCD_2D_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg [3:0] bin;
+// wires                                               
+wire [7:0] bcd;
+
+// assign statements (if any)                          
+Binary2BCD_2D i1 (
+// port map - connection between master ports and signals/registers   
+	.bcd(bcd),
+	.bin(bin)
+);
+initial 
+begin 
+#1000000 $stop;
+end 
+// bin[ 3 ]
+initial
+begin
+	bin[3] = 1'b0;
+	bin[3] = #180000 1'b1;
+	bin[3] = #110000 1'b0;
+end 
+// bin[ 2 ]
+initial
+begin
+	bin[2] = 1'b0;
+end 
+// bin[ 1 ]
+initial
+begin
+	bin[1] = 1'b0;
+	bin[1] = #180000 1'b1;
+	bin[1] = #110000 1'b0;
+end 
+// bin[ 0 ]
+initial
+begin
+	bin[0] = 1'b0;
+	bin[0] = #180000 1'b1;
+	bin[0] = #110000 1'b0;
+end 
+endmodule
+

@@ -10,28 +10,28 @@ z2
 cModel Technology
 Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim
 vBarcodeController
-Z1 !s110 1623763815
+Z1 !s110 1624296034
 !i10b 1
-!s100 4hVK?G@BmzkHjM]:J?GQz1
+!s100 A6ISL;ng<@[86:SX_bXcC1
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IkEWFbhF3VDUEVThb@C7j50
+IMj3Q]nGf^eNGYFPdAfZfR1
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1623763814
+w1624296032
 Z4 8SaleTerminal.vo
 Z5 FSaleTerminal.vo
-!i122 138
-L0 32 2345
+!i122 183
+L0 32 2346
 Z6 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z7 !s108 1623763815.000000
-Z8 !s107 SaleTerminal.vo|
-Z9 !s90 -work|work|SaleTerminal.vo|
+!s108 1624296033.000000
+Z7 !s107 SaleTerminal.vo|
+Z8 !s90 -work|work|SaleTerminal.vo|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z9 o-work work
+Z10 tCvgOpt 0
 n@barcode@controller
 vBarcodeController_vlg_vec_tst
 R1
@@ -41,70 +41,118 @@ R2
 IDFKO9^KhK5FToQ9:<]BYM2
 R3
 R0
-w1623763813
+w1624296031
 8BarcodeController.vwf.vt
 FBarcodeController.vwf.vt
-!i122 139
+!i122 184
 L0 30 114
 R6
 r1
 !s85 0
 31
-R7
+!s108 1624296034.000000
 !s107 BarcodeController.vwf.vt|
 !s90 -work|work|BarcodeController.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@barcode@controller_vlg_vec_tst
 vBarcodeShiftRegister
-Z12 !s110 1623738522
+Z11 !s110 1624295592
 !i10b 1
-!s100 8midmPcU8j]=T19X0RoZC0
+!s100 Lla4TMO1W`^^XHNGSQRm52
 R2
-IeNgHOaLkigBmmJJME9`[<2
+IgU>=eXjk[J@=0JGOk6>JJ3
 R3
 R0
-w1623738520
+w1624295590
 R4
 R5
-!i122 130
-L0 32 905
+!i122 181
+L0 32 1088
 R6
 r1
 !s85 0
 31
-Z13 !s108 1623738522.000000
+Z12 !s108 1624295592.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@barcode@shift@register
 vBarcodeShiftRegister_vlg_vec_tst
-R12
+R11
 !i10b 1
-!s100 S@AY0@oceGdQR?7b;DgkK2
+!s100 YR56Nb]fzieYjW4JJ_]Qm0
 R2
-IGgb;DQ90Vg59THhh``]JG0
+I`m_lL;<HKg7UM[9`DXBK?3
 R3
 R0
-w1623738519
+w1624295589
 8BarcodeShiftRegister.vwf.vt
 FBarcodeShiftRegister.vwf.vt
-!i122 131
-L0 30 100
+!i122 182
+L0 30 102
 R6
 r1
 !s85 0
 31
-R13
+R12
 !s107 BarcodeShiftRegister.vwf.vt|
 !s90 -work|work|BarcodeShiftRegister.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@barcode@shift@register_vlg_vec_tst
+vBinary2BCD_2D
+Z13 !s110 1624267209
+!i10b 1
+!s100 ^W42Z]fATOILjRnI3bCij0
+R2
+IPk7gz^:1bRM;;coPJfdYl1
+R3
+R0
+w1624267207
+R4
+R5
+!i122 177
+L0 32 304
+R6
+r1
+!s85 0
+31
+Z14 !s108 1624267209.000000
+R7
+R8
+!i113 1
+R9
+R10
+n@binary2@b@c@d_2@d
+vBinary2BCD_2D_vlg_vec_tst
+R13
+!i10b 1
+!s100 98QWPRg_lmGFEc_F>zLTf2
+R2
+IXz_Zj55X<F?XWNzH7S0Gn1
+R3
+R0
+w1624267206
+8Bin2BCD.vwf.vt
+FBin2BCD.vwf.vt
+!i122 178
+L0 30 44
+R6
+r1
+!s85 0
+31
+R14
+!s107 Bin2BCD.vwf.vt|
+!s90 -work|work|Bin2BCD.vwf.vt|
+!i113 1
+R9
+R10
+n@binary2@b@c@d_2@d_vlg_vec_tst
 vButtonController
 !s110 1624194223
 !i10b 1
@@ -122,12 +170,12 @@ R6
 r1
 !s85 0
 31
-Z14 !s108 1624194223.000000
+Z15 !s108 1624194223.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@button@controller
 vButtonController_vlg_vec_tst
 !s110 1624194224
@@ -146,15 +194,15 @@ R6
 r1
 !s85 0
 31
-R14
+R15
 !s107 ButtonController.vwf.vt|
 !s90 -work|work|ButtonController.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@button@controller_vlg_vec_tst
 vButtonDebouncer
-Z15 !s110 1623571545
+Z16 !s110 1623571545
 !i10b 1
 !s100 1STWZ2G`YFUaa^1Bg9HkD0
 R2
@@ -170,15 +218,15 @@ R6
 r1
 !s85 0
 31
-Z16 !s108 1623571545.000000
+Z17 !s108 1623571545.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@button@debouncer
 vButtonDebouncer_vlg_vec_tst
-R15
+R16
 !i10b 1
 !s100 J=^CG0kPgAzK8KC]HXTDm1
 R2
@@ -194,15 +242,15 @@ R6
 r1
 !s85 0
 31
-R16
+R17
 !s107 ButtonDebouncer.vwf.vt|
 !s90 -work|work|ButtonDebouncer.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@button@debouncer_vlg_vec_tst
 vDecoder4x16
-Z17 !s110 1624144300
+Z18 !s110 1624144300
 !i10b 1
 !s100 KeLi_MoQM=TWTC`R3kK>[1
 R2
@@ -218,15 +266,15 @@ R6
 r1
 !s85 0
 31
-Z18 !s108 1624144300.000000
+Z19 !s108 1624144300.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@decoder4x16
 vDecoder4x16_vlg_vec_tst
-R17
+R18
 !i10b 1
 !s100 0@KM2jCbhi6Ea=3MF[c:m3
 R2
@@ -242,63 +290,111 @@ R6
 r1
 !s85 0
 31
-R18
+R19
 !s107 Decoder4x16.vwf.vt|
 !s90 -work|work|Decoder4x16.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@decoder4x16_vlg_vec_tst
 vDirection2ProductID
-Z19 !s110 1624096456
+Z20 !s110 1624272088
 !i10b 1
 !s100 [2j7e`6OWM:08o_?fklP73
 R2
 IMRjeKhUY?EZWZ1EKk1NlM3
 R3
 R0
-w1624096455
+w1624272086
 R4
 R5
-!i122 158
+!i122 179
 L0 32 1041
 R6
 r1
 !s85 0
 31
-Z20 !s108 1624096456.000000
+!s108 1624272087.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@direction2@product@i@d
 vDirection2ProductID_vlg_vec_tst
-R19
+R20
 !i10b 1
 !s100 OcAR:=k=LNiXAZe>mUW>E0
 R2
 IXMl?CP=SfZD8>^gbKb_0b3
 R3
 R0
-w1624096454
+w1624272085
 8Direction2ProductID.vwf.vt
 FDirection2ProductID.vwf.vt
-!i122 159
+!i122 180
 L0 30 134
 R6
 r1
 !s85 0
 31
-R20
+!s108 1624272088.000000
 !s107 Direction2ProductID.vwf.vt|
 !s90 -work|work|Direction2ProductID.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@direction2@product@i@d_vlg_vec_tst
+vHoverController
+Z21 !s110 1624302040
+!i10b 1
+!s100 GDEX@h95UegoXRf4UgE;>3
+R2
+IG9nAGl1JR=AlbeB6?^AGN2
+R3
+R0
+w1624302038
+R4
+R5
+!i122 193
+L0 32 2942
+R6
+r1
+!s85 0
+31
+Z22 !s108 1624302040.000000
+R7
+R8
+!i113 1
+R9
+R10
+n@hover@controller
+vHoverController_vlg_vec_tst
+R21
+!i10b 1
+!s100 @MZb4Th6D^OE:R4@9gco[3
+R2
+IK=Vk44H<3o:_@>FNOGJ^z3
+R3
+R0
+w1624302037
+8HoverController.vwf.vt
+FHoverController.vwf.vt
+!i122 194
+L0 30 256
+R6
+r1
+!s85 0
+31
+R22
+!s107 HoverController.vwf.vt|
+!s90 -work|work|HoverController.vwf.vt|
+!i113 1
+R9
+R10
+n@hover@controller_vlg_vec_tst
 vStateMachine
-Z21 !s110 1623776173
+Z23 !s110 1623776173
 !i10b 1
 !s100 B^N<[BZ`>mcAGbL3B1ZfP2
 R2
@@ -314,15 +410,15 @@ R6
 r1
 !s85 0
 31
-Z22 !s108 1623776173.000000
+Z24 !s108 1623776173.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@state@machine
 vStateMachine_vlg_vec_tst
-R21
+R23
 !i10b 1
 !s100 ]L[3i<BjHbI_ZlO<?=]AY3
 R2
@@ -338,15 +434,15 @@ R6
 r1
 !s85 0
 31
-R22
+R24
 !s107 StateMachine.vwf.vt|
 !s90 -work|work|StateMachine.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@state@machine_vlg_vec_tst
 vVGA_Controller
-Z23 !s110 1624205933
+Z25 !s110 1624205933
 !i10b 1
 !s100 NZYHAkm>PFWEO]4kRoFFk2
 R2
@@ -363,14 +459,14 @@ r1
 !s85 0
 31
 !s108 1624205931.000000
+R7
 R8
-R9
 !i113 1
+R9
 R10
-R11
 n@v@g@a_@controller
 vVGA_Controller_vlg_vec_tst
-R23
+R25
 !i10b 1
 !s100 Tj;d?AH_Z=E4GgkCG^C@W0
 R2
@@ -390,6 +486,6 @@ r1
 !s107 VGA_Controller.vwf.vt|
 !s90 -work|work|VGA_Controller.vwf.vt|
 !i113 1
+R9
 R10
-R11
 n@v@g@a_@controller_vlg_vec_tst

@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source="D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.vwf" --testbench_file="D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/VGA_Controller.vwf.vt"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source="D:/EE/EE314/Project/QuartusProjectFiles/HoverController.vwf" --testbench_file="D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/HoverController.vwf.vt"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,12 +26,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Jun 20 19:18:47 2021
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/VGA_Controller.vwf.vt
+    Info: Processing started: Mon Jun 21 22:00:36 2021
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=verilog --write_settings_files=off SaleTerminal -c SaleTerminal --vector_source=D:/EE/EE314/Project/QuartusProjectFiles/HoverController.vwf --testbench_file=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/HoverController.vwf.vt
+Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 20.1 -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
-Warning (21300): LOCKED port on the PLL is not properly connected on instance "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|general[0].gpll". The LOCKED port on the PLL should be connected when the FBOUTCLK port is connected. Although it is unnecessary to connect the LOCKED signal, any logic driven off of an output clock of the PLL will not know when the PLL is locked and ready.
 
-bench files
+ in vector source file when writing test bench files
 
 Completed successfully. 
 
@@ -58,16 +62,20 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: Intel and sold by Intel or its authorized distributors.  Please
     Info: refer to the applicable agreement for further details, at
     Info: https://fpgasoftware.intel.com/eula.
-    Info: Processing started: Sun Jun 20 19:18:48 2021
+    Info: Processing started: Mon Jun 21 22:00:38 2021
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=verilog --output_directory=D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/ SaleTerminal -c SaleTerminal
+Warning (20013): Ignored 16 assignments for entity "VGA_PLL" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_NAME altera_pll -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_VERSION 20.1 -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name IP_TOOL_ENV mwpim -entity VGA_PLL -sip VGA_PLL.sip -library lib_VGA_PLL was ignored
+Warning (20013): Ignored 317 assignments for entity "VGA_PLL_0002" -- entity does not exist in design
 Info (119006): Selected device 5CSEMA5F31C6 for design "SaleTerminal"
-Warning (21300): LOCKED port on the PLL is not properly connected on instance "VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|general[0].gpll". The LOCKED port on the PLL should be connected when the FBOUTCLK port is connected. Although it is unnecessary to connect the LOCKED signal, any logic driven off of an output clock of the PLL will not know when the PLL is locked and ready.
 Info (204019): Generated file SaleTerminal.vo in folder "D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim//" for EDA simulation tool
-Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4861 megabytes
-    Info: Processing ended: Sun Jun 20 19:18:50 2021
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4722 megabytes
+    Info: Processing ended: Mon Jun 21 22:00:38 2021
+    Info: Elapsed time: 00:00:00
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -90,442 +98,54 @@ Reading pref.tcl
 
 # ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:18:51 on Jun 20,2021
+# Start time: 22:00:40 on Jun 21,2021
 # vlog -work work SaleTerminal.vo 
 
-# -- Compiling module VGA_Controller
-
+# -- Compiling module HoverController
 # 
 # Top level modules:
-# 	VGA_Controller
-# End time: 19:18:53 on Jun 20,2021, Elapsed time: 0:00:02
+# 	HoverController
+# End time: 22:00:40 on Jun 21,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 19:18:53 on Jun 20,2021
-# vlog -work work VGA_Controller.vwf.vt 
+# Start time: 22:00:40 on Jun 21,2021
+# vlog -work work HoverController.vwf.vt 
 
-# -- Compiling module VGA_Controller_vlg_vec_tst
+# -- Compiling module HoverController_vlg_vec_tst
 # 
 # Top level modules:
-# 	VGA_Controller_vlg_vec_tst
-# End time: 19:18:53 on Jun 20,2021, Elapsed time: 0:00:00
+# 	HoverController_vlg_vec_tst
+# End time: 22:00:40 on Jun 21,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 
-# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.VGA_Controller_vlg_vec_tst 
-# Start time: 19:18:53 on Jun 20,2021
-# Loading work.VGA_Controller_vlg_vec_tst
-# Loading work.VGA_Controller
+# vsim -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.HoverController_vlg_vec_tst 
+# Start time: 22:00:40 on Jun 21,2021
+# Loading work.HoverController_vlg_vec_tst
+# Loading work.HoverController
 # Loading cyclonev_ver.cyclonev_io_obuf
 # Loading cyclonev_ver.cyclonev_io_ibuf
-# Loading cyclonev_ver.cyclonev_pll_refclk_select
-# Loading cyclonev_ver.cyclonev_fractional_pll
-# Loading cyclonev_ver.cyclonev_pll_reconfig
-# Loading cyclonev_ver.cyclonev_pll_output_counter
 # Loading cyclonev_ver.cyclonev_lcell_comb
 # Loading altera_ver.dffeas
-# Loading cyclonev_ver.cyclonev_mac
-# Loading cyclonev_ver.cyclonev_ram_block
-# Loading sv_std.std
-# Loading altera_lnsim_ver.generic_m10k
-# Loading altera_lnsim_ver.altera_lnsim_functions
-# Loading altera_lnsim_ver.common_28nm_ram_block
-# Loading altera_lnsim_ver.common_28nm_ram_register
-# Loading altera_lnsim_ver.common_28nm_ram_pulse_generator
-# Loading altera_lnsim_ver.altera_pll_reconfig_tasks
-# Loading altera_lnsim_ver.generic_device_pll
-# Loading altera_lnsim_ver.altera_generic_pll_functions
-# Loading altera_lnsim_ver.generic_pll
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for '\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT '.  Expected 15, found 14.
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT  File: SaleTerminal.vo Line: 2757
-# ** Warning: (vsim-3722) SaleTerminal.vo(2757): [TFMPC] - Missing connection for port 'pllen'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for ''.  Expected , found .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_REFCLK_SELECT /cyclonev_pll_refclk_select_encrypted_inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: (vsim-3722) (): [TFMPC] - Missing connection for port ''.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for '\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL '.  Expected 24, found 23.
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL  File: SaleTerminal.vo Line: 2793
-# ** Warning: (vsim-3722) SaleTerminal.vo(2793): [TFMPC] - Missing connection for port 'vsspl'.
-# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'cyclonev_pll_reconfig_encrypted_inst'.  Expected 33, found 32.
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_RECONFIG /cyclonev_pll_reconfig_encrypted_inst File: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v Line: 3492
-# ** Warning: (vsim-3722) $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(3492): [TFMPC] - Missing connection for port ''.
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~PLL_RECONFIG /cyclonev_pll_reconfig_encrypted_inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
 # Loading altera_ver.PRIM_GDFF_LOW
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (26) for port 'az'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4326).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (18) for port 'bx'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4328).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (19) for port 'by'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4329).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (18) for port 'bz'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4330).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (18) does not match connection size (27) for port 'scanin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4332).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'chainin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4333).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8  File: SaleTerminal.vo Line: 5810
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8 /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult2~8 /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (26) for port 'az'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4326).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (18) for port 'bx'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4328).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (16) does not match connection size (19) for port 'by'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4329).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (18) for port 'bz'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4330).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (27) for port 'scanin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4332).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'chainin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4333).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8  File: SaleTerminal.vo Line: 5966
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8 /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult0~8 /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3016) Port type is incompatible with connection (port 'ax').
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (26) for port 'az'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4326).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3015) [PCDPC] - Port size (1) does not match connection size (18) for port 'bz'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4330).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3015) [PCDPC] - Port size (11) does not match connection size (27) for port 'scanin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4332).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3015) [PCDPC] - Port size (64) does not match connection size (1) for port 'chainin'. The port definition is at: $MODEL_TECH/../altera/verilog/src/cyclonev_atoms.v(4333).
-#    Time: 0 ps  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac  File: SaleTerminal.vo Line: 6282
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: (vsim-3015) [PCDPC] - Port size () does not match connection size () for .
-#    Time: 0 ps  Iteration: 0  Protected: /VGA_Controller_vlg_vec_tst/i1/\PixelController_inst0|Image_Shape_Submodule_inst0|ImageLocator_inst0|Mult1~mac /inst/ File: $MODEL_TECH/../altera/verilog/src/mentor/cyclonev_atoms_ncrypt.v Line: 38
-# ** Warning: Design size of 13487 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
-# Expect performance to be adversely affected.
-# after#27
-
-# 
-# Warning: por to CB BFM is not connected, internal por is used.
-# 
-# Info: =================================================
-# Info:           Generic PLL Summary
-# Info: =================================================
-# Time scale of (VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_0.no_need_to_gen) is  1ps /  1ps
-# Info: hierarchical_name = VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_0.no_need_to_gen
-# Info: reference_clock_frequency = 50.0 mhz
-# Info: output_clock_frequency = 320.0 mhz
-# Info: phase_shift = 0 ps
-# Info: duty_cycle = 50
-# Info: sim_additional_refclk_cycles_to_lock = 0
-# Info: output_clock_high_period = 1562.500000
-# Info: output_clock_low_period = 1562.500000
-# Info: =================================================
-# Info:           Generic PLL Summary
-# Info: =================================================
-# Time scale of (VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_1.no_need_to_gen) is  1ps /  1ps
-# Info: hierarchical_name = VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_1.no_need_to_gen
-# Info: reference_clock_frequency = 50.0 mhz
-# Info: output_clock_frequency = 320.0 mhz
-# Info: phase_shift = 390 ps
-# Info: duty_cycle = 50
-# Info: sim_additional_refclk_cycles_to_lock = 0
-# Info: output_clock_high_period = 1562.500000
-# Info: output_clock_low_period = 1562.500000
-# Info: =================================================
-# Info:           Generic PLL Summary
-# Info: =================================================
-# Time scale of (VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_2.no_need_to_gen) is  1ps /  1ps
-# Info: hierarchical_name = VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_2.no_need_to_gen
-# Info: reference_clock_frequency = 50.0 mhz
-# Info: output_clock_frequency = 320.0 mhz
-# Info: phase_shift = 780 ps
-# Info: duty_cycle = 50
-# Info: sim_additional_refclk_cycles_to_lock = 0
-# Info: output_clock_high_period = 1562.500000
-# Info: output_clock_low_period = 1562.500000
-# Info: =================================================
-# Info:           Generic PLL Summary
-# Info: =================================================
-# Time scale of (VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_3.no_need_to_gen) is  1ps /  1ps
-# Info: hierarchical_name = VGA_Controller_vlg_vec_tst.i1.\VGA_PLL_inst0|vga_pll_inst|altera_pll_i|general[0].gpll~FRACTIONAL_PLL .cyclonev_fractional_pll_encrypted_inst...inst_pll_phase_3.no_need_to_gen
-# Info: reference_clock_frequency = 50.0 mhz
-# Info: output_clock_frequency = 320.0 mhz
-# Info: phase_shift = 1170 ps
-# Info: duty_cycle = 50
-# Info: sim_additional_refclk_cycles_to_lock = 0
-# Info: output_clock_high_period = 1562.500000
-# Info: output_clock_low_period = 1562.500000
-# 
-# Warning: por to CB BFM is not connected, internal por is used.
-# 
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 0 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 2200624 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 4363123 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 6650622 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 8892700 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 11150280 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 13300625 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 15469120 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 17500624 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 19513125 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 21575624 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 23650790 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 25825620 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# Simulation time: 28069810 ps
-
-# ** Note: $finish    : VGA_Controller.vwf.vt(65)
-#    Time: 30 us  Iteration: 0  Instance: /VGA_Controller_vlg_vec_tst
-
-# End time: 19:23:54 on Jun 20,2021, Elapsed time: 0:05:01
-# Errors: 0, Warnings: 41
+# after#25
+# ** Note: $finish    : HoverController.vwf.vt(67)
+#    Time: 320 ns  Iteration: 0  Instance: /HoverController_vlg_vec_tst
+# End time: 22:00:40 on Jun 21,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.vwf...
+Reading D:/EE/EE314/Project/QuartusProjectFiles/HoverController.vwf...
 
 Reading D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210620192354.sim.vwf
+Warning: CleanSWOut[0] - signal not found in VCD.
+
+Writing the resulting VWF to D:/EE/EE314/Project/QuartusProjectFiles/simulation/qsim/SaleTerminal_20210621220040.sim.vwf
 
 Finished VCD to VWF conversion.
 

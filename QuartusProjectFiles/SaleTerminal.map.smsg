@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at Direction2ProductID.v(36): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 36
+Warning (10268): Verilog HDL information at BarcodeShiftRegister.v(39): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v Line: 39

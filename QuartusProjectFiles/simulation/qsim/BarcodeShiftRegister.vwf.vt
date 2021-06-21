@@ -19,7 +19,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/15/2021 09:28:39"
+// Generated on "06/21/2021 20:13:09"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          BarcodeShiftRegister
 // 
@@ -39,6 +39,7 @@ wire [3:0] Digit_0;
 wire [3:0] Digit_1;
 wire [3:0] Digit_2;
 wire [3:0] Digit_3;
+wire [2:0] NumOfBarcodeDigitsEntered;
 
 // assign statements (if any)                          
 BarcodeShiftRegister i1 (
@@ -50,6 +51,7 @@ BarcodeShiftRegister i1 (
 	.Digit_3(Digit_3),
 	.Digit_in(Digit_in),
 	.ENABLE(ENABLE),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
 	.RESET_N(RESET_N)
 );
 initial 
