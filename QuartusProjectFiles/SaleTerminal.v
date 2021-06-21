@@ -29,6 +29,7 @@ module SaleTerminal(
 	output wire[6:0] 	HEX1,
 	output wire[6:0] 	HEX2,
 	output wire[6:0] 	HEX3,
+	output wire[6:0] 	HEX4,
 	output wire[6:0] 	HEX5,
 	
 	output wire[9:0] 	LEDR	
@@ -92,7 +93,7 @@ VGA_Controller VGA_Controller_inst0(
 /* STATE MACHINE BEGIN */
 wire [3:0] ProductQuantity;
 wire BasketController_Enable_Pulse;
-wire [1:0] Dir_in;
+//wire [1:0] Dir_in;
 wire [2:0] State;
 wire Barcode_Enable_Pulse;				// From StateMachine
 wire RSTN_BarcodeController_Pulse;	// From StateMachine
@@ -104,12 +105,15 @@ wire[3:0] 	Barcode_Digit_0;
 wire[3:0] 	Barcode_Digit_1;
 wire[3:0] 	Barcode_Digit_2;
 wire[3:0] 	Barcode_Digit_3;
+wire ValidID;
 
 StateMachine StateMachine_inst0(
 	.CLOCK_50(CLOCK_50),
 	// RESET_N,
 	.CMD_Reg(CMD_Reg),
 	.KEY_Reg(KEY_Reg),
+	.KEY_En(KEY_En),
+	.CMD_En(CMD_En),
 	.CleanSWOut(CleanSWOut[2:1]),
 	.Barcode_DigitIn_0(Barcode_Digit_0),
 	.Barcode_DigitIn_1(Barcode_Digit_1),
@@ -124,10 +128,11 @@ StateMachine StateMachine_inst0(
 	.ProductQuantity(ProductQuantity),
 	.ProductID_out(ProductID_out),
 	.BasketController_Enable_Pulse(BasketController_Enable_Pulse),
+	.Product_valid(ValidID),
 	
 	.State(State),
 
-	.Dir_out(Dir_in)	// To Direction2ProductID
+	//.Dir_out(Dir_in)	// To Direction2ProductID
 );
 
 /* STATE MACHINE END */
@@ -150,8 +155,7 @@ BarcodeController BarcodeController_inst0(
 	.HEX0(HEX0),
 	.HEX1(HEX1),
 	.HEX2(HEX2),
-	.HEX3(HEX3),
-	.HEX5(HEX5)
+	.HEX3(HEX3)
 );
 /* BARCODE CONTROLLER END */
 
@@ -163,9 +167,13 @@ HoverController HoverController_inst0(
 	.Barcode_Digit_1(Barcode_Digit_1),
 	.Barcode_Digit_2(Barcode_Digit_2),
 	.Barcode_Digit_3(Barcode_Digit_3),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
 	.BarcodeCompleted(BarcodeDigitCompleted),
 	.SelectedProductID(ProductID_out),				// From Direction2ProductID
-	.HighlightedProductList(HighlightedProductList)
+	.HighlightedProductList(HighlightedProductList),
+	.HEX4(HEX4),
+	.HEX5(HEX5),
+	.ValidID(ValidID)
 );
 /* HOVER CONTROLLER END */
 
@@ -174,7 +182,8 @@ HoverController HoverController_inst0(
 LED_Controller LED_Controller_inst0(
 	.State(State),
 	.CleanSWOut(CleanSWOut),
-	.CleanButtonOut(CleanButtonOut),
+	.KEY_Reg(KEY_Reg),
+	.CMD_Reg(CMD_Reg),
 	.LEDR(LEDR)
 );
 /* LED CONTROLLER END */
