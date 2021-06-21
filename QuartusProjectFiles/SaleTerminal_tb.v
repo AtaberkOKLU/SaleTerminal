@@ -101,7 +101,7 @@ always
 		KEY[0] <= 1;
 		/* Interactive Select END */
 		
-		
+		#(64'd20000000);
 		$stop;
 	end
 endmodule
