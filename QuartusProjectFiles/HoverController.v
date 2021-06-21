@@ -4,7 +4,7 @@
  *		Inputs		: 	*
  *
  *		Outputs		: 	HighlightedProductList	=> Highlited Products Vector
- *		Owner			: 	Ataberk ÖKLÜ & Göksu UZUNTÜRK
+ *		Owner			: 	Ataberk ÖKLÜ
  */
  
 module HoverController(
@@ -19,51 +19,63 @@ module HoverController(
 	input wire [3:0] Barcode_Digit_1,
 	input wire [3:0] Barcode_Digit_2,
 	input wire [3:0] Barcode_Digit_3,
+	input wire [2:0] NumOfBarcodeDigitsEntered,
 	input wire 		  BarcodeCompleted,
+	
+	// State Machine
+	input wire 		  ValidID,
 	
 	// Direction2ProductID Interface
 		// For Both Basket & Interactive
 	input wire [3:0] SelectedProductID,
 	
 	// VGA Contoller Interface
-	output reg [11:0] HighlightedProductList
+	output reg [11:0] HighlightedProductList,
+	
+	// Segment 7 Displays
+	output wire [6:0] HEX4,
+	output wire [6:0] HEX5
 );
 
 wire [11:0] HighlightedBarcodeOut;
+wire [15:0] Barcode_in = {Barcode_Digit_3, Barcode_Digit_2, Barcode_Digit_1, Barcode_Digit_0};
 
-/*
- *
- *		BarcodeHoverControler by Göksu UZUNTÜRK
- *
- */
+BarcodeHoverController BarcodeHoverController_inst0(
+	.Barcode_in(Barcode_in),
+	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
+	.HighlightedBarcodeOut(HighlightedBarcodeOut),
+	.BarcodeCompleted(BarcodeCompleted)
+);
+
  
-reg  [1:0] SW12 = 0; 
-
 wire [15:0] DecoderOut;
-reg [11:0] HighlightedDecoderOut;
-/*
- *		Basket And Interactive Selection Hover by Ataberk ÖKLÜ
- *
- */
+reg  [11:0] HighlightedDecoderOut;
+
 
 Decoder4x16 Decoder4x16_inst0(
 	.in(SelectedProductID),
 	.out(DecoderOut)
 );
 
+DisplaySelectedIDSeg7 DisplaySelectedIDSeg7_inst0(
+	.CleanSWOut(CleanSWOut),
+	.SelectedID(SelectedProductID),
+	.HEX4(HEX4),
+	.HEX5(HEX5),
+	.valid(ValidID)
+);
 
-
-
-always @ (negedge CLK)
-	SW12 <= CleanSWOut;
 
 always @ (posedge CLK)
 	HighlightedDecoderOut <= DecoderOut[11:0];
 	
 always @ (negedge CLK)
 	begin
-		if(|SW12)
-			HighlightedProductList <= HighlightedDecoderOut;
+		if(|CleanSWOut)
+			if(ValidID)
+				HighlightedProductList <= HighlightedDecoderOut;
+			else
+				HighlightedProductList <= 12'b0;
 		else
 			HighlightedProductList <= HighlightedBarcodeOut;
 	end
