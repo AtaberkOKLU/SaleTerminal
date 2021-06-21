@@ -9,9 +9,7 @@
 
 module StateMachine(
 	// Button Controller
-	/*
 	input wire [3:0] CMD_En,
-	*/
 	input wire [3:0] KEY_En,
 	input wire [3:0] CMD_Reg,
 	input wire [3:0] KEY_Reg,
@@ -75,11 +73,16 @@ module StateMachine(
 	output reg  [3:0] ProductID_out,
 	output wire BasketController_Enable_Pulse,
 	
+	// Hover Controller
+	output wire Product_valid
+	
 	// InteractiveController
-	output reg  [1:0] Dir_out // (<- ^ v ->) (00 01 10 11)
+	//output reg  [1:0] Dir_out // (<- ^ v ->) (00 01 10 11)
 
 	
 );
+
+reg  [1:0] Dir_out;
 
 reg RST_BarcodeController_Level 	= 0;	// Active High
 reg RST_Direction2ProductID_Level= 0;	// Active High
@@ -90,7 +93,6 @@ reg EN_BasketController_Level 	= 0;	// Active High
 wire RST_BarcodeController_Pulse;
 wire [3:0] 	ProductID_Barcode;
 wire [3:0] 	ProductID_Direction;
-wire 			Product_valid;
 wire Direction2ProductID_En;
 wire RST_Direction2ProductID_Pulse;
 wire RSTN_Direction2ProductID_Pulse;
@@ -191,9 +193,12 @@ always @ (posedge CLOCK_50)
 		State1_Idle	:	// IDLE State
 					begin
 						// Deactivate Barcode Reset Level for further usages.
-						RST_BarcodeController_Level <= 0;
+						RST_BarcodeController_Level 	<= 0;
+						RST_Direction2ProductID_Level <= 0;
 						
-						if (CMD_Reg[0]) 						// Select Button is Pressed?
+						if (|KEY_Reg)			// If a Key Button is still pressed
+							State <= State1_Idle;	// Wait in Idle until released
+						else if (CMD_Reg[0]) 						// Select Button is Pressed?
 							State <= State6_EndShopping;	// 	End the Shopping
 						else if(CleanSWOut[2])				// SW2 is Active?
 							begin
@@ -202,11 +207,10 @@ always @ (posedge CLOCK_50)
 							end
 						else if (CleanSWOut[1])				// SW1 is Active?
 							begin
+								RST_Direction2ProductID_Level <= 1;
 								RST_BarcodeController_Level <= 1;
 								State <= State3_Interactive;	// 	Go to Interactive Mode
 							end
-						else if (|KEY_Reg)			// If a Key Button is still pressed
-							State <= State1_Idle;	// Wait in Idle until released
 						else										// None is active?
 							State <= State2_Barcode;		// 	Go to Barcode Mode
 					end
@@ -224,10 +228,9 @@ always @ (posedge CLOCK_50)
 								State <= State1_Idle;						// 	Go to IDLE State for proper handling
 							end
 						else if(!BarcodeDigitCompleted)				// Barcode is NOT completed?
-							if(|KEY_Reg)				// 	If any Digit Key is pressed
+							if(|(KEY_Reg | KEY_En))				// 	If any Digit Key is pressed
 								begin											// 		Then Add to Barcode Register
 									// Add to shift register
-									EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
 										4'b0001: Barcode_Digit_out <= 'd4;
@@ -236,32 +239,40 @@ always @ (posedge CLOCK_50)
 										4'b1000: Barcode_Digit_out <= 'd1;
 										default: Barcode_Digit_out <= 'd15;	// Never Reached
 									endcase
+									EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
 								end
 							else
 								State <= State2_Barcode;				// Keep in this state
 						else													// Barcode is completed
-							// Barcode Completed (Wait For Select Button)
-							if(CMD_Reg[0])									// Approved by Select Button 
-								if(Product_valid)							// Is Product is valid?
+							begin
+								// Barcode Completed (Wait For Select Button)
+								if(Product_valid)							// Approved by Select Button 
+									if(CMD_Reg[0])							// Is Product is valid?
+										begin
+											// BasketController Handle
+											// Send ProductID
+											ProductID_out <= ProductID_Barcode;// ProdcutID From Barcode2ProductID
+											// Enable?
+											
+											RST_BarcodeController_Level 	<= 1;
+											State <= State4_Quantity;			//		Then Go to Quantity Sel State
+										end
+									else											// Else
+										begin
+											ProductID_out <= ProductID_Barcode;
+											State <= State2_Barcode;		// Wait
+										end
+								else												// If not approved by Select Button yet
 									begin
-										// BasketController Handle
-										// Send ProductID
-										ProductID_out <= ProductID_Barcode;// ProdcutID From Barcode2ProductID
-										// Enable?
+										// Show Error
 										
-										RST_BarcodeController_Level 	<= 1;
-										State <= State4_Quantity;			//		Then Go to Quantity Sel State
-									end
-								else											// Else
-									begin										// Reset the barcode & Show Err?
-										// Text Controller - Show Err?
-										
-										// Reset Barcode
+										ProductID_out <= ProductID_Barcode;
+										// Reset the Barcode Register
 										RST_BarcodeController_Level <= 1;
-										State <= State2_Barcode;
+										// 	Wait in this state
+										State <= State1_Idle;				
 									end
-							else												// If not approved by Select Button yet
-								State <= State2_Barcode;				// 	Wait in this state
+							end
 								
 					end
 					
@@ -271,20 +282,25 @@ always @ (posedge CLOCK_50)
 						EN_Direction2ProductID_Level 	<= 0;
 						RST_Direction2ProductID_Level <= 0;
 						RST_BarcodeController_Level  <= 0;
-						if(CleanSWOut[1])								// SW1 still Active?
-							if(CMD_Reg[0])								// Select Button is Pressed?
+						if(CleanSWOut[2])
+							begin
+								RST_Direction2ProductID_Level <= 1;
+								State <= State5_BasketEdit;
+							end
+						else if(CleanSWOut[1])								// SW1 still Active?
+							if(CMD_Reg[0] | CMD_En[0])								// Select Button is Pressed?
 								begin
 									// Basket Controller Send ProductID?
 									// 	Enable?
-									ProductID_out <= ProductID_Direction;
+									ProductID_out <= ProductID_Direction;				
+									RST_Direction2ProductID_Level <= 1;
 									
 									State <= State4_Quantity;			// 	Go to Quantity Selection
-									RST_Direction2ProductID_Level <= 1;
 								end
 							else
 								begin
 									ProductID_out <= ProductID_Direction;
-									if(|KEY_Reg)							// Any Direction Key is pressed?
+									if(|(KEY_Reg | KEY_En))							// Any Direction Key is pressed?
 										begin
 											// Highlight Controller Handle
 											// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
@@ -300,11 +316,13 @@ always @ (posedge CLOCK_50)
 											State <= State3_Interactive;	// 	Stay in this State
 										end
 									else
-										State <= State3_Interactive;	// Wait Direction input in this State
+										begin
+											State <= State3_Interactive;	// Wait Direction input in this State
+										end
 								end
 						else												// SW1 is Deactivated
 							begin
-								//RST_Direction2ProductID_Level <= 1;	// 	Reset Current Position
+								RST_Direction2ProductID_Level <= 1;	// 	Reset Current Position
 								State <= State1_Idle;					// 	Go to IDLE State
 							end
 					end
@@ -313,7 +331,7 @@ always @ (posedge CLOCK_50)
 					begin
 						RST_BarcodeController_Level 	<= 0;
 						EN_BasketController_Level <= 0;
-						if(|KEY_Reg)								// Any Digit is Pressed?
+						if(|(KEY_Reg | KEY_En))								// Any Digit is Pressed?
 							begin
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
@@ -336,6 +354,7 @@ always @ (posedge CLOCK_50)
 					end
 		State5_BasketEdit	:	
 					begin
+						RST_Direction2ProductID_Level <= 0;
 						RST_BarcodeController_Level <= 0;
 						if(CleanSWOut[2])								// SW2 still Active?
 							if(CMD_Reg[0])								// Select Button is Pressed?
