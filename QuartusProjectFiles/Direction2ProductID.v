@@ -36,25 +36,24 @@ initial
 always @ (negedge CLOCK)
 	if(!RESET_N)
 		begin
-			ImgID = 0; 
-			BasketID = 0;
+			ImgID <= 0; 
+			BasketID <= 0;
 		end
 	else
 		if(Enable)
 			if(!CleanSW2)
 				begin
-					BasketID = 0;
+					BasketID <= 0;
 					case(Dir_in)
 						2'b00	 : if(ImgID > 0 ) ImgID <= ImgID - 4'd1; else ImgID <= 4'b0000;
 						2'b01	 : if(ImgID > 3 ) ImgID <= ImgID - 4'd4; else ImgID <= 4'b0000;
 						2'b10	 : if(ImgID < 8 ) ImgID <= ImgID + 4'd4; else ImgID <= 4'd11;
 						2'b11	 : if(ImgID < 11) ImgID <= ImgID + 4'd1; else ImgID <= 4'd11;
-						default: ImgID <= 0;	// Never Reached
 					endcase
 				end
 			else
 				begin
-					ImgID = 0;
+					ImgID <= 0;
 					case(Dir_in)
 						2'b01	 : if(BasketID > 0  ) BasketID <= BasketID - 4'd1; else BasketID <= 4'b0000;
 						2'b10	 : if(BasketID < BasketProductNum ) BasketID <= BasketID + 4'd1; else BasketID <= BasketProductNum;
