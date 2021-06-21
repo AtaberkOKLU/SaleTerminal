@@ -89,6 +89,7 @@ reg RST_Direction2ProductID_Level= 0;	// Active High
 reg EN_BarcodeController_Level 	= 0;	// Active High
 reg EN_Direction2ProductID_Level = 0;	// Active High
 reg EN_BasketController_Level 	= 0;	// Active High
+reg CNL_BasketController_Level 	= 0;  // Active High
 
 wire RST_BarcodeController_Pulse;
 wire [3:0] 	ProductID_Barcode;
@@ -96,6 +97,7 @@ wire [3:0] 	ProductID_Direction;
 wire Direction2ProductID_En;
 wire RST_Direction2ProductID_Pulse;
 wire RSTN_Direction2ProductID_Pulse;
+wire BasketController_Cancel_Pulse;
 
 // BarcodeController Reset Pulse Generator
 ButtonLevelPulseConverter BarcodeControllerResetPulseGenerator_inst0(
@@ -160,6 +162,15 @@ ButtonLevelPulseConverter BasketControllerEnablePulseGenerator_inst0(
 	.ButtonPulseOut(BasketController_Enable_Pulse)
 );
 
+
+// BasketController Cancel Pulse Generator
+ButtonLevelPulseConverter BasketControllerCancelPulseGenerator_inst0(
+	.CLK(CLOCK_50),
+	.CleanButtonIn(CNL_BasketController_Level),
+	.ButtonPulseOut(BasketController_Cancel_Pulse)
+);
+
+
 // State List
 localparam State0_Start 		= 3'd0;
 localparam State1_Idle 			= 3'd1;
@@ -193,6 +204,7 @@ always @ (posedge CLOCK_50)
 		State1_Idle	:	// IDLE State
 					begin
 						// Deactivate Barcode Reset Level for further usages.
+						EN_BasketController_Level 		<= 0;
 						RST_BarcodeController_Level 	<= 0;
 						RST_Direction2ProductID_Level <= 0;
 						
@@ -355,26 +367,42 @@ always @ (posedge CLOCK_50)
 		State5_BasketEdit	:	
 					begin
 						RST_Direction2ProductID_Level <= 0;
-						RST_BarcodeController_Level <= 0;
+						RST_BarcodeController_Level 	<= 0;
+						CNL_BasketController_Level  	<= 0;
 						if(CleanSWOut[2])								// SW2 still Active?
 							if(CMD_Reg[0])								// Select Button is Pressed?
 								begin
+									ProductID_out <= ProductID_Direction;
 									// Basket Controller Cancel Prd
-									
+									CNL_BasketController_Level <= 1;
 									// Stay in the Same State
 									State <= State5_BasketEdit;	// Stay in the Same State
 								end
 							else		
-								if(|KEY_Reg)							// Any Direction Key is pressed?
-									begin
-										// Highlight Controller Handle
-										
-										State <= State5_BasketEdit;// 	And Stay in this State
-									end
-								else
-									State <= State5_BasketEdit;	// Else Stay in this State
+								begin
+									ProductID_out <= ProductID_Direction;
+									if(|(KEY_Reg | KEY_En))							// Any Direction Key is pressed?
+										begin
+											// Highlight Controller Handle
+											// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
+											// Direction2Product ID Handle
+											EN_Direction2ProductID_Level <= 1;
+											case(KEY_Reg)
+												4'b0010: Dir_out <= 2'b10;	// Down
+												4'b0100: Dir_out <= 2'b01;	// Up
+											endcase
+											State <= State5_BasketEdit;	// 	Stay in this State
+										end
+									else
+										begin
+											State <= State5_BasketEdit;	// Wait Direction input in this State
+										end
+								end
 						else												// SW1 is Deactivated
-							State <= State1_Idle;					// 	Go to IDLE State
+							begin
+								RST_Direction2ProductID_Level <= 1;
+								State <= State1_Idle;					// 	Go to IDLE State
+							end
 					end
 		State6_EndShopping	: 	
 					// End Shopping Story
