@@ -1,3 +1,16 @@
+/*
+ *		Module		:	Binary2BCD_2D Block
+ * 	Description	: 	Binary 2 BCD - 2 Digit for Seg7
+ *		Inputs		: 	*
+ *						: 	*
+ *						:	*
+ *						:	*
+ *						:	*
+ *
+ *		Outputs		: 	*
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module Binary2BCD_2D(
 	input  wire [3:0] bin,
 	output reg  [7:0] bcd

@@ -1,3 +1,16 @@
+/*
+ *		Module		:	LED Controller Block
+ * 	Description	: 	It Displays İmportant inputs and states
+ *		Inputs		: 	*
+ *						: 	*
+ *						:	*
+ *						:	*
+ *						:	*
+ *
+ *		Outputs		: 	*
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module LED_Controller(
 	input  wire [2:0] State,
 	input  wire [2:0] CleanSWOut,

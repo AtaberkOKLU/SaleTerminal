@@ -61,10 +61,10 @@ module HVSync_Generator
 	 
 	 
     always @(negedge VGA_CLK)
-		 if (CounterXmaxed || (!RST_N))
+		 if (CounterXmaxed | (!RST_N))
 				begin
 					CounterX <= 0;
-				  if(CounterYmaxed || (!RST_N))
+				  if(CounterYmaxed | (!RST_N))
 					 CounterY <= 0;
 				  else
 					 CounterY <= CounterY + 10'd1;

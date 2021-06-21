@@ -87,11 +87,12 @@ Visit Docs Folder
 ## TO DO
 +	VGA Controller                      : Ataberk ÖKLÜ 	 - Ongoing
 	+	ImageLocator                    : Ataberk ÖKLÜ 	 - Ongoing
-	+	HVSync Generator                : Ataberk ÖKLÜ 	 - Done
+	+	HVSync Generator                : Ataberk ÖKLÜ 	 - Ongoing
 	+	ImageROM                        : Ataberk ÖKLÜ 	 - Ongoing
 		+	16x4 Encoder                : Alper SOYSAL 	 - Done
 		+	Product Highlight			: Ataberk ÖKLÜ 	 - Done
 	+	Hover Item Support				: Ataberk ÖKLÜ	 - Done
+	
 +	Button Controller                   : Ataberk ÖKLÜ 	 - Done
 	+	Button Debouncer                : Ataberk ÖKLÜ 	 - Done
 	+	Switch Debouncer				: Ataberk ÖKLÜ 	 - Done
@@ -99,9 +100,10 @@ Visit Docs Folder
 	+	Key-SW Register                 : Ataberk ÖKLÜ 	 - Done
 	+	Report							: Ataberk ÖKLÜ 	 - Done
 	
-+ 	Barcode Controller                  : Ataberk ÖKLÜ 	 - Ongoing
++ 	Barcode Controller                  : Ataberk ÖKLÜ 	 - Done
 	+	BarcodeShiftRegister            : Ataberk ÖKLÜ 	 - Done
 	+	7-Segment Controller            : Ataberk ÖKLÜ 	 - Done
+	+	BarcodeHover Support			: Ataberk ÖKLÜ 	 - Done
 	
 +	State Machine                       : Ataberk ÖKLÜ 	 - Ongoing
 	+	State Flowchart                 : Ataberk ÖKLÜ 	 - Ongoing
@@ -121,8 +123,8 @@ Visit Docs Folder
 	+	Info / Error Msg on Screen		: Alper SOYSAL 	 - Ongoing
 	+	VGA Implementation				: Alper SOYSAL 	 - Ongoing
 	
-+	Hover Controller					: Göksu&Ataberk	 - Ongoing
-	+	Barcode Hover Controller		: Göksu UZUNTÜRK - Ongoing
++	Hover Controller					: Ataberk ÖKLÜ   - Done
+	+	Barcode Hover Controller		: Ataberk ÖKLÜ   - Done
 	+	Interactive Hover Controller	: Ataberk ÖKLÜ   - Done
 		+	Direction2ProdcutID			: Ataberk ÖKLÜ   - Done
 		+	4x16 Decoder				: Ataberk ÖKLÜ   - Done

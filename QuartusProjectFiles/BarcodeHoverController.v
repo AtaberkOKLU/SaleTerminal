@@ -1,3 +1,16 @@
+/*
+ *		Module		:	Barcode Hover Controller Block
+ * 	Description	: 	It determines matching Products
+ *		Inputs		: 	*
+ *						: 	*
+ *						:	*
+ *						:	*
+ *						:	*
+ *
+ *		Outputs		: 	*
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module BarcodeHoverController(
 	input  wire [15:0] 	Barcode_in,
 	input  wire [2:0]	 	NumOfBarcodeDigitsEntered,

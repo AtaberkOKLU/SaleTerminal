@@ -1,3 +1,16 @@
+/*
+ *		Module		:	Decoder4x16 Block
+ * 	Description	: 	For ProductID -> Highlighted
+ *		Inputs		: 	*
+ *						: 	*
+ *						:	*
+ *						:	*
+ *						:	*
+ *
+ *		Outputs		: 	*
+ *		Owner			: 	Ataberk ÖKLÜ
+ */
+
 module Decoder4x16(
 	output wire [15:0] 	out,
 	input  wire [3:0] 	in
