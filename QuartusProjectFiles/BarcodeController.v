@@ -32,9 +32,7 @@ module BarcodeController(
 	output wire[6:0] 	HEX0,
 	output wire[6:0] 	HEX1,
 	output wire[6:0] 	HEX2,
-	output wire[6:0] 	HEX3,
-	
-	output wire[6:0] 	HEX5
+	output wire[6:0] 	HEX3
 );
 
 BarcodeShiftRegister BarcodeShiftRegister_inst0(
@@ -69,16 +67,10 @@ BarcodeShiftRegister BarcodeShiftRegister_inst0(
 		.bcd(Barcode_Digit_3),
 		.seg(HEX3)
 	);
-	
-	Segment7 Segment5(
-		.bcd(4'd9),
-		.seg(HEX5)
-	);
-
 
 	
 	always @ (*)
-		if(Barcode_Digit_3 < 10)
+		if(NumOfBarcodeDigitsEntered == 3'd4)
 			BarcodeDigitCompleted = 1;
 		else
 			BarcodeDigitCompleted = 0;
