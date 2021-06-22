@@ -68,7 +68,8 @@ DisplaySelectedIDSeg7 DisplaySelectedIDSeg7_inst0(
 
 always @ (posedge CLK)
 	HighlightedDecoderOut <= DecoderOut[11:0];
-	
+
+
 always @ (negedge CLK)
 	begin
 		if(|CleanSWOut)

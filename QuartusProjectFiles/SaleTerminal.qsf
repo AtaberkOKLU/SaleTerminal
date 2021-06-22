@@ -223,6 +223,62 @@ set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH VGA_Controller_
 set_global_assignment -name EDA_TEST_BENCH_NAME VGA_Controller_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id VGA_Controller_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME VGA_Controller_tb -section_id VGA_Controller_tb
+set_global_assignment -name VERILOG_FILE Encoder16x4.v
+set_global_assignment -name VERILOG_FILE encoder8x3.v
+set_global_assignment -name VERILOG_FILE ButtonManager.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeController.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeShiftRegister.vwf
+set_global_assignment -name VERILOG_FILE BarcodeController.v
+set_global_assignment -name SIP_FILE VGA_PLL.sip
+set_global_assignment -name QSYS_FILE FP_MULT.qsys
+set_global_assignment -name SOURCE_FILE VGA_PLL.cmp
+set_global_assignment -name SDC_FILE SaleTerminal.sdc
+set_global_assignment -name QIP_FILE VGA_PLL.qip
+set_global_assignment -name VERILOG_FILE Segment7.v
+set_global_assignment -name QIP_FILE ImageROM.qip
+set_global_assignment -name VERILOG_FILE HVSync_Generator.v
+set_global_assignment -name VERILOG_FILE VGA_Controller.v
+set_global_assignment -name VERILOG_FILE BarcodeShiftRegister.v
+set_global_assignment -name VERILOG_FILE ImageLocator.v
+set_global_assignment -name VERILOG_FILE ButtonDebouncer.v
+set_global_assignment -name VERILOG_FILE ButtonLevelPulseConverter.v
+set_global_assignment -name VERILOG_FILE ButtonController.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonController.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonDebouncer.vwf
+set_global_assignment -name VERILOG_FILE SwitchDebouncer.v
+set_global_assignment -name VERILOG_FILE Barcode2ProductID.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE StateMachine.vwf
+set_global_assignment -name VERILOG_FILE Direction2ProductID.v
+set_global_assignment -name VERILOG_FILE StateMachine.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Direction2ProductID.vwf
+set_global_assignment -name VERILOG_FILE HoverController.v
+set_global_assignment -name VERILOG_FILE Decoder4x16.v
+set_global_assignment -name VERILOG_FILE Image_Shape_Submodule.v
+set_global_assignment -name VERILOG_FILE PixelController.v
+set_global_assignment -name VERILOG_FILE SaleTerminal.v
+set_global_assignment -name VERILOG_FILE LED_Controller.v
+set_global_assignment -name VERILOG_FILE Decoder3x8.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Decoder4x16.vwf
+set_global_assignment -name VECTOR_WAVEFORM_FILE VGA_Controller.vwf
+set_global_assignment -name VERILOG_FILE VGA_Contoller_tb.v
+set_global_assignment -name VERILOG_FILE SaleTerminal_tb.v
+set_global_assignment -name EDA_TEST_BENCH_NAME SaleTerminal_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id SaleTerminal_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME SaleTerminal_tb -section_id SaleTerminal_tb
+set_global_assignment -name VERILOG_FILE DisplaySelectedIDSeg7.v
+set_global_assignment -name VERILOG_FILE Binary2BCD_2D.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE Bin2BCD.vwf
+set_location_assignment PIN_AA24 -to HEX4[0]
+set_location_assignment PIN_Y23 -to HEX4[1]
+set_location_assignment PIN_Y24 -to HEX4[2]
+set_location_assignment PIN_W22 -to HEX4[3]
+set_location_assignment PIN_W24 -to HEX4[4]
+set_location_assignment PIN_V23 -to HEX4[5]
+set_location_assignment PIN_W25 -to HEX4[6]
+set_global_assignment -name EDA_TEST_BENCH_FILE VGA_Contoller_tb.v -section_id VGA_Controller_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE SaleTerminal_tb.v -section_id SaleTerminal_tb
+set_global_assignment -name VERILOG_FILE BarcodeHoverController.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE HoverController.vwf
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[0]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[1]
 set_instance_assignment -name PACKAGE_SKEW_COMPENSATION OFF -to HPS_DDR3_DQ[2]
@@ -794,62 +850,6 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3]
-set_global_assignment -name VERILOG_FILE Encoder16x4.v
-set_global_assignment -name VERILOG_FILE encoder8x3.v
-set_global_assignment -name VERILOG_FILE ButtonManager.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeController.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE BarcodeShiftRegister.vwf
-set_global_assignment -name VERILOG_FILE BarcodeController.v
-set_global_assignment -name SIP_FILE VGA_PLL.sip
-set_global_assignment -name QSYS_FILE FP_MULT.qsys
-set_global_assignment -name SOURCE_FILE VGA_PLL.cmp
-set_global_assignment -name SDC_FILE SaleTerminal.sdc
-set_global_assignment -name QIP_FILE VGA_PLL.qip
-set_global_assignment -name VERILOG_FILE Segment7.v
-set_global_assignment -name QIP_FILE ImageROM.qip
-set_global_assignment -name VERILOG_FILE HVSync_Generator.v
-set_global_assignment -name VERILOG_FILE VGA_Controller.v
-set_global_assignment -name VERILOG_FILE BarcodeShiftRegister.v
-set_global_assignment -name VERILOG_FILE ImageLocator.v
-set_global_assignment -name VERILOG_FILE ButtonDebouncer.v
-set_global_assignment -name VERILOG_FILE ButtonLevelPulseConverter.v
-set_global_assignment -name VERILOG_FILE ButtonController.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonController.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE ButtonDebouncer.vwf
-set_global_assignment -name VERILOG_FILE SwitchDebouncer.v
-set_global_assignment -name VERILOG_FILE Barcode2ProductID.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE StateMachine.vwf
-set_global_assignment -name VERILOG_FILE Direction2ProductID.v
-set_global_assignment -name VERILOG_FILE StateMachine.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Direction2ProductID.vwf
-set_global_assignment -name VERILOG_FILE HoverController.v
-set_global_assignment -name VERILOG_FILE Decoder4x16.v
-set_global_assignment -name VERILOG_FILE Image_Shape_Submodule.v
-set_global_assignment -name VERILOG_FILE PixelController.v
-set_global_assignment -name VERILOG_FILE SaleTerminal.v
-set_global_assignment -name VERILOG_FILE LED_Controller.v
-set_global_assignment -name VERILOG_FILE Decoder3x8.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Decoder4x16.vwf
-set_global_assignment -name VECTOR_WAVEFORM_FILE VGA_Controller.vwf
-set_global_assignment -name VERILOG_FILE VGA_Contoller_tb.v
-set_global_assignment -name VERILOG_FILE SaleTerminal_tb.v
-set_global_assignment -name EDA_TEST_BENCH_NAME SaleTerminal_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id SaleTerminal_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME SaleTerminal_tb -section_id SaleTerminal_tb
-set_global_assignment -name VERILOG_FILE DisplaySelectedIDSeg7.v
-set_global_assignment -name VERILOG_FILE Binary2BCD_2D.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE Bin2BCD.vwf
-set_location_assignment PIN_AA24 -to HEX4[0]
-set_location_assignment PIN_Y23 -to HEX4[1]
-set_location_assignment PIN_Y24 -to HEX4[2]
-set_location_assignment PIN_W22 -to HEX4[3]
-set_location_assignment PIN_W24 -to HEX4[4]
-set_location_assignment PIN_V23 -to HEX4[5]
-set_location_assignment PIN_W25 -to HEX4[6]
-set_global_assignment -name EDA_TEST_BENCH_FILE VGA_Contoller_tb.v -section_id VGA_Controller_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE SaleTerminal_tb.v -section_id SaleTerminal_tb
-set_global_assignment -name VERILOG_FILE BarcodeHoverController.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE HoverController.vwf
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

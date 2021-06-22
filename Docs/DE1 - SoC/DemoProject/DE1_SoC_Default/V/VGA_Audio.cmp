@@ -1,0 +1,11 @@
+	component VGA_Audio is
+		port (
+			refclk   : in  std_logýc := 'X'; -- clk
+			rst      : in  std_logýc := 'X'; -- reset
+			outclk_0 : out std_logýc;        -- clk
+			outclk_1 : out std_logýc;        -- clk
+			outclk_2 : out std_logýc;        -- clk
+			locked   : out std_logýc         -- export
+		);
+	end component VGA_Audio;
+

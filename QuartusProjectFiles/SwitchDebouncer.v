@@ -17,8 +17,8 @@ module SwitchDebouncer
 	parameter COUNTER_REG_SIZE = 2
 )(
     input CLK,
-    input NoisySWIn,  		// Active High
-    output reg CleanSWOut  // Active High
+    input NoisySWIn,  				// Active High
+    output reg CleanSWOut = 0  	// Active High
 );
 
 // Syncronization

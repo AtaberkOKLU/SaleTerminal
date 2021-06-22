@@ -130,7 +130,7 @@ StateMachine StateMachine_inst0(
 	.BasketController_Enable_Pulse(BasketController_Enable_Pulse),
 	.Product_valid(ValidID),
 	
-	.State(State),
+	.State_out(State)
 
 	//.Dir_out(Dir_in)	// To Direction2ProductID
 );

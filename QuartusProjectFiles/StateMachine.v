@@ -66,7 +66,7 @@ module StateMachine(
 	*/
 	
 	// LED Controller
-	output reg  [2:0] State,
+	output wire  [2:0] State_out,
 	
 	// BasketController
 	output reg  [3:0] ProductQuantity,
@@ -83,6 +83,8 @@ module StateMachine(
 );
 
 reg  [1:0] Dir_out;
+reg  [2:0] State;
+assign State_out = State;
 
 reg RST_BarcodeController_Level 	= 0;	// Active High
 reg RST_Direction2ProductID_Level= 0;	// Active High
