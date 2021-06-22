@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Mon Jun 21 23:13:38 2021
+Tue Jun 22 12:08:04 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -73,13 +73,13 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Jun 21 23:13:38 2021       ;
+; Analysis & Synthesis Status     ; Successful - Tue Jun 22 12:08:04 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 196                                         ;
+; Total registers                 ; 200                                         ;
 ; Total pins                      ; 90                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,880,000                                   ;
@@ -258,16 +258,16 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 366                                                                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 371                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Combinational ALUT usage for logic          ; 522                                                                                                                        ;
-;     -- 7 input functions                    ; 27                                                                                                                         ;
-;     -- 6 input functions                    ; 177                                                                                                                        ;
+; Combinational ALUT usage for logic          ; 527                                                                                                                        ;
+;     -- 7 input functions                    ; 26                                                                                                                         ;
+;     -- 6 input functions                    ; 183                                                                                                                        ;
 ;     -- 5 input functions                    ; 63                                                                                                                         ;
-;     -- 4 input functions                    ; 141                                                                                                                        ;
-;     -- <=3 input functions                  ; 114                                                                                                                        ;
+;     -- 4 input functions                    ; 146                                                                                                                        ;
+;     -- <=3 input functions                  ; 109                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Dedicated logic registers                   ; 196                                                                                                                        ;
+; Dedicated logic registers                   ; 200                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
 ; I/O pins                                    ; 90                                                                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                                                                          ;
@@ -280,8 +280,8 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                                                                                                                            ;
 ; Maximum fan-out node                        ; VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
 ; Maximum fan-out                             ; 437                                                                                                                        ;
-; Total fan-out                               ; 8537                                                                                                                       ;
-; Average fan-out                             ; 6.76                                                                                                                       ;
+; Total fan-out                               ; 8577                                                                                                                       ;
+; Average fan-out                             ; 6.75                                                                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -290,46 +290,48 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                     ; Entity Name               ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SaleTerminal                                                                   ; 522 (0)             ; 196 (0)                   ; 2880000           ; 3          ; 90   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
+; |SaleTerminal                                                                   ; 527 (0)             ; 200 (0)                   ; 2880000           ; 3          ; 90   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
 ;    |BarcodeController:BarcodeController_inst0|                                  ; 46 (1)              ; 19 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0                                                                                                                                                                                                 ; BarcodeController         ; work         ;
 ;       |BarcodeShiftRegister:BarcodeShiftRegister_inst0|                         ; 17 (17)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0                                                                                                                                                 ; BarcodeShiftRegister      ; work         ;
 ;       |Segment7:Segment0|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0                                                                                                                                                                               ; Segment7                  ; work         ;
 ;       |Segment7:Segment1|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment1                                                                                                                                                                               ; Segment7                  ; work         ;
 ;       |Segment7:Segment2|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment2                                                                                                                                                                               ; Segment7                  ; work         ;
 ;       |Segment7:Segment3|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment3                                                                                                                                                                               ; Segment7                  ; work         ;
-;    |ButtonController:ButtonController_inst0|                                    ; 31 (0)              ; 45 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0                                                                                                                                                                                                   ; ButtonController          ; work         ;
+;    |ButtonController:ButtonController_inst0|                                    ; 32 (0)              ; 49 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0                                                                                                                                                                                                   ; ButtonController          ; work         ;
 ;       |ButtonDebouncer:ButtonDebouncer_Key0|                                    ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0                                                                                                                                                              ; ButtonDebouncer           ; work         ;
 ;       |ButtonDebouncer:ButtonDebouncer_Key1|                                    ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key1                                                                                                                                                              ; ButtonDebouncer           ; work         ;
 ;       |ButtonDebouncer:ButtonDebouncer_Key2|                                    ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key2                                                                                                                                                              ; ButtonDebouncer           ; work         ;
 ;       |ButtonDebouncer:ButtonDebouncer_Key3|                                    ; 4 (4)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key3                                                                                                                                                              ; ButtonDebouncer           ; work         ;
 ;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD0                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
+;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD1                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
+;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_CMD3                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY0                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY1                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY2                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
-;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3|                ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
-;       |ButtonManager:ButtonManager_inst0|                                       ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0                                                                                                                                                                 ; ButtonManager             ; work         ;
+;       |ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3|                ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonLevelPulseConverter:ButtonLevelPulseConverter_KEY3                                                                                                                                          ; ButtonLevelPulseConverter ; work         ;
+;       |ButtonManager:ButtonManager_inst0|                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|ButtonManager:ButtonManager_inst0                                                                                                                                                                 ; ButtonManager             ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW0|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW1|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW2|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2                                                                                                                                                               ; SwitchDebouncer           ; work         ;
-;    |HoverController:HoverController_inst0|                                      ; 68 (1)              ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
-;       |BarcodeHoverController:BarcodeHoverController_inst0|                     ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|BarcodeHoverController:BarcodeHoverController_inst0                                                                                                                                                 ; BarcodeHoverController    ; work         ;
+;    |HoverController:HoverController_inst0|                                      ; 69 (2)              ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
+;       |BarcodeHoverController:BarcodeHoverController_inst0|                     ; 40 (40)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|BarcodeHoverController:BarcodeHoverController_inst0                                                                                                                                                 ; BarcodeHoverController    ; work         ;
 ;       |Decoder4x16:Decoder4x16_inst0|                                           ; 12 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0                                                                                                                                                                       ; Decoder4x16               ; work         ;
 ;          |Decoder3x8:d1|                                                        ; 12 (12)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1                                                                                                                                                         ; Decoder3x8                ; work         ;
-;       |DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|                       ; 16 (6)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0                                                                                                                                                   ; DisplaySelectedIDSeg7     ; work         ;
+;       |DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|                       ; 15 (5)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0                                                                                                                                                   ; DisplaySelectedIDSeg7     ; work         ;
 ;          |Segment7:Segment7_HEX4|                                               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Segment7:Segment7_HEX4                                                                                                                            ; Segment7                  ; work         ;
 ;          |Segment7:Segment7_HEX5|                                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Segment7:Segment7_HEX5                                                                                                                            ; Segment7                  ; work         ;
-;    |StateMachine:StateMachine_inst0|                                            ; 102 (53)            ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
-;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
+;    |StateMachine:StateMachine_inst0|                                            ; 108 (58)            ; 33 (17)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
+;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 33 (33)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0                                                                                                                                     ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0                                                                                                                                   ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0|  ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0                                                                                                                                    ; ButtonLevelPulseConverter ; work         ;
 ;       |Direction2ProductID:Direction2ProductID_inst0|                           ; 16 (16)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0                                                                                                                                                             ; Direction2ProductID       ; work         ;
-;    |VGA_Controller:VGA_Controller_inst0|                                        ; 275 (0)             ; 75 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
+;    |VGA_Controller:VGA_Controller_inst0|                                        ; 272 (0)             ; 75 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
 ;       |HVSync_Generator:HVSync_Generator_inst0|                                 ; 36 (36)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0                                                                                                                                                               ; HVSync_Generator          ; work         ;
-;       |PixelController:PixelController_inst0|                                   ; 239 (0)             ; 51 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
-;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 239 (123)           ; 51 (24)                   ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
-;             |ImageLocator:ImageLocator_inst0|                                   ; 101 (88)            ; 19 (19)                   ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
+;       |PixelController:PixelController_inst0|                                   ; 236 (0)             ; 51 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
+;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 236 (123)           ; 51 (24)                   ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
+;             |ImageLocator:ImageLocator_inst0|                                   ; 98 (85)             ; 19 (19)                   ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
 ;                |Encoder16x4:Encoder16x4_inst0|                                  ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0                                                 ; Encoder16x4               ; work         ;
 ;             |ImageROM:ImageROM_inst0|                                           ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0                                                                                       ; ImageROM                  ; work         ;
 ;                |altsyncram:altsyncram_component|                                ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component                                                       ; altsyncram                ; work         ;
@@ -390,8 +392,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 196   ;
-; Number of registers using Synchronous Clear  ; 69    ;
+; Total registers                              ; 200   ;
+; Number of registers using Synchronous Clear  ; 68    ;
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -405,9 +407,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                     ; Fan out ;
 +-------------------------------------------------------------------------------------------------------+---------+
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]  ; 28      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]  ; 27      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[1]  ; 19      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[2]  ; 18      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[2]  ; 19      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[3]  ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[4]  ; 18      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[5]  ; 23      ;
@@ -417,7 +419,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[9]  ; 23      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[10] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[11] ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[12] ; 23      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[12] ; 20      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[13] ; 17      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[14] ; 16      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[15] ; 10      ;
@@ -431,16 +433,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[1]                  ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|HoverController:HoverController_inst0|HighlightedProductList[11]                                                                        ;
-; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[1]                                                                                        ;
+; 4:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|HoverController:HoverController_inst0|HighlightedProductList[3]                                                                         ;
 ; 7:1                ; 4 bits    ; 16 LEs        ; 12 LEs               ; 4 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[0]                                               ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[5]  ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[17] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[14]                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[11]                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[4]                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]                                    ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|FirstDigit[2]                                   ;
+; 12:1               ; 4 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[0]                                                                                        ;
+; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[4]  ;
+; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[19] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[15]                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[8]                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[5]                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[2]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|FirstDigit[3]                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -1014,35 +1016,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 196                         ;
+; arriav_ff             ; 200                         ;
 ;     ENA               ; 34                          ;
 ;     ENA SCLR          ; 12                          ;
-;     SCLR              ; 45                          ;
+;     SCLR              ; 44                          ;
 ;     SCLR SLD          ; 12                          ;
-;     plain             ; 93                          ;
-; arriav_lcell_comb     ; 532                         ;
+;     plain             ; 98                          ;
+; arriav_lcell_comb     ; 537                         ;
 ;     arith             ; 47                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 27                          ;
 ;         2 data inputs ; 17                          ;
 ;         4 data inputs ; 2                           ;
-;     extend            ; 27                          ;
-;         7 data inputs ; 27                          ;
-;     normal            ; 458                         ;
+;     extend            ; 26                          ;
+;         7 data inputs ; 26                          ;
+;     normal            ; 464                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 12                          ;
-;         2 data inputs ; 27                          ;
-;         3 data inputs ; 38                          ;
-;         4 data inputs ; 139                         ;
+;         2 data inputs ; 28                          ;
+;         3 data inputs ; 32                          ;
+;         4 data inputs ; 144                         ;
 ;         5 data inputs ; 63                          ;
-;         6 data inputs ; 177                         ;
+;         6 data inputs ; 183                         ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 90                          ;
 ; generic_pll           ; 1                           ;
 ; stratixv_ram_block    ; 360                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.47                        ;
+; Average LUT depth     ; 2.48                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1061,7 +1063,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Mon Jun 21 23:13:26 2021
+    Info: Processing started: Tue Jun 22 12:07:53 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.v
@@ -1105,7 +1107,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file statema
 Info (12021): Found 1 design units, including 1 entities, in source file hovercontroller.v
     Info (12023): Found entity 1: HoverController File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 10
 Info (12021): Found 1 design units, including 1 entities, in source file decoder4x16.v
-    Info (12023): Found entity 1: Decoder4x16 File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 1
+    Info (12023): Found entity 1: Decoder4x16 File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file image_shape_submodule.v
     Info (12023): Found entity 1: Image_Shape_Submodule File: D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file pixelcontroller.v
@@ -1114,7 +1116,7 @@ Warning (10275): Verilog HDL Module Instantiation warning at SaleTerminal.v(136)
 Info (12021): Found 1 design units, including 1 entities, in source file saleterminal.v
     Info (12023): Found entity 1: SaleTerminal File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 7
 Info (12021): Found 1 design units, including 1 entities, in source file led_controller.v
-    Info (12023): Found entity 1: LED_Controller File: D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v Line: 1
+    Info (12023): Found entity 1: LED_Controller File: D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file decoder3x8.v
     Info (12023): Found entity 1: Decoder3x8 File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file vga_contoller_tb.v
@@ -1122,11 +1124,11 @@ Info (12021): Found 1 design units, including 1 entities, in source file vga_con
 Info (12021): Found 1 design units, including 1 entities, in source file saleterminal_tb.v
     Info (12023): Found entity 1: SaleTerminal_tb File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v Line: 3
 Info (12021): Found 1 design units, including 1 entities, in source file displayselectedidseg7.v
-    Info (12023): Found entity 1: DisplaySelectedIDSeg7 File: D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v Line: 1
+    Info (12023): Found entity 1: DisplaySelectedIDSeg7 File: D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file binary2bcd_2d.v
-    Info (12023): Found entity 1: Binary2BCD_2D File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 1
+    Info (12023): Found entity 1: Binary2BCD_2D File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file barcodehovercontroller.v
-    Info (12023): Found entity 1: BarcodeHoverController File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v Line: 1
+    Info (12023): Found entity 1: BarcodeHoverController File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v Line: 14
 Info (12127): Elaborating entity "SaleTerminal" for the top level hierarchy
 Info (12128): Elaborating entity "ButtonController" for hierarchy "ButtonController:ButtonController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 59
 Info (12128): Elaborating entity "ButtonDebouncer" for hierarchy "ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0" File: D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v Line: 47
@@ -1239,10 +1241,10 @@ Warning (10230): Verilog HDL assignment warning at ImageLocator.v(185): truncate
 Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 143
 Info (12128): Elaborating entity "encoder8x3" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0|encoder8x3:b2v_inst" File: D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v Line: 43
 Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:StateMachine_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 136
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(247): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 247
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(321): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 321
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(349): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 349
-Info (10264): Verilog HDL Case Statement information at StateMachine.v(390): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 390
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(254): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 254
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(330): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 330
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(363): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 363
+Info (10264): Verilog HDL Case Statement information at StateMachine.v(406): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 406
 Info (12128): Elaborating entity "Barcode2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 128
 Info (12128): Elaborating entity "Direction2ProductID" for hierarchy "StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v Line: 156
 Info (10264): Verilog HDL Case Statement information at Direction2ProductID.v(57): all case item expressions in this case statement are onehot File: D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v Line: 57
@@ -1252,11 +1254,11 @@ Info (12128): Elaborating entity "Segment7" for hierarchy "BarcodeController:Bar
 Info (12128): Elaborating entity "HoverController" for hierarchy "HoverController:HoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 177
 Info (12128): Elaborating entity "BarcodeHoverController" for hierarchy "HoverController:HoverController_inst0|BarcodeHoverController:BarcodeHoverController_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 48
 Info (12128): Elaborating entity "Decoder4x16" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 58
-Info (12128): Elaborating entity "Decoder3x8" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1" File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 6
+Info (12128): Elaborating entity "Decoder3x8" for hierarchy "HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1" File: D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v Line: 19
 Info (12128): Elaborating entity "DisplaySelectedIDSeg7" for hierarchy "HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v Line: 66
-Info (12128): Elaborating entity "Binary2BCD_2D" for hierarchy "HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Binary2BCD_2D:Binary2BCD_2D_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v Line: 16
-Warning (10230): Verilog HDL assignment warning at Binary2BCD_2D.v(12): truncated value with size 32 to match size of target (4) File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 12
-Warning (10230): Verilog HDL assignment warning at Binary2BCD_2D.v(18): truncated value with size 32 to match size of target (4) File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 18
+Info (12128): Elaborating entity "Binary2BCD_2D" for hierarchy "HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Binary2BCD_2D:Binary2BCD_2D_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v Line: 29
+Warning (10230): Verilog HDL assignment warning at Binary2BCD_2D.v(25): truncated value with size 32 to match size of target (4) File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 25
+Warning (10230): Verilog HDL assignment warning at Binary2BCD_2D.v(31): truncated value with size 32 to match size of target (4) File: D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v Line: 31
 Info (12128): Elaborating entity "LED_Controller" for hierarchy "LED_Controller:LED_Controller_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v Line: 188
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
@@ -1266,17 +1268,17 @@ Info (286030): Timing-Driven Synthesis is running
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1030 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1036 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 576 logic cells
+    Info (21061): Implemented 582 logic cells
     Info (21064): Implemented 360 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
-    Info: Peak virtual memory: 4864 megabytes
-    Info: Processing ended: Mon Jun 21 23:13:38 2021
-    Info: Elapsed time: 00:00:12
+    Info: Peak virtual memory: 4865 megabytes
+    Info: Processing ended: Tue Jun 22 12:08:04 2021
+    Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:25
 
 
