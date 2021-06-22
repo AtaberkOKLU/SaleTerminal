@@ -210,7 +210,7 @@ always @ (posedge CLOCK_50)
 						
 						if (|KEY_Reg)			// If a Key Button is still pressed
 							State <= State1_Idle;	// Wait in Idle until released
-						else if (CMD_Reg[0]) 						// Select Button is Pressed?
+						else if (CMD_Reg[3] & CMD_En[3]) 						// Select Button is Pressed?
 							State <= State6_EndShopping;	// 	End the Shopping
 						else if(CleanSWOut[2])				// SW2 is Active?
 							begin
@@ -234,32 +234,39 @@ always @ (posedge CLOCK_50)
 						// Deactivate Barcode Enable Level for further usages.
 						EN_BarcodeController_Level 	<= 0;
 								
-						if(CleanSWOut[1] || CleanSWOut[2])			// SW1 or SW2 active?
+						if(CleanSWOut[1] | CleanSWOut[2])			// SW1 or SW2 active?
 							begin
 								RST_BarcodeController_Level 	<= 1;
 								State <= State1_Idle;						// 	Go to IDLE State for proper handling
 							end
+						else if(CMD_Reg[0] & CMD_En[0])				// End Shopping Pressed?
+								State <= State6_EndShopping;
+						else if(CMD_Reg[1] & CMD_En[1])				// Cancel is pressed
+									begin
+										RST_BarcodeController_Level 	<= 1;
+										State <= State2_Barcode;
+									end							
 						else if(!BarcodeDigitCompleted)				// Barcode is NOT completed?
-							if(|(KEY_Reg | KEY_En))				// 	If any Digit Key is pressed
-								begin											// 		Then Add to Barcode Register
-									// Add to shift register
-									// Case or Simple Encoder to extract the pressed key
-									case(KEY_Reg)
-										4'b0001: Barcode_Digit_out <= 'd4;
-										4'b0010: Barcode_Digit_out <= 'd3;
-										4'b0100: Barcode_Digit_out <= 'd2;
-										4'b1000: Barcode_Digit_out <= 'd1;
-										default: Barcode_Digit_out <= 'd15;	// Never Reached
-									endcase
-									EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
-								end
-							else
-								State <= State2_Barcode;				// Keep in this state
+									if(|(KEY_Reg & KEY_En))				// 	If any Digit Key is pressed
+										begin											// 		Then Add to Barcode Register
+											// Add to shift register
+											// Case or Simple Encoder to extract the pressed key
+											case(KEY_Reg)
+												4'b0001: Barcode_Digit_out <= 'd4;
+												4'b0010: Barcode_Digit_out <= 'd3;
+												4'b0100: Barcode_Digit_out <= 'd2;
+												4'b1000: Barcode_Digit_out <= 'd1;
+												default: Barcode_Digit_out <= 'd15;	// Never Reached
+											endcase
+											EN_BarcodeController_Level <= 1;	// Enable the Barcode Shift Register
+										end
+									else
+										State <= State2_Barcode;				// Keep in this state
 						else													// Barcode is completed
 							begin
 								// Barcode Completed (Wait For Select Button)
 								if(Product_valid)							// Approved by Select Button 
-									if(CMD_Reg[0])							// Is Product is valid?
+									if(CMD_Reg[3] & CMD_En[3])							// Is Product is valid?
 										begin
 											// BasketController Handle
 											// Send ProductID
@@ -300,7 +307,9 @@ always @ (posedge CLOCK_50)
 								State <= State5_BasketEdit;
 							end
 						else if(CleanSWOut[1])								// SW1 still Active?
-							if(CMD_Reg[0] | CMD_En[0])								// Select Button is Pressed?
+							if(CMD_Reg[0] & CMD_En[0])				// End Shopping Pressed?
+								State <= State6_EndShopping;
+							else if(CMD_Reg[3] & CMD_En[3])								// Select Button is Pressed?
 								begin
 									// Basket Controller Send ProductID?
 									// 	Enable?
@@ -312,7 +321,7 @@ always @ (posedge CLOCK_50)
 							else
 								begin
 									ProductID_out <= ProductID_Direction;
-									if(|(KEY_Reg | KEY_En))							// Any Direction Key is pressed?
+									if(|(KEY_Reg & KEY_En))							// Any Direction Key is pressed?
 										begin
 											// Highlight Controller Handle
 											// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
@@ -343,7 +352,12 @@ always @ (posedge CLOCK_50)
 					begin
 						RST_BarcodeController_Level 	<= 0;
 						EN_BasketController_Level <= 0;
-						if(|(KEY_Reg | KEY_En))								// Any Digit is Pressed?
+						if(CMD_Reg[1] & CMD_En[1])				// Cancel is pressed
+							begin
+								RST_BarcodeController_Level 	<= 1;
+								State <= State1_Idle;
+							end
+						else if(|(KEY_Reg & KEY_En))								// Any Digit is Pressed?
 							begin
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
@@ -370,7 +384,9 @@ always @ (posedge CLOCK_50)
 						RST_BarcodeController_Level 	<= 0;
 						CNL_BasketController_Level  	<= 0;
 						if(CleanSWOut[2])								// SW2 still Active?
-							if(CMD_Reg[0])								// Select Button is Pressed?
+							if(CMD_Reg[0] & CMD_En[0])				// End Shopping Pressed?
+								State <= State6_EndShopping;
+							else if(CMD_Reg[3] & CMD_En[3])								// Select Button is Pressed?
 								begin
 									ProductID_out <= ProductID_Direction;
 									// Basket Controller Cancel Prd
@@ -381,7 +397,7 @@ always @ (posedge CLOCK_50)
 							else		
 								begin
 									ProductID_out <= ProductID_Direction;
-									if(|(KEY_Reg | KEY_En))							// Any Direction Key is pressed?
+									if(|(KEY_Reg & KEY_En))							// Any Direction Key is pressed?
 										begin
 											// Highlight Controller Handle
 											// Dir_out -> Dir_in@Direction2ProductID:ProductID -> InteractiveController
@@ -404,11 +420,24 @@ always @ (posedge CLOCK_50)
 								State <= State1_Idle;					// 	Go to IDLE State
 							end
 					end
-		State6_EndShopping	: 	
-					// End Shopping Story
-					/***/
-					// Then a Fresh Start
-					State <= State0_Start;
+		State6_EndShopping	:
+					if(CMD_Reg[1] & CMD_En[1])				// Cancel is pressed
+							begin
+								State <= State1_Idle;
+							end
+					else if(|BasketProductNum)
+						if(CMD_Reg[0] & CMD_En[0]) // Is it approved?
+							// End Shopping Story
+							/***/
+							// Then a Fresh Start
+							State <= State0_Start;
+						else
+							State <= State6_EndShopping;
+					else
+						begin
+							//Show Error: No Product in basket
+							State <= State1_Idle;	// Go to Idle
+						end
 		default:	
 					begin
 						State <= State0_Start;
