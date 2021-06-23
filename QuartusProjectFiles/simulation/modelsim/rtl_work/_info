@@ -9,33 +9,333 @@ z2
 !i10f 100
 cModel Technology
 Z0 dD:/EE/EE314/Project/QuartusProjectFiles/simulation/modelsim
-vBarcodeController
-Z1 !s110 1624283168
+vBarcode2ProductID
+Z1 !s110 1624450380
 !i10b 1
-!s100 5?bP@LfHLkHS6>HZ_2V4b2
+!s100 GKQBfEMZ>jG;LmhTJR2LL2
 Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IebOZ^:a?VOE50<6O]_8KS2
+I`YH6<b^GIIPO]VX:hX9]V2
 Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1624267091
-8D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
-FD:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
-!i122 3
-L0 18 61
+w1624189317
+8D:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v
+!i122 15
+L0 12 31
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1624283168.000000
-!s107 D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
+Z5 !s108 1624450379.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v|
 !i113 1
 Z6 o-vlog01compat -work work
 Z7 !s92 -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles
 Z8 tCvgOpt 0
+n@barcode2@product@i@d
+vBarcodeController
+Z9 !s110 1624450378
+!i10b 1
+!s100 CKbhie]5PDXV=[oRRD]M30
+R2
+ISP2KoQ=j>AkK@G=GBGnDS3
+R3
+R0
+w1624296270
+8D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v
+!i122 4
+L0 18 61
+R4
+r1
+!s85 0
+31
+Z10 !s108 1624450378.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v|
+!i113 1
+R6
+R7
+R8
 n@barcode@controller
-vEncoder16x4
+vBarcodeHoverController
+Z11 !s110 1624450381
+!i10b 1
+!s100 0YKLLCme_9?KoU@DEigEd2
+R2
+I8S8g?IFg0>ZN4[8?Uo>n=1
+R3
+R0
+w1624445043
+8D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v
+!i122 27
+L0 14 73
+R4
+r1
+!s85 0
+31
+Z12 !s108 1624450381.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v|
+!i113 1
+R6
+R7
+R8
+n@barcode@hover@controller
+vBarcodeShiftRegister
+Z13 !s110 1624450379
+!i10b 1
+!s100 c`=9BGJ:mj5QHV]eT=G0K3
+R2
+I^UN[=2Q>zL6fmb_TMM>6i1
+R3
+R0
+w1624295617
+8D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v
+FD:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v
+!i122 9
+L0 15 50
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v|
+!i113 1
+R6
+R7
+R8
+n@barcode@shift@register
+vBinary2BCD_2D
+R11
+!i10b 1
+!s100 `@H<T^<3<6z]<ZU4GcL862
+R2
+II7cCDNYSK6e`k=>LkCTTi3
+R3
+R0
+w1624363569
+8D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v
+!i122 26
+L0 14 24
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v|
+!i113 1
+R6
+R7
+R8
+n@binary2@b@c@d_2@d
+vButtonController
+R13
+!i10b 1
+!s100 HfMMRCnafa53>WnibC`053
+R2
+I431W>?f1X^`G;=Kbg8NRo1
+R3
+R0
+w1624223755
+8D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v
+!i122 13
+L0 21 149
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v|
+!i113 1
+R6
+R7
+R8
+n@button@controller
+vButtonDebouncer
+R13
+!i10b 1
+!s100 gn^oh89DdEiREnVLUUagP1
+R2
+I9j<aL>cWdRYcfai6TzHX30
+R3
+R0
+w1624363509
+8D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v
+!i122 11
+Z14 L0 15 34
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v|
+!i113 1
+R6
+R7
+R8
+n@button@debouncer
+vButtonLevelPulseConverter
+R13
+!i10b 1
+!s100 EmFS_3G>8W4hzgk[nNWJP2
+R2
+I>__128KLiA`5@<ZmKNeVQ2
+R3
+R0
+w1623529128
+8D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v
+!i122 12
+L0 14 20
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v|
+!i113 1
+R6
+R7
+R8
+n@button@level@pulse@converter
+vButtonManager
+R9
+!i10b 1
+!s100 U5L1^=QSTc6T8XT:hK8jz3
+R2
+I<4?E>K4>O8cgXFS0ljPdg2
+R3
+R0
+w1624221197
+8D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v
+FD:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v
+!i122 3
+L0 15 28
+R4
+r1
+!s85 0
+31
+R10
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v|
+!i113 1
+R6
+R7
+R8
+n@button@manager
+vDecoder3x8
+R11
+!i10b 1
+!s100 ko:jKflHh9FdBWj[7D1UA0
+R2
+I:FU4zo<aCdX8BiG`:ZYdQ0
+R3
+R0
+w1624144115
+8D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v
+!i122 24
+L0 1 18
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v|
+!i113 1
+R6
+R7
+R8
+n@decoder3x8
+vDecoder4x16
 R1
+!i10b 1
+!s100 G;6:WQLJd0F?hU:JO[C:G3
+R2
+Ig:bZKO?D>dek`Pi_AHB2=1
+R3
+R0
+w1624309131
+8D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v
+!i122 19
+L0 14 9
+R4
+r1
+!s85 0
+31
+Z15 !s108 1624450380.000000
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v|
+!i113 1
+R6
+R7
+R8
+n@decoder4x16
+vDirection2ProductID
+R1
+!i10b 1
+!s100 B^MfH=WzGZ_B3k21[mGUM2
+R2
+Im>e98D^42mD8X;cJkz5<k3
+R3
+R0
+w1624306205
+8D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v
+!i122 16
+L0 13 53
+R4
+r1
+!s85 0
+31
+R15
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v|
+!i113 1
+R6
+R7
+R8
+n@direction2@product@i@d
+vDisplaySelectedIDSeg7
+R11
+!i10b 1
+!s100 cJ^Bog=a1z^IBUk:CQ^HT2
+R2
+I8;0j;oPnT3j@A^XgPFNEF0
+R3
+R0
+w1624309052
+8D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v
+FD:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v
+!i122 25
+L0 14 39
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v|
+!i113 1
+R6
+R7
+R8
+n@display@selected@i@d@seg7
+vEncoder16x4
+R9
 !i10b 1
 !s100 M55HVVcI@;7zXhCL8[cRl3
 R2
@@ -51,7 +351,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v|
 !i113 1
@@ -60,7 +360,7 @@ R7
 R8
 n@encoder16x4
 vencoder8x3
-R1
+R9
 !i10b 1
 !s100 ZdV9Hd4ZZkI?9jHBGJk@?1
 R2
@@ -76,25 +376,50 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v|
 !i113 1
 R6
 R7
 R8
-vHVSync_Generator
+vHoverController
 R1
 !i10b 1
-!s100 >:lgAX^GzZVm7:l:IHCg80
+!s100 Fk__eF58RiCTe`j<?meAH3
 R2
-I?REb3?IL:B[l8BlU^Ki^O1
+I@hVUJ=4J9P^F<]ShOJ2IF2
 R3
 R0
-w1624210145
+w1624447313
+8D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v
+FD:/EE/EE314/Project/QuartusProjectFiles/HoverController.v
+!i122 18
+L0 10 71
+R4
+r1
+!s85 0
+31
+R15
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v|
+!i113 1
+R6
+R7
+R8
+n@hover@controller
+vHVSync_Generator
+R13
+!i10b 1
+!s100 V7;8XJ_D:mZFdZ3Xiolh30
+R2
+IeLDY_`gl1UzUG44^ne2mV0
+R3
+R0
+w1624309162
 8D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v
 FD:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v
-!i122 5
+!i122 7
 L0 15 74
 R4
 r1
@@ -109,7 +434,7 @@ R7
 R8
 n@h@v@sync_@generator
 vImage_Shape_Submodule
-Z9 !s110 1624283169
+R1
 !i10b 1
 !s100 bUeiclAeiCWdB<lhiQO@j0
 R2
@@ -119,13 +444,13 @@ R0
 w1624210641
 8D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v
 FD:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v
-!i122 8
+!i122 20
 L0 15 57
 R4
 r1
 !s85 0
 31
-Z10 !s108 1624283169.000000
+R15
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v|
 !i113 1
@@ -134,23 +459,23 @@ R7
 R8
 n@image_@shape_@submodule
 vImageLocator
-R9
+R13
 !i10b 1
-!s100 bh:C1cK]E4Pkje5FBg=ic0
+!s100 AUcJVg2Z<bLaI9DTK[6S53
 R2
-Il_0<XgJF24`OS>]AHzh3[2
+IQEX;jnaiK8ClOSV4D^JJ<1
 R3
 R0
-w1624283043
+w1624304638
 8D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v
 FD:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v
-!i122 7
-L0 14 172
+!i122 10
+L0 14 176
 R4
 r1
 !s85 0
 31
-R10
+R5
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v|
 !i113 1
@@ -159,7 +484,7 @@ R7
 R8
 n@image@locator
 vImageROM
-R1
+R9
 !i10b 1
 !s100 h=naiVidLKlYW@@1<TH:N3
 R2
@@ -169,13 +494,13 @@ R0
 w1624207716
 8D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v
 FD:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v
-!i122 4
+!i122 6
 L0 40 61
 R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v|
 !i113 1
@@ -183,8 +508,33 @@ R6
 R7
 R8
 n@image@r@o@m
+vLED_Controller
+R1
+!i10b 1
+!s100 0gkjGchMfJLjmEiI7Q`Fi0
+R2
+I?7_G0C<BD<Co3La^[fd>J0
+R3
+R0
+w1624309080
+8D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v
+FD:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v
+!i122 23
+L0 14 15
+R4
+r1
+!s85 0
+31
+R15
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v|
+!i113 1
+R6
+R7
+R8
+n@l@e@d_@controller
 vPixelController
-R9
+R1
 !i10b 1
 !s100 2?>hNh@4W_nXA`N0P_45O2
 R2
@@ -194,13 +544,13 @@ R0
 w1624212191
 8D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v
 FD:/EE/EE314/Project/QuartusProjectFiles/PixelController.v
-!i122 9
+!i122 21
 L0 16 53
 R4
 r1
 !s85 0
 31
-R10
+R15
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v|
 !s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v|
 !i113 1
@@ -208,33 +558,133 @@ R6
 R7
 R8
 n@pixel@controller
-vVGA_Contoller_tb
-R9
+vSaleTerminal
+R1
 !i10b 1
-!s100 ^;_CT6^?fhOB@6iiWmY=_0
+!s100 dc?XU[K[X96@cFFB>GXaM0
 R2
-Ik`lhE2AS?fFY7CLPhRFC]1
+I8TcA[5oJ8`fVMJY:eXC8o1
 R3
 R0
-w1624209290
-8D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v
-FD:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v
-!i122 10
-L0 3 56
+w1624445066
+8D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v
+FD:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v
+!i122 22
+L0 7 184
+R4
+r1
+!s85 0
+31
+R15
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v|
+!i113 1
+R6
+R7
+R8
+n@sale@terminal
+vSaleTerminal_tb
+R11
+!i10b 1
+!s100 Ll16;cVcOMA^?cMchV7d>2
+R2
+I5YDA`U<LX?5nXPSE7NFC>1
+R3
+R0
+w1624443861
+8D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v
+FD:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v
+!i122 28
+L0 3 112
+R4
+r1
+!s85 0
+31
+R12
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v|
+!i113 1
+R6
+R7
+R8
+n@sale@terminal_tb
+vSegment7
+R9
+!i10b 1
+!s100 LMQ03`X5Y7dYjhWoXS8F@3
+R2
+I6TQ:hk018P?>7YfL_7kef3
+R3
+R0
+w1624190198
+8D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v
+FD:/EE/EE314/Project/QuartusProjectFiles/Segment7.v
+!i122 5
+L0 12 23
 R4
 r1
 !s85 0
 31
 R10
-!s107 D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/VGA_Contoller_tb.v|
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v|
 !i113 1
 R6
 R7
 R8
-n@v@g@a_@contoller_tb
+n@segment7
+vStateMachine
+R1
+!i10b 1
+!s100 UJf6Zlo0`Z1^1RRA?4fZb0
+R2
+IfPH8YeU@nl55h]PVZMQXW3
+R3
+R0
+w1624450083
+8D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v
+FD:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v
+!i122 17
+L0 10 443
+R4
+r1
+!s85 0
+31
+R15
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v|
+!i113 1
+R6
+R7
+R8
+n@state@machine
+vSwitchDebouncer
+R13
+!i10b 1
+!s100 QYBUV5b_T6LV9nf@2M5N@3
+R2
+I?R:o`n4H3;1Phbij?SRg@3
+R3
+R0
+w1624363810
+8D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v
+FD:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v
+!i122 14
+R14
+R4
+r1
+!s85 0
+31
+R5
+!s107 D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+D:/EE/EE314/Project/QuartusProjectFiles|D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v|
+!i113 1
+R6
+R7
+R8
+n@switch@debouncer
 vVGA_Controller
-R9
+R13
 !i10b 1
 !s100 ICZ>6AFnBK2?;AQ34hlIA1
 R2
@@ -244,7 +694,7 @@ R0
 w1624210646
 8D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v
 FD:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v
-!i122 6
+!i122 8
 L0 15 112
 R4
 r1
@@ -259,7 +709,7 @@ R7
 R8
 n@v@g@a_@controller
 vVGA_PLL
-R1
+R9
 !i10b 1
 !s100 Nm]MoCj9i]]zHnIgBT4gO2
 R2
@@ -275,7 +725,7 @@ R4
 r1
 !s85 0
 31
-R5
+R10
 !s107 D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo|
 !s90 -reportprogress|300|D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo|
 !i113 1
