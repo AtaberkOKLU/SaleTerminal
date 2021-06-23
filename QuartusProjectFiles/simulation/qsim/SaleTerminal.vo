@@ -17,7 +17,7 @@
 // PROGRAM "Quartus Prime"
 // VERSION "Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition"
 
-// DATE "06/21/2021 22:00:38"
+// DATE "06/23/2021 21:38:39"
 
 // 
 // Device: Altera 5CSEMA5F31C6 Package FBGA896
@@ -29,33 +29,21 @@
 
 `timescale 1 ps/ 1 ps
 
-module HoverController (
-	CLK,
-	CleanSWOut,
-	Barcode_Digit_0,
-	Barcode_Digit_1,
-	Barcode_Digit_2,
-	Barcode_Digit_3,
-	NumOfBarcodeDigitsEntered,
-	BarcodeCompleted,
-	ValidID,
-	SelectedProductID,
-	HighlightedProductList,
-	HEX4,
-	HEX5);
-input 	CLK;
-input 	[2:1] CleanSWOut;
-input 	[3:0] Barcode_Digit_0;
-input 	[3:0] Barcode_Digit_1;
-input 	[3:0] Barcode_Digit_2;
-input 	[3:0] Barcode_Digit_3;
-input 	[2:0] NumOfBarcodeDigitsEntered;
-input 	BarcodeCompleted;
-input 	ValidID;
-input 	[3:0] SelectedProductID;
-output 	[11:0] HighlightedProductList;
-output 	[6:0] HEX4;
-output 	[6:0] HEX5;
+module Direction2ProductID (
+	RESET_N,
+	Enable,
+	CLOCK,
+	CleanSW2,
+	BasketProductNum,
+	Dir_in,
+	ProductID);
+input 	RESET_N;
+input 	Enable;
+input 	CLOCK;
+input 	CleanSW2;
+input 	[3:0] BasketProductNum;
+input 	[1:0] Dir_in;
+output 	[3:0] ProductID;
 
 wire gnd;
 wire vcc;
@@ -68,1133 +56,238 @@ assign unknown = 1'bx;
 tri1 devclrn;
 tri1 devpor;
 tri1 devoe;
-wire \BarcodeCompleted~input_o ;
-wire \HighlightedProductList[0]~output_o ;
-wire \HighlightedProductList[1]~output_o ;
-wire \HighlightedProductList[2]~output_o ;
-wire \HighlightedProductList[3]~output_o ;
-wire \HighlightedProductList[4]~output_o ;
-wire \HighlightedProductList[5]~output_o ;
-wire \HighlightedProductList[6]~output_o ;
-wire \HighlightedProductList[7]~output_o ;
-wire \HighlightedProductList[8]~output_o ;
-wire \HighlightedProductList[9]~output_o ;
-wire \HighlightedProductList[10]~output_o ;
-wire \HighlightedProductList[11]~output_o ;
-wire \HEX4[0]~output_o ;
-wire \HEX4[1]~output_o ;
-wire \HEX4[2]~output_o ;
-wire \HEX4[3]~output_o ;
-wire \HEX4[4]~output_o ;
-wire \HEX4[5]~output_o ;
-wire \HEX4[6]~output_o ;
-wire \HEX5[0]~output_o ;
-wire \HEX5[1]~output_o ;
-wire \HEX5[2]~output_o ;
-wire \HEX5[3]~output_o ;
-wire \HEX5[4]~output_o ;
-wire \HEX5[5]~output_o ;
-wire \HEX5[6]~output_o ;
-wire \CLK~input_o ;
-wire \NumOfBarcodeDigitsEntered[2]~input_o ;
-wire \NumOfBarcodeDigitsEntered[0]~input_o ;
-wire \NumOfBarcodeDigitsEntered[1]~input_o ;
-wire \BarcodeHoverController_inst0|ShiftRight0~0_combout ;
-wire \Barcode_Digit_1[1]~input_o ;
-wire \Barcode_Digit_2[1]~input_o ;
-wire \Barcode_Digit_2[0]~input_o ;
-wire \BarcodeHoverController_inst0|Prdct0_Check~0_combout ;
-wire \Barcode_Digit_1[2]~input_o ;
-wire \Barcode_Digit_0[3]~input_o ;
-wire \Barcode_Digit_2[2]~input_o ;
-wire \Barcode_Digit_2[3]~input_o ;
-wire \BarcodeHoverController_inst0|Equal0~0_combout ;
-wire \Barcode_Digit_1[3]~input_o ;
-wire \Barcode_Digit_3[3]~input_o ;
-wire \BarcodeHoverController_inst0|Equal0~1_combout ;
-wire \Barcode_Digit_3[2]~input_o ;
-wire \Barcode_Digit_3[1]~input_o ;
-wire \BarcodeHoverController_inst0|Equal0~2_combout ;
-wire \BarcodeHoverController_inst0|Equal0~3_combout ;
-wire \Barcode_Digit_0[0]~input_o ;
-wire \Barcode_Digit_0[1]~input_o ;
-wire \Barcode_Digit_0[2]~input_o ;
-wire \BarcodeHoverController_inst0|Equal0~4_combout ;
-wire \Barcode_Digit_1[0]~input_o ;
-wire \Barcode_Digit_3[0]~input_o ;
-wire \BarcodeHoverController_inst0|Equal0~5_combout ;
-wire \BarcodeHoverController_inst0|Equal0~6_combout ;
-wire \SelectedProductID[0]~input_o ;
-wire \SelectedProductID[1]~input_o ;
-wire \SelectedProductID[3]~input_o ;
-wire \SelectedProductID[2]~input_o ;
-wire \Decoder4x16_inst0|d1|g4~0_combout ;
-wire \ValidID~input_o ;
-wire \CleanSWOut[1]~input_o ;
-wire \CleanSWOut[2]~input_o ;
-wire \HighlightedProductList[0]~0_combout ;
-wire \WideOr0~0_combout ;
-wire \HighlightedProductList[0]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal0~7_combout ;
-wire \BarcodeHoverController_inst0|Equal1~0_combout ;
-wire \BarcodeHoverController_inst0|ShiftRight0~1_combout ;
-wire \BarcodeHoverController_inst0|Equal1~1_combout ;
-wire \BarcodeHoverController_inst0|Equal1~2_combout ;
-wire \Decoder4x16_inst0|d1|g4~1_combout ;
-wire \HighlightedProductList[1]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal2~0_combout ;
-wire \Decoder4x16_inst0|d1|g4~2_combout ;
-wire \HighlightedProductList[2]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal9~0_combout ;
-wire \BarcodeHoverController_inst0|Equal3~0_combout ;
-wire \Decoder4x16_inst0|d1|g4~3_combout ;
-wire \HighlightedProductList[3]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal4~0_combout ;
-wire \BarcodeHoverController_inst0|Equal4~1_combout ;
-wire \Decoder4x16_inst0|d1|g4~4_combout ;
-wire \HighlightedProductList[4]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal5~0_combout ;
-wire \BarcodeHoverController_inst0|Equal5~1_combout ;
-wire \BarcodeHoverController_inst0|Equal5~2_combout ;
-wire \BarcodeHoverController_inst0|Equal5~3_combout ;
-wire \BarcodeHoverController_inst0|Equal5~4_combout ;
-wire \Decoder4x16_inst0|d1|g4~5_combout ;
-wire \HighlightedProductList[5]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal6~0_combout ;
-wire \BarcodeHoverController_inst0|Equal6~1_combout ;
-wire \Decoder4x16_inst0|d1|g4~6_combout ;
-wire \HighlightedProductList[6]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal7~0_combout ;
-wire \BarcodeHoverController_inst0|Equal7~1_combout ;
-wire \BarcodeHoverController_inst0|Equal7~2_combout ;
-wire \BarcodeHoverController_inst0|Equal7~3_combout ;
-wire \Decoder4x16_inst0|d1|g4~7_combout ;
-wire \HighlightedProductList[7]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal8~0_combout ;
-wire \BarcodeHoverController_inst0|Equal8~1_combout ;
-wire \Decoder4x16_inst0|d1|g4~8_combout ;
-wire \HighlightedProductList[8]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal9~1_combout ;
-wire \BarcodeHoverController_inst0|Equal9~2_combout ;
-wire \Decoder4x16_inst0|d1|g4~9_combout ;
-wire \HighlightedProductList[9]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal7~4_combout ;
-wire \BarcodeHoverController_inst0|Equal11~1_combout ;
-wire \BarcodeHoverController_inst0|Equal10~0_combout ;
-wire \Decoder4x16_inst0|d1|g4~10_combout ;
-wire \HighlightedProductList[10]~reg0_q ;
-wire \BarcodeHoverController_inst0|Equal11~0_combout ;
-wire \Decoder4x16_inst0|d1|g4~11_combout ;
-wire \HighlightedProductList[11]~reg0_q ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ;
-wire \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0_combout ;
-wire \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ;
-wire [15:0] \BarcodeHoverController_inst0|Barcode_Extract ;
-wire [11:0] HighlightedDecoderOut;
+wire \ProductID[0]~output_o ;
+wire \ProductID[1]~output_o ;
+wire \ProductID[2]~output_o ;
+wire \ProductID[3]~output_o ;
+wire \CLOCK~input_o ;
+wire \CleanSW2~input_o ;
+wire \Dir_in[0]~input_o ;
+wire \Dir_in[1]~input_o ;
+wire \Enable~input_o ;
+wire \RESET_N~input_o ;
+wire \BasketID~1_combout ;
+wire \BasketID~0_combout ;
+wire \BasketProductNum[0]~input_o ;
+wire \Equal1~0_combout ;
+wire \BasketProductNum[2]~input_o ;
+wire \BasketProductNum[1]~input_o ;
+wire \Add6~2_combout ;
+wire \Add6~1_combout ;
+wire \BasketID~3_combout ;
+wire \BasketProductNum[3]~input_o ;
+wire \Add6~3_combout ;
+wire \Add4~1_combout ;
+wire \Add5~1_combout ;
+wire \BasketID~5_combout ;
+wire \LessThan4~0_combout ;
+wire \BasketID[1]~2_combout ;
+wire \Add4~0_combout ;
+wire \Add5~0_combout ;
+wire \BasketID~4_combout ;
+wire \Add6~0_combout ;
+wire \LessThan5~0_combout ;
+wire \LessThan5~1_combout ;
+wire \BasketID~6_combout ;
+wire \Mux0~0_combout ;
+wire \ImgID~4_combout ;
+wire \ImgID~1_combout ;
+wire \Mux1~0_combout ;
+wire \ImgID~3_combout ;
+wire \Mux2~0_combout ;
+wire \ImgID~2_combout ;
+wire \Mux3~0_combout ;
+wire \ImgID~0_combout ;
+wire \ProductID~0_combout ;
+wire \ProductID~1_combout ;
+wire \ProductID~2_combout ;
+wire \ProductID~3_combout ;
+wire [3:0] BasketID;
+wire [3:0] ImgID;
 
 
-cyclonev_io_obuf \HighlightedProductList[0]~output (
-	.i(\HighlightedProductList[0]~reg0_q ),
+cyclonev_io_obuf \ProductID[0]~output (
+	.i(\ProductID~0_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\HighlightedProductList[0]~output_o ),
+	.o(\ProductID[0]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \HighlightedProductList[0]~output .bus_hold = "false";
-defparam \HighlightedProductList[0]~output .open_drain_output = "false";
-defparam \HighlightedProductList[0]~output .shift_series_termination_control = "false";
+defparam \ProductID[0]~output .bus_hold = "false";
+defparam \ProductID[0]~output .open_drain_output = "false";
+defparam \ProductID[0]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \HighlightedProductList[1]~output (
-	.i(\HighlightedProductList[1]~reg0_q ),
+cyclonev_io_obuf \ProductID[1]~output (
+	.i(\ProductID~1_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\HighlightedProductList[1]~output_o ),
+	.o(\ProductID[1]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \HighlightedProductList[1]~output .bus_hold = "false";
-defparam \HighlightedProductList[1]~output .open_drain_output = "false";
-defparam \HighlightedProductList[1]~output .shift_series_termination_control = "false";
+defparam \ProductID[1]~output .bus_hold = "false";
+defparam \ProductID[1]~output .open_drain_output = "false";
+defparam \ProductID[1]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \HighlightedProductList[2]~output (
-	.i(\HighlightedProductList[2]~reg0_q ),
+cyclonev_io_obuf \ProductID[2]~output (
+	.i(\ProductID~2_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\HighlightedProductList[2]~output_o ),
+	.o(\ProductID[2]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \HighlightedProductList[2]~output .bus_hold = "false";
-defparam \HighlightedProductList[2]~output .open_drain_output = "false";
-defparam \HighlightedProductList[2]~output .shift_series_termination_control = "false";
+defparam \ProductID[2]~output .bus_hold = "false";
+defparam \ProductID[2]~output .open_drain_output = "false";
+defparam \ProductID[2]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \HighlightedProductList[3]~output (
-	.i(\HighlightedProductList[3]~reg0_q ),
+cyclonev_io_obuf \ProductID[3]~output (
+	.i(\ProductID~3_combout ),
 	.oe(vcc),
 	.dynamicterminationcontrol(gnd),
 	.seriesterminationcontrol(16'b0000000000000000),
 	.parallelterminationcontrol(16'b0000000000000000),
 	.devoe(devoe),
-	.o(\HighlightedProductList[3]~output_o ),
+	.o(\ProductID[3]~output_o ),
 	.obar());
 // synopsys translate_off
-defparam \HighlightedProductList[3]~output .bus_hold = "false";
-defparam \HighlightedProductList[3]~output .open_drain_output = "false";
-defparam \HighlightedProductList[3]~output .shift_series_termination_control = "false";
+defparam \ProductID[3]~output .bus_hold = "false";
+defparam \ProductID[3]~output .open_drain_output = "false";
+defparam \ProductID[3]~output .shift_series_termination_control = "false";
 // synopsys translate_on
 
-cyclonev_io_obuf \HighlightedProductList[4]~output (
-	.i(\HighlightedProductList[4]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[4]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[4]~output .bus_hold = "false";
-defparam \HighlightedProductList[4]~output .open_drain_output = "false";
-defparam \HighlightedProductList[4]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[5]~output (
-	.i(\HighlightedProductList[5]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[5]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[5]~output .bus_hold = "false";
-defparam \HighlightedProductList[5]~output .open_drain_output = "false";
-defparam \HighlightedProductList[5]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[6]~output (
-	.i(\HighlightedProductList[6]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[6]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[6]~output .bus_hold = "false";
-defparam \HighlightedProductList[6]~output .open_drain_output = "false";
-defparam \HighlightedProductList[6]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[7]~output (
-	.i(\HighlightedProductList[7]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[7]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[7]~output .bus_hold = "false";
-defparam \HighlightedProductList[7]~output .open_drain_output = "false";
-defparam \HighlightedProductList[7]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[8]~output (
-	.i(\HighlightedProductList[8]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[8]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[8]~output .bus_hold = "false";
-defparam \HighlightedProductList[8]~output .open_drain_output = "false";
-defparam \HighlightedProductList[8]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[9]~output (
-	.i(\HighlightedProductList[9]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[9]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[9]~output .bus_hold = "false";
-defparam \HighlightedProductList[9]~output .open_drain_output = "false";
-defparam \HighlightedProductList[9]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[10]~output (
-	.i(\HighlightedProductList[10]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[10]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[10]~output .bus_hold = "false";
-defparam \HighlightedProductList[10]~output .open_drain_output = "false";
-defparam \HighlightedProductList[10]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HighlightedProductList[11]~output (
-	.i(\HighlightedProductList[11]~reg0_q ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HighlightedProductList[11]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HighlightedProductList[11]~output .bus_hold = "false";
-defparam \HighlightedProductList[11]~output .open_drain_output = "false";
-defparam \HighlightedProductList[11]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[0]~output (
-	.i(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[0]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[0]~output .bus_hold = "false";
-defparam \HEX4[0]~output .open_drain_output = "false";
-defparam \HEX4[0]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[1]~output (
-	.i(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[1]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[1]~output .bus_hold = "false";
-defparam \HEX4[1]~output .open_drain_output = "false";
-defparam \HEX4[1]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[2]~output (
-	.i(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[2]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[2]~output .bus_hold = "false";
-defparam \HEX4[2]~output .open_drain_output = "false";
-defparam \HEX4[2]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[3]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[3]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[3]~output .bus_hold = "false";
-defparam \HEX4[3]~output .open_drain_output = "false";
-defparam \HEX4[3]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[4]~output (
-	.i(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[4]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[4]~output .bus_hold = "false";
-defparam \HEX4[4]~output .open_drain_output = "false";
-defparam \HEX4[4]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[5]~output (
-	.i(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[5]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[5]~output .bus_hold = "false";
-defparam \HEX4[5]~output .open_drain_output = "false";
-defparam \HEX4[5]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX4[6]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX4[6]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX4[6]~output .bus_hold = "false";
-defparam \HEX4[6]~output .open_drain_output = "false";
-defparam \HEX4[6]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[0]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[0]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[0]~output .bus_hold = "false";
-defparam \HEX5[0]~output .open_drain_output = "false";
-defparam \HEX5[0]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[1]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[1]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[1]~output .bus_hold = "false";
-defparam \HEX5[1]~output .open_drain_output = "false";
-defparam \HEX5[1]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[2]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[2]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[2]~output .bus_hold = "false";
-defparam \HEX5[2]~output .open_drain_output = "false";
-defparam \HEX5[2]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[3]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[3]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[3]~output .bus_hold = "false";
-defparam \HEX5[3]~output .open_drain_output = "false";
-defparam \HEX5[3]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[4]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[4]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[4]~output .bus_hold = "false";
-defparam \HEX5[4]~output .open_drain_output = "false";
-defparam \HEX5[4]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[5]~output (
-	.i(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[5]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[5]~output .bus_hold = "false";
-defparam \HEX5[5]~output .open_drain_output = "false";
-defparam \HEX5[5]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_obuf \HEX5[6]~output (
-	.i(vcc),
-	.oe(vcc),
-	.dynamicterminationcontrol(gnd),
-	.seriesterminationcontrol(16'b0000000000000000),
-	.parallelterminationcontrol(16'b0000000000000000),
-	.devoe(devoe),
-	.o(\HEX5[6]~output_o ),
-	.obar());
-// synopsys translate_off
-defparam \HEX5[6]~output .bus_hold = "false";
-defparam \HEX5[6]~output .open_drain_output = "false";
-defparam \HEX5[6]~output .shift_series_termination_control = "false";
-// synopsys translate_on
-
-cyclonev_io_ibuf \CLK~input (
-	.i(CLK),
+cyclonev_io_ibuf \CLOCK~input (
+	.i(CLOCK),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\CLK~input_o ));
+	.o(\CLOCK~input_o ));
 // synopsys translate_off
-defparam \CLK~input .bus_hold = "false";
-defparam \CLK~input .simulate_z_as = "z";
+defparam \CLOCK~input .bus_hold = "false";
+defparam \CLOCK~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \NumOfBarcodeDigitsEntered[2]~input (
-	.i(NumOfBarcodeDigitsEntered[2]),
+cyclonev_io_ibuf \CleanSW2~input (
+	.i(CleanSW2),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\NumOfBarcodeDigitsEntered[2]~input_o ));
+	.o(\CleanSW2~input_o ));
 // synopsys translate_off
-defparam \NumOfBarcodeDigitsEntered[2]~input .bus_hold = "false";
-defparam \NumOfBarcodeDigitsEntered[2]~input .simulate_z_as = "z";
+defparam \CleanSW2~input .bus_hold = "false";
+defparam \CleanSW2~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \NumOfBarcodeDigitsEntered[0]~input (
-	.i(NumOfBarcodeDigitsEntered[0]),
+cyclonev_io_ibuf \Dir_in[0]~input (
+	.i(Dir_in[0]),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\NumOfBarcodeDigitsEntered[0]~input_o ));
+	.o(\Dir_in[0]~input_o ));
 // synopsys translate_off
-defparam \NumOfBarcodeDigitsEntered[0]~input .bus_hold = "false";
-defparam \NumOfBarcodeDigitsEntered[0]~input .simulate_z_as = "z";
+defparam \Dir_in[0]~input .bus_hold = "false";
+defparam \Dir_in[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_io_ibuf \NumOfBarcodeDigitsEntered[1]~input (
-	.i(NumOfBarcodeDigitsEntered[1]),
+cyclonev_io_ibuf \Dir_in[1]~input (
+	.i(Dir_in[1]),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\NumOfBarcodeDigitsEntered[1]~input_o ));
+	.o(\Dir_in[1]~input_o ));
 // synopsys translate_off
-defparam \NumOfBarcodeDigitsEntered[1]~input .bus_hold = "false";
-defparam \NumOfBarcodeDigitsEntered[1]~input .simulate_z_as = "z";
+defparam \Dir_in[1]~input .bus_hold = "false";
+defparam \Dir_in[1]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_lcell_comb \BarcodeHoverController_inst0|ShiftRight0~0 (
+cyclonev_io_ibuf \Enable~input (
+	.i(Enable),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\Enable~input_o ));
+// synopsys translate_off
+defparam \Enable~input .bus_hold = "false";
+defparam \Enable~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_io_ibuf \RESET_N~input (
+	.i(RESET_N),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\RESET_N~input_o ));
+// synopsys translate_off
+defparam \RESET_N~input .bus_hold = "false";
+defparam \RESET_N~input .simulate_z_as = "z";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~1 (
 // Equation(s):
-// \BarcodeHoverController_inst0|ShiftRight0~0_combout  = (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))
+// \BasketID~1_combout  = ( \RESET_N~input_o  & ( (!\Enable~input_o ) # ((\CleanSW2~input_o  & (!\Dir_in[0]~input_o  $ (\Dir_in[1]~input_o )))) ) )
 
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\Enable~input_o ),
+	.datae(!\RESET_N~input_o ),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
+	.combout(\BasketID~1_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \BarcodeHoverController_inst0|ShiftRight0~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|ShiftRight0~0 .lut_mask = 64'hA8A8A8A8A8A8A8A8;
-defparam \BarcodeHoverController_inst0|ShiftRight0~0 .shared_arith = "off";
+defparam \BasketID~1 .extended_lut = "off";
+defparam \BasketID~1 .lut_mask = 64'h0000FF410000FF41;
+defparam \BasketID~1 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Barcode_Digit_1[1]~input (
-	.i(Barcode_Digit_1[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_1[1]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_1[1]~input .bus_hold = "false";
-defparam \Barcode_Digit_1[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_2[1]~input (
-	.i(Barcode_Digit_2[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_2[1]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_2[1]~input .bus_hold = "false";
-defparam \Barcode_Digit_2[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Barcode_Extract[9] (
+cyclonev_lcell_comb \BasketID~0 (
 // Equation(s):
-// \BarcodeHoverController_inst0|Barcode_Extract [9] = (\Barcode_Digit_2[1]~input_o  & ((\NumOfBarcodeDigitsEntered[1]~input_o ) # (\NumOfBarcodeDigitsEntered[2]~input_o )))
+// \BasketID~0_combout  = ( \RESET_N~input_o  & ( (\CleanSW2~input_o  & (\Enable~input_o  & (!\Dir_in[0]~input_o  $ (!\Dir_in[1]~input_o )))) ) )
 
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datac(!\Barcode_Digit_2[1]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\Enable~input_o ),
+	.datae(!\RESET_N~input_o ),
 	.dataf(gnd),
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Barcode_Extract [9]),
+	.combout(\BasketID~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \BarcodeHoverController_inst0|Barcode_Extract[9] .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Barcode_Extract[9] .lut_mask = 64'h0707070707070707;
-defparam \BarcodeHoverController_inst0|Barcode_Extract[9] .shared_arith = "off";
+defparam \BasketID~0 .extended_lut = "off";
+defparam \BasketID~0 .lut_mask = 64'h0000001400000014;
+defparam \BasketID~0 .shared_arith = "off";
 // synopsys translate_on
 
-cyclonev_io_ibuf \Barcode_Digit_2[0]~input (
-	.i(Barcode_Digit_2[0]),
+cyclonev_io_ibuf \BasketProductNum[0]~input (
+	.i(BasketProductNum[0]),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_2[0]~input_o ));
+	.o(\BasketProductNum[0]~input_o ));
 // synopsys translate_off
-defparam \Barcode_Digit_2[0]~input .bus_hold = "false";
-defparam \Barcode_Digit_2[0]~input .simulate_z_as = "z";
+defparam \BasketProductNum[0]~input .bus_hold = "false";
+defparam \BasketProductNum[0]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Prdct0_Check~0 (
+cyclonev_lcell_comb \Equal1~0 (
 // Equation(s):
-// \BarcodeHoverController_inst0|Prdct0_Check~0_combout  = (!\Barcode_Digit_2[0]~input_o  & ((\NumOfBarcodeDigitsEntered[1]~input_o ) # (\NumOfBarcodeDigitsEntered[2]~input_o )))
+// \Equal1~0_combout  = (!\Dir_in[0]~input_o  & \Dir_in[1]~input_o )
 
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datac(!\Barcode_Digit_2[0]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Prdct0_Check~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Prdct0_Check~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Prdct0_Check~0 .lut_mask = 64'h7070707070707070;
-defparam \BarcodeHoverController_inst0|Prdct0_Check~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_1[2]~input (
-	.i(Barcode_Digit_1[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_1[2]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_1[2]~input .bus_hold = "false";
-defparam \Barcode_Digit_1[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Barcode_Extract[6] (
-// Equation(s):
-// \BarcodeHoverController_inst0|Barcode_Extract [6] = (\Barcode_Digit_1[2]~input_o  & (((\NumOfBarcodeDigitsEntered[0]~input_o  & \NumOfBarcodeDigitsEntered[1]~input_o )) # (\NumOfBarcodeDigitsEntered[2]~input_o )))
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_1[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Barcode_Extract [6]),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Barcode_Extract[6] .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Barcode_Extract[6] .lut_mask = 64'h0057005700570057;
-defparam \BarcodeHoverController_inst0|Barcode_Extract[6] .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_0[3]~input (
-	.i(Barcode_Digit_0[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_0[3]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_0[3]~input .bus_hold = "false";
-defparam \Barcode_Digit_0[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_2[2]~input (
-	.i(Barcode_Digit_2[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_2[2]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_2[2]~input .bus_hold = "false";
-defparam \Barcode_Digit_2[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_2[3]~input (
-	.i(Barcode_Digit_2[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_2[3]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_2[3]~input .bus_hold = "false";
-defparam \Barcode_Digit_2[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~0_combout  = ( \Barcode_Digit_2[3]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ) ) ) # ( !\Barcode_Digit_2[3]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & 
-// ((!\NumOfBarcodeDigitsEntered[1]~input_o ) # ((!\Barcode_Digit_2[2]~input_o )))) # (\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\Barcode_Digit_0[3]~input_o  & !\Barcode_Digit_2[2]~input_o )))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datac(!\Barcode_Digit_0[3]~input_o ),
-	.datad(!\Barcode_Digit_2[2]~input_o ),
-	.datae(!\Barcode_Digit_2[3]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~0 .lut_mask = 64'hFA888888FA888888;
-defparam \BarcodeHoverController_inst0|Equal0~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_1[3]~input (
-	.i(Barcode_Digit_1[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_1[3]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_1[3]~input .bus_hold = "false";
-defparam \Barcode_Digit_1[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_3[3]~input (
-	.i(Barcode_Digit_3[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_3[3]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_3[3]~input .bus_hold = "false";
-defparam \Barcode_Digit_3[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~1_combout  = ( \Barcode_Digit_3[3]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) # ( !\Barcode_Digit_3[3]~input_o  & ( 
-// (!\Barcode_Digit_1[3]~input_o ) # ((!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_1[3]~input_o ),
-	.datae(!\Barcode_Digit_3[3]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~1 .lut_mask = 64'hFFA88080FFA88080;
-defparam \BarcodeHoverController_inst0|Equal0~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_3[2]~input (
-	.i(Barcode_Digit_3[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_3[2]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_3[2]~input .bus_hold = "false";
-defparam \Barcode_Digit_3[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_3[1]~input (
-	.i(Barcode_Digit_3[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_3[1]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_3[1]~input .bus_hold = "false";
-defparam \Barcode_Digit_3[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~2 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~2_combout  = ( \Barcode_Digit_3[1]~input_o  & ( (!\Barcode_Digit_3[2]~input_o ) # ((!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ))) ) ) # 
-// ( !\Barcode_Digit_3[1]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_3[2]~input_o ),
-	.datae(!\Barcode_Digit_3[1]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~2 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~2 .lut_mask = 64'h8080FF808080FF80;
-defparam \BarcodeHoverController_inst0|Equal0~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~3 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~3_combout  = ( \BarcodeHoverController_inst0|Equal0~1_combout  & ( \BarcodeHoverController_inst0|Equal0~2_combout  & ( (!\BarcodeHoverController_inst0|Barcode_Extract [9] & 
-// (!\BarcodeHoverController_inst0|Prdct0_Check~0_combout  & (!\BarcodeHoverController_inst0|Barcode_Extract [6] & \BarcodeHoverController_inst0|Equal0~0_combout ))) ) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|Barcode_Extract [9]),
-	.datab(!\BarcodeHoverController_inst0|Prdct0_Check~0_combout ),
-	.datac(!\BarcodeHoverController_inst0|Barcode_Extract [6]),
-	.datad(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.dataf(!\BarcodeHoverController_inst0|Equal0~2_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~3 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~3 .lut_mask = 64'h0000000000000080;
-defparam \BarcodeHoverController_inst0|Equal0~3 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_0[0]~input (
-	.i(Barcode_Digit_0[0]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_0[0]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_0[0]~input .bus_hold = "false";
-defparam \Barcode_Digit_0[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_0[1]~input (
-	.i(Barcode_Digit_0[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_0[1]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_0[1]~input .bus_hold = "false";
-defparam \Barcode_Digit_0[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_0[2]~input (
-	.i(Barcode_Digit_0[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_0[2]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_0[2]~input .bus_hold = "false";
-defparam \Barcode_Digit_0[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~4 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~4_combout  = (\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\Barcode_Digit_0[2]~input_o ) # (\Barcode_Digit_0[1]~input_o )) # (\Barcode_Digit_0[0]~input_o )))
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\Barcode_Digit_0[0]~input_o ),
-	.datac(!\Barcode_Digit_0[1]~input_o ),
-	.datad(!\Barcode_Digit_0[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~4_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~4 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~4 .lut_mask = 64'h5515551555155515;
-defparam \BarcodeHoverController_inst0|Equal0~4 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_1[0]~input (
-	.i(Barcode_Digit_1[0]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_1[0]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_1[0]~input .bus_hold = "false";
-defparam \Barcode_Digit_1[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \Barcode_Digit_3[0]~input (
-	.i(Barcode_Digit_3[0]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\Barcode_Digit_3[0]~input_o ));
-// synopsys translate_off
-defparam \Barcode_Digit_3[0]~input .bus_hold = "false";
-defparam \Barcode_Digit_3[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~5 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~5_combout  = ( \Barcode_Digit_3[0]~input_o  & ( (!\Barcode_Digit_1[0]~input_o ) # ((!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) ) 
-// ) # ( !\Barcode_Digit_3[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datae(!\Barcode_Digit_3[0]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~5_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~5 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~5 .lut_mask = 64'hC000EEEAC000EEEA;
-defparam \BarcodeHoverController_inst0|Equal0~5 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~6 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~6_combout  = ( \BarcodeHoverController_inst0|Equal0~5_combout  & ( (\BarcodeHoverController_inst0|Equal0~3_combout  & (!\BarcodeHoverController_inst0|Equal0~4_combout  & ((\Barcode_Digit_1[1]~input_o ) # 
-// (\BarcodeHoverController_inst0|ShiftRight0~0_combout )))) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
-	.datab(!\Barcode_Digit_1[1]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal0~4_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal0~5_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~6_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~6 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~6 .lut_mask = 64'h0000070000000700;
-defparam \BarcodeHoverController_inst0|Equal0~6 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \SelectedProductID[0]~input (
-	.i(SelectedProductID[0]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SelectedProductID[0]~input_o ));
-// synopsys translate_off
-defparam \SelectedProductID[0]~input .bus_hold = "false";
-defparam \SelectedProductID[0]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \SelectedProductID[1]~input (
-	.i(SelectedProductID[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SelectedProductID[1]~input_o ));
-// synopsys translate_off
-defparam \SelectedProductID[1]~input .bus_hold = "false";
-defparam \SelectedProductID[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \SelectedProductID[3]~input (
-	.i(SelectedProductID[3]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SelectedProductID[3]~input_o ));
-// synopsys translate_off
-defparam \SelectedProductID[3]~input .bus_hold = "false";
-defparam \SelectedProductID[3]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \SelectedProductID[2]~input (
-	.i(SelectedProductID[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\SelectedProductID[2]~input_o ));
-// synopsys translate_off
-defparam \SelectedProductID[2]~input .bus_hold = "false";
-defparam \SelectedProductID[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~0 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~0_combout  = (!\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~0 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~0 .lut_mask = 64'h8000800080008000;
-defparam \Decoder4x16_inst0|d1|g4~0 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[0] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~0_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[0]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[0] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[0] .power_up = "low";
-// synopsys translate_on
-
-cyclonev_io_ibuf \ValidID~input (
-	.i(ValidID),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\ValidID~input_o ));
-// synopsys translate_off
-defparam \ValidID~input .bus_hold = "false";
-defparam \ValidID~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \CleanSWOut[1]~input (
-	.i(CleanSWOut[1]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\CleanSWOut[1]~input_o ));
-// synopsys translate_off
-defparam \CleanSWOut[1]~input .bus_hold = "false";
-defparam \CleanSWOut[1]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_io_ibuf \CleanSWOut[2]~input (
-	.i(CleanSWOut[2]),
-	.ibar(gnd),
-	.dynamicterminationcontrol(gnd),
-	.o(\CleanSWOut[2]~input_o ));
-// synopsys translate_off
-defparam \CleanSWOut[2]~input .bus_hold = "false";
-defparam \CleanSWOut[2]~input .simulate_z_as = "z";
-// synopsys translate_on
-
-cyclonev_lcell_comb \HighlightedProductList[0]~0 (
-// Equation(s):
-// \HighlightedProductList[0]~0_combout  = ( \NumOfBarcodeDigitsEntered[0]~input_o  & ( \NumOfBarcodeDigitsEntered[1]~input_o  & ( (!\ValidID~input_o  & ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o ))) ) ) ) # ( !\NumOfBarcodeDigitsEntered[0]~input_o 
-//  & ( \NumOfBarcodeDigitsEntered[1]~input_o  & ( (!\ValidID~input_o  & ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o ))) ) ) ) # ( \NumOfBarcodeDigitsEntered[0]~input_o  & ( !\NumOfBarcodeDigitsEntered[1]~input_o  & ( (!\ValidID~input_o  & 
-// ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o ))) ) ) ) # ( !\NumOfBarcodeDigitsEntered[0]~input_o  & ( !\NumOfBarcodeDigitsEntered[1]~input_o  & ( (!\CleanSWOut[1]~input_o  & ((!\CleanSWOut[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[2]~input_o 
-// ))) # (\CleanSWOut[2]~input_o  & (!\ValidID~input_o )))) # (\CleanSWOut[1]~input_o  & (!\ValidID~input_o )) ) ) )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datae(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.dataf(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\HighlightedProductList[0]~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \HighlightedProductList[0]~0 .extended_lut = "off";
-defparam \HighlightedProductList[0]~0 .lut_mask = 64'hEA2A2A2A2A2A2A2A;
-defparam \HighlightedProductList[0]~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \WideOr0~0 (
-// Equation(s):
-// \WideOr0~0_combout  = (\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )
-
-	.dataa(!\CleanSWOut[1]~input_o ),
-	.datab(!\CleanSWOut[2]~input_o ),
+	.dataa(!\Dir_in[0]~input_o ),
+	.datab(!\Dir_in[1]~input_o ),
 	.datac(gnd),
 	.datad(gnd),
 	.datae(gnd),
@@ -1202,1772 +295,878 @@ cyclonev_lcell_comb \WideOr0~0 (
 	.datag(gnd),
 	.cin(gnd),
 	.sharein(gnd),
-	.combout(\WideOr0~0_combout ),
+	.combout(\Equal1~0_combout ),
 	.sumout(),
 	.cout(),
 	.shareout());
 // synopsys translate_off
-defparam \WideOr0~0 .extended_lut = "off";
-defparam \WideOr0~0 .lut_mask = 64'h7777777777777777;
-defparam \WideOr0~0 .shared_arith = "off";
+defparam \Equal1~0 .extended_lut = "off";
+defparam \Equal1~0 .lut_mask = 64'h2222222222222222;
+defparam \Equal1~0 .shared_arith = "off";
 // synopsys translate_on
 
-dffeas \HighlightedProductList[0]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal0~6_combout ),
-	.asdata(HighlightedDecoderOut[0]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[0]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[0]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[0]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal0~7 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal0~7_combout  = ( \BarcodeHoverController_inst0|Equal0~1_combout  & ( (!\BarcodeHoverController_inst0|Barcode_Extract [9] & (!\BarcodeHoverController_inst0|Prdct0_Check~0_combout  & 
-// (!\BarcodeHoverController_inst0|Barcode_Extract [6] & \BarcodeHoverController_inst0|Equal0~0_combout ))) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|Barcode_Extract [9]),
-	.datab(!\BarcodeHoverController_inst0|Prdct0_Check~0_combout ),
-	.datac(!\BarcodeHoverController_inst0|Barcode_Extract [6]),
-	.datad(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal0~7_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal0~7 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal0~7 .lut_mask = 64'h0000008000000080;
-defparam \BarcodeHoverController_inst0|Equal0~7 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal1~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal1~0_combout  = ( \Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_1[0]~input_o ))) ) ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_1[0]~input_o ))) ) ) ) # ( \Barcode_Digit_0[1]~input_o  & ( !\Barcode_Digit_0[2]~input_o  & ( ((!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) # 
-// (\Barcode_Digit_1[0]~input_o ) ) ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( !\Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_1[0]~input_o ))) ) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datae(!\Barcode_Digit_0[1]~input_o ),
-	.dataf(!\Barcode_Digit_0[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal1~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal1~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal1~0 .lut_mask = 64'hCCC4DDD5CCC4CCC4;
-defparam \BarcodeHoverController_inst0|Equal1~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|ShiftRight0~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|ShiftRight0~1_combout  = (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ))
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|ShiftRight0~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|ShiftRight0~1 .lut_mask = 64'h8080808080808080;
-defparam \BarcodeHoverController_inst0|ShiftRight0~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal1~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal1~1_combout  = ( \Barcode_Digit_3[2]~input_o  & ( \Barcode_Digit_3[1]~input_o  & ( (\BarcodeHoverController_inst0|ShiftRight0~1_combout  & ((\Barcode_Digit_1[1]~input_o ) # 
-// (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) ) ) # ( !\Barcode_Digit_3[2]~input_o  & ( \Barcode_Digit_3[1]~input_o  & ( (\BarcodeHoverController_inst0|ShiftRight0~1_combout  & ((\Barcode_Digit_1[1]~input_o ) # 
-// (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) ) ) # ( \Barcode_Digit_3[2]~input_o  & ( !\Barcode_Digit_3[1]~input_o  & ( (!\BarcodeHoverController_inst0|ShiftRight0~0_combout  & (\Barcode_Digit_1[1]~input_o  & ((!\Barcode_Digit_3[0]~input_o ) 
-// # (\BarcodeHoverController_inst0|ShiftRight0~1_combout )))) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout  & ((!\Barcode_Digit_3[0]~input_o ) # ((\BarcodeHoverController_inst0|ShiftRight0~1_combout )))) ) ) ) # ( !\Barcode_Digit_3[2]~input_o  & ( 
-// !\Barcode_Digit_3[1]~input_o  & ( (\BarcodeHoverController_inst0|ShiftRight0~1_combout  & ((\Barcode_Digit_1[1]~input_o ) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
-	.datab(!\Barcode_Digit_3[0]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.datad(!\Barcode_Digit_1[1]~input_o ),
-	.datae(!\Barcode_Digit_3[2]~input_o ),
-	.dataf(!\Barcode_Digit_3[1]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal1~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal1~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal1~1 .lut_mask = 64'h050F45CF050F050F;
-defparam \BarcodeHoverController_inst0|Equal1~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal1~2 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal1~2_combout  = ( \BarcodeHoverController_inst0|Equal1~1_combout  & ( (\BarcodeHoverController_inst0|Equal0~7_combout  & (\BarcodeHoverController_inst0|Equal1~0_combout  & ((!\NumOfBarcodeDigitsEntered[2]~input_o ) # 
-// (!\Barcode_Digit_0[0]~input_o )))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\Barcode_Digit_0[0]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|Equal0~7_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal1~0_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal1~1_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal1~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal1~2 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal1~2 .lut_mask = 64'h0000000E0000000E;
-defparam \BarcodeHoverController_inst0|Equal1~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~1 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~1_combout  = (\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~1 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~1 .lut_mask = 64'h4000400040004000;
-defparam \Decoder4x16_inst0|d1|g4~1 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[1] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~1_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[1]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[1] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[1] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[1]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal1~2_combout ),
-	.asdata(HighlightedDecoderOut[1]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[1]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[1]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[1]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal2~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal2~0_combout  = ( \BarcodeHoverController_inst0|Equal1~1_combout  & ( (\BarcodeHoverController_inst0|Equal0~7_combout  & (\BarcodeHoverController_inst0|Equal1~0_combout  & ((!\NumOfBarcodeDigitsEntered[2]~input_o ) # 
-// (\Barcode_Digit_0[0]~input_o )))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\Barcode_Digit_0[0]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|Equal0~7_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal1~0_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal1~1_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal2~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal2~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal2~0 .lut_mask = 64'h0000000B0000000B;
-defparam \BarcodeHoverController_inst0|Equal2~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~2 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~2_combout  = (!\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~2 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~2 .lut_mask = 64'h2000200020002000;
-defparam \Decoder4x16_inst0|d1|g4~2 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[2] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~2_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[2]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[2] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[2] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[2]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal2~0_combout ),
-	.asdata(HighlightedDecoderOut[2]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[2]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[2]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[2]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal9~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal9~0_combout  = ( \Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\Barcode_Digit_1[0]~input_o ) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) 
-// ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\Barcode_Digit_1[0]~input_o ) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) ) ) # ( \Barcode_Digit_0[1]~input_o  & ( 
-// !\Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\Barcode_Digit_1[0]~input_o ) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout ))) ) ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( !\Barcode_Digit_0[2]~input_o  & ( 
-// (!\Barcode_Digit_1[0]~input_o  & ((!\NumOfBarcodeDigitsEntered[2]~input_o ) # ((\Barcode_Digit_0[0]~input_o )))) # (\Barcode_Digit_1[0]~input_o  & (\BarcodeHoverController_inst0|ShiftRight0~0_combout  & ((!\NumOfBarcodeDigitsEntered[2]~input_o ) # 
-// (\Barcode_Digit_0[0]~input_o )))) ) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
-	.datad(!\Barcode_Digit_0[0]~input_o ),
-	.datae(!\Barcode_Digit_0[1]~input_o ),
-	.dataf(!\Barcode_Digit_0[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal9~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal9~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal9~0 .lut_mask = 64'h8CAF8C8C8C8C8C8C;
-defparam \BarcodeHoverController_inst0|Equal9~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal3~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal3~0_combout  = ( \BarcodeHoverController_inst0|Equal0~3_combout  & ( \BarcodeHoverController_inst0|Equal9~0_combout  & ( (!\BarcodeHoverController_inst0|ShiftRight0~0_combout  & (\Barcode_Digit_1[1]~input_o  & 
-// ((\BarcodeHoverController_inst0|ShiftRight0~1_combout ) # (\Barcode_Digit_3[0]~input_o )))) # (\BarcodeHoverController_inst0|ShiftRight0~0_combout  & (((\BarcodeHoverController_inst0|ShiftRight0~1_combout )) # (\Barcode_Digit_3[0]~input_o ))) ) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
-	.datab(!\Barcode_Digit_3[0]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.datad(!\Barcode_Digit_1[1]~input_o ),
-	.datae(!\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.dataf(!\BarcodeHoverController_inst0|Equal9~0_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal3~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal3~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal3~0 .lut_mask = 64'h000000000000153F;
-defparam \BarcodeHoverController_inst0|Equal3~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~3 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~3_combout  = (\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~3_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~3 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~3 .lut_mask = 64'h1000100010001000;
-defparam \Decoder4x16_inst0|d1|g4~3 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[3] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~3_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[3]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[3] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[3] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[3]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal3~0_combout ),
-	.asdata(HighlightedDecoderOut[3]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[3]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[3]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[3]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal4~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal4~0_combout  = ( \Barcode_Digit_1[1]~input_o  & ( (\NumOfBarcodeDigitsEntered[2]~input_o  & !\Barcode_Digit_0[0]~input_o ) ) ) # ( !\Barcode_Digit_1[1]~input_o  & ( ((\NumOfBarcodeDigitsEntered[0]~input_o  & 
-// \NumOfBarcodeDigitsEntered[1]~input_o )) # (\NumOfBarcodeDigitsEntered[2]~input_o ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_0[0]~input_o ),
-	.datae(!\Barcode_Digit_1[1]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal4~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal4~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal4~0 .lut_mask = 64'h5757550057575500;
-defparam \BarcodeHoverController_inst0|Equal4~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal4~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal4~1_combout  = ( !\BarcodeHoverController_inst0|Equal4~0_combout  & ( (\BarcodeHoverController_inst0|Equal1~0_combout  & (\BarcodeHoverController_inst0|Equal0~3_combout  & 
-// ((\BarcodeHoverController_inst0|ShiftRight0~1_combout ) # (\Barcode_Digit_3[0]~input_o )))) ) )
-
-	.dataa(!\Barcode_Digit_3[0]~input_o ),
-	.datab(!\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal1~0_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal4~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal4~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal4~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal4~1 .lut_mask = 64'h0007000000070000;
-defparam \BarcodeHoverController_inst0|Equal4~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~4 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~4_combout  = (!\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & \SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~4_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~4 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~4 .lut_mask = 64'h0080008000800080;
-defparam \Decoder4x16_inst0|d1|g4~4 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[4] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~4_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[4]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[4] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[4] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[4]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal4~1_combout ),
-	.asdata(HighlightedDecoderOut[4]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[4]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[4]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[4]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal5~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal5~0_combout  = ( \Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_3[1]~input_o ))) ) ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( \Barcode_Digit_0[2]~input_o  & ( ((!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ))) # 
-// (\Barcode_Digit_3[1]~input_o ) ) ) ) # ( \Barcode_Digit_0[1]~input_o  & ( !\Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_3[1]~input_o ))) ) ) ) # ( !\Barcode_Digit_0[1]~input_o  & ( !\Barcode_Digit_0[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) # 
-// (\Barcode_Digit_3[1]~input_o ))) ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_3[1]~input_o ),
-	.datae(!\Barcode_Digit_0[1]~input_o ),
-	.dataf(!\Barcode_Digit_0[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal5~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal5~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal5~0 .lut_mask = 64'h80AA80AA80FF80AA;
-defparam \BarcodeHoverController_inst0|Equal5~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal5~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal5~1_combout  = ( \Barcode_Digit_1[1]~input_o  & ( \Barcode_Digit_3[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) ) # ( 
-// !\Barcode_Digit_1[1]~input_o  & ( \Barcode_Digit_3[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) ) # ( \Barcode_Digit_1[1]~input_o  & ( 
-// !\Barcode_Digit_3[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o  & ((!\NumOfBarcodeDigitsEntered[1]~input_o ) # (\Barcode_Digit_3[0]~input_o ))) # (\NumOfBarcodeDigitsEntered[0]~input_o  & 
-// (!\NumOfBarcodeDigitsEntered[1]~input_o  & \Barcode_Digit_3[0]~input_o )))) ) ) ) # ( !\Barcode_Digit_1[1]~input_o  & ( !\Barcode_Digit_3[2]~input_o  & ( ((!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & 
-// !\NumOfBarcodeDigitsEntered[1]~input_o ))) # (\Barcode_Digit_3[0]~input_o ) ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_3[0]~input_o ),
-	.datae(!\Barcode_Digit_1[1]~input_o ),
-	.dataf(!\Barcode_Digit_3[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal5~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal5~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal5~1 .lut_mask = 64'h80FF80A880808080;
-defparam \BarcodeHoverController_inst0|Equal5~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal5~2 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal5~2_combout  = ( \Barcode_Digit_2[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ) ) ) # ( !\Barcode_Digit_2[0]~input_o  & ( ((!\NumOfBarcodeDigitsEntered[2]~input_o  & 
-// ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) # (\Barcode_Digit_1[0]~input_o ) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datae(!\Barcode_Digit_2[0]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal5~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal5~2 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal5~2 .lut_mask = 64'hDDD5CC00DDD5CC00;
-defparam \BarcodeHoverController_inst0|Equal5~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal5~3 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal5~3_combout  = ( \BarcodeHoverController_inst0|Equal5~2_combout  & ( (!\BarcodeHoverController_inst0|Barcode_Extract [6] & (\BarcodeHoverController_inst0|Equal0~0_combout  & 
-// (\BarcodeHoverController_inst0|Equal0~1_combout  & \BarcodeHoverController_inst0|Equal5~1_combout ))) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|Barcode_Extract [6]),
-	.datab(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal5~1_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal5~2_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal5~3_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal5~3 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal5~3 .lut_mask = 64'h0000000200000002;
-defparam \BarcodeHoverController_inst0|Equal5~3 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal5~4 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal5~4_combout  = ( \BarcodeHoverController_inst0|Equal5~0_combout  & ( \BarcodeHoverController_inst0|Equal5~3_combout  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[1]~input_o ) # 
-// ((\Barcode_Digit_2[1]~input_o )))) # (\NumOfBarcodeDigitsEntered[2]~input_o  & (((!\Barcode_Digit_0[0]~input_o  & \Barcode_Digit_2[1]~input_o )))) ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datac(!\Barcode_Digit_0[0]~input_o ),
-	.datad(!\Barcode_Digit_2[1]~input_o ),
-	.datae(!\BarcodeHoverController_inst0|Equal5~0_combout ),
-	.dataf(!\BarcodeHoverController_inst0|Equal5~3_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal5~4_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal5~4 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal5~4 .lut_mask = 64'h00000000000088FA;
-defparam \BarcodeHoverController_inst0|Equal5~4 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~5 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~5_combout  = (\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & \SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~5_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~5 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~5 .lut_mask = 64'h0040004000400040;
-defparam \Decoder4x16_inst0|d1|g4~5 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[5] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~5_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[5]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[5] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[5] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[5]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal5~4_combout ),
-	.asdata(HighlightedDecoderOut[5]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[5]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[5]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[5]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal6~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal6~0_combout  = ( \Barcode_Digit_3[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) # ( !\Barcode_Digit_3[0]~input_o  & ( 
-// ((!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) # (\Barcode_Digit_1[0]~input_o ) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datae(!\Barcode_Digit_3[0]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal6~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal6~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal6~0 .lut_mask = 64'hDDD5C000DDD5C000;
-defparam \BarcodeHoverController_inst0|Equal6~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal6~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal6~1_combout  = ( \BarcodeHoverController_inst0|Equal6~0_combout  & ( (\BarcodeHoverController_inst0|Equal0~3_combout  & (!\BarcodeHoverController_inst0|Equal0~4_combout  & ((\Barcode_Digit_1[1]~input_o ) # 
-// (\BarcodeHoverController_inst0|ShiftRight0~0_combout )))) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|ShiftRight0~0_combout ),
-	.datab(!\Barcode_Digit_1[1]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal0~4_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal6~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal6~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal6~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal6~1 .lut_mask = 64'h0000070000000700;
-defparam \BarcodeHoverController_inst0|Equal6~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~6 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~6_combout  = (!\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & \SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~6_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~6 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~6 .lut_mask = 64'h0020002000200020;
-defparam \Decoder4x16_inst0|d1|g4~6 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[6] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~6_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[6]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[6] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[6] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[6]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal6~1_combout ),
-	.asdata(HighlightedDecoderOut[6]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[6]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[6]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[6]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal7~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal7~0_combout  = ( \Barcode_Digit_3[2]~input_o  & ( \Barcode_Digit_1[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) ) # ( 
-// !\Barcode_Digit_3[2]~input_o  & ( \Barcode_Digit_1[2]~input_o  & ( (!\Barcode_Digit_1[0]~input_o ) # ((!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o )))) ) ) ) # ( 
-// \Barcode_Digit_3[2]~input_o  & ( !\Barcode_Digit_1[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o )) ) ) ) # ( !\Barcode_Digit_3[2]~input_o  & ( 
-// !\Barcode_Digit_1[2]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o ))) ) ) )
-
-	.dataa(!\Barcode_Digit_1[0]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datae(!\Barcode_Digit_3[2]~input_o ),
-	.dataf(!\Barcode_Digit_1[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal7~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal7~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal7~0 .lut_mask = 64'hCCC0C000EEEAC000;
-defparam \BarcodeHoverController_inst0|Equal7~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal7~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal7~1_combout  = ( \Barcode_Digit_1[1]~input_o  & ( \Barcode_Digit_2[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\NumOfBarcodeDigitsEntered[1]~input_o ))) ) ) ) 
-// # ( !\Barcode_Digit_1[1]~input_o  & ( \Barcode_Digit_2[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o ) # (!\Barcode_Digit_0[0]~input_o ) ) ) ) # ( \Barcode_Digit_1[1]~input_o  & ( !\Barcode_Digit_2[0]~input_o  & ( 
-// (!\NumOfBarcodeDigitsEntered[2]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ) ) ) ) # ( !\Barcode_Digit_1[1]~input_o  & ( !\Barcode_Digit_2[0]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ) ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_0[0]~input_o ),
-	.datae(!\Barcode_Digit_1[1]~input_o ),
-	.dataf(!\Barcode_Digit_2[0]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal7~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal7~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal7~1 .lut_mask = 64'hA0A0A0A0FFAAA8A8;
-defparam \BarcodeHoverController_inst0|Equal7~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal7~2 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal7~2_combout  = ( \Barcode_Digit_2[1]~input_o  & ( (!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[1]~input_o  & ((!\NumOfBarcodeDigitsEntered[0]~input_o ) # (!\Barcode_Digit_3[0]~input_o )))) ) ) 
-// # ( !\Barcode_Digit_2[1]~input_o  & ( (!\Barcode_Digit_3[0]~input_o ) # ((!\NumOfBarcodeDigitsEntered[2]~input_o  & (!\NumOfBarcodeDigitsEntered[0]~input_o  & !\NumOfBarcodeDigitsEntered[1]~input_o ))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_3[0]~input_o ),
-	.datae(!\Barcode_Digit_2[1]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal7~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal7~2 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal7~2 .lut_mask = 64'hFF80A080FF80A080;
-defparam \BarcodeHoverController_inst0|Equal7~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal7~3 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal7~3_combout  = ( \BarcodeHoverController_inst0|Equal7~1_combout  & ( \BarcodeHoverController_inst0|Equal7~2_combout  & ( (\BarcodeHoverController_inst0|Equal0~0_combout  & (\BarcodeHoverController_inst0|Equal0~1_combout  
-// & (\BarcodeHoverController_inst0|Equal5~0_combout  & \BarcodeHoverController_inst0|Equal7~0_combout ))) ) ) )
-
-	.dataa(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datab(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal5~0_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal7~0_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal7~1_combout ),
-	.dataf(!\BarcodeHoverController_inst0|Equal7~2_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal7~3_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal7~3 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal7~3 .lut_mask = 64'h0000000000000001;
-defparam \BarcodeHoverController_inst0|Equal7~3 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~7 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~7_combout  = (\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (!\SelectedProductID[3]~input_o  & \SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~7_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~7 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~7 .lut_mask = 64'h0010001000100010;
-defparam \Decoder4x16_inst0|d1|g4~7 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[7] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~7_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[7]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[7] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[7] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[7]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal7~3_combout ),
-	.asdata(HighlightedDecoderOut[7]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[7]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[7]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[7]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal8~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal8~0_combout  = ( \Barcode_Digit_1[1]~input_o  & ( ((\NumOfBarcodeDigitsEntered[0]~input_o  & \NumOfBarcodeDigitsEntered[1]~input_o )) # (\NumOfBarcodeDigitsEntered[2]~input_o ) ) ) # ( !\Barcode_Digit_1[1]~input_o  & ( 
-// (\NumOfBarcodeDigitsEntered[2]~input_o  & \Barcode_Digit_0[0]~input_o ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datad(!\Barcode_Digit_0[0]~input_o ),
-	.datae(!\Barcode_Digit_1[1]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal8~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal8~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal8~0 .lut_mask = 64'h0055575700555757;
-defparam \BarcodeHoverController_inst0|Equal8~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal8~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal8~1_combout  = ( !\BarcodeHoverController_inst0|Equal8~0_combout  & ( (\BarcodeHoverController_inst0|Equal1~0_combout  & (\BarcodeHoverController_inst0|Equal0~3_combout  & 
-// ((\BarcodeHoverController_inst0|ShiftRight0~1_combout ) # (\Barcode_Digit_3[0]~input_o )))) ) )
-
-	.dataa(!\Barcode_Digit_3[0]~input_o ),
-	.datab(!\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal1~0_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal0~3_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal8~0_combout ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal8~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal8~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal8~1 .lut_mask = 64'h0007000000070000;
-defparam \BarcodeHoverController_inst0|Equal8~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~8 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~8_combout  = (!\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~8_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~8 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~8 .lut_mask = 64'h0800080008000800;
-defparam \Decoder4x16_inst0|d1|g4~8 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[8] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~8_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[8]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[8] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[8] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[8]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal8~1_combout ),
-	.asdata(HighlightedDecoderOut[8]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[8]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[8]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[8]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal9~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal9~1_combout  = (!\BarcodeHoverController_inst0|Prdct0_Check~0_combout  & (!\BarcodeHoverController_inst0|Barcode_Extract [6] & (\BarcodeHoverController_inst0|Equal0~0_combout  & 
-// \BarcodeHoverController_inst0|Equal0~1_combout )))
-
-	.dataa(!\BarcodeHoverController_inst0|Prdct0_Check~0_combout ),
-	.datab(!\BarcodeHoverController_inst0|Barcode_Extract [6]),
-	.datac(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal9~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal9~1 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal9~1 .lut_mask = 64'h0008000800080008;
-defparam \BarcodeHoverController_inst0|Equal9~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal9~2 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal9~2_combout  = ( \BarcodeHoverController_inst0|Equal1~1_combout  & ( \BarcodeHoverController_inst0|Equal9~0_combout  & ( (\BarcodeHoverController_inst0|Equal9~1_combout  & (((!\NumOfBarcodeDigitsEntered[2]~input_o  & 
-// !\NumOfBarcodeDigitsEntered[1]~input_o )) # (\Barcode_Digit_2[1]~input_o ))) ) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datac(!\Barcode_Digit_2[1]~input_o ),
-	.datad(!\BarcodeHoverController_inst0|Equal9~1_combout ),
-	.datae(!\BarcodeHoverController_inst0|Equal1~1_combout ),
-	.dataf(!\BarcodeHoverController_inst0|Equal9~0_combout ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal9~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal9~2 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal9~2 .lut_mask = 64'h000000000000008F;
-defparam \BarcodeHoverController_inst0|Equal9~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~9 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~9_combout  = (\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  & (\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~9_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~9 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~9 .lut_mask = 64'h0400040004000400;
-defparam \Decoder4x16_inst0|d1|g4~9 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[9] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~9_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[9]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[9] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[9] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[9]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal9~2_combout ),
-	.asdata(HighlightedDecoderOut[9]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[9]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[9]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[9]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal7~4 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal7~4_combout  = (\BarcodeHoverController_inst0|Equal0~0_combout  & (\BarcodeHoverController_inst0|Equal0~1_combout  & (\BarcodeHoverController_inst0|Equal7~0_combout  & \BarcodeHoverController_inst0|Equal7~1_combout )))
-
-	.dataa(!\BarcodeHoverController_inst0|Equal0~0_combout ),
-	.datab(!\BarcodeHoverController_inst0|Equal0~1_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal7~0_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal7~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal7~4_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal7~4 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal7~4 .lut_mask = 64'h0001000100010001;
-defparam \BarcodeHoverController_inst0|Equal7~4 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal11~1 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal11~1_combout  = ( !\Barcode_Digit_3[1]~input_o  & ( (!\Barcode_Digit_2[1]~input_o  & (!\NumOfBarcodeDigitsEntered[1]~input_o  & (((!\NumOfBarcodeDigitsEntered[2]~input_o ))))) # (\Barcode_Digit_2[1]~input_o  & 
-// (((!\NumOfBarcodeDigitsEntered[2]~input_o ) # ((!\Barcode_Digit_0[2]~input_o  & \Barcode_Digit_0[1]~input_o ))))) ) ) # ( \Barcode_Digit_3[1]~input_o  & ( (!\NumOfBarcodeDigitsEntered[1]~input_o  & (((!\NumOfBarcodeDigitsEntered[0]~input_o  & 
-// ((!\NumOfBarcodeDigitsEntered[2]~input_o )))))) ) )
-
-	.dataa(!\NumOfBarcodeDigitsEntered[1]~input_o ),
-	.datab(!\Barcode_Digit_0[2]~input_o ),
-	.datac(!\NumOfBarcodeDigitsEntered[0]~input_o ),
-	.datad(!\Barcode_Digit_0[1]~input_o ),
-	.datae(!\Barcode_Digit_3[1]~input_o ),
-	.dataf(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datag(!\Barcode_Digit_2[1]~input_o ),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal11~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal11~1 .extended_lut = "on";
-defparam \BarcodeHoverController_inst0|Equal11~1 .lut_mask = 64'hAFAFA0A0000C0000;
-defparam \BarcodeHoverController_inst0|Equal11~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal10~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal10~0_combout  = (\BarcodeHoverController_inst0|Equal7~4_combout  & (\BarcodeHoverController_inst0|Equal11~1_combout  & ((\BarcodeHoverController_inst0|ShiftRight0~1_combout ) # (\Barcode_Digit_3[0]~input_o ))))
-
-	.dataa(!\Barcode_Digit_3[0]~input_o ),
-	.datab(!\BarcodeHoverController_inst0|ShiftRight0~1_combout ),
-	.datac(!\BarcodeHoverController_inst0|Equal7~4_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal11~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal10~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal10~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal10~0 .lut_mask = 64'h0007000700070007;
-defparam \BarcodeHoverController_inst0|Equal10~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~10 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~10_combout  = (!\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~10_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~10 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~10 .lut_mask = 64'h0200020002000200;
-defparam \Decoder4x16_inst0|d1|g4~10 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[10] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~10_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[10]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[10] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[10] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[10]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal10~0_combout ),
-	.asdata(HighlightedDecoderOut[10]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[10]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[10]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[10]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \BarcodeHoverController_inst0|Equal11~0 (
-// Equation(s):
-// \BarcodeHoverController_inst0|Equal11~0_combout  = (\BarcodeHoverController_inst0|Equal5~3_combout  & (\BarcodeHoverController_inst0|Equal11~1_combout  & ((!\NumOfBarcodeDigitsEntered[2]~input_o ) # (\Barcode_Digit_0[0]~input_o ))))
-
-	.dataa(!\NumOfBarcodeDigitsEntered[2]~input_o ),
-	.datab(!\Barcode_Digit_0[0]~input_o ),
-	.datac(!\BarcodeHoverController_inst0|Equal5~3_combout ),
-	.datad(!\BarcodeHoverController_inst0|Equal11~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\BarcodeHoverController_inst0|Equal11~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \BarcodeHoverController_inst0|Equal11~0 .extended_lut = "off";
-defparam \BarcodeHoverController_inst0|Equal11~0 .lut_mask = 64'h000B000B000B000B;
-defparam \BarcodeHoverController_inst0|Equal11~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \Decoder4x16_inst0|d1|g4~11 (
-// Equation(s):
-// \Decoder4x16_inst0|d1|g4~11_combout  = (\SelectedProductID[0]~input_o  & (\SelectedProductID[1]~input_o  & (\SelectedProductID[3]~input_o  & !\SelectedProductID[2]~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\SelectedProductID[1]~input_o ),
-	.datac(!\SelectedProductID[3]~input_o ),
-	.datad(!\SelectedProductID[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\Decoder4x16_inst0|d1|g4~11_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \Decoder4x16_inst0|d1|g4~11 .extended_lut = "off";
-defparam \Decoder4x16_inst0|d1|g4~11 .lut_mask = 64'h0100010001000100;
-defparam \Decoder4x16_inst0|d1|g4~11 .shared_arith = "off";
-// synopsys translate_on
-
-dffeas \HighlightedDecoderOut[11] (
-	.clk(\CLK~input_o ),
-	.d(\Decoder4x16_inst0|d1|g4~11_combout ),
-	.asdata(vcc),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(gnd),
-	.sload(gnd),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(HighlightedDecoderOut[11]),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedDecoderOut[11] .is_wysiwyg = "true";
-defparam \HighlightedDecoderOut[11] .power_up = "low";
-// synopsys translate_on
-
-dffeas \HighlightedProductList[11]~reg0 (
-	.clk(!\CLK~input_o ),
-	.d(\BarcodeHoverController_inst0|Equal11~0_combout ),
-	.asdata(HighlightedDecoderOut[11]),
-	.clrn(vcc),
-	.aload(gnd),
-	.sclr(\HighlightedProductList[0]~0_combout ),
-	.sload(\WideOr0~0_combout ),
-	.ena(vcc),
-	.devclrn(devclrn),
-	.devpor(devpor),
-	.q(\HighlightedProductList[11]~reg0_q ),
-	.prn(vcc));
-// synopsys translate_off
-defparam \HighlightedProductList[11]~reg0 .is_wysiwyg = "true";
-defparam \HighlightedProductList[11]~reg0 .power_up = "low";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  = (!\SelectedProductID[0]~input_o  & (((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )) # (\ValidID~input_o )))
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\ValidID~input_o ),
-	.datac(!\CleanSWOut[1]~input_o ),
-	.datad(!\CleanSWOut[2]~input_o ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0 .lut_mask = 64'h2AAA2AAA2AAA2AAA;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  = ( \SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  & ( (!\SelectedProductID[1]~input_o ) # ((!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o ))) ) ) 
-// ) # ( !\SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  & ( ((!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o ))) # (\SelectedProductID[1]~input_o ) ) ) ) # ( \SelectedProductID[3]~input_o  & ( 
-// !\SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) ) # ( !\SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( ((!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & 
-// !\CleanSWOut[2]~input_o ))) # (\SelectedProductID[1]~input_o ) ) ) )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(!\SelectedProductID[1]~input_o ),
-	.datae(!\SelectedProductID[3]~input_o ),
-	.dataf(!\SelectedProductID[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1 .lut_mask = 64'h80FF808080FFFF80;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  = ( \SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  & ( ((!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o ))) # (\SelectedProductID[1]~input_o ) ) ) ) # ( 
-// !\SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  ) ) # ( \SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) ) # ( 
-// !\SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(!\SelectedProductID[1]~input_o ),
-	.datae(!\SelectedProductID[3]~input_o ),
-	.dataf(!\SelectedProductID[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0 .lut_mask = 64'h80808080FFFF80FF;
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout  = ( \SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) ) # ( !\SelectedProductID[3]~input_o  & ( 
-// \SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) ) # ( \SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( (!\SelectedProductID[1]~input_o ) # ((!\ValidID~input_o  & 
-// (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o ))) ) ) ) # ( !\SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( (!\ValidID~input_o  & (!\CleanSWOut[1]~input_o  & !\CleanSWOut[2]~input_o )) ) ) )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(!\SelectedProductID[1]~input_o ),
-	.datae(!\SelectedProductID[3]~input_o ),
-	.dataf(!\SelectedProductID[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1 .lut_mask = 64'h8080FF8080808080;
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0_combout  = (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & (!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout  & (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  $ 
-// (\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout )))) # (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & (\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & 
-// \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout )))
-
-	.dataa(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.datac(!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.datad(!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0 .lut_mask = 64'h8402840284028402;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0_combout  = (\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & ((!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  $ 
-// (\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ))) # (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & !\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ))))
-
-	.dataa(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.datac(!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.datad(!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0 .lut_mask = 64'h0902090209020902;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0_combout  = (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & ((!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & (\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & 
-// \DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout )) # (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & (!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & !\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ))))
-
-	.dataa(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.datac(!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.datad(!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0 .lut_mask = 64'h1002100210021002;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|FirstDigit~2 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout  = ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )) # (\ValidID~input_o )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(gnd),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit~2 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit~2 .lut_mask = 64'h7F7F7F7F7F7F7F7F;
-defparam \DisplaySelectedIDSeg7_inst0|FirstDigit~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2_combout  = ( \SelectedProductID[2]~input_o  & ( (\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout  & ((!\SelectedProductID[0]~input_o  & (!\SelectedProductID[1]~input_o  $ 
-// (!\SelectedProductID[3]~input_o ))) # (\SelectedProductID[0]~input_o  & ((!\SelectedProductID[1]~input_o ) # (\SelectedProductID[3]~input_o ))))) ) ) # ( !\SelectedProductID[2]~input_o  & ( (\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout  & 
-// ((!\SelectedProductID[0]~input_o ) # ((\SelectedProductID[1]~input_o  & !\SelectedProductID[3]~input_o )))) ) )
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ),
-	.datac(!\SelectedProductID[1]~input_o ),
-	.datad(!\SelectedProductID[3]~input_o ),
-	.datae(!\SelectedProductID[2]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2 .lut_mask = 64'h2322123123221231;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0_combout  = ( \SelectedProductID[2]~input_o  & ( ((!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ) # (!\SelectedProductID[1]~input_o  $ (\SelectedProductID[3]~input_o ))) # 
-// (\SelectedProductID[0]~input_o ) ) ) # ( !\SelectedProductID[2]~input_o  & ( (!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ) # (\SelectedProductID[0]~input_o ) ) )
-
-	.dataa(!\SelectedProductID[0]~input_o ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout ),
-	.datac(!\SelectedProductID[1]~input_o ),
-	.datad(!\SelectedProductID[3]~input_o ),
-	.datae(!\SelectedProductID[2]~input_o ),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0 .lut_mask = 64'hDDDDFDDFDDDDFDDF;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0_combout  = (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & ((!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  $ (\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout )) # 
-// (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ))) # (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout  & ((!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout 
-// )) # (\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  & ((\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout )))))
-
-	.dataa(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.datac(!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.datad(!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0 .lut_mask = 64'hB23FB23FB23FB23F;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0_combout  = (!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & ((!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout  $ (!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout )))) # 
-// (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout  & (!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout  & ((!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ) # (\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ))))
-
-	.dataa(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout ),
-	.datab(!\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout ),
-	.datac(!\DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout ),
-	.datad(!\DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout ),
-	.datae(gnd),
-	.dataf(gnd),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0 .lut_mask = 64'h3DC03DC03DC03DC0;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_lcell_comb \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0 (
-// Equation(s):
-// \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout  = ( !\SelectedProductID[3]~input_o  & ( \SelectedProductID[2]~input_o  & ( ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )) # (\ValidID~input_o ) ) ) ) # ( \SelectedProductID[3]~input_o 
-//  & ( !\SelectedProductID[2]~input_o  & ( (!\SelectedProductID[1]~input_o  & (((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )) # (\ValidID~input_o ))) ) ) ) # ( !\SelectedProductID[3]~input_o  & ( !\SelectedProductID[2]~input_o  & ( 
-// ((\CleanSWOut[2]~input_o ) # (\CleanSWOut[1]~input_o )) # (\ValidID~input_o ) ) ) )
-
-	.dataa(!\ValidID~input_o ),
-	.datab(!\CleanSWOut[1]~input_o ),
-	.datac(!\CleanSWOut[2]~input_o ),
-	.datad(!\SelectedProductID[1]~input_o ),
-	.datae(!\SelectedProductID[3]~input_o ),
-	.dataf(!\SelectedProductID[2]~input_o ),
-	.datag(gnd),
-	.cin(gnd),
-	.sharein(gnd),
-	.combout(\DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout ),
-	.sumout(),
-	.cout(),
-	.shareout());
-// synopsys translate_off
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0 .extended_lut = "off";
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0 .lut_mask = 64'h7F7F7F007F7F0000;
-defparam \DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0 .shared_arith = "off";
-// synopsys translate_on
-
-cyclonev_io_ibuf \BarcodeCompleted~input (
-	.i(BarcodeCompleted),
+cyclonev_io_ibuf \BasketProductNum[2]~input (
+	.i(BasketProductNum[2]),
 	.ibar(gnd),
 	.dynamicterminationcontrol(gnd),
-	.o(\BarcodeCompleted~input_o ));
+	.o(\BasketProductNum[2]~input_o ));
 // synopsys translate_off
-defparam \BarcodeCompleted~input .bus_hold = "false";
-defparam \BarcodeCompleted~input .simulate_z_as = "z";
+defparam \BasketProductNum[2]~input .bus_hold = "false";
+defparam \BasketProductNum[2]~input .simulate_z_as = "z";
 // synopsys translate_on
 
-assign HighlightedProductList[0] = \HighlightedProductList[0]~output_o ;
+cyclonev_io_ibuf \BasketProductNum[1]~input (
+	.i(BasketProductNum[1]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[1]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[1]~input .bus_hold = "false";
+defparam \BasketProductNum[1]~input .simulate_z_as = "z";
+// synopsys translate_on
 
-assign HighlightedProductList[1] = \HighlightedProductList[1]~output_o ;
+cyclonev_lcell_comb \Add6~2 (
+// Equation(s):
+// \Add6~2_combout  = !\BasketProductNum[2]~input_o  $ (((!\BasketProductNum[0]~input_o  & !\BasketProductNum[1]~input_o )))
 
-assign HighlightedProductList[2] = \HighlightedProductList[2]~output_o ;
+	.dataa(!\BasketProductNum[0]~input_o ),
+	.datab(!\BasketProductNum[2]~input_o ),
+	.datac(!\BasketProductNum[1]~input_o ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add6~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add6~2 .extended_lut = "off";
+defparam \Add6~2 .lut_mask = 64'h6C6C6C6C6C6C6C6C;
+defparam \Add6~2 .shared_arith = "off";
+// synopsys translate_on
 
-assign HighlightedProductList[3] = \HighlightedProductList[3]~output_o ;
+cyclonev_lcell_comb \Add6~1 (
+// Equation(s):
+// \Add6~1_combout  = !\BasketProductNum[0]~input_o  $ (!\BasketProductNum[1]~input_o )
 
-assign HighlightedProductList[4] = \HighlightedProductList[4]~output_o ;
+	.dataa(!\BasketProductNum[0]~input_o ),
+	.datab(!\BasketProductNum[1]~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add6~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add6~1 .extended_lut = "off";
+defparam \Add6~1 .lut_mask = 64'h6666666666666666;
+defparam \Add6~1 .shared_arith = "off";
+// synopsys translate_on
 
-assign HighlightedProductList[5] = \HighlightedProductList[5]~output_o ;
+cyclonev_lcell_comb \BasketID~3 (
+// Equation(s):
+// \BasketID~3_combout  = ( \LessThan5~1_combout  & ( \BasketID[1]~2_combout  & ( !BasketID[0] $ (!BasketID[1] $ (!\Equal1~0_combout )) ) ) ) # ( !\LessThan5~1_combout  & ( \BasketID[1]~2_combout  & ( (!\Equal1~0_combout  & (!BasketID[0] $ ((BasketID[1])))) 
+// # (\Equal1~0_combout  & (((!\Add6~1_combout )))) ) ) )
 
-assign HighlightedProductList[6] = \HighlightedProductList[6]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!\Equal1~0_combout ),
+	.datad(!\Add6~1_combout ),
+	.datae(!\LessThan5~1_combout ),
+	.dataf(!\BasketID[1]~2_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~3 .extended_lut = "off";
+defparam \BasketID~3 .lut_mask = 64'h000000009F909696;
+defparam \BasketID~3 .shared_arith = "off";
+// synopsys translate_on
 
-assign HighlightedProductList[7] = \HighlightedProductList[7]~output_o ;
+dffeas \BasketID[1] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[1] .is_wysiwyg = "true";
+defparam \BasketID[1] .power_up = "low";
+// synopsys translate_on
 
-assign HighlightedProductList[8] = \HighlightedProductList[8]~output_o ;
+cyclonev_io_ibuf \BasketProductNum[3]~input (
+	.i(BasketProductNum[3]),
+	.ibar(gnd),
+	.dynamicterminationcontrol(gnd),
+	.o(\BasketProductNum[3]~input_o ));
+// synopsys translate_off
+defparam \BasketProductNum[3]~input .bus_hold = "false";
+defparam \BasketProductNum[3]~input .simulate_z_as = "z";
+// synopsys translate_on
 
-assign HighlightedProductList[9] = \HighlightedProductList[9]~output_o ;
+cyclonev_lcell_comb \Add6~3 (
+// Equation(s):
+// \Add6~3_combout  = !\BasketProductNum[3]~input_o  $ (((!\BasketProductNum[0]~input_o  & (!\BasketProductNum[2]~input_o  & !\BasketProductNum[1]~input_o ))))
 
-assign HighlightedProductList[10] = \HighlightedProductList[10]~output_o ;
+	.dataa(!\BasketProductNum[0]~input_o ),
+	.datab(!\BasketProductNum[3]~input_o ),
+	.datac(!\BasketProductNum[2]~input_o ),
+	.datad(!\BasketProductNum[1]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add6~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add6~3 .extended_lut = "off";
+defparam \Add6~3 .lut_mask = 64'h6CCC6CCC6CCC6CCC;
+defparam \Add6~3 .shared_arith = "off";
+// synopsys translate_on
 
-assign HighlightedProductList[11] = \HighlightedProductList[11]~output_o ;
+cyclonev_lcell_comb \Add4~1 (
+// Equation(s):
+// \Add4~1_combout  = !BasketID[3] $ (((!BasketID[0] & (!BasketID[1] & !BasketID[2]))))
 
-assign HEX4[0] = \HEX4[0]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add4~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add4~1 .extended_lut = "off";
+defparam \Add4~1 .lut_mask = 64'h7F807F807F807F80;
+defparam \Add4~1 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX4[1] = \HEX4[1]~output_o ;
+cyclonev_lcell_comb \Add5~1 (
+// Equation(s):
+// \Add5~1_combout  = !BasketID[3] $ (((!BasketID[0]) # ((!BasketID[1]) # (!BasketID[2]))))
 
-assign HEX4[2] = \HEX4[2]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add5~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add5~1 .extended_lut = "off";
+defparam \Add5~1 .lut_mask = 64'h01FE01FE01FE01FE;
+defparam \Add5~1 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX4[3] = \HEX4[3]~output_o ;
+cyclonev_lcell_comb \BasketID~5 (
+// Equation(s):
+// \BasketID~5_combout  = ( \Add4~1_combout  & ( \Add5~1_combout  & ( (\Equal1~0_combout  & (\BasketID[1]~2_combout  & ((!\Add6~3_combout ) # (\LessThan5~1_combout )))) ) ) ) # ( !\Add4~1_combout  & ( \Add5~1_combout  & ( (\BasketID[1]~2_combout  & 
+// ((!\Equal1~0_combout ) # ((!\Add6~3_combout ) # (\LessThan5~1_combout )))) ) ) ) # ( \Add4~1_combout  & ( !\Add5~1_combout  & ( (\Equal1~0_combout  & (!\Add6~3_combout  & (!\LessThan5~1_combout  & \BasketID[1]~2_combout ))) ) ) ) # ( !\Add4~1_combout  & ( 
+// !\Add5~1_combout  & ( (\BasketID[1]~2_combout  & ((!\Equal1~0_combout ) # ((!\Add6~3_combout  & !\LessThan5~1_combout )))) ) ) )
 
-assign HEX4[4] = \HEX4[4]~output_o ;
+	.dataa(!\Equal1~0_combout ),
+	.datab(!\Add6~3_combout ),
+	.datac(!\LessThan5~1_combout ),
+	.datad(!\BasketID[1]~2_combout ),
+	.datae(!\Add4~1_combout ),
+	.dataf(!\Add5~1_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~5_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~5 .extended_lut = "off";
+defparam \BasketID~5 .lut_mask = 64'h00EA004000EF0045;
+defparam \BasketID~5 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX4[5] = \HEX4[5]~output_o ;
+dffeas \BasketID[3] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~5_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[3] .is_wysiwyg = "true";
+defparam \BasketID[3] .power_up = "low";
+// synopsys translate_on
 
-assign HEX4[6] = \HEX4[6]~output_o ;
+cyclonev_lcell_comb \LessThan4~0 (
+// Equation(s):
+// \LessThan4~0_combout  = (((BasketID[3]) # (BasketID[2])) # (BasketID[1])) # (BasketID[0])
 
-assign HEX5[0] = \HEX5[0]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(!BasketID[3]),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan4~0 .extended_lut = "off";
+defparam \LessThan4~0 .lut_mask = 64'h7FFF7FFF7FFF7FFF;
+defparam \LessThan4~0 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX5[1] = \HEX5[1]~output_o ;
+cyclonev_lcell_comb \BasketID[1]~2 (
+// Equation(s):
+// \BasketID[1]~2_combout  = ( \RESET_N~input_o  & ( (\CleanSW2~input_o  & (((!\Dir_in[0]~input_o  & \Dir_in[1]~input_o )) # (\LessThan4~0_combout ))) ) )
 
-assign HEX5[2] = \HEX5[2]~output_o ;
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\Dir_in[0]~input_o ),
+	.datac(!\Dir_in[1]~input_o ),
+	.datad(!\LessThan4~0_combout ),
+	.datae(!\RESET_N~input_o ),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID[1]~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID[1]~2 .extended_lut = "off";
+defparam \BasketID[1]~2 .lut_mask = 64'h0000045500000455;
+defparam \BasketID[1]~2 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX5[3] = \HEX5[3]~output_o ;
+cyclonev_lcell_comb \Add4~0 (
+// Equation(s):
+// \Add4~0_combout  = !BasketID[2] $ (((!BasketID[0] & !BasketID[1])))
 
-assign HEX5[4] = \HEX5[4]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add4~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add4~0 .extended_lut = "off";
+defparam \Add4~0 .lut_mask = 64'h7878787878787878;
+defparam \Add4~0 .shared_arith = "off";
+// synopsys translate_on
 
-assign HEX5[5] = \HEX5[5]~output_o ;
+cyclonev_lcell_comb \Add5~0 (
+// Equation(s):
+// \Add5~0_combout  = !BasketID[2] $ (((!BasketID[0]) # (!BasketID[1])))
 
-assign HEX5[6] = \HEX5[6]~output_o ;
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!BasketID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add5~0 .extended_lut = "off";
+defparam \Add5~0 .lut_mask = 64'h1E1E1E1E1E1E1E1E;
+defparam \Add5~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~4 (
+// Equation(s):
+// \BasketID~4_combout  = ( \Add4~0_combout  & ( \Add5~0_combout  & ( (\Equal1~0_combout  & (\BasketID[1]~2_combout  & ((!\Add6~2_combout ) # (\LessThan5~1_combout )))) ) ) ) # ( !\Add4~0_combout  & ( \Add5~0_combout  & ( (\BasketID[1]~2_combout  & 
+// ((!\Equal1~0_combout ) # ((!\Add6~2_combout ) # (\LessThan5~1_combout )))) ) ) ) # ( \Add4~0_combout  & ( !\Add5~0_combout  & ( (\Equal1~0_combout  & (!\Add6~2_combout  & (!\LessThan5~1_combout  & \BasketID[1]~2_combout ))) ) ) ) # ( !\Add4~0_combout  & ( 
+// !\Add5~0_combout  & ( (\BasketID[1]~2_combout  & ((!\Equal1~0_combout ) # ((!\Add6~2_combout  & !\LessThan5~1_combout )))) ) ) )
+
+	.dataa(!\Equal1~0_combout ),
+	.datab(!\Add6~2_combout ),
+	.datac(!\LessThan5~1_combout ),
+	.datad(!\BasketID[1]~2_combout ),
+	.datae(!\Add4~0_combout ),
+	.dataf(!\Add5~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~4 .extended_lut = "off";
+defparam \BasketID~4 .lut_mask = 64'h00EA004000EF0045;
+defparam \BasketID~4 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[2] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(!\BasketID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[2] .is_wysiwyg = "true";
+defparam \BasketID[2] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Add6~0 (
+// Equation(s):
+// \Add6~0_combout  = (!\BasketProductNum[0]~input_o  & !\BasketProductNum[1]~input_o )
+
+	.dataa(!\BasketProductNum[0]~input_o ),
+	.datab(!\BasketProductNum[1]~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Add6~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Add6~0 .extended_lut = "off";
+defparam \Add6~0 .lut_mask = 64'h8888888888888888;
+defparam \Add6~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \LessThan5~0 (
+// Equation(s):
+// \LessThan5~0_combout  = (!BasketID[0] & ((!\BasketProductNum[1]~input_o  & ((!\BasketProductNum[0]~input_o ))) # (\BasketProductNum[1]~input_o  & (!BasketID[1])))) # (BasketID[0] & (!BasketID[1] & (!\BasketProductNum[0]~input_o  $ 
+// (\BasketProductNum[1]~input_o ))))
+
+	.dataa(!BasketID[0]),
+	.datab(!BasketID[1]),
+	.datac(!\BasketProductNum[0]~input_o ),
+	.datad(!\BasketProductNum[1]~input_o ),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan5~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan5~0 .extended_lut = "off";
+defparam \LessThan5~0 .lut_mask = 64'hE08CE08CE08CE08C;
+defparam \LessThan5~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \LessThan5~1 (
+// Equation(s):
+// \LessThan5~1_combout  = ( \Add6~0_combout  & ( \LessThan5~0_combout  & ( (!BasketID[2] & ((!BasketID[3]) # (!\BasketProductNum[3]~input_o  $ (\BasketProductNum[2]~input_o )))) # (BasketID[2] & ((!\BasketProductNum[3]~input_o  & 
+// ((!\BasketProductNum[2]~input_o ))) # (\BasketProductNum[3]~input_o  & (!BasketID[3])))) ) ) ) # ( !\Add6~0_combout  & ( \LessThan5~0_combout  & ( (!BasketID[3] & ((!BasketID[2]) # ((\BasketProductNum[2]~input_o ) # (\BasketProductNum[3]~input_o )))) # 
+// (BasketID[3] & (\BasketProductNum[3]~input_o  & ((!BasketID[2]) # (\BasketProductNum[2]~input_o )))) ) ) ) # ( \Add6~0_combout  & ( !\LessThan5~0_combout  & ( (!\BasketProductNum[3]~input_o  & (((!\BasketProductNum[2]~input_o )))) # 
+// (\BasketProductNum[3]~input_o  & (!BasketID[3] & ((!BasketID[2]) # (\BasketProductNum[2]~input_o )))) ) ) ) # ( !\Add6~0_combout  & ( !\LessThan5~0_combout  & ( (!BasketID[3] & (((!BasketID[2] & \BasketProductNum[2]~input_o )) # 
+// (\BasketProductNum[3]~input_o ))) # (BasketID[3] & (!BasketID[2] & (\BasketProductNum[3]~input_o  & \BasketProductNum[2]~input_o ))) ) ) )
+
+	.dataa(!BasketID[2]),
+	.datab(!BasketID[3]),
+	.datac(!\BasketProductNum[3]~input_o ),
+	.datad(!\BasketProductNum[2]~input_o ),
+	.datae(!\Add6~0_combout ),
+	.dataf(!\LessThan5~0_combout ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\LessThan5~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \LessThan5~1 .extended_lut = "off";
+defparam \LessThan5~1 .lut_mask = 64'h0C8EF80C8ECFFC8E;
+defparam \LessThan5~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \BasketID~6 (
+// Equation(s):
+// \BasketID~6_combout  = ( !\Equal1~0_combout  & ( ((!BasketID[0] & (((\BasketID~0_combout  & \LessThan4~0_combout )))) # (BasketID[0] & (\BasketID~1_combout ))) ) ) # ( \Equal1~0_combout  & ( (!BasketID[0] & (((\BasketID~0_combout  & 
+// ((!\BasketProductNum[0]~input_o ) # (\LessThan5~1_combout )))))) # (BasketID[0] & (((\BasketID~0_combout  & (!\BasketProductNum[0]~input_o  & !\LessThan5~1_combout ))) # (\BasketID~1_combout ))) ) )
+
+	.dataa(!\BasketID~1_combout ),
+	.datab(!\BasketID~0_combout ),
+	.datac(!\BasketProductNum[0]~input_o ),
+	.datad(!\LessThan5~1_combout ),
+	.datae(!\Equal1~0_combout ),
+	.dataf(!BasketID[0]),
+	.datag(!\LessThan4~0_combout ),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\BasketID~6_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \BasketID~6 .extended_lut = "on";
+defparam \BasketID~6 .lut_mask = 64'h0303303355557555;
+defparam \BasketID~6 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \BasketID[0] (
+	.clk(!\CLOCK~input_o ),
+	.d(\BasketID~6_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(vcc),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(BasketID[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \BasketID[0] .is_wysiwyg = "true";
+defparam \BasketID[0] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Mux0~0 (
+// Equation(s):
+// \Mux0~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( ((ImgID[1] & (ImgID[0] & ImgID[2]))) # (ImgID[3]) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[3] & ImgID[2]) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  
+// & ( (ImgID[2]) # (ImgID[3]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (ImgID[3] & (((ImgID[2]) # (ImgID[0])) # (ImgID[1]))) ) ) )
+
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[2]),
+	.datae(!\Dir_in[1]~input_o ),
+	.dataf(!\Dir_in[0]~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Mux0~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Mux0~0 .extended_lut = "off";
+defparam \Mux0~0 .lut_mask = 64'h070F0FFF000F0F1F;
+defparam \Mux0~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~4 (
+// Equation(s):
+// \ImgID~4_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & \Mux0~0_combout ))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux0~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~4_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~4 .extended_lut = "off";
+defparam \ImgID~4 .lut_mask = 64'h0202020202020202;
+defparam \ImgID~4 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~1 (
+// Equation(s):
+// \ImgID~1_combout  = (!\RESET_N~input_o ) # (\Enable~input_o )
+
+	.dataa(!\Enable~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(gnd),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~1 .extended_lut = "off";
+defparam \ImgID~1 .lut_mask = 64'hDDDDDDDDDDDDDDDD;
+defparam \ImgID~1 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ImgID[3] (
+	.clk(!\CLOCK~input_o ),
+	.d(\ImgID~4_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\ImgID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(ImgID[3]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ImgID[3] .is_wysiwyg = "true";
+defparam \ImgID[3] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Mux1~0 (
+// Equation(s):
+// \Mux1~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[3] & (!ImgID[2] $ (((!ImgID[1]) # (!ImgID[0]))))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[3] & !ImgID[2]) ) ) ) # ( \Dir_in[1]~input_o  & ( 
+// !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[2]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[1] & ((!ImgID[0] & (ImgID[3] & !ImgID[2])) # (ImgID[0] & ((ImgID[2]))))) # (ImgID[1] & (((ImgID[2])))) ) ) )
+
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[2]),
+	.datae(!\Dir_in[1]~input_o ),
+	.dataf(!\Dir_in[0]~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Mux1~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Mux1~0 .extended_lut = "off";
+defparam \Mux1~0 .lut_mask = 64'h0877F0000F0010E0;
+defparam \Mux1~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~3 (
+// Equation(s):
+// \ImgID~3_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & \Mux1~0_combout ))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux1~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~3 .extended_lut = "off";
+defparam \ImgID~3 .lut_mask = 64'h0202020202020202;
+defparam \ImgID~3 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ImgID[2] (
+	.clk(!\CLOCK~input_o ),
+	.d(\ImgID~3_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\ImgID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(ImgID[2]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ImgID[2] .is_wysiwyg = "true";
+defparam \ImgID[2] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Mux2~0 (
+// Equation(s):
+// \Mux2~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[0] & (!ImgID[1] & ((!ImgID[2]) # (!ImgID[3])))) # (ImgID[0] & (((!ImgID[3] & ImgID[1])))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[1]) # ((!ImgID[2] & 
+// !ImgID[3])) ) ) ) # ( \Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[1]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( (!ImgID[0] & (((!ImgID[2] & !ImgID[3])) # (ImgID[1]))) # (ImgID[0] & (((!ImgID[1])))) ) ) )
+
+	.dataa(!ImgID[2]),
+	.datab(!ImgID[0]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[1]),
+	.datae(!\Dir_in[1]~input_o ),
+	.dataf(!\Dir_in[0]~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Mux2~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Mux2~0 .extended_lut = "off";
+defparam \Mux2~0 .lut_mask = 64'hB3CCF000FFA0C830;
+defparam \Mux2~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~2 (
+// Equation(s):
+// \ImgID~2_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & !\Mux2~0_combout ))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux2~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~2 .extended_lut = "off";
+defparam \ImgID~2 .lut_mask = 64'h2020202020202020;
+defparam \ImgID~2 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ImgID[1] (
+	.clk(!\CLOCK~input_o ),
+	.d(\ImgID~2_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\ImgID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(ImgID[1]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ImgID[1] .is_wysiwyg = "true";
+defparam \ImgID[1] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \Mux3~0 (
+// Equation(s):
+// \Mux3~0_combout  = ( \Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (ImgID[0] & ((!ImgID[3]) # ((!ImgID[1] & !ImgID[2])))) ) ) ) # ( !\Dir_in[1]~input_o  & ( \Dir_in[0]~input_o  & ( (!ImgID[0]) # ((!ImgID[2] & !ImgID[3])) ) ) ) # ( \Dir_in[1]~input_o  & 
+// ( !\Dir_in[0]~input_o  & ( (!ImgID[3] & !ImgID[0]) ) ) ) # ( !\Dir_in[1]~input_o  & ( !\Dir_in[0]~input_o  & ( ((!ImgID[1] & (!ImgID[2] & !ImgID[3]))) # (ImgID[0]) ) ) )
+
+	.dataa(!ImgID[1]),
+	.datab(!ImgID[2]),
+	.datac(!ImgID[3]),
+	.datad(!ImgID[0]),
+	.datae(!\Dir_in[1]~input_o ),
+	.dataf(!\Dir_in[0]~input_o ),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\Mux3~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \Mux3~0 .extended_lut = "off";
+defparam \Mux3~0 .lut_mask = 64'h80FFF000FFC000F8;
+defparam \Mux3~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ImgID~0 (
+// Equation(s):
+// \ImgID~0_combout  = (!\CleanSW2~input_o  & (\RESET_N~input_o  & !\Mux3~0_combout ))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!\RESET_N~input_o ),
+	.datac(!\Mux3~0_combout ),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ImgID~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ImgID~0 .extended_lut = "off";
+defparam \ImgID~0 .lut_mask = 64'h2020202020202020;
+defparam \ImgID~0 .shared_arith = "off";
+// synopsys translate_on
+
+dffeas \ImgID[0] (
+	.clk(!\CLOCK~input_o ),
+	.d(\ImgID~0_combout ),
+	.asdata(vcc),
+	.clrn(vcc),
+	.aload(gnd),
+	.sclr(gnd),
+	.sload(gnd),
+	.ena(\ImgID~1_combout ),
+	.devclrn(devclrn),
+	.devpor(devpor),
+	.q(ImgID[0]),
+	.prn(vcc));
+// synopsys translate_off
+defparam \ImgID[0] .is_wysiwyg = "true";
+defparam \ImgID[0] .power_up = "low";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~0 (
+// Equation(s):
+// \ProductID~0_combout  = (!\CleanSW2~input_o  & ((ImgID[0]))) # (\CleanSW2~input_o  & (BasketID[0]))
+
+	.dataa(!BasketID[0]),
+	.datab(!\CleanSW2~input_o ),
+	.datac(!ImgID[0]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~0_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~0 .extended_lut = "off";
+defparam \ProductID~0 .lut_mask = 64'h1D1D1D1D1D1D1D1D;
+defparam \ProductID~0 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~1 (
+// Equation(s):
+// \ProductID~1_combout  = (!\CleanSW2~input_o  & ((ImgID[1]))) # (\CleanSW2~input_o  & (BasketID[1]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[1]),
+	.datac(!ImgID[1]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~1_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~1 .extended_lut = "off";
+defparam \ProductID~1 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~1 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~2 (
+// Equation(s):
+// \ProductID~2_combout  = (!\CleanSW2~input_o  & ((ImgID[2]))) # (\CleanSW2~input_o  & (BasketID[2]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[2]),
+	.datac(!ImgID[2]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~2_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~2 .extended_lut = "off";
+defparam \ProductID~2 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~2 .shared_arith = "off";
+// synopsys translate_on
+
+cyclonev_lcell_comb \ProductID~3 (
+// Equation(s):
+// \ProductID~3_combout  = (!\CleanSW2~input_o  & ((ImgID[3]))) # (\CleanSW2~input_o  & (BasketID[3]))
+
+	.dataa(!\CleanSW2~input_o ),
+	.datab(!BasketID[3]),
+	.datac(!ImgID[3]),
+	.datad(gnd),
+	.datae(gnd),
+	.dataf(gnd),
+	.datag(gnd),
+	.cin(gnd),
+	.sharein(gnd),
+	.combout(\ProductID~3_combout ),
+	.sumout(),
+	.cout(),
+	.shareout());
+// synopsys translate_off
+defparam \ProductID~3 .extended_lut = "off";
+defparam \ProductID~3 .lut_mask = 64'h1B1B1B1B1B1B1B1B;
+defparam \ProductID~3 .shared_arith = "off";
+// synopsys translate_on
+
+assign ProductID[0] = \ProductID[0]~output_o ;
+
+assign ProductID[1] = \ProductID[1]~output_o ;
+
+assign ProductID[2] = \ProductID[2]~output_o ;
+
+assign ProductID[3] = \ProductID[3]~output_o ;
 
 endmodule

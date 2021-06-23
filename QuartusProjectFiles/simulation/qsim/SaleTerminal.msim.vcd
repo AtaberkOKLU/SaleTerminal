@@ -3,7 +3,7 @@ $comment
 		vcd file SaleTerminal.msim.vcd -direction
 $end
 $date
-	Mon Jun 21 22:00:40 2021
+	Wed Jun 23 21:38:42 2021
 $end
 $version
 	ModelSim Version 2020.1
@@ -12,1042 +12,710 @@ $timescale
 	1ps
 $end
 
-$scope module HoverController_vlg_vec_tst $end
-$var reg 1 ! BarcodeCompleted $end
-$var reg 4 " Barcode_Digit_0 [3:0] $end
-$var reg 4 # Barcode_Digit_1 [3:0] $end
-$var reg 4 $ Barcode_Digit_2 [3:0] $end
-$var reg 4 % Barcode_Digit_3 [3:0] $end
-$var reg 1 & CLK $end
-$var reg 2 ' CleanSWOut [2:1] $end
-$var reg 3 ( NumOfBarcodeDigitsEntered [2:0] $end
-$var reg 4 ) SelectedProductID [3:0] $end
-$var reg 1 * ValidID $end
-$var wire 1 + HEX4 [6] $end
-$var wire 1 , HEX4 [5] $end
-$var wire 1 - HEX4 [4] $end
-$var wire 1 . HEX4 [3] $end
-$var wire 1 / HEX4 [2] $end
-$var wire 1 0 HEX4 [1] $end
-$var wire 1 1 HEX4 [0] $end
-$var wire 1 2 HEX5 [6] $end
-$var wire 1 3 HEX5 [5] $end
-$var wire 1 4 HEX5 [4] $end
-$var wire 1 5 HEX5 [3] $end
-$var wire 1 6 HEX5 [2] $end
-$var wire 1 7 HEX5 [1] $end
-$var wire 1 8 HEX5 [0] $end
-$var wire 1 9 HighlightedProductList [11] $end
-$var wire 1 : HighlightedProductList [10] $end
-$var wire 1 ; HighlightedProductList [9] $end
-$var wire 1 < HighlightedProductList [8] $end
-$var wire 1 = HighlightedProductList [7] $end
-$var wire 1 > HighlightedProductList [6] $end
-$var wire 1 ? HighlightedProductList [5] $end
-$var wire 1 @ HighlightedProductList [4] $end
-$var wire 1 A HighlightedProductList [3] $end
-$var wire 1 B HighlightedProductList [2] $end
-$var wire 1 C HighlightedProductList [1] $end
-$var wire 1 D HighlightedProductList [0] $end
+$scope module Direction2ProductID_vlg_vec_tst $end
+$var reg 4 ! BasketProductNum [3:0] $end
+$var reg 1 " CLOCK $end
+$var reg 1 # CleanSW2 $end
+$var reg 2 $ Dir_in [1:0] $end
+$var reg 1 % Enable $end
+$var reg 1 & RESET_N $end
+$var wire 1 ' ProductID [3] $end
+$var wire 1 ( ProductID [2] $end
+$var wire 1 ) ProductID [1] $end
+$var wire 1 * ProductID [0] $end
 
 $scope module i1 $end
-$var wire 1 E gnd $end
-$var wire 1 F vcc $end
-$var wire 1 G unknown $end
-$var tri1 1 H devclrn $end
-$var tri1 1 I devpor $end
-$var tri1 1 J devoe $end
-$var wire 1 K BarcodeCompleted~input_o $end
-$var wire 1 L HighlightedProductList[0]~output_o $end
-$var wire 1 M HighlightedProductList[1]~output_o $end
-$var wire 1 N HighlightedProductList[2]~output_o $end
-$var wire 1 O HighlightedProductList[3]~output_o $end
-$var wire 1 P HighlightedProductList[4]~output_o $end
-$var wire 1 Q HighlightedProductList[5]~output_o $end
-$var wire 1 R HighlightedProductList[6]~output_o $end
-$var wire 1 S HighlightedProductList[7]~output_o $end
-$var wire 1 T HighlightedProductList[8]~output_o $end
-$var wire 1 U HighlightedProductList[9]~output_o $end
-$var wire 1 V HighlightedProductList[10]~output_o $end
-$var wire 1 W HighlightedProductList[11]~output_o $end
-$var wire 1 X HEX4[0]~output_o $end
-$var wire 1 Y HEX4[1]~output_o $end
-$var wire 1 Z HEX4[2]~output_o $end
-$var wire 1 [ HEX4[3]~output_o $end
-$var wire 1 \ HEX4[4]~output_o $end
-$var wire 1 ] HEX4[5]~output_o $end
-$var wire 1 ^ HEX4[6]~output_o $end
-$var wire 1 _ HEX5[0]~output_o $end
-$var wire 1 ` HEX5[1]~output_o $end
-$var wire 1 a HEX5[2]~output_o $end
-$var wire 1 b HEX5[3]~output_o $end
-$var wire 1 c HEX5[4]~output_o $end
-$var wire 1 d HEX5[5]~output_o $end
-$var wire 1 e HEX5[6]~output_o $end
-$var wire 1 f CLK~input_o $end
-$var wire 1 g NumOfBarcodeDigitsEntered[2]~input_o $end
-$var wire 1 h NumOfBarcodeDigitsEntered[0]~input_o $end
-$var wire 1 i NumOfBarcodeDigitsEntered[1]~input_o $end
-$var wire 1 j BarcodeHoverController_inst0|ShiftRight0~0_combout $end
-$var wire 1 k Barcode_Digit_1[1]~input_o $end
-$var wire 1 l Barcode_Digit_2[1]~input_o $end
-$var wire 1 m Barcode_Digit_2[0]~input_o $end
-$var wire 1 n BarcodeHoverController_inst0|Prdct0_Check~0_combout $end
-$var wire 1 o Barcode_Digit_1[2]~input_o $end
-$var wire 1 p Barcode_Digit_0[3]~input_o $end
-$var wire 1 q Barcode_Digit_2[2]~input_o $end
-$var wire 1 r Barcode_Digit_2[3]~input_o $end
-$var wire 1 s BarcodeHoverController_inst0|Equal0~0_combout $end
-$var wire 1 t Barcode_Digit_1[3]~input_o $end
-$var wire 1 u Barcode_Digit_3[3]~input_o $end
-$var wire 1 v BarcodeHoverController_inst0|Equal0~1_combout $end
-$var wire 1 w Barcode_Digit_3[2]~input_o $end
-$var wire 1 x Barcode_Digit_3[1]~input_o $end
-$var wire 1 y BarcodeHoverController_inst0|Equal0~2_combout $end
-$var wire 1 z BarcodeHoverController_inst0|Equal0~3_combout $end
-$var wire 1 { Barcode_Digit_0[0]~input_o $end
-$var wire 1 | Barcode_Digit_0[1]~input_o $end
-$var wire 1 } Barcode_Digit_0[2]~input_o $end
-$var wire 1 ~ BarcodeHoverController_inst0|Equal0~4_combout $end
-$var wire 1 !! Barcode_Digit_1[0]~input_o $end
-$var wire 1 "! Barcode_Digit_3[0]~input_o $end
-$var wire 1 #! BarcodeHoverController_inst0|Equal0~5_combout $end
-$var wire 1 $! BarcodeHoverController_inst0|Equal0~6_combout $end
-$var wire 1 %! SelectedProductID[0]~input_o $end
-$var wire 1 &! SelectedProductID[1]~input_o $end
-$var wire 1 '! SelectedProductID[3]~input_o $end
-$var wire 1 (! SelectedProductID[2]~input_o $end
-$var wire 1 )! Decoder4x16_inst0|d1|g4~0_combout $end
-$var wire 1 *! ValidID~input_o $end
-$var wire 1 +! CleanSWOut[1]~input_o $end
-$var wire 1 ,! CleanSWOut[2]~input_o $end
-$var wire 1 -! HighlightedProductList[0]~0_combout $end
-$var wire 1 .! WideOr0~0_combout $end
-$var wire 1 /! HighlightedProductList[0]~reg0_q $end
-$var wire 1 0! BarcodeHoverController_inst0|Equal0~7_combout $end
-$var wire 1 1! BarcodeHoverController_inst0|Equal1~0_combout $end
-$var wire 1 2! BarcodeHoverController_inst0|ShiftRight0~1_combout $end
-$var wire 1 3! BarcodeHoverController_inst0|Equal1~1_combout $end
-$var wire 1 4! BarcodeHoverController_inst0|Equal1~2_combout $end
-$var wire 1 5! Decoder4x16_inst0|d1|g4~1_combout $end
-$var wire 1 6! HighlightedProductList[1]~reg0_q $end
-$var wire 1 7! BarcodeHoverController_inst0|Equal2~0_combout $end
-$var wire 1 8! Decoder4x16_inst0|d1|g4~2_combout $end
-$var wire 1 9! HighlightedProductList[2]~reg0_q $end
-$var wire 1 :! BarcodeHoverController_inst0|Equal9~0_combout $end
-$var wire 1 ;! BarcodeHoverController_inst0|Equal3~0_combout $end
-$var wire 1 <! Decoder4x16_inst0|d1|g4~3_combout $end
-$var wire 1 =! HighlightedProductList[3]~reg0_q $end
-$var wire 1 >! BarcodeHoverController_inst0|Equal4~0_combout $end
-$var wire 1 ?! BarcodeHoverController_inst0|Equal4~1_combout $end
-$var wire 1 @! Decoder4x16_inst0|d1|g4~4_combout $end
-$var wire 1 A! HighlightedProductList[4]~reg0_q $end
-$var wire 1 B! BarcodeHoverController_inst0|Equal5~0_combout $end
-$var wire 1 C! BarcodeHoverController_inst0|Equal5~1_combout $end
-$var wire 1 D! BarcodeHoverController_inst0|Equal5~2_combout $end
-$var wire 1 E! BarcodeHoverController_inst0|Equal5~3_combout $end
-$var wire 1 F! BarcodeHoverController_inst0|Equal5~4_combout $end
-$var wire 1 G! Decoder4x16_inst0|d1|g4~5_combout $end
-$var wire 1 H! HighlightedProductList[5]~reg0_q $end
-$var wire 1 I! BarcodeHoverController_inst0|Equal6~0_combout $end
-$var wire 1 J! BarcodeHoverController_inst0|Equal6~1_combout $end
-$var wire 1 K! Decoder4x16_inst0|d1|g4~6_combout $end
-$var wire 1 L! HighlightedProductList[6]~reg0_q $end
-$var wire 1 M! BarcodeHoverController_inst0|Equal7~0_combout $end
-$var wire 1 N! BarcodeHoverController_inst0|Equal7~1_combout $end
-$var wire 1 O! BarcodeHoverController_inst0|Equal7~2_combout $end
-$var wire 1 P! BarcodeHoverController_inst0|Equal7~3_combout $end
-$var wire 1 Q! Decoder4x16_inst0|d1|g4~7_combout $end
-$var wire 1 R! HighlightedProductList[7]~reg0_q $end
-$var wire 1 S! BarcodeHoverController_inst0|Equal8~0_combout $end
-$var wire 1 T! BarcodeHoverController_inst0|Equal8~1_combout $end
-$var wire 1 U! Decoder4x16_inst0|d1|g4~8_combout $end
-$var wire 1 V! HighlightedProductList[8]~reg0_q $end
-$var wire 1 W! BarcodeHoverController_inst0|Equal9~1_combout $end
-$var wire 1 X! BarcodeHoverController_inst0|Equal9~2_combout $end
-$var wire 1 Y! Decoder4x16_inst0|d1|g4~9_combout $end
-$var wire 1 Z! HighlightedProductList[9]~reg0_q $end
-$var wire 1 [! BarcodeHoverController_inst0|Equal7~4_combout $end
-$var wire 1 \! BarcodeHoverController_inst0|Equal11~1_combout $end
-$var wire 1 ]! BarcodeHoverController_inst0|Equal10~0_combout $end
-$var wire 1 ^! Decoder4x16_inst0|d1|g4~10_combout $end
-$var wire 1 _! HighlightedProductList[10]~reg0_q $end
-$var wire 1 `! BarcodeHoverController_inst0|Equal11~0_combout $end
-$var wire 1 a! Decoder4x16_inst0|d1|g4~11_combout $end
-$var wire 1 b! HighlightedProductList[11]~reg0_q $end
-$var wire 1 c! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~0_combout $end
-$var wire 1 d! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~1_combout $end
-$var wire 1 e! DisplaySelectedIDSeg7_inst0|FirstDigit[2]~0_combout $end
-$var wire 1 f! DisplaySelectedIDSeg7_inst0|FirstDigit[3]~1_combout $end
-$var wire 1 g! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr6~0_combout $end
-$var wire 1 h! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr5~0_combout $end
-$var wire 1 i! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr4~0_combout $end
-$var wire 1 j! DisplaySelectedIDSeg7_inst0|FirstDigit~2_combout $end
-$var wire 1 k! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr3~2_combout $end
-$var wire 1 l! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr2~0_combout $end
-$var wire 1 m! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr1~0_combout $end
-$var wire 1 n! DisplaySelectedIDSeg7_inst0|Segment7_HEX4|WideOr0~0_combout $end
-$var wire 1 o! DisplaySelectedIDSeg7_inst0|Segment7_HEX5|Decoder0~0_combout $end
-$var wire 1 p! BarcodeHoverController_inst0|Barcode_Extract [15] $end
-$var wire 1 q! BarcodeHoverController_inst0|Barcode_Extract [14] $end
-$var wire 1 r! BarcodeHoverController_inst0|Barcode_Extract [13] $end
-$var wire 1 s! BarcodeHoverController_inst0|Barcode_Extract [12] $end
-$var wire 1 t! BarcodeHoverController_inst0|Barcode_Extract [11] $end
-$var wire 1 u! BarcodeHoverController_inst0|Barcode_Extract [10] $end
-$var wire 1 v! BarcodeHoverController_inst0|Barcode_Extract [9] $end
-$var wire 1 w! BarcodeHoverController_inst0|Barcode_Extract [8] $end
-$var wire 1 x! BarcodeHoverController_inst0|Barcode_Extract [7] $end
-$var wire 1 y! BarcodeHoverController_inst0|Barcode_Extract [6] $end
-$var wire 1 z! BarcodeHoverController_inst0|Barcode_Extract [5] $end
-$var wire 1 {! BarcodeHoverController_inst0|Barcode_Extract [4] $end
-$var wire 1 |! BarcodeHoverController_inst0|Barcode_Extract [3] $end
-$var wire 1 }! BarcodeHoverController_inst0|Barcode_Extract [2] $end
-$var wire 1 ~! BarcodeHoverController_inst0|Barcode_Extract [1] $end
-$var wire 1 !" BarcodeHoverController_inst0|Barcode_Extract [0] $end
-$var wire 1 "" HighlightedDecoderOut [11] $end
-$var wire 1 #" HighlightedDecoderOut [10] $end
-$var wire 1 $" HighlightedDecoderOut [9] $end
-$var wire 1 %" HighlightedDecoderOut [8] $end
-$var wire 1 &" HighlightedDecoderOut [7] $end
-$var wire 1 '" HighlightedDecoderOut [6] $end
-$var wire 1 (" HighlightedDecoderOut [5] $end
-$var wire 1 )" HighlightedDecoderOut [4] $end
-$var wire 1 *" HighlightedDecoderOut [3] $end
-$var wire 1 +" HighlightedDecoderOut [2] $end
-$var wire 1 ," HighlightedDecoderOut [1] $end
-$var wire 1 -" HighlightedDecoderOut [0] $end
+$var wire 1 + gnd $end
+$var wire 1 , vcc $end
+$var wire 1 - unknown $end
+$var tri1 1 . devclrn $end
+$var tri1 1 / devpor $end
+$var tri1 1 0 devoe $end
+$var wire 1 1 ProductID[0]~output_o $end
+$var wire 1 2 ProductID[1]~output_o $end
+$var wire 1 3 ProductID[2]~output_o $end
+$var wire 1 4 ProductID[3]~output_o $end
+$var wire 1 5 CLOCK~input_o $end
+$var wire 1 6 CleanSW2~input_o $end
+$var wire 1 7 Dir_in[0]~input_o $end
+$var wire 1 8 Dir_in[1]~input_o $end
+$var wire 1 9 Enable~input_o $end
+$var wire 1 : RESET_N~input_o $end
+$var wire 1 ; BasketID~1_combout $end
+$var wire 1 < BasketID~0_combout $end
+$var wire 1 = BasketProductNum[0]~input_o $end
+$var wire 1 > Equal1~0_combout $end
+$var wire 1 ? BasketProductNum[2]~input_o $end
+$var wire 1 @ BasketProductNum[1]~input_o $end
+$var wire 1 A Add6~2_combout $end
+$var wire 1 B Add6~1_combout $end
+$var wire 1 C BasketID~3_combout $end
+$var wire 1 D BasketProductNum[3]~input_o $end
+$var wire 1 E Add6~3_combout $end
+$var wire 1 F Add4~1_combout $end
+$var wire 1 G Add5~1_combout $end
+$var wire 1 H BasketID~5_combout $end
+$var wire 1 I LessThan4~0_combout $end
+$var wire 1 J BasketID[1]~2_combout $end
+$var wire 1 K Add4~0_combout $end
+$var wire 1 L Add5~0_combout $end
+$var wire 1 M BasketID~4_combout $end
+$var wire 1 N Add6~0_combout $end
+$var wire 1 O LessThan5~0_combout $end
+$var wire 1 P LessThan5~1_combout $end
+$var wire 1 Q BasketID~6_combout $end
+$var wire 1 R Mux0~0_combout $end
+$var wire 1 S ImgID~4_combout $end
+$var wire 1 T ImgID~1_combout $end
+$var wire 1 U Mux1~0_combout $end
+$var wire 1 V ImgID~3_combout $end
+$var wire 1 W Mux2~0_combout $end
+$var wire 1 X ImgID~2_combout $end
+$var wire 1 Y Mux3~0_combout $end
+$var wire 1 Z ImgID~0_combout $end
+$var wire 1 [ ProductID~0_combout $end
+$var wire 1 \ ProductID~1_combout $end
+$var wire 1 ] ProductID~2_combout $end
+$var wire 1 ^ ProductID~3_combout $end
+$var wire 1 _ BasketID [3] $end
+$var wire 1 ` BasketID [2] $end
+$var wire 1 a BasketID [1] $end
+$var wire 1 b BasketID [0] $end
+$var wire 1 c ImgID [3] $end
+$var wire 1 d ImgID [2] $end
+$var wire 1 e ImgID [1] $end
+$var wire 1 f ImgID [0] $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-0!
-b1111 "
-b1111 #
-b1111 $
-b1111 %
-0&
-b0 '
-b0 (
-b0 )
+b101 !
+1"
+0#
+b0 $
+0%
+1&
 0*
-11
-10
-1/
-1.
-1-
+0)
+0(
+0'
+0+
 1,
-1+
-18
-17
-16
+x-
+1.
+1/
+10
+01
+02
+03
+04
 15
-14
-13
-12
-0D
-0C
-0B
-0A
-0@
-0?
-0>
-0=
-0<
-0;
-0:
+06
+07
+08
 09
-0E
-1F
-xG
-1H
-1I
-1J
+1:
+1;
+0<
+1=
+0>
+1?
+0@
+0A
+1B
+0C
+0D
+1E
+0F
+0G
+0H
+0I
+0J
 0K
 0L
 0M
 0N
 0O
-0P
+1P
 0Q
 0R
 0S
 0T
 0U
 0V
-0W
-1X
+1W
+0X
 1Y
-1Z
-1[
-1\
-1]
-1^
-1_
-1`
-1a
-1b
-1c
-1d
-1e
+0Z
+0[
+0\
+0]
+0^
+0b
+0a
+0`
+0_
 0f
-0g
-0h
-0i
-1j
-1k
-1l
-1m
-0n
-1o
-1p
-1q
-1r
-1s
-1t
-1u
-1v
-1w
-1x
-1y
-1z
-1{
-1|
-1}
-0~
-1!!
-1"!
-1#!
-1$!
-0%!
-0&!
-0'!
-0(!
-1)!
-0*!
-0+!
-0,!
-1-!
-0.!
-0/!
-10!
-11!
-12!
-13!
-14!
-05!
-06!
-17!
-08!
-09!
-1:!
-1;!
-0<!
-0=!
-0>!
-1?!
-0@!
-0A!
-1B!
-1C!
-1D!
-1E!
-1F!
-0G!
-0H!
-1I!
-1J!
-0K!
-0L!
-1M!
-1N!
-1O!
-1P!
-0Q!
-0R!
-0S!
-1T!
-0U!
-0V!
-1W!
-1X!
-0Y!
-0Z!
-1[!
-1\!
-1]!
-0^!
-0_!
-1`!
-0a!
-0b!
-0c!
-1d!
-1e!
-1f!
-1g!
-1h!
-1i!
-0j!
-0k!
-1l!
-1m!
-0n!
-0o!
-z!"
-z~!
-z}!
-z|!
-z{!
-zz!
-0y!
-zx!
-zw!
-0v!
-zu!
-zt!
-zs!
-zr!
-zq!
-zp!
-0-"
-0,"
-0+"
-0*"
-0)"
-0("
-0'"
-0&"
-0%"
-0$"
-0#"
-0""
+0e
+0d
+0c
 $end
 #5000
-1&
-1f
-1-"
-#10000
-0&
-0f
-#15000
-1&
-1f
-#20000
-b111 %
-b11 %
-b1 (
-0&
-1h
-0w
-0u
-0f
-0\!
-0O!
-0I!
-02!
-0-!
-03!
-0]!
-0J!
-0P!
-0`!
-0X!
-07!
-04!
-#25000
-1&
-1f
-#30000
-0&
-0f
-1/!
-1=!
-1A!
-1H!
-1V!
-1T
-1Q
-1P
-1O
-1L
-1D
-1A
-1@
-1?
-1<
-#35000
-1&
-1f
-#40000
-0&
-0f
-#45000
-1&
-1f
-#50000
-0&
-0f
-#55000
-1&
-1f
-#60000
-b111 $
-b11 $
-b1 $
-b11 (
-b10 (
-0&
-0h
-1i
-0l
-0q
-0r
-0f
-0D!
-0F!
-0E!
-#65000
-1&
-1f
-#70000
-0&
-0f
-0H!
-0Q
-0?
-#75000
-1&
-1f
-#80000
-0&
-0f
-#85000
-1&
-1f
-#90000
-0&
-0f
-#95000
-1&
-1f
-#100000
-0&
-0f
-#105000
-1&
-1f
-#110000
-b111 #
-b11 #
-b10 #
-b11 (
-0&
-1h
-0!!
-0o
-0t
-0f
-0M!
-01!
-1S!
-0N!
-0C!
-0j
-0[!
-0T!
-0?!
-#115000
-1&
-1f
-#120000
-0&
-0f
-0A!
-0V!
-0T
-0P
-0@
-0<
-#125000
-1&
-1f
-#130000
-0&
-0f
-#135000
-1&
-1f
-#140000
-0&
-0f
-#145000
-1&
-1f
-#150000
-1!
-b111 "
-b11 "
-b1 "
-b111 (
-b10 )
-b11 )
-1*
-b101 (
-b100 (
-0&
-1K
-1%!
-1&!
-0h
-0i
-1g
-0|
-0}
-0p
-1*!
-0f
-1o!
-1j!
-0f!
-0e!
-0B!
-1~
-1<!
-0)!
-0a
-0`
-0d
-0c
-0b
-0_
-1n!
-1k!
-08
+0"
 05
-04
-03
-07
-06
-0$!
-0i!
-0h!
-0g!
-0X
-0Y
-0Z
-0[
-0^
-0+
-0.
-0/
-00
-01
-#155000
-1&
-1f
-1*"
-0-"
-#160000
-0&
-0f
-0/!
-0L
-0D
-#165000
-1&
-1f
-#170000
-0&
-0f
-#175000
-1&
-1f
-#180000
-0&
-0f
-#185000
-1&
-1f
-#190000
-0&
-0f
-#195000
-1&
-1f
-#200000
-0&
-0f
-#205000
-1&
-1f
-#210000
-b1011 %
-b1111 %
-b1001 $
-b1101 $
-b1111 $
-b1010 #
-b1110 #
-b1111 #
-0!
-b1001 "
-b1101 "
-b1111 "
-b0 (
-b1 )
-b0 )
-0*
-0&
-0K
-0%!
-0&!
-0g
-1|
-1}
-1p
-1!!
-1o
-1t
-1l
-1q
-1r
-1w
-1u
-0*!
-0f
-0o!
-0j!
-1f!
-1e!
-1-!
-1M!
-1C!
-1\!
-1O!
-1I!
-1D!
-0:!
-11!
-1B!
-0~
-0S!
-1N!
-12!
-1j
-0l!
-0<!
-1)!
-0\
-1a
-1`
-1d
-1c
-1b
-1_
-1:!
-13!
-1[!
-1E!
-0n!
-0k!
+#10000
+1"
+15
+#15000
+0"
+05
+#20000
+1%
+b10 $
+1"
+19
 18
 15
-14
-13
-17
-16
-0-
-1J!
-0;!
-1$!
-1T!
-1?!
-1P!
-1i!
-1h!
-1g!
-1l!
-1\
-1X
-1Y
-1Z
-1[
-1^
-1+
-1.
-1/
-10
-11
-1-
-1`!
-1F!
-1]!
-1X!
-17!
-14!
-1;!
-#215000
-1&
-1f
-0*"
-1-"
-#220000
-0&
-0f
-0=!
-0O
-0A
-#225000
-1&
-1f
-#230000
-b1 '
-0&
-1+!
-0f
-1o!
-1j!
-0f!
-0e!
-0d!
-1c!
-1.!
-0a
-0`
-0d
-0c
-0b
-0_
-1k!
-08
+1U
+1>
+0;
+1T
+1V
+#25000
+0"
 05
-04
-03
-07
-06
-0m!
-0i!
-0h!
-0g!
-0l!
-0\
-0X
+1d
+0U
+1R
+1]
+13
+1(
+1S
+0V
+#30000
+0%
+b0 $
+1"
+09
+08
+15
 0Y
+0W
+0R
+0>
+1;
+0T
+0S
+1X
+1Z
+#35000
+0"
+05
+#40000
+1"
+15
+#45000
+0"
+05
+#50000
+1%
+b10 $
+1"
+19
+18
+15
+1Y
+1W
+1R
+1>
+0;
+1T
+1S
+0X
 0Z
+#55000
+0"
+05
+1c
+0d
+0Y
+0W
 0]
-0[
-0.
-0,
-0/
-00
-01
-0-
-#235000
-1&
-1f
-#240000
-b111 %
-b11 %
-b111 $
-b11 $
+1^
+14
+03
+0(
+1'
+1X
+1Z
+#60000
+0%
+b0 $
+1"
+09
+08
+15
+1U
+0R
+0>
+1;
+0T
+0S
+1V
+#65000
+0"
+05
+#70000
 b1 $
-b111 #
-b11 #
-b10 #
-b111 "
-b11 "
-b1 "
-b100 (
-b10 )
-b11 )
-1*
-0&
-1%!
-1&!
-1g
-0|
-0}
-0p
-0!!
-0o
-0t
-0l
-0q
-0r
-0w
-0u
-1*!
-0f
-1d!
-0c!
-0-!
-0M!
-0C!
-0\!
-0O!
-0I!
-0D!
-01!
-0B!
-1~
-1S!
-0N!
-02!
-0j
-0X!
-0F!
-04!
-1l!
-1<!
-0)!
+b11 $
+1"
+17
+18
+15
+1W
+0U
+1R
+1S
+0V
+0X
+#75000
+0"
+05
+#80000
+1%
+b10 $
+b0 $
+1"
+19
+07
+08
+15
+0W
+1U
+0R
+0;
+1T
+0S
+1V
+1X
+#85000
+0"
+05
+0c
+1d
+1e
+1f
+1Y
+1[
 1\
-03!
-0[!
-0E!
-1n!
-1-
-0J!
-0$!
-0]!
-0T!
-0?!
-0P!
-07!
-0`!
-1m!
 1]
 0^
-0+
-1,
-#245000
-1&
-1f
-1*"
-0-"
-#250000
-0&
+04
+13
+12
+11
+1*
+1)
+1(
+0'
+0Z
+#90000
+0%
+1"
+09
+15
+0T
+1;
+#95000
+0"
+05
+#100000
+b1 $
+b11 $
+1%
+1"
+17
+18
+19
+15
+1T
+0;
+1W
+0U
+1R
+1S
+0V
+0X
+#105000
+0"
+05
+1c
+0d
+0e
 0f
-1=!
-1O
-1A
-#255000
-1&
-1f
-#260000
-b1011 %
-b1111 %
-b1001 $
-b1101 $
-b1111 $
-b1010 #
-b1110 #
-b1111 #
-b1001 "
-b1101 "
-b1111 "
-b0 (
-b1 )
-b0 )
-0*
-0&
-0%!
-0&!
-0g
-1|
-1}
-1p
-1!!
-1o
-1t
-1l
-1q
-1r
-1w
-1u
-0*!
-0f
-0d!
-1c!
-1-!
-1M!
-1C!
-1\!
-1O!
-1I!
-1D!
-0:!
-11!
-1B!
-0~
-0S!
-1N!
-12!
-1j
-0l!
-0<!
-1)!
+0Y
+0[
 0\
-1:!
-13!
-1[!
-1E!
-0n!
-0-
-1J!
-0;!
-1$!
-1T!
-1?!
-1P!
-0m!
 0]
 1^
-1+
-0,
-1`!
-1F!
-1]!
-1X!
-17!
-14!
-1;!
+14
+03
+02
+01
+0*
+0)
+0(
+1'
+1Z
+#110000
+b10 $
+b0 $
+0%
+1"
+07
+08
+09
+15
+0T
+1;
+0W
+1U
+0R
+0S
+1V
+1X
+#115000
+0"
+05
+#120000
+b10 $
+1%
+1"
+18
+19
+15
+1T
+0;
+0U
+1R
+1>
+1S
+0V
+#125000
+0"
+05
+1e
+1f
+1[
+1\
+12
+11
+1*
+1)
+#130000
+b11 $
+b1 $
+1"
+17
+08
+15
+1U
+0R
+0>
+0S
+1V
+#135000
+0"
+05
+0c
+1d
+0U
+1]
+0^
+04
+13
+1(
+0'
+0V
+#140000
+0%
+b0 $
+1"
+09
+07
+15
+1Y
+1U
+1;
+0T
+1V
+0Z
+#145000
+0"
+05
+#150000
+1#
+1"
+16
+15
+0]
+0\
+0[
+0X
+0V
+01
+02
+03
+0(
+0)
+0*
+#155000
+0"
+05
+#160000
+b10 $
+1%
+1"
+18
+19
+15
+1T
+1<
+0;
+0Y
+0U
+1R
+1J
+1>
+1Q
+#165000
+0"
+05
+1b
+0d
+0e
+0f
+1Y
+1W
+1U
+0R
+1K
+1I
+1F
+1[
+0Q
+1C
+11
+1*
+#170000
+1"
+15
+#175000
+0"
+05
+1a
+0b
+0[
+1Q
+1\
+12
+01
+0*
+1)
+#180000
+1"
+15
+#185000
+0"
+05
+1b
+1L
+1[
+0Q
+0C
+11
+1*
+1M
+#190000
+1"
+15
+#195000
+0"
+05
+0a
+1`
+0b
+0P
+0[
+1Q
+1]
+0\
+02
+13
+01
+0*
+1(
+0)
+0Q
+#200000
+1"
+15
+#205000
+0"
+05
+#210000
+1"
+15
+#215000
+0"
+05
+#220000
+b0 $
+0%
+1"
+08
+09
+15
+0T
+0<
+1;
+0U
+0>
+0M
+1C
+#225000
+0"
+05
+#230000
+1%
+1"
+19
+15
+1T
+#235000
+0"
+05
+#240000
+b1 $
+1"
+17
+15
+1<
+0;
+1Q
+#245000
+0"
+05
+1a
+0`
+1b
+1P
+1[
+0Q
+0]
+1\
+12
+03
+11
+1*
+0(
+1)
+#250000
+1"
+15
+#255000
+0"
+05
+0b
+0L
+0[
+1Q
+0C
+01
+0*
+#260000
+1"
+15
 #265000
-1&
-1f
-0*"
-1-"
+0"
+05
+0a
+1b
+1[
+0Q
+0\
+02
+11
+1*
+0)
 #270000
-0&
-0f
-0=!
-0O
-0A
+b0 $
+1"
+07
+15
+0<
+1;
+1Q
 #275000
-1&
-1f
+0"
+05
 #280000
-0&
-0f
+b10 $
+b11 $
+1"
+17
+18
+15
+0Y
 #285000
-1&
-1f
+0"
+05
 #290000
-0&
-0f
+0#
+0%
+b1 $
+b0 $
+1"
+06
+09
+07
+08
+15
+1Y
+0J
+0T
+0[
+1Z
+01
+0*
+0Z
 #295000
-1&
-1f
+0"
+05
 #300000
 0&
-0f
+1"
+0:
+15
+1T
+0;
+0Q
 #305000
-1&
-1f
+0"
+05
+0b
+0K
+0I
+0F
 #310000
-0&
-0f
-#315000
 1&
-1f
+1"
+1:
+15
+0T
+1;
+#315000
+0"
+05
 #320000

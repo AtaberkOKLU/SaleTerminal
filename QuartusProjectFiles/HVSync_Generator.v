@@ -72,17 +72,17 @@ module HVSync_Generator
 		 else
 			CounterX <= CounterX + 11'd1;
 
-assign cHD = (CounterX<SYNC_PULSE_H)?1'b0:1'b1;
-assign cVD = (CounterY<SYNC_PULSE_V)?1'b0:1'b1;
+	assign cHD = (CounterX<SYNC_PULSE_H)?1'b0:1'b1;
+	assign cVD = (CounterY<SYNC_PULSE_V)?1'b0:1'b1;
 
-assign hori_valid = (CounterX<(WHOLE_H-FRONT_PORCH_H)&& CounterX>=BACK_PORCH_H)?1'b1:1'b0;
-assign vert_valid = (CounterY<(WHOLE_V-FRONT_PORCH_V)&& CounterY>=BACK_PORCH_V)?1'b1:1'b0;
-assign cDEN = hori_valid && vert_valid;
+	assign hori_valid = (CounterX<(WHOLE_H-FRONT_PORCH_H)&& CounterX>=BACK_PORCH_H)?1'b1:1'b0;
+	assign vert_valid = (CounterY<(WHOLE_V-FRONT_PORCH_V)&& CounterY>=BACK_PORCH_V)?1'b1:1'b0;
+	assign cDEN = hori_valid && vert_valid;
 
-always@(negedge VGA_CLK)
-	begin
-	  VGA_HS<=cHD;
-	  VGA_VS<=cVD;
-	  VGA_BLANK_N<=cDEN;
-	end
+	always@(negedge VGA_CLK)
+		begin
+		  VGA_HS<=cHD;
+		  VGA_VS<=cVD;
+		  VGA_BLANK_N<=cDEN;
+		end
 endmodule

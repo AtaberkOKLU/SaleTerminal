@@ -1,4 +1,4 @@
-Fitter Status : Successful - Wed Jun 23 15:10:12 2021
+Fitter Status : Successful - Wed Jun 23 21:45:12 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
 Top-level Entity Name : SaleTerminal
@@ -6,7 +6,7 @@ Family : Cyclone V
 Device : 5CSEMA5F31C6
 Timing Models : Final
 Logic utilization (in ALMs) : 358 / 32,070 ( 1 % )
-Total registers : 217
+Total registers : 218
 Total pins : 90 / 457 ( 20 % )
 Total virtual pins : 0
 Total block memory bits : 2,880,000 / 4,065,280 ( 71 % )

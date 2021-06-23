@@ -1,5 +1,5 @@
 Flow report for SaleTerminal
-Wed Jun 23 15:10:28 2021
+Wed Jun 23 21:45:29 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jun 23 15:10:28 2021       ;
+; Flow Status                     ; Successful - Wed Jun 23 21:45:29 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -49,7 +49,7 @@ https://fpgasoftware.intel.com/eula.
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
 ; Logic utilization (in ALMs)     ; 358 / 32,070 ( 1 % )                        ;
-; Total registers                 ; 217                                         ;
+; Total registers                 ; 218                                         ;
 ; Total pins                      ; 90 / 457 ( 20 % )                           ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,880,000 / 4,065,280 ( 71 % )              ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/23/2021 15:08:39 ;
+; Start date & time ; 06/23/2021 21:43:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SaleTerminal        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 141812761300711.162445011815028        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 141812761300711.162447381403116        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SaleTerminal_tb                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; VGA_Controller_tb                 ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
@@ -129,10 +129,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4865 MB             ; 00:00:24                           ;
-; Fitter               ; 00:01:21     ; 1.1                     ; 6870 MB             ; 00:02:21                           ;
-; Assembler            ; 00:00:14     ; 1.0                     ; 4886 MB             ; 00:00:14                           ;
-; Total                ; 00:01:47     ; --                      ; --                  ; 00:02:59                           ;
+; Analysis & Synthesis ; 00:00:13     ; 1.0                     ; 4857 MB             ; 00:00:26                           ;
+; Fitter               ; 00:01:24     ; 1.1                     ; 6857 MB             ; 00:02:27                           ;
+; Assembler            ; 00:00:15     ; 1.0                     ; 4889 MB             ; 00:00:15                           ;
+; Total                ; 00:01:52     ; --                      ; --                  ; 00:03:08                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
