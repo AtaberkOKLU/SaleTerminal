@@ -210,23 +210,26 @@ always @ (posedge CLOCK_50)
 						RST_BarcodeController_Level 	<= 0;
 						RST_Direction2ProductID_Level <= 0;
 						
-						if (|KEY_Reg)			// If a Key Button is still pressed
-							State <= State1_Idle;	// Wait in Idle until released
-						else if (CMD_Reg[3] & CMD_En[3]) 						// Select Button is Pressed?
+						if (CMD_Reg[3] & CMD_En[3]) 						// Select Button is Pressed?
 							State <= State6_EndShopping;	// 	End the Shopping
 						else if(CleanSWOut[2])				// SW2 is Active?
 							begin
 								RST_BarcodeController_Level <= 1;
+								ProductID_out <= 4'b1111;
 								State <= State5_BasketEdit;	// 	Go to Basket Editing Mode
 							end
 						else if (CleanSWOut[1])				// SW1 is Active?
 							begin
 								RST_Direction2ProductID_Level <= 1;
 								RST_BarcodeController_Level <= 1;
+								ProductID_out <= 4'b1111;
 								State <= State3_Interactive;	// 	Go to Interactive Mode
 							end
 						else										// None is active?
-							State <= State2_Barcode;		// 	Go to Barcode Mode
+							begin
+								State <= State2_Barcode;		// 	Go to Barcode Mode
+								ProductID_out <= 4'b1111;
+							end
 					end
 					
 		State2_Barcode	:	// Barcode Mode State
@@ -239,7 +242,7 @@ always @ (posedge CLOCK_50)
 						if(CleanSWOut[1] | CleanSWOut[2])			// SW1 or SW2 active?
 							begin
 								RST_BarcodeController_Level 	<= 1;
-								State <= State1_Idle;						// 	Go to IDLE State for proper handling
+								State <= State1_Idle;					// 	Go to IDLE State for proper handling
 							end
 						else if(CMD_Reg[0] & CMD_En[0])				// End Shopping Pressed?
 								State <= State6_EndShopping;
@@ -291,7 +294,7 @@ always @ (posedge CLOCK_50)
 										// Reset the Barcode Register
 										RST_BarcodeController_Level <= 1;
 										// 	Wait in this state
-										State <= State1_Idle;				
+										State <= State2_Barcode;				
 									end
 							end
 								

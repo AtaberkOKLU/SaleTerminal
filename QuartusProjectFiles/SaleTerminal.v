@@ -168,7 +168,6 @@ HoverController HoverController_inst0(
 	.Barcode_Digit_2(Barcode_Digit_2),
 	.Barcode_Digit_3(Barcode_Digit_3),
 	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
-	.BarcodeCompleted(BarcodeDigitCompleted),
 	.SelectedProductID(ProductID_out),				// From Direction2ProductID
 	.HighlightedProductList(HighlightedProductList),
 	.HEX4(HEX4),

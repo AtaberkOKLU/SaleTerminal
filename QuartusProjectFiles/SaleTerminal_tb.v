@@ -20,36 +20,38 @@ wire[6:0] 	HEX0;
 wire[6:0] 	HEX1;
 wire[6:0] 	HEX2;
 wire[6:0] 	HEX3;
+wire[6:0] 	HEX4;
 wire[6:0] 	HEX5;
 wire[9:0] 	LEDR;
 
 SaleTerminal SaleTerminal_inst0(
-	CLOCK_50,
-	RESET_N,
-	KEY,
-	SW,
+	.CLOCK_50(CLOCK_50),
+	.RESET_N(RESET_N),
+	.KEY(KEY),
+	.SW(SW),
 
-	VGA_R,
-	VGA_G,
-	VGA_B,
-	VGA_CLK,
-	VGA_HS,
-	VGA_VS,
-	VGA_BLANK_N,
-	VGA_SYNC_N,
-	HEX0,
-	HEX1,
-	HEX2,
-	HEX3,
-	HEX5,
-	LEDR
+	.VGA_R(VGA_R),
+	.VGA_G(VGA_G),
+	.VGA_B(VGA_B),
+	.VGA_BLANK_N(VGA_BLANK_N),
+	.VGA_CLK(VGA_CLK),
+	.VGA_HS(VGA_HS),
+	.VGA_VS(VGA_VS),
+	.VGA_SYNC_N(VGA_SYNC_N),
+	.HEX0(HEX0),
+	.HEX1(HEX1),
+	.HEX2(HEX2),
+	.HEX3(HEX3),
+	.HEX4(HEX4),
+	.HEX5(HEX5),
+	.LEDR(LEDR)
 );
 
 initial
 	begin
 		CLOCK_50 = 0;
 		RESET_N  = 1;
-		SW			= 0;
+		SW			= 3'b000;
 		KEY 		= 4'b1111;
 	end
 	
@@ -64,41 +66,46 @@ always
 	begin
 		#2000;
 		/* ENTER 1213 BARCODE & PRESS SELECT BUTTON BEGIN */
-		KEY[3] <= 0;
+		KEY[3] = 0;
 		#200;
-		KEY[3] <= 1;
+		KEY[3] = 1;
 		#400;
-		KEY[2] <= 0;
+		KEY[2] = 0;
 		#200;
-		KEY[2] <= 1;
+		KEY[2] = 1;
 		#400;
-		KEY[3] <= 0;
+		KEY[3] = 0;
 		#200;
-		KEY[3] <= 1;
+		KEY[3] = 1;
 		#400;
-		KEY[1] <= 0;
+		KEY[1] = 0;
 		#200;
-		KEY[1] <= 1;
+		KEY[1] = 1;
 		#400;
-		SW[0]  <= 1;
+		SW[0]  = 1;
 		#200;
-		KEY[0] <= 0;
+		KEY[3] = 0;
 		#200;
-		KEY[0] <= 1;
+		KEY[3] = 1;
 		#400;
-		SW[0]  <= 0;
+		SW[0]  = 0;
 		/* ENTER 1213 BARCODE & PRESS SELECT BUTTON END */
+		/* Quantity = 3 */
+		#400;
+		KEY[1] = 0;
+		#200;
+		KEY[1] = 1;
 		#1000;
 		/* Interactive Select BEGIN */
-		SW[1]  <= 0;
+		SW[1]  = 1;
 		#200;
-		KEY[1] <= 0;
+		KEY[1] = 0;
 		#200;
-		KEY[1] <= 1;
+		KEY[1] = 1;
 		#200;
-		KEY[0] <= 0;
+		KEY[0] = 0;
 		#200;
-		KEY[0] <= 1;
+		KEY[0] = 1;
 		/* Interactive Select END */
 		
 		#(64'd20000000);

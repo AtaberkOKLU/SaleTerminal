@@ -14,7 +14,6 @@
 module BarcodeHoverController(
 	input  wire [15:0] 	Barcode_in,
 	input  wire [2:0]	 	NumOfBarcodeDigitsEntered,
-	input  wire 			BarcodeCompleted,
 	
 	output wire [11:0] 	HighlightedBarcodeOut
 );
@@ -82,6 +81,6 @@ assign Prdct11_Extract		= ((Prdct_11_Barcode)&(16'hFFFF>>(NumOfBarcodeDigitsEnte
 assign Prdct11_Check			=  (Prdct_11_Barcode == (Barcode_Extract|Prdct11_Extract));
 
 
-assign HighlightedBarcodeOut = (BarcodeCompleted)?{Prdct11_Check, Prdct10_Check, Prdct9_Check, Prdct8_Check, Prdct7_Check, Prdct6_Check, Prdct5_Check, Prdct4_Check, Prdct3_Check, Prdct2_Check, Prdct1_Check, Prdct0_Check}:12'b0;
+assign HighlightedBarcodeOut = (|NumOfBarcodeDigitsEntered)?{Prdct11_Check, Prdct10_Check, Prdct9_Check, Prdct8_Check, Prdct7_Check, Prdct6_Check, Prdct5_Check, Prdct4_Check, Prdct3_Check, Prdct2_Check, Prdct1_Check, Prdct0_Check}:12'b0;
 
 endmodule

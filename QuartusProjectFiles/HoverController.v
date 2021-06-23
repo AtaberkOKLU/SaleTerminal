@@ -20,7 +20,6 @@ module HoverController(
 	input wire [3:0] Barcode_Digit_2,
 	input wire [3:0] Barcode_Digit_3,
 	input wire [2:0] NumOfBarcodeDigitsEntered,
-	input wire 		  BarcodeCompleted,
 	
 	// State Machine
 	input wire 		  ValidID,
@@ -43,8 +42,7 @@ wire [15:0] Barcode_in = {Barcode_Digit_3, Barcode_Digit_2, Barcode_Digit_1, Bar
 BarcodeHoverController BarcodeHoverController_inst0(
 	.Barcode_in(Barcode_in),
 	.NumOfBarcodeDigitsEntered(NumOfBarcodeDigitsEntered),
-	.HighlightedBarcodeOut(HighlightedBarcodeOut),
-	.BarcodeCompleted(BarcodeCompleted)
+	.HighlightedBarcodeOut(HighlightedBarcodeOut)
 );
 
  
@@ -67,16 +65,13 @@ DisplaySelectedIDSeg7 DisplaySelectedIDSeg7_inst0(
 
 
 always @ (posedge CLK)
-	HighlightedDecoderOut <= DecoderOut[11:0];
+	HighlightedDecoderOut <= (|CleanSWOut)?DecoderOut[11:0]:12'b0;
 
 
 always @ (negedge CLK)
 	begin
 		if(|CleanSWOut)
-			if(ValidID)
-				HighlightedProductList <= HighlightedDecoderOut;
-			else
-				HighlightedProductList <= 12'b0;
+			HighlightedProductList <= HighlightedDecoderOut;
 		else
 			HighlightedProductList <= HighlightedBarcodeOut;
 	end
