@@ -806,6 +806,16 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[1]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[2]
 set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION" -to HPS_DDR3_DM[3]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE text_controller_tb.v
+set_global_assignment -name VERILOG_FILE text_controller_general.v
+set_global_assignment -name VERILOG_FILE price_writer.v
+set_global_assignment -name VERILOG_FILE number_writer_pixel.v
+set_global_assignment -name VERILOG_FILE num_calc.v
+set_global_assignment -name VERILOG_FILE mux_13x1.v
+set_global_assignment -name VERILOG_FILE mux_11x1.v
 set_global_assignment -name VERILOG_FILE writer.v
 set_global_assignment -name VERILOG_FILE text_controller.v
 set_global_assignment -name VERILOG_FILE mux_9x1.v
@@ -859,7 +869,4 @@ set_global_assignment -name VERILOG_FILE Binary2BCD_2D.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE Bin2BCD.vwf
 set_global_assignment -name VERILOG_FILE BarcodeHoverController.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE HoverController.vwf
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
