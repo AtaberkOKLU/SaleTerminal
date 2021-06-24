@@ -52,6 +52,8 @@ module VGA_Controller
 	 input  wire SW2,
 	 input  wire[3:0] BasketProductNum,
 	 input  wire [47:0] BasketProductIDList,
+	 input  wire [239:0] numbers,
+	 input  wire [19:0] total_price,
 	 
     output wire [R_WIDTH-1:0] VGA_R,
 	 output wire [G_WIDTH-1:0] VGA_G,
@@ -120,7 +122,9 @@ module VGA_Controller
 		.SW2(SW2),
 		.PixBus(PixBux_wire),
 		.BasketProductNum(BasketProductNum),
-		.BasketProductIDList(BasketProductIDList)
+		.BasketProductIDList(BasketProductIDList),
+		.numbers(numbers),
+		.total_price(total_price)
 	);
 	
 assign {VGA_B, VGA_G, VGA_R} = PixBux_wire;
