@@ -576,7 +576,7 @@ begin
 		
 end  
 
-	assign NUM = NUM_REG + 1;
+	assign NUM = NUM_REG;
 	assign T_PRICE = T_PRICE_REG;
 	
 	assign P_LIST_0 = P_LIST_REG_0;
