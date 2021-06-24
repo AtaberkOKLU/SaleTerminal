@@ -69,7 +69,7 @@ writer writer_12(
 
 letter_writer letter_writer_1(
 .H_counter(H_counter),
-.ve_counter(V_counter),
+.V_counter(V_counter),
 .CLK(CLK),
 .output_bit(output_bit),
 .words(dat)
