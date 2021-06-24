@@ -24,7 +24,7 @@ input
   In8; //The eight 8-bit input lines of the Mux 
 
 input [2:0] Sel; //The three bit selection line 
-output [7:0] Out; //The single 8-bit output line of the Mux 
+output Out; //The single 8-bit output line of the Mux 
 reg [7:0] Out;
 input enable; 
 

@@ -2,7 +2,8 @@ module text_controller(product_IDS,CLK,H_counter,V_counter,output_bit);
 
 input [47:0]product_IDS;
 input CLK;
-input [9:0] H_counter,V_counter;
+input [10:0] H_counter;
+input [9:0] V_counter;
 output output_bit;
 wire [755:0] dat;
 

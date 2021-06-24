@@ -1,6 +1,7 @@
 module letter_writer(H_counter,V_counter,CLK,output_bit,words);
 
-input [9:0] H_counter,V_counter;
+input [10:0] H_counter;
+input [9:0] V_counter;
 input CLK;
 wire [62:0]letters;
 output output_bit;
@@ -70,12 +71,26 @@ mux_12x1 mux_12x1_1(
 
 );
 
+wire p_1= (ve_counter >= 10'd60 & ve_counter <= 10'd75);
+wire p_2= (ve_counter >= 10'd100 & ve_counter <=10'd115);
+wire p_3= (ve_counter >= 10'd140 & ve_counter <=10'd155);
+wire p_4= (ve_counter >= 10'd180 & ve_counter <=10'd195);
+wire p_5= (ve_counter >= 10'd220 & ve_counter <=10'd235);
+wire p_6= (ve_counter >= 10'd260 & ve_counter <=10'd275);
+wire p_7= (ve_counter >= 10'd300 & ve_counter <=10'd315);
+wire p_8= (ve_counter >= 10'd340 & ve_counter <=10'd355);
+wire p_9= (ve_counter >= 10'd380 & ve_counter <=10'd395);
+wire p_10=(ve_counter >= 10'd420 & ve_counter <=10'd435);
+wire p_11=(ve_counter >= 10'd460 & ve_counter <=10'd475);
+wire p_12=(ve_counter >= 10'd500 & ve_counter <=10'd515);
+
+
 
 always @(posedge CLK)
  begin
-  if (ve_counter >= 10'b0000111100 & ve_counter <= 10'b0001001011 & ve_counter >= 10'b0001100100 & ve_counter <= 10'b0001110011 & ve_counter >= 10'b0010001100 & ve_counter <= 10'b0010011011 & ve_counter >= 10'b0010110100 & ve_counter <= 10'b0011000011  & ve_counter >= 10'b0100000100 & ve_counter <= 10'b0100010011 & ve_counter >= 10'b0100101100 & ve_counter <= 10'b0100111011 & ve_counter >= 10'b0101010100 & ve_counter <= 10'b0101100011 & ve_counter >= 10'b0101111100 & ve_counter <= 10'b0110001011 & ve_counter >= 10'b0110100100 & ve_counter <= 10'b0110110011 & ve_counter >= 10'b0111001100 & ve_counter <= 10'b0111011011 & ve_counter >= 10'b0111110100 & ve_counter <= 10'b1000000011) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
+  if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
   begin
-	if (H_counter>=10'b0000010100 & H_counter<=10'b0001011011)  //20 & 91
+	if (H_counter>=11'd65 & H_counter<=11'd137)  //20 & 91
 	begin
 		enable<=1'b1;
 		row_counter<=row_counter + 3'b001;
