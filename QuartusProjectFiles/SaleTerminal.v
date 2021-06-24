@@ -95,6 +95,9 @@ VGA_Controller VGA_Controller_inst0(
 /* STATE MACHINE BEGIN */
 wire [3:0] ProductQuantity;
 wire BasketController_Enable_Pulse;
+wire BasketController_Cancel_Pulse;
+wire BasketController_RSTN_Pulse;
+
 //wire [1:0] Dir_in;
 wire [2:0] State;
 wire Barcode_Enable_Pulse;				// From StateMachine
@@ -130,6 +133,8 @@ StateMachine StateMachine_inst0(
 	.ProductQuantity(ProductQuantity),
 	.ProductID_out(ProductID_out),
 	.BasketController_Enable_Pulse(BasketController_Enable_Pulse),
+	.BasketController_Cancel_Pulse(BasketController_Cancel_Pulse),
+	.BasketController_RSTN_Pulse(BasketController_RSTN_Pulse),
 	.Product_valid(ValidID),
 	.BasketProductNum(BasketProductNum),
 	
@@ -179,6 +184,87 @@ HoverController HoverController_inst0(
 );
 /* HOVER CONTROLLER END */
 
+/* BASKET CONTROLLER BEGIN */
+
+wire [15:0] T_PRICE, PRICE_LIST_0, PRICE_LIST_1, PRICE_LIST_2, PRICE_LIST_3, PRICE_LIST_4;
+wire [15:0] PRICE_LIST_5, PRICE_LIST_6, PRICE_LIST_7, PRICE_LIST_8, PRICE_LIST_9;
+wire [15:0] PRICE_LIST_10, PRICE_LIST_11;
+
+wire [3:0] P_LIST_0;
+wire [3:0] P_LIST_1;
+wire [3:0] P_LIST_2;
+wire [3:0] P_LIST_3;
+wire [3:0] P_LIST_4;
+wire [3:0] P_LIST_5;
+wire [3:0] P_LIST_6;
+wire [3:0] P_LIST_7;
+wire [3:0] P_LIST_8;
+wire [3:0] P_LIST_9;
+wire [3:0] P_LIST_10;
+wire [3:0] P_LIST_11;
+
+wire [3:0] QTT_LIST_0;
+wire [3:0] QTT_LIST_1;
+wire [3:0] QTT_LIST_2;
+wire [3:0] QTT_LIST_3;
+wire [3:0] QTT_LIST_4;
+wire [3:0] QTT_LIST_5;
+wire [3:0] QTT_LIST_6;
+wire [3:0] QTT_LIST_7;
+wire [3:0] QTT_LIST_8;
+wire [3:0] QTT_LIST_9;
+wire [3:0] QTT_LIST_10;
+wire [3:0] QTT_LIST_11;
+
+BasketController BasketController_inst0(
+	.CLK(CLOCK_50),
+	.ENABLE(BasketController_Enable_Pulse),
+	.RESET_N(BasketController_RSTN_Pulse),
+	.ID(ProductID_out),
+	.QTT(ProductQuantity),
+	.CANCEL(BasketController_Cancel_Pulse),
+	.NUM(BasketProductNum),
+	.T_PRICE(T_PRICE),
+	.P_LIST_0(P_LIST_0),
+	.P_LIST_1(P_LIST_1),
+	.P_LIST_2(P_LIST_2),
+	.P_LIST_3(P_LIST_3),
+	.P_LIST_4(P_LIST_4),
+	.P_LIST_5(P_LIST_5),
+	.P_LIST_6(P_LIST_6),
+	.P_LIST_7(P_LIST_7),
+	.P_LIST_8(P_LIST_8),
+	.P_LIST_9(P_LIST_9),
+	.P_LIST_10(P_LIST_10),
+	.P_LIST_11(P_LIST_11),
+	
+	.QTT_LIST_0(QTT_LIST_0),
+	.QTT_LIST_1(QTT_LIST_1),
+	.QTT_LIST_2(QTT_LIST_2),
+	.QTT_LIST_3(QTT_LIST_3),
+	.QTT_LIST_4(QTT_LIST_4),
+	.QTT_LIST_5(QTT_LIST_5),
+	.QTT_LIST_6(QTT_LIST_6),
+	.QTT_LIST_7(QTT_LIST_7),
+	.QTT_LIST_8(QTT_LIST_8),
+	.QTT_LIST_9(QTT_LIST_9),
+	.QTT_LIST_10(QTT_LIST_10),
+	.QTT_LIST_11(QTT_LIST_11),
+	
+	.PRICE_LIST_0(PRICE_LIST_0),
+	.PRICE_LIST_1(PRICE_LIST_1),
+	.PRICE_LIST_2(PRICE_LIST_2),
+	.PRICE_LIST_3(PRICE_LIST_3),
+	.PRICE_LIST_4(PRICE_LIST_4),
+	.PRICE_LIST_5(PRICE_LIST_5),
+	.PRICE_LIST_6(PRICE_LIST_6),
+	.PRICE_LIST_7(PRICE_LIST_7),
+	.PRICE_LIST_8(PRICE_LIST_8),
+	.PRICE_LIST_9(PRICE_LIST_9),
+	.PRICE_LIST_10(PRICE_LIST_10),
+	.PRICE_LIST_11(PRICE_LIST_11)
+);
+/* BASKET CONTROLLER BEGIN */
 
 /* LED CONTROLLER BEGIN */
 LED_Controller LED_Controller_inst0(

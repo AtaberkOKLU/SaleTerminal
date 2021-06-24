@@ -72,6 +72,8 @@ module StateMachine(
 	output reg  [3:0] ProductQuantity,
 	output reg  [3:0] ProductID_out,
 	output wire BasketController_Enable_Pulse,
+	output wire BasketController_Cancel_Pulse,
+	output wire BasketController_RSTN_Pulse,
 	
 	// Hover Controller
 	output wire Product_valid
@@ -88,6 +90,7 @@ assign State_out = State;
 
 reg RST_BarcodeController_Level 	= 0;	// Active High
 reg RST_Direction2ProductID_Level= 0;	// Active High
+reg RST_BasketController_Level	= 0;	// Active High
 reg EN_BarcodeController_Level 	= 0;	// Active High
 reg EN_Direction2ProductID_Level = 0;	// Active High
 reg EN_BasketController_Level 	= 0;	// Active High
@@ -99,7 +102,7 @@ wire [3:0] 	ProductID_Direction;
 wire Direction2ProductID_En;
 wire RST_Direction2ProductID_Pulse;
 wire RSTN_Direction2ProductID_Pulse;
-wire BasketController_Cancel_Pulse;
+wire RST_BasketController_Pulse;
 
 // BarcodeController Reset Pulse Generator
 ButtonLevelPulseConverter BarcodeControllerResetPulseGenerator_inst0(
@@ -171,6 +174,15 @@ ButtonLevelPulseConverter BasketControllerCancelPulseGenerator_inst0(
 	.CleanButtonIn(CNL_BasketController_Level),
 	.ButtonPulseOut(BasketController_Cancel_Pulse)
 );
+
+// BasketController Reset Pulse Generator
+ButtonLevelPulseConverter BasketControllerResetPulseGenerator_inst0(
+	.CLK(CLOCK_50),
+	.CleanButtonIn(RST_BasketController_Level),
+	.ButtonPulseOut(RST_BasketController_Pulse)
+);
+// Since RST is Active Low, take inverse.
+assign BasketController_RSTN_Pulse = ~RST_BasketController_Pulse;
 
 
 // State List
