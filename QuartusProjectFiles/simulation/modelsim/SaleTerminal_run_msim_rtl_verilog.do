@@ -16,6 +16,16 @@ vmap work rtl_work
 
 vlog "D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo"
 
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/writer.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/text_controller.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_9x1.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_8x1.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_12x1.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/letter_writer.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/font_rom.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BCD_Multiplier.v}
+vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BasketController.v}
 vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v}
 vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v}
 vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v}

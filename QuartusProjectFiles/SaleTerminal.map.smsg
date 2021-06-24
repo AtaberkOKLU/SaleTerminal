@@ -1,3 +1,2 @@
 Warning (10268): Verilog HDL information at PriceCalculator.v(44): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v Line: 44
-Warning (10268): Verilog HDL information at BasketController.v(127): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/BasketController.v Line: 127
 Warning (10268): Verilog HDL information at BarcodeShiftRegister.v(39): always construct contains both blocking and non-blocking assignments File: D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v Line: 39
