@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Wed Jun 23 21:43:47 2021
+Thu Jun 24 11:58:09 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -21,7 +21,7 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
  13. General Register Statistics
  14. Inverted Register Statistics
  15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated
+ 16. Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated
  17. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0
  18. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key0
  19. Parameter Settings for User Entity Instance: ButtonController:ButtonController_inst0|ButtonDebouncer:ButtonDebouncer_Key1
@@ -74,16 +74,16 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 23 21:43:47 2021       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 24 11:58:09 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 204                                         ;
+; Total registers                 ; 201                                         ;
 ; Total pins                      ; 90                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 2,880,000                                   ;
+; Total block memory bits         ; 3,129,600                                   ;
 ; Total DSP Blocks                ; 3                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
@@ -247,10 +247,10 @@ https://fpgasoftware.intel.com/eula.
 ; altrom.inc                                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
 ; altram.inc                                          ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altram.inc            ;         ;
 ; altdpram.inc                                        ; yes             ; Megafunction                           ; c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
-; db/altsyncram_ejj1.tdf                              ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_ejj1.tdf               ;         ;
+; db/altsyncram_jjj1.tdf                              ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_jjj1.tdf               ;         ;
 ; /ee/ee314/project/resources/rom_init/rom_images.mif ; yes             ; Auto-Found Memory Initialization File  ; /ee/ee314/project/resources/rom_init/rom_images.mif                          ;         ;
-; db/decode_l2a.tdf                                   ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/decode_l2a.tdf                    ;         ;
-; db/mux_qib.tdf                                      ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf                       ;         ;
+; db/decode_m2a.tdf                                   ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/decode_m2a.tdf                    ;         ;
+; db/mux_rib.tdf                                      ; yes             ; Auto-Generated Megafunction            ; D:/EE/EE314/Project/QuartusProjectFiles/db/mux_rib.tdf                       ;         ;
 +-----------------------------------------------------+-----------------+----------------------------------------+------------------------------------------------------------------------------+---------+
 
 
@@ -259,20 +259,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                                                      ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 362                                                                                                                        ;
+; Estimate of Logic utilization (ALMs needed) ; 367                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Combinational ALUT usage for logic          ; 519                                                                                                                        ;
-;     -- 7 input functions                    ; 27                                                                                                                         ;
-;     -- 6 input functions                    ; 171                                                                                                                        ;
-;     -- 5 input functions                    ; 69                                                                                                                         ;
-;     -- 4 input functions                    ; 141                                                                                                                        ;
-;     -- <=3 input functions                  ; 111                                                                                                                        ;
+; Combinational ALUT usage for logic          ; 542                                                                                                                        ;
+;     -- 7 input functions                    ; 3                                                                                                                          ;
+;     -- 6 input functions                    ; 183                                                                                                                        ;
+;     -- 5 input functions                    ; 71                                                                                                                         ;
+;     -- 4 input functions                    ; 145                                                                                                                        ;
+;     -- <=3 input functions                  ; 140                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
-; Dedicated logic registers                   ; 204                                                                                                                        ;
+; Dedicated logic registers                   ; 201                                                                                                                        ;
 ;                                             ;                                                                                                                            ;
 ; I/O pins                                    ; 90                                                                                                                         ;
 ; Total MLAB memory bits                      ; 0                                                                                                                          ;
-; Total block memory bits                     ; 2880000                                                                                                                    ;
+; Total block memory bits                     ; 3129600                                                                                                                    ;
 ;                                             ;                                                                                                                            ;
 ; Total DSP Blocks                            ; 3                                                                                                                          ;
 ;                                             ;                                                                                                                            ;
@@ -280,9 +280,9 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                                                          ;
 ;                                             ;                                                                                                                            ;
 ; Maximum fan-out node                        ; VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i|outclk_wire[0] ;
-; Maximum fan-out                             ; 437                                                                                                                        ;
-; Total fan-out                               ; 8547                                                                                                                       ;
-; Average fan-out                             ; 6.75                                                                                                                       ;
+; Maximum fan-out                             ; 458                                                                                                                        ;
+; Total fan-out                               ; 8922                                                                                                                       ;
+; Average fan-out                             ; 6.81                                                                                                                       ;
 +---------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -291,7 +291,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                     ; Entity Name               ; Library Name ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------+--------------+
-; |SaleTerminal                                                                   ; 519 (0)             ; 204 (0)                   ; 2880000           ; 3          ; 90   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
+; |SaleTerminal                                                                   ; 542 (0)             ; 201 (0)                   ; 3129600           ; 3          ; 90   ; 0            ; |SaleTerminal                                                                                                                                                                                                                                           ; SaleTerminal              ; work         ;
 ;    |BarcodeController:BarcodeController_inst0|                                  ; 46 (1)              ; 19 (0)                    ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0                                                                                                                                                                                                 ; BarcodeController         ; work         ;
 ;       |BarcodeShiftRegister:BarcodeShiftRegister_inst0|                         ; 17 (17)             ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0                                                                                                                                                 ; BarcodeShiftRegister      ; work         ;
 ;       |Segment7:Segment0|                                                       ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|BarcodeController:BarcodeController_inst0|Segment7:Segment0                                                                                                                                                                               ; Segment7                  ; work         ;
@@ -314,31 +314,31 @@ https://fpgasoftware.intel.com/eula.
 ;       |SwitchDebouncer:SwitchDebouncer_SW0|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW0                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW1|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW1                                                                                                                                                               ; SwitchDebouncer           ; work         ;
 ;       |SwitchDebouncer:SwitchDebouncer_SW2|                                     ; 3 (3)               ; 5 (5)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|ButtonController:ButtonController_inst0|SwitchDebouncer:SwitchDebouncer_SW2                                                                                                                                                               ; SwitchDebouncer           ; work         ;
-;    |HoverController:HoverController_inst0|                                      ; 71 (3)              ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
-;       |BarcodeHoverController:BarcodeHoverController_inst0|                     ; 39 (39)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|BarcodeHoverController:BarcodeHoverController_inst0                                                                                                                                                 ; BarcodeHoverController    ; work         ;
+;    |HoverController:HoverController_inst0|                                      ; 69 (2)              ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0                                                                                                                                                                                                     ; HoverController           ; work         ;
+;       |BarcodeHoverController:BarcodeHoverController_inst0|                     ; 38 (38)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|BarcodeHoverController:BarcodeHoverController_inst0                                                                                                                                                 ; BarcodeHoverController    ; work         ;
 ;       |Decoder4x16:Decoder4x16_inst0|                                           ; 13 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0                                                                                                                                                                       ; Decoder4x16               ; work         ;
 ;          |Decoder3x8:d1|                                                        ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|Decoder4x16:Decoder4x16_inst0|Decoder3x8:d1                                                                                                                                                         ; Decoder3x8                ; work         ;
 ;       |DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|                       ; 16 (5)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0                                                                                                                                                   ; DisplaySelectedIDSeg7     ; work         ;
 ;          |Binary2BCD_2D:Binary2BCD_2D_inst0|                                    ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Binary2BCD_2D:Binary2BCD_2D_inst0                                                                                                                 ; Binary2BCD_2D             ; work         ;
 ;          |Segment7:Segment7_HEX4|                                               ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Segment7:Segment7_HEX4                                                                                                                            ; Segment7                  ; work         ;
 ;          |Segment7:Segment7_HEX5|                                               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|Segment7:Segment7_HEX5                                                                                                                            ; Segment7                  ; work         ;
-;    |StateMachine:StateMachine_inst0|                                            ; 98 (52)             ; 37 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
+;    |StateMachine:StateMachine_inst0|                                            ; 100 (54)            ; 37 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0                                                                                                                                                                                                           ; StateMachine              ; work         ;
 ;       |Barcode2ProductID:Barcode2ProductID_inst0|                               ; 29 (29)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Barcode2ProductID:Barcode2ProductID_inst0                                                                                                                                                                 ; Barcode2ProductID         ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0|   ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerEnablePulseGenerator_inst0                                                                                                                                     ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0|    ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:BarcodeControllerResetPulseGenerator_inst0                                                                                                                                      ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0| ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDEnablePulseGenerator_inst0                                                                                                                                   ; ButtonLevelPulseConverter ; work         ;
 ;       |ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0|  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|ButtonLevelPulseConverter:Direction2ProductIDResetPulseGenerator_inst0                                                                                                                                    ; ButtonLevelPulseConverter ; work         ;
 ;       |Direction2ProductID:Direction2ProductID_inst0|                           ; 17 (17)             ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0                                                                                                                                                             ; Direction2ProductID       ; work         ;
-;    |VGA_Controller:VGA_Controller_inst0|                                        ; 272 (0)             ; 75 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
-;       |HVSync_Generator:HVSync_Generator_inst0|                                 ; 36 (36)             ; 24 (24)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0                                                                                                                                                               ; HVSync_Generator          ; work         ;
-;       |PixelController:PixelController_inst0|                                   ; 236 (0)             ; 51 (0)                    ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
-;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 236 (123)           ; 51 (24)                   ; 2880000           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
-;             |ImageLocator:ImageLocator_inst0|                                   ; 98 (85)             ; 19 (19)                   ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
-;                |Encoder16x4:Encoder16x4_inst0|                                  ; 13 (13)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0                                                 ; Encoder16x4               ; work         ;
-;             |ImageROM:ImageROM_inst0|                                           ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0                                                                                       ; ImageROM                  ; work         ;
-;                |altsyncram:altsyncram_component|                                ; 15 (0)              ; 8 (0)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component                                                       ; altsyncram                ; work         ;
-;                   |altsyncram_ejj1:auto_generated|                              ; 15 (0)              ; 8 (8)                     ; 2880000           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated                        ; altsyncram_ejj1           ; work         ;
-;                      |decode_l2a:rden_decode|                                   ; 15 (15)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated|decode_l2a:rden_decode ; decode_l2a                ; work         ;
+;    |VGA_Controller:VGA_Controller_inst0|                                        ; 295 (0)             ; 72 (0)                    ; 3129600           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0                                                                                                                                                                                                       ; VGA_Controller            ; work         ;
+;       |HVSync_Generator:HVSync_Generator_inst0|                                 ; 35 (35)             ; 21 (21)                   ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|HVSync_Generator:HVSync_Generator_inst0                                                                                                                                                               ; HVSync_Generator          ; work         ;
+;       |PixelController:PixelController_inst0|                                   ; 260 (0)             ; 51 (0)                    ; 3129600           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0                                                                                                                                                                 ; PixelController           ; work         ;
+;          |Image_Shape_Submodule:Image_Shape_Submodule_inst0|                    ; 260 (144)           ; 51 (24)                   ; 3129600           ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0                                                                                                               ; Image_Shape_Submodule     ; work         ;
+;             |ImageLocator:ImageLocator_inst0|                                   ; 100 (91)            ; 19 (19)                   ; 0                 ; 3          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0                                                                               ; ImageLocator              ; work         ;
+;                |Encoder16x4:Encoder16x4_inst0|                                  ; 9 (9)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0                                                 ; Encoder16x4               ; work         ;
+;             |ImageROM:ImageROM_inst0|                                           ; 16 (0)              ; 8 (0)                     ; 3129600           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0                                                                                       ; ImageROM                  ; work         ;
+;                |altsyncram:altsyncram_component|                                ; 16 (0)              ; 8 (0)                     ; 3129600           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component                                                       ; altsyncram                ; work         ;
+;                   |altsyncram_jjj1:auto_generated|                              ; 16 (0)              ; 8 (8)                     ; 3129600           ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated                        ; altsyncram_jjj1           ; work         ;
+;                      |decode_m2a:rden_decode|                                   ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated|decode_m2a:rden_decode ; decode_m2a                ; work         ;
 ;       |VGA_PLL:VGA_PLL_inst0|                                                   ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0                                                                                                                                                                                 ; VGA_PLL                   ; VGA_PLL      ;
 ;          |VGA_PLL_0002:vga_pll_inst|                                            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst                                                                                                                                                       ; VGA_PLL_0002              ; VGA_PLL      ;
 ;             |altera_pll:altera_pll_i|                                           ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|VGA_PLL:VGA_PLL_inst0|VGA_PLL_0002:vga_pll_inst|altera_pll:altera_pll_i                                                                                                                               ; altera_pll                ; work         ;
@@ -351,7 +351,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+-------------------------------------------------------+
 ; Name                                                                                                                                                                                                                          ; Type ; Mode ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size    ; MIF                                                   ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+-------------------------------------------------------+
-; VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 120000       ; 24           ; --           ; --           ; 2880000 ; D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif ;
+; VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated|ALTSYNCRAM ; AUTO ; ROM  ; 130400       ; 24           ; --           ; --           ; 3129600 ; D:/EE/EE314/Project/Resources/ROM_Init/ROM_IMAGES.mif ;
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------+--------------+--------------+--------------+--------------+---------+-------------------------------------------------------+
 
 
@@ -413,7 +413,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 204   ;
+; Total registers                              ; 201   ;
 ; Number of registers using Synchronous Clear  ; 78    ;
 ; Number of registers using Synchronous Load   ; 12    ;
 ; Number of registers using Asynchronous Clear ; 0     ;
@@ -428,21 +428,21 @@ Encoding Type:  One-Hot
 +-------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                     ; Fan out ;
 +-------------------------------------------------------------------------------------------------------+---------+
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]  ; 26      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[1]  ; 18      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]  ; 28      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[1]  ; 19      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[2]  ; 18      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[3]  ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[4]  ; 17      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[4]  ; 18      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[5]  ; 21      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[6]  ; 11      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[7]  ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[8]  ; 17      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[9]  ; 21      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[8]  ; 18      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[9]  ; 22      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[10] ; 10      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[11] ; 10      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[12] ; 19      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[12] ; 22      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[13] ; 16      ;
-; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[14] ; 15      ;
+; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[14] ; 16      ;
 ; BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[15] ; 10      ;
 ; Total number of inverted registers = 16                                                               ;         ;
 +-------------------------------------------------------------------------------------------------------+---------+
@@ -453,22 +453,22 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[1]                  ;
-; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|HoverController:HoverController_inst0|HighlightedProductList[3]                                                                         ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[2]                                               ;
-; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[0]                                                                                        ;
-; 17:1               ; 8 bits    ; 88 LEs        ; 88 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[2]  ;
-; 17:1               ; 16 bits   ; 176 LEs       ; 160 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[13] ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[15]                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[10]                                   ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[4]                                    ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[0]                                    ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|NumOfBarcodeDigitsEntered[0]                  ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |SaleTerminal|HoverController:HoverController_inst0|HighlightedProductList[5]                                                                         ;
+; 7:1                ; 4 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|Direction2ProductID:Direction2ProductID_inst0|BasketID[0]                                               ;
+; 10:1               ; 4 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |SaleTerminal|StateMachine:StateMachine_inst0|ProductID_out[2]                                                                                        ;
+; 18:1               ; 8 bits    ; 96 LEs        ; 96 LEs               ; 0 LEs                  ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[6]  ;
+; 18:1               ; 16 bits   ; 192 LEs       ; 176 LEs              ; 16 LEs                 ; Yes        ; |SaleTerminal|VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|RGB_Bus[11] ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[13]                                   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[8]                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[7]                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |SaleTerminal|BarcodeController:BarcodeController_inst0|BarcodeShiftRegister:BarcodeShiftRegister_inst0|Barcode[2]                                    ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SaleTerminal|HoverController:HoverController_inst0|DisplaySelectedIDSeg7:DisplaySelectedIDSeg7_inst0|FirstDigit[1]                                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated ;
+; Source assignments for VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                                                                                                                                                          ;
 +---------------------------------+--------------------+------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -892,7 +892,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; OPERATION_MODE                     ; ROM                                                   ; Untyped                                                                                                                             ;
 ; WIDTH_A                            ; 24                                                    ; Signed Integer                                                                                                                      ;
 ; WIDTHAD_A                          ; 17                                                    ; Signed Integer                                                                                                                      ;
-; NUMWORDS_A                         ; 120000                                                ; Signed Integer                                                                                                                      ;
+; NUMWORDS_A                         ; 130400                                                ; Signed Integer                                                                                                                      ;
 ; OUTDATA_REG_A                      ; CLOCK0                                                ; Untyped                                                                                                                             ;
 ; ADDRESS_ACLR_A                     ; NONE                                                  ; Untyped                                                                                                                             ;
 ; OUTDATA_ACLR_A                     ; NONE                                                  ; Untyped                                                                                                                             ;
@@ -934,7 +934,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                                 ; Untyped                                                                                                                             ;
 ; WIDTH_ECCSTATUS                    ; 3                                                     ; Untyped                                                                                                                             ;
 ; DEVICE_FAMILY                      ; Cyclone V                                             ; Untyped                                                                                                                             ;
-; CBXI_PARAMETER                     ; altsyncram_ejj1                                       ; Untyped                                                                                                                             ;
+; CBXI_PARAMETER                     ; altsyncram_jjj1                                       ; Untyped                                                                                                                             ;
 +------------------------------------+-------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -965,7 +965,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Entity Instance                           ; VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component ;
 ;     -- OPERATION_MODE                     ; ROM                                                                                                                                                                                 ;
 ;     -- WIDTH_A                            ; 24                                                                                                                                                                                  ;
-;     -- NUMWORDS_A                         ; 120000                                                                                                                                                                              ;
+;     -- NUMWORDS_A                         ; 130400                                                                                                                                                                              ;
 ;     -- OUTDATA_REG_A                      ; CLOCK0                                                                                                                                                                              ;
 ;     -- WIDTH_B                            ; 1                                                                                                                                                                                   ;
 ;     -- NUMWORDS_B                         ; 1                                                                                                                                                                                   ;
@@ -1037,35 +1037,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 204                         ;
+; arriav_ff             ; 201                         ;
 ;     ENA               ; 36                          ;
 ;     ENA SCLR          ; 10                          ;
 ;     SCLR              ; 56                          ;
 ;     SCLR SLD          ; 12                          ;
-;     plain             ; 90                          ;
-; arriav_lcell_comb     ; 529                         ;
-;     arith             ; 47                          ;
-;         0 data inputs ; 1                           ;
-;         1 data inputs ; 27                          ;
-;         2 data inputs ; 17                          ;
-;         4 data inputs ; 2                           ;
-;     extend            ; 27                          ;
-;         7 data inputs ; 27                          ;
-;     normal            ; 455                         ;
+;     plain             ; 87                          ;
+; arriav_lcell_comb     ; 552                         ;
+;     arith             ; 59                          ;
+;         0 data inputs ; 3                           ;
+;         1 data inputs ; 29                          ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 3                           ;
+;         5 data inputs ; 1                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 490                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 12                          ;
-;         2 data inputs ; 26                          ;
-;         3 data inputs ; 36                          ;
-;         4 data inputs ; 139                         ;
-;         5 data inputs ; 69                          ;
-;         6 data inputs ; 171                         ;
+;         2 data inputs ; 18                          ;
+;         3 data inputs ; 60                          ;
+;         4 data inputs ; 145                         ;
+;         5 data inputs ; 70                          ;
+;         6 data inputs ; 183                         ;
 ; arriav_mac            ; 3                           ;
 ; boundary_port         ; 90                          ;
 ; generic_pll           ; 1                           ;
-; stratixv_ram_block    ; 360                         ;
+; stratixv_ram_block    ; 384                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.46                        ;
+; Average LUT depth     ; 2.72                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1084,7 +1085,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Wed Jun 23 21:43:33 2021
+    Info: Processing started: Thu Jun 24 11:57:57 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file encoder16x4.v
@@ -1240,22 +1241,22 @@ Info (12133): Instantiated megafunction "VGA_Controller:VGA_Controller_inst0|Pix
     Info (12134): Parameter "intended_device_family" = "Cyclone V"
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
-    Info (12134): Parameter "numwords_a" = "120000"
+    Info (12134): Parameter "numwords_a" = "130400"
     Info (12134): Parameter "operation_mode" = "ROM"
     Info (12134): Parameter "outdata_aclr_a" = "NONE"
     Info (12134): Parameter "outdata_reg_a" = "CLOCK0"
     Info (12134): Parameter "widthad_a" = "17"
     Info (12134): Parameter "width_a" = "24"
     Info (12134): Parameter "width_byteena_a" = "1"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ejj1.tdf
-    Info (12023): Found entity 1: altsyncram_ejj1 File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_ejj1.tdf Line: 32
-Info (12128): Elaborating entity "altsyncram_ejj1" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_l2a.tdf
-    Info (12023): Found entity 1: decode_l2a File: D:/EE/EE314/Project/QuartusProjectFiles/db/decode_l2a.tdf Line: 23
-Info (12128): Elaborating entity "decode_l2a" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated|decode_l2a:rden_decode" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_ejj1.tdf Line: 41
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_qib.tdf
-    Info (12023): Found entity 1: mux_qib File: D:/EE/EE314/Project/QuartusProjectFiles/db/mux_qib.tdf Line: 23
-Info (12128): Elaborating entity "mux_qib" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_ejj1:auto_generated|mux_qib:mux2" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_ejj1.tdf Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_jjj1.tdf
+    Info (12023): Found entity 1: altsyncram_jjj1 File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_jjj1.tdf Line: 32
+Info (12128): Elaborating entity "altsyncram_jjj1" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated" File: c:/intelfpga_lite/20.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_m2a.tdf
+    Info (12023): Found entity 1: decode_m2a File: D:/EE/EE314/Project/QuartusProjectFiles/db/decode_m2a.tdf Line: 23
+Info (12128): Elaborating entity "decode_m2a" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated|decode_m2a:rden_decode" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_jjj1.tdf Line: 41
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_rib.tdf
+    Info (12023): Found entity 1: mux_rib File: D:/EE/EE314/Project/QuartusProjectFiles/db/mux_rib.tdf Line: 23
+Info (12128): Elaborating entity "mux_rib" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageROM:ImageROM_inst0|altsyncram:altsyncram_component|altsyncram_jjj1:auto_generated|mux_rib:mux2" File: D:/EE/EE314/Project/QuartusProjectFiles/db/altsyncram_jjj1.tdf Line: 42
 Info (12128): Elaborating entity "ImageLocator" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v Line: 61
 Warning (10230): Verilog HDL assignment warning at ImageLocator.v(185): truncated value with size 32 to match size of target (17) File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 185
 Info (12128): Elaborating entity "Encoder16x4" for hierarchy "VGA_Controller:VGA_Controller_inst0|PixelController:PixelController_inst0|Image_Shape_Submodule:Image_Shape_Submodule_inst0|ImageLocator:ImageLocator_inst0|Encoder16x4:Encoder16x4_inst0" File: D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v Line: 143
@@ -1288,18 +1289,18 @@ Info (17049): 3 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 7 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1029 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1075 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 81 output pins
-    Info (21061): Implemented 575 logic cells
-    Info (21064): Implemented 360 RAM segments
+    Info (21061): Implemented 597 logic cells
+    Info (21064): Implemented 384 RAM segments
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 3 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4857 megabytes
-    Info: Processing ended: Wed Jun 23 21:43:47 2021
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:27
+    Info: Peak virtual memory: 4867 megabytes
+    Info: Processing ended: Thu Jun 24 11:58:09 2021
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:24
 
 
 +------------------------------------------+
