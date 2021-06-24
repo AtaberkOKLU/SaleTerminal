@@ -379,10 +379,10 @@ always @ (posedge CLOCK_50)
 							begin
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
-										4'b0001: ProductQuantity <= 'd1;
-										4'b0010: ProductQuantity <= 'd2;
-										4'b0100: ProductQuantity <= 'd3;
-										4'b1000: ProductQuantity <= 'd4;
+										4'b0001: ProductQuantity <= 'd4;
+										4'b0010: ProductQuantity <= 'd3;
+										4'b0100: ProductQuantity <= 'd2;
+										4'b1000: ProductQuantity <= 'd1;
 										default: ProductQuantity <= 'd0;	// Never Reached
 									endcase
 									// TODO Basket Controller handling
