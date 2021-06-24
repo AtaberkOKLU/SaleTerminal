@@ -54,6 +54,9 @@ reg inHighlightedImgArea_Reg 	= 0;
 reg SW2_Reg							= 0;
 
 /* BASKET LOCATION CONTROL BEGIN */
+wire w_x_prdct 			= (CounterX > 19)  & (CounterX < 280);
+wire w_x_prdct_brdr		= (CounterX == 20) | (CounterX == 60);
+
 wire w_x_indicator_p		= (CounterX > 19)  & (CounterX < 59) ;
  
 wire w_y_indicator_p0	= (CounterY > 59)  & (CounterY < 99) ;
@@ -84,7 +87,71 @@ wire p_9_indicator  = w_x_indicator_p & w_y_indicator_p9;
 wire p_10_indicator = w_x_indicator_p & w_y_indicator_p10;
 wire p_11_indicator = w_x_indicator_p & w_y_indicator_p11;
 
+
+
+// 4 Lines for product 0
+wire w_line_p0_x 			= w_y_indicator_p0 & w_x_prdct_brdr;
+wire w_line_p0_y 			= w_x_prdct & (CounterY == 60 | CounterY == 100);
+wire w_border_p0 			= w_line_p0_x | w_line_p0_y;
+
+// 3 lines for others
+wire w_line_p1_x 			= w_y_indicator_p1 & w_x_prdct_brdr;
+wire w_line_p1_y 			= w_x_prdct & (CounterY == 140);
+wire w_border_p1 			= w_line_p1_x | w_line_p1_y;
+
+wire w_line_p2_x 			= w_y_indicator_p2 & w_x_prdct_brdr;
+wire w_line_p2_y 			= w_x_prdct & (CounterY == 180);
+wire w_border_p2 			= w_line_p2_x | w_line_p2_y;
+
+wire w_line_p3_x 			= w_y_indicator_p3 & w_x_prdct_brdr;
+wire w_line_p3_y 			= w_x_prdct & (CounterY == 220);
+wire w_border_p3 			= w_line_p3_x | w_line_p3_y;
+
+wire w_line_p4_x 			= w_y_indicator_p4 & w_x_prdct_brdr;
+wire w_line_p4_y 			= w_x_prdct & (CounterY == 260);
+wire w_border_p4 			= w_line_p4_x | w_line_p4_y;
+
+wire w_line_p5_x 			= w_y_indicator_p5 & w_x_prdct_brdr;
+wire w_line_p5_y 			= w_x_prdct & (CounterY == 300);
+wire w_border_p5 			= w_line_p5_x | w_line_p5_y;
+
+wire w_line_p6_x 			= w_y_indicator_p6 & w_x_prdct_brdr;
+wire w_line_p6_y 			= w_x_prdct & (CounterY == 340);
+wire w_border_p6 			= w_line_p6_x | w_line_p6_y;
+
+wire w_line_p7_x 			= w_y_indicator_p7 & w_x_prdct_brdr;
+wire w_line_p7_y 			= w_x_prdct & (CounterY == 380);
+wire w_border_p7 			= w_line_p7_x | w_line_p7_y;
+
+wire w_line_p8_x 			= w_y_indicator_p8 & w_x_prdct_brdr;
+wire w_line_p8_y 			= w_x_prdct & (CounterY == 420);
+wire w_border_p8 			= w_line_p8_x | w_line_p8_y;
+
+wire w_line_p9_x 			= w_y_indicator_p9 & w_x_prdct_brdr;
+wire w_line_p9_y 			= w_x_prdct & (CounterY == 460);
+wire w_border_p9 			= w_line_p9_x | w_line_p9_y;
+
+wire w_line_p10_x 		= w_y_indicator_p10 & w_x_prdct_brdr;
+wire w_line_p10_y 		= w_x_prdct & (CounterY == 500);
+wire w_border_p10 		= w_line_p10_x | w_line_p10_y;
+
+wire w_line_p11_x 		= w_y_indicator_p11 & w_x_prdct_brdr;
+wire w_line_p11_y 		= w_x_prdct & (CounterY == 540);
+wire w_border_p11 		= w_line_p11_x | w_line_p11_y;
+
+wire [11:0] border 		= {w_border_p11, w_border_p10, w_border_p8, w_border_p7, w_border_p6, w_border_p5, w_border_p4, w_border_p3, w_border_p2, w_border_p1, w_border_p0};
+
+wire onBoard = |(border & (~(12'hFFF<<BasketProductNum)));
 /* BASKET LOCATION CONTROL END */
+
+/* LINES BEGIN */
+
+wire w_line0 = (CounterX == 300);
+wire w_line1 = (CounterX > 300) & (CounterY == 404);
+wire w_line2 = (CounterX < 300) & (CounterY == 50);
+
+wire onLine  = w_line0 | w_line1 | w_line2 | onBoard;
+/* LINES END */
 
 /* IMAGE LOCATION CONTROL BEGIN */
 wire [3:0] ImageID;
@@ -106,7 +173,7 @@ wire w_y_indicator_1 = (CounterY > 147) & (CounterY < 158);
 wire w_y2 = (CounterY > 275) & (CounterY < 376);
 wire w_y_indicator_2 = (CounterY > 275) & (CounterY < 286);
 
-wire w_logo = (CounterX > 19) & (CounterY > 9) & (CounterX < 280) & (CounterY < 50);
+wire w_logo = w_x_prdct & (CounterY > 4) & (CounterY < 45);
 
 wire im_0  = w_x0 & w_y0;
 wire im_1  = w_x1 & w_y0;
@@ -183,11 +250,11 @@ always @ (negedge CLK)
 					
 assign inHighlightedArea = ((SW2_Reg & inHighlightedPrdArea_Reg & |BasketProductNum) | (~SW2_Reg & inHighlightedImgArea_Reg));
 									
-assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:{(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	// Red/White
+assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:(onLine)?{(R_WIDTH+G_WIDTH+B_WIDTH){1'b0}}:{(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	// Red/White
 
 always @ (posedge CLK)
 	if(isImage)
-		ROM_Addr <= ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-((w_logo)?20:(308+ImageID[1:0]*128))) + ((w_logo)?LOGO_WIDTH:PRDCT_PIC_WIDTH)*(CounterY-((w_logo)?10:(20+((ImageID[3:2])*128))));
+		ROM_Addr <= ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-((w_logo)?20:(308+ImageID[1:0]*128))) + ((w_logo)?LOGO_WIDTH:PRDCT_PIC_WIDTH)*(CounterY-((w_logo)?5:(20+((ImageID[3:2])*128))));
 	else
 		ROM_Addr <= {ROM_ADDR_BUS_WIDTH{1'b0}};
 		
