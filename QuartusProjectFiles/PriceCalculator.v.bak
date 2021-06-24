@@ -76,7 +76,7 @@ begin
 	
 end
 
-	BCD_Multiplier Calculate_Price(.NUM1(PRICE_REG), .NUM2(QTT_REG), .PRODUCT(PRICE));
-
+	BCD_Multiplier Calculate_Price(.NUM1(PRICE_REG), .NUM2(QTT_REG), .PRODUCT(PRICE_REG));
+	assign PRICE = PRICE_REG;
 	
 endmodule 
