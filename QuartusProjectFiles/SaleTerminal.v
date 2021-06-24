@@ -114,7 +114,7 @@ wire ValidID;
 
 StateMachine StateMachine_inst0(
 	.CLOCK_50(CLOCK_50),
-	// RESET_N,
+	.RESET_N(RESET_N),
 	.CMD_Reg(CMD_Reg),
 	.KEY_Reg(KEY_Reg),
 	.KEY_En(KEY_En),
@@ -184,7 +184,7 @@ HoverController HoverController_inst0(
 );
 /* HOVER CONTROLLER END */
 
-/* BASKET CONTROLLER BEGIN 
+/* BASKET CONTROLLER BEGIN */
 
 wire [15:0] T_PRICE, PRICE_LIST_0, PRICE_LIST_1, PRICE_LIST_2, PRICE_LIST_3, PRICE_LIST_4;
 wire [15:0] PRICE_LIST_5, PRICE_LIST_6, PRICE_LIST_7, PRICE_LIST_8, PRICE_LIST_9;
@@ -219,7 +219,7 @@ wire [3:0] QTT_LIST_11;
 BasketController BasketController_inst0(
 	.CLK(CLOCK_50),
 	.ENABLE(BasketController_Enable_Pulse),
-	.RESET_N(BasketController_RSTN_Pulse),
+	.RESET_N(BasketController_RSTN_Pulse && RESET_N),
 	.ID(ProductID_out),
 	.QTT(ProductQuantity),
 	.CANCEL(BasketController_Cancel_Pulse),
