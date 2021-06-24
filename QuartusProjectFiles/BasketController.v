@@ -570,8 +570,8 @@ begin
 		
 			endcase
 			
-			T_PRICE_REG = T_PRICE_REG - DELETE_PRICE;
-			NUM_REG = NUM_REG - 1;
+			T_PRICE_REG <= T_PRICE_REG - DELETE_PRICE;
+			NUM_REG <= NUM_REG - 1;
 		end
 		
 end  
