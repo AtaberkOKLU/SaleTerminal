@@ -1,26 +1,20 @@
-module letter_writer(H_counter,ve_counter,CLK,output_bit,words);
+module letter_writer(H_counter,ve_counter,CLK,output_bit,words,output_bit_char,coloumn_counter,data);
 
 input [10:0] H_counter;
 input [9:0] ve_counter;
 input CLK;
 wire [62:0]letters;
 output output_bit;
-wire [7:0] data;
+input wire [7:0] data;
 reg [2:0] row_counter=3'b000;
-reg [3:0] coloumn_counter=4'b0000;
+output reg [3:0] coloumn_counter=4'b0000;
 reg [3:0] char_counter=4'b0000;
-wire [6:0] output_bit_char;
+output wire [6:0] output_bit_char;
 reg enable=1'b0;
 input [755:0] words;
 reg [3:0] basket_counter=4'b0000;
 
 
-
-font_rom font_rom1(
-.clk(CLK),
-.addr({output_bit_char,coloumn_counter}),
-.data(data)
-);
 
 mux_8x1 mux_8x1_1(
 .Sel(row_counter),
