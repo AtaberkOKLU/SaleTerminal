@@ -31,6 +31,7 @@ module PixelController#(
 	input wire [11:0] HighlightedProductList,
 	input wire CLOCK,
 	input wire SW2,
+	input wire[3:0] BasketProductNum,
 	
 	output wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] PixBus
 );
@@ -56,7 +57,8 @@ Image_Shape_Submodule#(
 	.HighlightedProductList(HighlightedProductList),
 	.CLOCK(CLOCK),
 	.SW2(SW2),
-	.RGB_Bus(Img_RGBBus)
+	.RGB_Bus(Img_RGBBus),
+	.BasketProductNum(BasketProductNum)
 );
 
 /*

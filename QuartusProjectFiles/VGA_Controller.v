@@ -50,6 +50,7 @@ module VGA_Controller
 	 input  wire[11:0] HighlightedProductList,
 	 // Button Controller Interface
 	 input  wire SW2,
+	 input  wire[3:0] BasketProductNum,
 	 
     output wire [R_WIDTH-1:0] VGA_R,
 	 output wire [G_WIDTH-1:0] VGA_G,
@@ -116,7 +117,8 @@ module VGA_Controller
 		.HighlightedProductList(HighlightedProductList),
 		.CLOCK(VGA_CLK_W),
 		.SW2(SW2),
-		.PixBus(PixBux_wire)
+		.PixBus(PixBux_wire),
+		.BasketProductNum(BasketProductNum)
 	);
 	
 assign {VGA_B, VGA_G, VGA_R} = PixBux_wire;

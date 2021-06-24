@@ -28,7 +28,7 @@ module ImageLocator
 	parameter PRDCT_PIC_HEIGHT = 100,
 	
 	parameter LOGO_WIDTH			= 260,
-	parameter LOGO_HEIGHT 		= 40,
+	parameter LOGO_HEIGHT 		= 40
 )(
 	input wire CLK,
 
@@ -41,6 +41,8 @@ module ImageLocator
 	
 	// Button Controller Interface
 	input  wire SW2,
+	
+	input  wire[3:0] BasketProductNum,
 	
 	output reg  [ROM_ADDR_BUS_WIDTH-1:0]  ROM_Addr,
 	output wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] PixelBus,
@@ -98,11 +100,11 @@ wire w_x3 = (CounterX > 691) & (CounterX < 792);
 wire w_x_indicator_3 = (CounterX > 691) & (CounterX < 702);
 
 wire w_y0 = (CounterY > 19) & (CounterY < 120);
-wire w_y_indicator_0 = (CounterX > 19) & (CounterX < 30);
+wire w_y_indicator_0 = (CounterY > 19) & (CounterY < 30);
 wire w_y1 = (CounterY > 147) & (CounterY < 248);
-wire w_y_indicator_1 = (CounterX > 147) & (CounterX < 158);
+wire w_y_indicator_1 = (CounterY > 147) & (CounterY < 158);
 wire w_y2 = (CounterY > 275) & (CounterY < 376);
-wire w_y_indicator_2 = (CounterX > 275) & (CounterX < 286);
+wire w_y_indicator_2 = (CounterY > 275) & (CounterY < 286);
 
 wire w_logo = (CounterX > 19) & (CounterY > 9) & (CounterX < 280) & (CounterY < 50);
 
@@ -179,7 +181,7 @@ always @ (negedge CLK)
 		SW2_Reg 							<= SW2;
 	end
 					
-assign inHighlightedArea = ((SW2_Reg & inHighlightedPrdArea_Reg) | (~SW2_Reg & inHighlightedImgArea_Reg));
+assign inHighlightedArea = ((SW2_Reg & inHighlightedPrdArea_Reg & |BasketProductNum) | (~SW2_Reg & inHighlightedImgArea_Reg));
 									
 assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:{(R_WIDTH+G_WIDTH+B_WIDTH){1'b1}};	// Red/White
 

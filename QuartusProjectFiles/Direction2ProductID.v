@@ -56,7 +56,10 @@ always @ (negedge CLOCK)
 					ImgID <= 0;
 					case(Dir_in)
 						2'b01	 : if(BasketID > 0  ) BasketID <= BasketID - 4'd1; else BasketID <= 4'b0000;
-						2'b10	 : if(BasketID < BasketProductNum-1 ) BasketID <= BasketID + 4'd1; else BasketID <= BasketProductNum-1;
+						2'b10	 : if(|BasketProductNum)
+										if(BasketID < BasketProductNum-1 ) BasketID <= BasketID + 4'd1; 
+										else BasketID <= BasketProductNum-1;
+									
 					endcase
 				end
 				

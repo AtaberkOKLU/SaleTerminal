@@ -65,6 +65,7 @@ ButtonController ButtonController_inst0(
 wire VGA_Controller_RSTN;
 assign VGA_Controller_RSTN = RESET_N;
 wire [11:0] HighlightedProductList;
+wire [3:0] BasketProductNum;
 
 VGA_Controller VGA_Controller_inst0(
 	// Generic
@@ -84,7 +85,8 @@ VGA_Controller VGA_Controller_inst0(
    .VGA_HS(VGA_HS),
    .VGA_VS(VGA_VS),
    .VGA_BLANK_N(VGA_BLANK_N),
-	.VGA_SYNC_N(VGA_SYNC_N)
+	.VGA_SYNC_N(VGA_SYNC_N),
+	.BasketProductNum(BasketProductNum)
 );
 
 /* VGA CONTROLLER END */
@@ -129,6 +131,7 @@ StateMachine StateMachine_inst0(
 	.ProductID_out(ProductID_out),
 	.BasketController_Enable_Pulse(BasketController_Enable_Pulse),
 	.Product_valid(ValidID),
+	.BasketProductNum(BasketProductNum),
 	
 	.State_out(State)
 

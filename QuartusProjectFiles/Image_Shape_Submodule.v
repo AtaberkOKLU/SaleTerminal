@@ -31,6 +31,7 @@ module Image_Shape_Submodule
 	input wire [11:0] HighlightedProductList,
 	input wire CLOCK,
 	input wire SW2,
+	input wire[3:0] BasketProductNum,
 	
 	output reg [R_WIDTH+G_WIDTH+B_WIDTH-1:0] RGB_Bus
 );
@@ -57,7 +58,8 @@ ImageLocator ImageLocator_inst0(
 	.PixelBus(PixBux_wire),
 	.SW2(SW2),
 	.CLK(CLOCK),
-	.inHighlightedArea(inHighlightedArea_wire)
+	.inHighlightedArea(inHighlightedArea_wire),
+	.BasketProductNum(BasketProductNum)
 );
 
 always @ (posedge CLOCK)
