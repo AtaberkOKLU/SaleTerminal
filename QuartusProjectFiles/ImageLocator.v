@@ -55,7 +55,7 @@ reg SW2_Reg							= 0;
 
 /* BASKET LOCATION CONTROL BEGIN */
 wire w_x_prdct 			= (CounterX > 19)  & (CounterX < 280);
-wire w_x_prdct_brdr		= (CounterX == 20) | (CounterX == 60);
+wire w_x_prdct_brdr		= (CounterX == 20) | (CounterX == 60) | (CounterX == 280);
 
 wire w_x_indicator_p		= (CounterX > 19)  & (CounterX < 59) ;
  
@@ -139,7 +139,7 @@ wire w_line_p11_x 		= w_y_indicator_p11 & w_x_prdct_brdr;
 wire w_line_p11_y 		= w_x_prdct & (CounterY == 540);
 wire w_border_p11 		= w_line_p11_x | w_line_p11_y;
 
-wire [11:0] border 		= {w_border_p11, w_border_p10, w_border_p8, w_border_p7, w_border_p6, w_border_p5, w_border_p4, w_border_p3, w_border_p2, w_border_p1, w_border_p0};
+wire [11:0] border 		= {w_border_p11, w_border_p10, w_border_p9, w_border_p8, w_border_p7, w_border_p6, w_border_p5, w_border_p4, w_border_p3, w_border_p2, w_border_p1, w_border_p0};
 
 wire onBoard = |(border & (~(12'hFFF<<BasketProductNum)));
 /* BASKET LOCATION CONTROL END */

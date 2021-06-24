@@ -36,7 +36,7 @@ module StateMachine(
 	
 	// Generic
 	input wire CLOCK_50,
-	// input wire RESET_N,
+	input wire RESET_N,
 	
 	// Button Controller
 	/*
@@ -151,7 +151,7 @@ ButtonLevelPulseConverter Direction2ProductIDEnablePulseGenerator_inst0(
 
 // Interactive Selection  for BasketController
 Direction2ProductID Direction2ProductID_inst0(
-	.RESET_N(RSTN_Direction2ProductID_Pulse),
+	.RESET_N(RSTN_Direction2ProductID_Pulse & RESET_N),
 	.Enable(Direction2ProductID_En),
 	.CLOCK(CLOCK_50),
 	.Dir_in(Dir_out),
@@ -221,6 +221,7 @@ always @ (posedge CLOCK_50)
 						EN_BasketController_Level 		<= 0;
 						RST_BarcodeController_Level 	<= 0;
 						RST_Direction2ProductID_Level <= 0;
+						RST_BasketController_Level		<= 0;
 						
 						if (CMD_Reg[3] & CMD_En[3]) 						// Select Button is Pressed?
 							State <= State6_EndShopping;	// 	End the Shopping
@@ -400,6 +401,7 @@ always @ (posedge CLOCK_50)
 						RST_Direction2ProductID_Level <= 0;
 						RST_BarcodeController_Level 	<= 0;
 						CNL_BasketController_Level  	<= 0;
+						EN_Direction2ProductID_Level  <= 0;
 						if(CleanSWOut[2])								// SW2 still Active?
 							if(CMD_Reg[0] & CMD_En[0])				// End Shopping Pressed?
 								State <= State6_EndShopping;
@@ -408,12 +410,13 @@ always @ (posedge CLOCK_50)
 									ProductID_out <= ProductID_Direction;
 									// Basket Controller Cancel Prd
 									CNL_BasketController_Level <= 1;
+									RST_Direction2ProductID_Level <= 1;
 									// Stay in the Same State
+									
 									State <= State5_BasketEdit;	// Stay in the Same State
 								end
 							else		
 								begin
-									ProductID_out <= ProductID_Direction;
 									if(|(KEY_Reg & KEY_En))							// Any Direction Key is pressed?
 										begin
 											// Highlight Controller Handle
@@ -425,10 +428,12 @@ always @ (posedge CLOCK_50)
 												4'b0100: Dir_out <= 2'b01;	// Up
 											endcase
 											State <= State5_BasketEdit;	// 	Stay in this State
+											ProductID_out <= ProductID_Direction;
 										end
 									else
 										begin
 											State <= State5_BasketEdit;	// Wait Direction input in this State
+											ProductID_out <= ProductID_Direction;
 										end
 								end
 						else												// SW1 is Deactivated
