@@ -31,7 +31,8 @@ module PixelController#(
 	input wire [11:0] HighlightedProductList,
 	input wire CLOCK,
 	input wire SW2,
-	input wire[3:0] BasketProductNum,
+	input wire [3:0] BasketProductNum,
+	input wire [47:0] BasketProductIDList,
 	
 	output wire [R_WIDTH+G_WIDTH+B_WIDTH-1:0] PixBus
 );
@@ -64,6 +65,15 @@ Image_Shape_Submodule#(
 /*
  *		Text Controller
  */
+ 
+ 
+text_controller TextController_inst0(
+.CLK(CLOCK),
+.product_IDS(BasketProductIDList),
+.H_counter(CounterX),
+.V_counter(CounterY),
+.output_bit(isFontPixel)
+);
 	
 assign PixBus = (isFontPixel) ? {(R_WIDTH+G_WIDTH+B_WIDTH){1'b0}}:Img_RGBBus;
 
