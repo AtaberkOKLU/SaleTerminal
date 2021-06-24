@@ -179,52 +179,52 @@ begin
 			begin
 				case(NUM_REG)
 					
-					0000 : P_LIST_REG_0 <= ID;
-					0001 : P_LIST_REG_1 <= ID;
-					0010 : P_LIST_REG_2 <= ID;
-					0011 : P_LIST_REG_3 <= ID;
-					0100 : P_LIST_REG_4 <= ID;
-					0101 : P_LIST_REG_5 <= ID;
-					0110 : P_LIST_REG_6 <= ID;
-					0111 : P_LIST_REG_7 <= ID;
-					1000 : P_LIST_REG_8 <= ID;
-					1001 : P_LIST_REG_9 <= ID;
-					1010 : P_LIST_REG_10 <= ID;
-					1011 : P_LIST_REG_11 <= ID;
+					4'b0000 : P_LIST_REG_0 <= ID;
+					4'b0001 : P_LIST_REG_1 <= ID;
+					4'b0010 : P_LIST_REG_2 <= ID;
+					4'b0011 : P_LIST_REG_3 <= ID;
+					4'b0100 : P_LIST_REG_4 <= ID;
+					4'b0101 : P_LIST_REG_5 <= ID;
+					4'b0110 : P_LIST_REG_6 <= ID;
+					4'b0111 : P_LIST_REG_7 <= ID;
+					4'b1000 : P_LIST_REG_8 <= ID;
+					4'b1001 : P_LIST_REG_9 <= ID;
+					4'b1010 : P_LIST_REG_10 <= ID;
+					4'b1011 : P_LIST_REG_11 <= ID;
 				 
 				endcase
 				
 				case(NUM_REG)
 				
-					0000 : PRICE_LIST_REG_0 <= PRICE;
-					0001 : PRICE_LIST_REG_1 <= PRICE;
-					0010 : PRICE_LIST_REG_2 <= PRICE;
-					0011 : PRICE_LIST_REG_3 <= PRICE;
-					0100 : PRICE_LIST_REG_4 <= PRICE;
-					0101 : PRICE_LIST_REG_5 <= PRICE;
-					0110 : PRICE_LIST_REG_6 <= PRICE;
-					0111 : PRICE_LIST_REG_7 <= PRICE;
-					1000 : PRICE_LIST_REG_8 <= PRICE;
-					1001 : PRICE_LIST_REG_9 <= PRICE;
-					1010 : PRICE_LIST_REG_10 <= PRICE;
-					1011 : PRICE_LIST_REG_11 <= PRICE;
+					4'b0000 : PRICE_LIST_REG_0 <= PRICE;
+					4'b0001 : PRICE_LIST_REG_1 <= PRICE;
+					4'b0010 : PRICE_LIST_REG_2 <= PRICE;
+					4'b0011 : PRICE_LIST_REG_3 <= PRICE;
+					4'b0100 : PRICE_LIST_REG_4 <= PRICE;
+					4'b0101 : PRICE_LIST_REG_5 <= PRICE;
+					4'b0110 : PRICE_LIST_REG_6 <= PRICE;
+					4'b0111 : PRICE_LIST_REG_7 <= PRICE;
+					4'b1000 : PRICE_LIST_REG_8 <= PRICE;
+					4'b1001 : PRICE_LIST_REG_9 <= PRICE;
+					4'b1010 : PRICE_LIST_REG_10 <= PRICE;
+					4'b1011 : PRICE_LIST_REG_11 <= PRICE;
 					
 				endcase
 
 				case(NUM_REG)
 					
-					0000 : QTT_LIST_REG_0 <= QTT;
-					0001 : QTT_LIST_REG_1 <= QTT;
-					0010 : QTT_LIST_REG_2 <= QTT;
-					0011 : QTT_LIST_REG_3 <= QTT;
-					0100 : QTT_LIST_REG_4 <= QTT;
-					0101 : QTT_LIST_REG_5 <= QTT;
-					0110 : QTT_LIST_REG_6 <= QTT;
-					0111 : QTT_LIST_REG_7 <= QTT;
-					1000 : QTT_LIST_REG_8 <= QTT;
-					1001 : QTT_LIST_REG_9 <= QTT;
-					1010 : QTT_LIST_REG_10 <= QTT;
-					1011 : QTT_LIST_REG_11 <= QTT;
+					4'b0000 : QTT_LIST_REG_0 <= QTT;
+					4'b0001 : QTT_LIST_REG_1 <= QTT;
+					4'b0010 : QTT_LIST_REG_2 <= QTT;
+					4'b0011 : QTT_LIST_REG_3 <= QTT;
+					4'b0100 : QTT_LIST_REG_4 <= QTT;
+					4'b0101 : QTT_LIST_REG_5 <= QTT;
+					4'b0110 : QTT_LIST_REG_6 <= QTT;
+					4'b0111 : QTT_LIST_REG_7 <= QTT;
+					4'b1000 : QTT_LIST_REG_8 <= QTT;
+					4'b1001 : QTT_LIST_REG_9 <= QTT;
+					4'b1010 : QTT_LIST_REG_10 <= QTT;
+					4'b1011 : QTT_LIST_REG_11 <= QTT;
 					
 				endcase
 				 
@@ -239,7 +239,7 @@ begin
 			//cancel product, decrease total price
 			case(ID) //product list is shifted after cancel operation
 				
-				0000 : begin 
+				4'b0000 : begin 
 					P_LIST_REG_0 <= P_LIST_REG_1; 
 					P_LIST_REG_1 <= P_LIST_REG_2;
 					P_LIST_REG_2 <= P_LIST_REG_3;
@@ -253,7 +253,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				0001 : begin  
+				4'b0001 : begin  
 					P_LIST_REG_1 <= P_LIST_REG_2;
 					P_LIST_REG_2 <= P_LIST_REG_3;
 					P_LIST_REG_3 <= P_LIST_REG_4;
@@ -266,7 +266,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end	
-				0010 : begin  
+				4'b0010 : begin  
 					P_LIST_REG_2 <= P_LIST_REG_3;
 					P_LIST_REG_3 <= P_LIST_REG_4;
 					P_LIST_REG_4 <= P_LIST_REG_5;
@@ -278,7 +278,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end	
-				0011 : begin
+				4'b0011 : begin
 					P_LIST_REG_3 <= P_LIST_REG_4;
 					P_LIST_REG_4 <= P_LIST_REG_5;
 					P_LIST_REG_5 <= P_LIST_REG_6;
@@ -289,7 +289,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				0100 : begin
+				4'b0100 : begin
 					P_LIST_REG_4 <= P_LIST_REG_5;
 					P_LIST_REG_5 <= P_LIST_REG_6;
 					P_LIST_REG_6 <= P_LIST_REG_7;
@@ -299,7 +299,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				0101 : begin
+				4'b0101 : begin
 					P_LIST_REG_5 <= P_LIST_REG_6;
 					P_LIST_REG_6 <= P_LIST_REG_7;
 					P_LIST_REG_7 <= P_LIST_REG_8;
@@ -308,7 +308,7 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				0110 : begin
+				4'b0110 : begin
 					P_LIST_REG_6 <= P_LIST_REG_7;
 					P_LIST_REG_7 <= P_LIST_REG_8;
 					P_LIST_REG_8 <= P_LIST_REG_9;
@@ -316,29 +316,29 @@ begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				0111 : begin
+				4'b0111 : begin
 					P_LIST_REG_7 <= P_LIST_REG_8;
 					P_LIST_REG_8 <= P_LIST_REG_9;
 					P_LIST_REG_9 <= P_LIST_REG_10;
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				1000 : begin
+				4'b1000 : begin
 					P_LIST_REG_8 <= P_LIST_REG_9;
 					P_LIST_REG_9 <= P_LIST_REG_10;
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end
-				1001 : begin
+				4'b1001 : begin
 					P_LIST_REG_9 <= P_LIST_REG_10;
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end 
-				1010 : begin
+				4'b1010 : begin
 					P_LIST_REG_10 <= P_LIST_REG_11;
 					P_LIST_REG_11 <= 4'b1111;
 				end  
-				1011 : begin
+				4'b1011 : begin
 					P_LIST_REG_11 <= 4'b1111;
 				end  		
 			
@@ -346,7 +346,7 @@ begin
 			
 			case(ID) //price list is shifted after cancel operation
 			
-				0000 : begin
+				4'b0000 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_0;
 				PRICE_LIST_REG_0 <= PRICE_LIST_REG_1;
 				PRICE_LIST_REG_1 <= PRICE_LIST_REG_2;
@@ -361,7 +361,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0001 : begin
+				4'b0001 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_1;
 				PRICE_LIST_REG_1 <= PRICE_LIST_REG_2;
 				PRICE_LIST_REG_2 <= PRICE_LIST_REG_3;
@@ -375,7 +375,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0010 : begin
+				4'b0010 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_2;
 				PRICE_LIST_REG_2 <= PRICE_LIST_REG_3;
 				PRICE_LIST_REG_3 <= PRICE_LIST_REG_4;
@@ -388,7 +388,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0011 : begin
+				4'b0011 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_3;
 				PRICE_LIST_REG_3 <= PRICE_LIST_REG_4;
 				PRICE_LIST_REG_4 <= PRICE_LIST_REG_5;
@@ -400,7 +400,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0100 : begin
+				4'b0100 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_4;
 				PRICE_LIST_REG_4 <= PRICE_LIST_REG_5;
 				PRICE_LIST_REG_5 <= PRICE_LIST_REG_6;
@@ -411,7 +411,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0101 : begin
+				4'b0101 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_5;
 				PRICE_LIST_REG_5 <= PRICE_LIST_REG_6;
 				PRICE_LIST_REG_6 <= PRICE_LIST_REG_7;
@@ -421,7 +421,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0110 : begin
+				4'b0110 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_6;
 				PRICE_LIST_REG_6 <= PRICE_LIST_REG_7;
 				PRICE_LIST_REG_7 <= PRICE_LIST_REG_8;
@@ -430,7 +430,7 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				0111 : begin
+				4'b0111 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_7;
 				PRICE_LIST_REG_7 <= PRICE_LIST_REG_8;
 				PRICE_LIST_REG_8 <= PRICE_LIST_REG_9;
@@ -438,25 +438,25 @@ begin
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				1000 : begin
+				4'b1000 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_8;
 				PRICE_LIST_REG_8 <= PRICE_LIST_REG_9;
 				PRICE_LIST_REG_9 <= PRICE_LIST_REG_10;
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				1001 : begin
+				4'b1001 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_9;
 				PRICE_LIST_REG_9 <= PRICE_LIST_REG_10;
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				1010 : begin
+				4'b1010 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_10;
 				PRICE_LIST_REG_10 <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
-				1011 : begin
+				4'b1011 : begin
 				DELETE_PRICE <= PRICE_LIST_REG_11;
 				PRICE_LIST_REG_11 <= 16'b1111_1111_1111_1111;
 				end
@@ -465,7 +465,7 @@ begin
 			
 			case(ID) //quantity list is shifted after cancel operation
 			
-				0000 : begin
+				4'b0000 : begin
 				QTT_LIST_REG_0 <= QTT_LIST_REG_1;
 				QTT_LIST_REG_1 <= QTT_LIST_REG_2;
 				QTT_LIST_REG_2 <= QTT_LIST_REG_3;
@@ -479,7 +479,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0001 : begin
+				4'b0001 : begin
 				QTT_LIST_REG_1 <= QTT_LIST_REG_2;
 				QTT_LIST_REG_2 <= QTT_LIST_REG_3;
 				QTT_LIST_REG_3 <= QTT_LIST_REG_4;
@@ -492,7 +492,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0010 : begin
+				4'b0010 : begin
 				QTT_LIST_REG_2 <= QTT_LIST_REG_3;
 				QTT_LIST_REG_3 <= QTT_LIST_REG_4;
 				QTT_LIST_REG_4 <= QTT_LIST_REG_5;
@@ -504,7 +504,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0011 : begin
+				4'b0011 : begin
 				QTT_LIST_REG_3 <= QTT_LIST_REG_4;
 				QTT_LIST_REG_4 <= QTT_LIST_REG_5;
 				QTT_LIST_REG_5 <= QTT_LIST_REG_6;
@@ -515,7 +515,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0100 : begin
+				4'b0100 : begin
 				QTT_LIST_REG_4 <= QTT_LIST_REG_5;
 				QTT_LIST_REG_5 <= QTT_LIST_REG_6;
 				QTT_LIST_REG_6 <= QTT_LIST_REG_7;
@@ -525,7 +525,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0101 : begin
+				4'b0101 : begin
 				QTT_LIST_REG_5 <= QTT_LIST_REG_6;
 				QTT_LIST_REG_6 <= QTT_LIST_REG_7;
 				QTT_LIST_REG_7 <= QTT_LIST_REG_8;
@@ -534,7 +534,7 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0110 : begin
+				4'b0110 : begin
 				QTT_LIST_REG_6 <= QTT_LIST_REG_7;
 				QTT_LIST_REG_7 <= QTT_LIST_REG_8;
 				QTT_LIST_REG_8 <= QTT_LIST_REG_9;
@@ -542,29 +542,29 @@ begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				0111 : begin
+				4'b0111 : begin
 				QTT_LIST_REG_7 <= QTT_LIST_REG_8;
 				QTT_LIST_REG_8 <= QTT_LIST_REG_9;
 				QTT_LIST_REG_9 <= QTT_LIST_REG_10;
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				1000 : begin
+				4'b1000 : begin
 				QTT_LIST_REG_8 <= QTT_LIST_REG_9;
 				QTT_LIST_REG_9 <= QTT_LIST_REG_10;
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				1001 : begin
+				4'b1001 : begin
 				QTT_LIST_REG_9 <= QTT_LIST_REG_10;
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				1010 : begin
+				4'b1010 : begin
 				QTT_LIST_REG_10 <= QTT_LIST_REG_11;
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
-				1011 : begin
+				4'b1011 : begin
 				QTT_LIST_REG_11 <= 4'b1111;
 				end
 		
@@ -576,7 +576,7 @@ begin
 		
 end  
 
-	assign NUM = NUM_REG + 1;
+	assign NUM = NUM_REG;
 	assign T_PRICE = T_PRICE_REG;
 	
 	assign P_LIST_0 = P_LIST_REG_0;

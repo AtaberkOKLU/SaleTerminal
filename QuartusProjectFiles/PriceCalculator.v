@@ -50,18 +50,18 @@ begin
 					ID_REG = ID;
 					QTT_REG = QTT;
 					case(ID_REG)
-							0000 : PRICE_REG <= PRICE_0;
-							0001 : PRICE_REG <= PRICE_1;
-							0010 : PRICE_REG <= PRICE_2;
-							0011 : PRICE_REG <= PRICE_3;
-							0100 : PRICE_REG <= PRICE_4;
-							0101 : PRICE_REG <= PRICE_5;
-							0110 : PRICE_REG <= PRICE_6;
-							0111 : PRICE_REG <= PRICE_7;
-							1000 : PRICE_REG <= PRICE_8;
-							1001 : PRICE_REG <= PRICE_9;
-							1010 : PRICE_REG <= PRICE_10;
-							1011 : PRICE_REG <= PRICE_11;
+							4'b0000 : PRICE_REG <= PRICE_0;
+							4'b0001 : PRICE_REG <= PRICE_1;
+							4'b0010 : PRICE_REG <= PRICE_2;
+							4'b0011 : PRICE_REG <= PRICE_3;
+							4'b0100 : PRICE_REG <= PRICE_4;
+							4'b0101 : PRICE_REG <= PRICE_5;
+							4'b0110 : PRICE_REG <= PRICE_6;
+							4'b0111 : PRICE_REG <= PRICE_7;
+							4'b1000 : PRICE_REG <= PRICE_8;
+							4'b1001 : PRICE_REG <= PRICE_9;
+							4'b1010 : PRICE_REG <= PRICE_10;
+							4'b1011 : PRICE_REG <= PRICE_11;
 							default : PRICE_REG <= 12'b111111111111;
 					endcase
 				end
