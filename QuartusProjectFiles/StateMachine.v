@@ -206,9 +206,9 @@ always @ (posedge CLOCK_50)
 						// Reset Barcode
 						RST_BarcodeController_Level <= 1;
 						// Reset Basket
-						
+						RST_BasketController_Level <= 1;
 						// Reset Quantity (if stored)
-						
+						RST_Direction2ProductID_Level <= 1;
 						// Reset ***
 						
 						// Go to IDLE State
