@@ -67,6 +67,19 @@ assign VGA_Controller_RSTN = RESET_N;
 wire [11:0] HighlightedProductList;
 wire [3:0] BasketProductNum;
 
+wire [3:0] P_LIST_0;
+wire [3:0] P_LIST_1;
+wire [3:0] P_LIST_2;
+wire [3:0] P_LIST_3;
+wire [3:0] P_LIST_4;
+wire [3:0] P_LIST_5;
+wire [3:0] P_LIST_6;
+wire [3:0] P_LIST_7;
+wire [3:0] P_LIST_8;
+wire [3:0] P_LIST_9;
+wire [3:0] P_LIST_10;
+wire [3:0] P_LIST_11;
+
 VGA_Controller VGA_Controller_inst0(
 	// Generic
 	.CLOCK_50(CLOCK_50),
@@ -86,7 +99,8 @@ VGA_Controller VGA_Controller_inst0(
    .VGA_VS(VGA_VS),
    .VGA_BLANK_N(VGA_BLANK_N),
 	.VGA_SYNC_N(VGA_SYNC_N),
-	.BasketProductNum(BasketProductNum)
+	.BasketProductNum(BasketProductNum),
+	.BasketProductIDList({P_LIST_0, P_LIST_1, P_LIST_2, P_LIST_3, P_LIST_4, P_LIST_5, P_LIST_6, P_LIST_7, P_LIST_8, P_LIST_9, P_LIST_10, P_LIST_11})
 );
 
 /* VGA CONTROLLER END */
@@ -189,19 +203,6 @@ HoverController HoverController_inst0(
 wire [15:0] T_PRICE, PRICE_LIST_0, PRICE_LIST_1, PRICE_LIST_2, PRICE_LIST_3, PRICE_LIST_4;
 wire [15:0] PRICE_LIST_5, PRICE_LIST_6, PRICE_LIST_7, PRICE_LIST_8, PRICE_LIST_9;
 wire [15:0] PRICE_LIST_10, PRICE_LIST_11;
-
-wire [3:0] P_LIST_0;
-wire [3:0] P_LIST_1;
-wire [3:0] P_LIST_2;
-wire [3:0] P_LIST_3;
-wire [3:0] P_LIST_4;
-wire [3:0] P_LIST_5;
-wire [3:0] P_LIST_6;
-wire [3:0] P_LIST_7;
-wire [3:0] P_LIST_8;
-wire [3:0] P_LIST_9;
-wire [3:0] P_LIST_10;
-wire [3:0] P_LIST_11;
 
 wire [3:0] QTT_LIST_0;
 wire [3:0] QTT_LIST_1;

@@ -228,20 +228,20 @@ always @ (posedge CLOCK_50)
 						else if(CleanSWOut[2])				// SW2 is Active?
 							begin
 								RST_BarcodeController_Level <= 1;
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 								State <= State5_BasketEdit;	// 	Go to Basket Editing Mode
 							end
 						else if (CleanSWOut[1])				// SW1 is Active?
 							begin
 								RST_Direction2ProductID_Level <= 1;
 								RST_BarcodeController_Level <= 1;
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 								State <= State3_Interactive;	// 	Go to Interactive Mode
 							end
 						else										// None is active?
 							begin
 								State <= State2_Barcode;		// 	Go to Barcode Mode
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 							end
 					end
 					
