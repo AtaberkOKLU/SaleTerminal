@@ -25,7 +25,10 @@ module ImageLocator
 	
 		// Product Image Properties
 	parameter PRDCT_PIC_WIDTH 	= 100,
-	parameter PRDCT_PIC_HEIGHT = 100
+	parameter PRDCT_PIC_HEIGHT = 100,
+	
+	parameter LOGO_WIDTH			= 260,
+	parameter LOGO_HEIGHT 		= 40,
 )(
 	input wire CLK,
 
@@ -101,7 +104,7 @@ wire w_y_indicator_1 = (CounterX > 147) & (CounterX < 158);
 wire w_y2 = (CounterY > 275) & (CounterY < 376);
 wire w_y_indicator_2 = (CounterX > 275) & (CounterX < 286);
 
-wire w_logo = (CounterX > 19) & (CounterY > 9) & (CounterY < 279) & (CounterX < 50);
+wire w_logo = (CounterX > 19) & (CounterY > 9) & (CounterX < 280) & (CounterY < 50);
 
 wire im_0  = w_x0 & w_y0;
 wire im_1  = w_x1 & w_y0;
@@ -182,7 +185,7 @@ assign PixelBus 	= (inHighlightedArea) ? 24'h0000FF:{(R_WIDTH+G_WIDTH+B_WIDTH){1
 
 always @ (posedge CLK)
 	if(isImage)
-		ROM_Addr <= ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-(308+ImageID[1:0]<<7)) + (PRDCT_PIC_WIDTH)*(CounterY-(20+((ImageID>>2)<<7)));
+		ROM_Addr <= ImageID*PRDCT_PIC_WIDTH*PRDCT_PIC_HEIGHT + (CounterX-((w_logo)?20:(308+ImageID[1:0]*128))) + ((w_logo)?LOGO_WIDTH:PRDCT_PIC_WIDTH)*(CounterY-((w_logo)?10:(20+((ImageID[3:2])*128))));
 	else
 		ROM_Addr <= {ROM_ADDR_BUS_WIDTH{1'b0}};
 		
