@@ -18,6 +18,8 @@ PRDC_IMG_HEIGHT = 100;
 PRDC_NUM        = 12;
 COLOR_CHNL_NUM  = 3;
 FPGA_CLR_WIDTH  = 8;
+LOGO_W          = 260;
+LOGO_H          = 40;
 
 %% Directory Definitions
 WORKING_DIR = "../";
@@ -28,12 +30,12 @@ ROM_DIR     = append(WORKING_DIR, "ROM_Init/");
 Image_Files_List = dir(IMAGES_DIR);
 Image_Files_List = Image_Files_List(3:end);
 number_of_images = length(Image_Files_List);
-assert(PRDC_NUM == number_of_images, "# of Products does not match the number of images");
+assert(PRDC_NUM+1 == number_of_images, "# of Products does not match the number of images");
 
 %% Creating MIF File
 fileID = fopen (append(ROM_DIR, 'ROM_IMAGES.mif'), 'w');
 % Properly Format the File
-fprintf(fileID, 'DEPTH = %d;\n', 100*100*number_of_images);
+fprintf(fileID, 'DEPTH = %d;\n', 100*100*PRDC_NUM+LOGO_W*LOGO_H);
 fprintf(fileID, 'WIDTH = %d;\n', 8*3);
 fprintf(fileID, 'ADDRESS_RADIX = UNS;\n');
 fprintf(fileID, 'DATA_RADIX = HEX;\n');
