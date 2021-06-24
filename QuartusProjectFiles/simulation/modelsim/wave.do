@@ -18,6 +18,10 @@ add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Contr
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/ROM_Addr
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/PixelBus
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/isImage
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedArea
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedPrdArea_Reg
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedImgArea_Reg
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/ImageID
 add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_0
 add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_1
 add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_2
@@ -28,13 +32,9 @@ add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverCont
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedProductList
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedBarcodeOut
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedDecoderOut
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedArea
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedPrdArea_Reg
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedImgArea_Reg
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/ImageID
 TreeUpdate [SetDefaultTree]
 WaveRestoreCursors {{Cursor 1} {0 ps} 0}
-quietly wave cursor active 0
+quietly wave cursor active 1
 configure wave -namecolwidth 737
 configure wave -valuecolwidth 87
 configure wave -justifyvalue left
@@ -49,4 +49,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ps
 update
-WaveRestoreZoom {14598644866 ps} {14925208165 ps}
+WaveRestoreZoom {0 ps} {326563299 ps}
