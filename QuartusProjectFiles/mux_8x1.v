@@ -29,9 +29,9 @@ reg Out;
 input enable; 
 
 //Check the state of the input lines 
-always @ (In1 or In2 or In3 or In4 or In5 or In6 or In7 or In8 or Sel) 
+always @ (In1 or In2 or In3 or In4 or In5 or In6 or In7 or In8 or enable or Sel) 
 begin 
- if (enable == 1)
+ if (enable)
  begin
   case (Sel) 
    3'b000 : Out = In1; 
