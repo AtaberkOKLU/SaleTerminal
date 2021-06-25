@@ -1,4 +1,4 @@
-module letter_writer(H_counter,ve_counter,CLK,output_bit,words,output_bit_char,coloumn_counter,data);
+module letter_writer(RESET_N, H_counter,ve_counter,CLK,output_bit,words,output_bit_char,coloumn_counter,data);
 
 input [10:0] H_counter;
 input [9:0] ve_counter;
@@ -13,7 +13,7 @@ output wire [6:0] output_bit_char;
 reg enable=1'b0;
 input [755:0] words;
 reg [3:0] basket_counter=4'b0000;
-
+input wire RESET_N;
 
 
 mux_8x1 mux_8x1_1(
@@ -83,7 +83,16 @@ reg [3:0] counter = 4'b0000;
 
 always @(posedge CLK)
  begin
-  if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
+	if(!RESET_N)
+		begin
+			row_counter			<= 0;
+			char_counter		<= 0;
+			coloumn_counter	<= 0;
+			enable				<= 0;
+			basket_counter		<= 0;
+			counter				<= 0;
+		end
+  else if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
   begin
 	if (H_counter>=11'd65 & H_counter<=11'd136)  //20 & 91
 	begin

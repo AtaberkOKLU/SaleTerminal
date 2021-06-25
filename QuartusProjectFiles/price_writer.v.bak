@@ -1,4 +1,4 @@
-module price_writer(RESET_N, numbers,total_price,H_counter,ve_counter,CLK,output_bit,output_bit_char,coloumn_counter,data);
+module price_writer(numbers,total_price,H_counter,ve_counter,CLK,output_bit,output_bit_char,coloumn_counter,data);
 
 input wire [239:0] numbers;
 wire [1000:0] prices;
@@ -12,7 +12,6 @@ output output_bit;
 output wire [6:0] output_bit_char;
 output wire [3:0] coloumn_counter;
 input wire [7:0] data;
-input wire RESET_N;
 
 
 num_calc num_calc1(
@@ -114,8 +113,7 @@ number_writer_pixel number_writer_pixel_1(
 .prices(prices),
 .output_bit_char(output_bit_char),
 .coloumn_counter(coloumn_counter),
-.data(data),
-.RESET_N(RESET_N)
+.data(data)
 );
 
 

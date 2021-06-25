@@ -1,4 +1,4 @@
-module number_writer_pixel(RESET_N,H_counter,ve_counter,CLK,output_bit,prices,output_bit_char,coloumn_counter,data);
+module number_writer_pixel(H_counter,ve_counter,CLK,output_bit,prices,output_bit_char,coloumn_counter,data);
 
 input [10:0] H_counter;
 input [9:0] ve_counter;
@@ -13,7 +13,7 @@ output wire [6:0] output_bit_char;
 reg enable=1'b0;
 input [1000:0] prices;
 reg [3:0] basket_counter=4'b0000;
-input wire RESET_N;
+
 
 mux_8x1 mux_8x1_1(
 .Sel(row_counter),
@@ -85,15 +85,7 @@ wire p_13=(ve_counter >= 10'd562 & ve_counter <=10'd577);
 
 always @(posedge CLK)
  begin
-  if(!RESET_N)
-		begin
-			row_counter			<= 0;
-			char_counter		<= 0;
-			coloumn_counter	<= 0;
-			enable				<= 0;
-			basket_counter		<= 0;
-		end
-  else if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12 | p_13) 
+  if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12 | p_13) 
   begin
 	if (H_counter>=11'd172 & H_counter<=11'd259)  
 	begin

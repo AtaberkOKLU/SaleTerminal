@@ -1,4 +1,4 @@
-module text_controller_general(product_IDS,H_counter,V_counter,CLK,output_bit,numbers,total_price,RESET_N);
+module text_controller_general(product_IDS,H_counter,V_counter,CLK,output_bit,numbers,total_price);
 
 input [47:0] product_IDS;
 input CLK;
@@ -6,7 +6,7 @@ input [10:0] H_counter;
 input [9:0] V_counter;
 output output_bit;
 wire output_bit1,output_bit2;
-input wire RESET_N;
+
 wire [6:0] output_bit_char,output_bit_char1,output_bit_char2;
 wire [3:0] coloumn_counter,coloumn_counter1,coloumn_counter2;
 wire [7:0] data;
@@ -24,8 +24,7 @@ text_controller text_controller1(
 .output_bit(output_bit1),
 .data(data),
 .output_bit_char(output_bit_char1),
-.coloumn_counter(coloumn_counter1),
-.RESET_N(RESET_N)
+.coloumn_counter(coloumn_counter1)
 );
 
 price_writer price_writer_1(
@@ -37,8 +36,7 @@ price_writer price_writer_1(
 .output_bit(output_bit2),
 .output_bit_char(output_bit_char2),
 .coloumn_counter(coloumn_counter2),
-.data(data),
-.RESET_N(RESET_N)
+.data(data)
 );
 
 

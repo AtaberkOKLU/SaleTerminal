@@ -1,4 +1,4 @@
-module text_controller(product_IDS,CLK,H_counter,V_counter,output_bit,data,output_bit_char,coloumn_counter);
+module text_controller(RESET_N,product_IDS,CLK,H_counter,V_counter,output_bit,data,output_bit_char,coloumn_counter);
 
 input [47:0]product_IDS;
 input CLK;
@@ -9,6 +9,7 @@ wire [755:0] dat;
 input [7:0] data;
 output [6:0] output_bit_char;
 output [3:0] coloumn_counter;
+input wire RESET_N;
 
 writer writer_1(
 .ProductID(product_IDS[47:44]),
@@ -78,7 +79,8 @@ letter_writer letter_writer_1(
 .words(dat),
 .output_bit_char(output_bit_char),
 .coloumn_counter(coloumn_counter),
-.data(data)
+.data(data),
+.RESET_N(RESET_N)
 );
 
 

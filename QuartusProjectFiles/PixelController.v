@@ -31,6 +31,7 @@ module PixelController#(
 	input wire [11:0] HighlightedProductList,
 	input wire CLOCK,
 	input wire SW2,
+	input wire RESET_N,
 	input wire [3:0] BasketProductNum,
 	input wire [47:0] BasketProductIDList,
 	input  wire [239:0] numbers,
@@ -76,7 +77,8 @@ text_controller_general TextController_inst0(
 	.V_counter(CounterY),
 	.output_bit(isFontPixel),
 	.numbers(numbers),
-	.total_price(total_price)
+	.total_price(total_price),
+	.RESET_N(RESET_N)
 );
 	
 assign PixBus = (isFontPixel) ? {(R_WIDTH+G_WIDTH+B_WIDTH){1'b0}}:Img_RGBBus;

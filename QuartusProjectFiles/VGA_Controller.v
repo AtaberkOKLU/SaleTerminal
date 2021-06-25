@@ -124,7 +124,8 @@ module VGA_Controller
 		.BasketProductNum(BasketProductNum),
 		.BasketProductIDList(BasketProductIDList),
 		.numbers(numbers),
-		.total_price(total_price)
+		.total_price(total_price),
+		.RESET_N(RESET_N)
 	);
 	
 assign {VGA_B, VGA_G, VGA_R} = PixBux_wire;
