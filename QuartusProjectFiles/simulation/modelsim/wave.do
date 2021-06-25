@@ -24,8 +24,36 @@ add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/StateMach
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/BasketController_Enable_Pulse
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/BasketController_Cancel_Pulse
 add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/Product_valid
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/ENABLE
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/ID
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/QTT
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/CANCEL
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/NUM
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/T_PRICE
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_0
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_1
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_2
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_3
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/T_PRICE_REG
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/DELETE_PRICE
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/NUM_REG
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/EN_Price_Level
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/Price_Enable_Pulse
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/output_bit
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/H_counter
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/V_counter
+add wave -noupdate -radix hexadecimal /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/output_bit_char
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/row_counter
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/coloumn_counter
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/char_counter
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/enable
+add wave -noupdate -radix hexadecimal /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/addr
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter1
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter2
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {5795427 ps} 0}
+WaveRestoreCursors {{Cursor 1} {2113454691 ps} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 457
 configure wave -valuecolwidth 100
@@ -41,4 +69,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {5736596 ps} {5957450 ps}
+WaveRestoreZoom {2111784166 ps} {2117859396 ps}
