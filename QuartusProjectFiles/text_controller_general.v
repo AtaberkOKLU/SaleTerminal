@@ -1,4 +1,4 @@
-module text_controller_general(product_IDS,H_counter,V_counter,CLK,output_bit,numbers,total_price);
+module text_controller_general(product_IDS,H_counter,V_counter,CLK,output_bit,numbers,total_price,output_bit_char,output_bit_char1,output_bit_char2);
 
 input [47:0] product_IDS;
 input CLK;
@@ -7,7 +7,7 @@ input [9:0] V_counter;
 output output_bit;
 wire output_bit1,output_bit2;
 
-wire [6:0] output_bit_char,output_bit_char1,output_bit_char2;
+output wire [6:0] output_bit_char,output_bit_char1,output_bit_char2;
 wire [3:0] coloumn_counter,coloumn_counter1,coloumn_counter2;
 wire [7:0] data;
 wire [10:0] addr;

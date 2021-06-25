@@ -25,7 +25,7 @@ input
 
 input [2:0] Sel; //The three bit selection line 
 output Out; //The single 8-bit output line of the Mux 
-reg [7:0] Out;
+reg Out;
 input enable; 
 
 //Check the state of the input lines 

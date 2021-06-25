@@ -42,7 +42,8 @@ mux_9x1 mux_9x1_1(
 .In7(letters[20:14]),
 .In8(letters[13:7]),
 .In9(letters[6:0]),
-.Out(output_bit_char)
+.Out(output_bit_char),
+.enable(enable)
 
 );
 
@@ -64,18 +65,19 @@ mux_12x1 mux_12x1_1(
 
 );
 
-wire p_1= (ve_counter >= 10'd60 & ve_counter <= 10'd75);
-wire p_2= (ve_counter >= 10'd100 & ve_counter <=10'd115);
-wire p_3= (ve_counter >= 10'd140 & ve_counter <=10'd155);
-wire p_4= (ve_counter >= 10'd180 & ve_counter <=10'd195);
-wire p_5= (ve_counter >= 10'd220 & ve_counter <=10'd235);
-wire p_6= (ve_counter >= 10'd260 & ve_counter <=10'd275);
-wire p_7= (ve_counter >= 10'd300 & ve_counter <=10'd315);
-wire p_8= (ve_counter >= 10'd340 & ve_counter <=10'd355);
-wire p_9= (ve_counter >= 10'd380 & ve_counter <=10'd395);
-wire p_10=(ve_counter >= 10'd420 & ve_counter <=10'd435);
-wire p_11=(ve_counter >= 10'd460 & ve_counter <=10'd475);
-wire p_12=(ve_counter >= 10'd500 & ve_counter <=10'd515);
+wire p_1= (ve_counter >= 10'd72 & ve_counter <= 10'd87);
+wire p_2= (ve_counter >= 10'd112 & ve_counter <=10'd127);
+wire p_3= (ve_counter >= 10'd152 & ve_counter <=10'd167);
+wire p_4= (ve_counter >= 10'd192 & ve_counter <=10'd207);
+wire p_5= (ve_counter >= 10'd232 & ve_counter <=10'd247);
+wire p_6= (ve_counter >= 10'd272 & ve_counter <=10'd287);
+wire p_7= (ve_counter >= 10'd312 & ve_counter <=10'd327);
+wire p_8= (ve_counter >= 10'd352 & ve_counter <=10'd367);
+wire p_9= (ve_counter >= 10'd392 & ve_counter <=10'd407);
+wire p_10=(ve_counter >= 10'd432 & ve_counter <=10'd447);
+wire p_11=(ve_counter >= 10'd472 & ve_counter <=10'd487);
+wire p_12=(ve_counter >= 10'd512 & ve_counter <=10'd527);
+
 
 
 
@@ -88,7 +90,7 @@ always @(posedge CLK)
 		enable<=1'b1;
 		row_counter<=row_counter + 3'b001;
 		if (row_counter == 3'b111)
-			begin
+		begin
 			char_counter<=char_counter + 4'b0001;
 				if (char_counter == 4'b1000)
 				begin
@@ -103,7 +105,7 @@ always @(posedge CLK)
 					end	
 				end	
 			row_counter<=3'b000;
-			end
+		end
 	end
 	else
 		enable<=1'b0;

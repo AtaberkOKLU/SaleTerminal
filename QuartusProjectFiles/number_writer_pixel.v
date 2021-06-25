@@ -43,7 +43,8 @@ mux_11x1 mux_11x1_1(
 .In9(numbers[20:14]),
 .In10(numbers[13:7]),
 .In11(numbers[6:0]),
-.Out(output_bit_char)
+.Out(output_bit_char),
+.enable(enable)
 
 );
 
