@@ -12,7 +12,7 @@
 //						
 //		Owner			: 	Ahsen TOPBAŞ
 
-module PriceCalculator(CLK,ENABLE,RESET_N,ID,QTT,PRICE);
+module PriceCalculator(CLK,RESET_N,ENABLE,ID,QTT,PRICE);
 
 	input wire CLK;
 	input wire ENABLE;
@@ -20,63 +20,57 @@ module PriceCalculator(CLK,ENABLE,RESET_N,ID,QTT,PRICE);
 	input wire [3:0] ID;
 	input wire [3:0] QTT;
 	
-	output wire [15:0] PRICE;
+	output wire [11:0] PRICE;
 	
 	//Prices of the products
 //Price_# means that this price belongs to the product with id = #
-localparam PRICE_0 = 12'b0010_0101_0000;	//banana
-localparam PRICE_1 = 12'b0000_0101_0000;	//potato
-localparam PRICE_2 = 12'b0000_0111_0101;	//tomato
-localparam PRICE_3 = 12'b0010_0000_0000;	//peach
-localparam PRICE_4 = 12'b0001_0000_0000;	//apple
-localparam PRICE_5 = 12'b1001_1001_0101;	//pineapple
-localparam PRICE_6 = 12'b0110_1001_0101;	//avocado
-localparam PRICE_7 = 12'b1001_0010_0101;	//cherry
-localparam PRICE_8 = 12'b0010_0111_0101;	//fig
-localparam PRICE_9 = 12'b1001_1001_0101;	//grape
-localparam PRICE_10 = 12'b0100_0010_0101;	//kiwi
-localparam PRICE_11 = 12'b1000_1001_0101;	//lemon
-	
-reg [3:0] ID_REG = 4'b1111;
-reg [3:0] QTT_REG = 4'b1111;
-reg [15:0] PRICE_REG = 12'b111111111111;
+localparam PRICE_0 = 12'd250;	//banana
+localparam PRICE_1 = 12'd50;	//potato
+localparam PRICE_2 = 12'd75;	//tomato
+localparam PRICE_3 = 12'd200;	//peach
+localparam PRICE_4 = 12'd100;	//apple
+localparam PRICE_5 = 12'd995;	//pineapple
+localparam PRICE_6 = 12'd695;	//avocado
+localparam PRICE_7 = 12'd325;	//cherry
+localparam PRICE_8 = 12'd275;	//fig
+localparam PRICE_9 = 12'd495;	//grape
+localparam PRICE_10 = 12'd425;	//kiwi
+localparam PRICE_11 = 12'd595;	//lemon
 
-always @(posedge CLK)
+reg [11:0] PRICE_REG = 12'b111111111111;
+
+always @(negedge CLK)
 begin
 	if(~RESET_N)
 		begin
-			if(ENABLE)
-				begin
-					ID_REG = ID;
-					QTT_REG = QTT;
-					case(ID_REG)
-							4'b0000 : PRICE_REG <= PRICE_0;
-							4'b0001 : PRICE_REG <= PRICE_1;
-							4'b0010 : PRICE_REG <= PRICE_2;
-							4'b0011 : PRICE_REG <= PRICE_3;
-							4'b0100 : PRICE_REG <= PRICE_4;
-							4'b0101 : PRICE_REG <= PRICE_5;
-							4'b0110 : PRICE_REG <= PRICE_6;
-							4'b0111 : PRICE_REG <= PRICE_7;
-							4'b1000 : PRICE_REG <= PRICE_8;
-							4'b1001 : PRICE_REG <= PRICE_9;
-							4'b1010 : PRICE_REG <= PRICE_10;
-							4'b1011 : PRICE_REG <= PRICE_11;
-							default : PRICE_REG <= 12'b111111111111;
-					endcase
-				end
+			PRICE_REG 	<= 12'b111111111111;
 		end
 	
 	else
 		begin
-			ID_REG = 4'b1111;
-			QTT_REG = 4'b1111;
-			PRICE_REG = 12'b111111111111;
+			if(ENABLE)
+				begin
+					case(ID)
+							4'b0000 : PRICE_REG <= PRICE_0  * QTT;
+							4'b0001 : PRICE_REG <= PRICE_1  * QTT;
+							4'b0010 : PRICE_REG <= PRICE_2  * QTT;
+							4'b0011 : PRICE_REG <= PRICE_3  * QTT;
+							4'b0100 : PRICE_REG <= PRICE_4  * QTT;
+							4'b0101 : PRICE_REG <= PRICE_5  * QTT;
+							4'b0110 : PRICE_REG <= PRICE_6  * QTT;
+							4'b0111 : PRICE_REG <= PRICE_7  * QTT;
+							4'b1000 : PRICE_REG <= PRICE_8  * QTT;
+							4'b1001 : PRICE_REG <= PRICE_9  * QTT;
+							4'b1010 : PRICE_REG <= PRICE_10 * QTT;
+							4'b1011 : PRICE_REG <= PRICE_11 * QTT;
+							default : PRICE_REG <= 12'b111111111111;
+					endcase
+				end
+
 		end
 	
 end
 
-	BCD_Multiplier Calculate_Price(.NUM1(PRICE_REG), .NUM2(QTT_REG), .PRODUCT(PRICE));
+	assign PRICE = PRICE_REG;
 
-	
 endmodule 

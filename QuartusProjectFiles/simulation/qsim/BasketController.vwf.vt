@@ -1,0 +1,211 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "06/24/2021 23:45:50"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          BasketController
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module BasketController_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg CANCEL;
+reg CLK;
+reg ENABLE;
+reg [3:0] ID;
+reg [3:0] QTT;
+reg RESET_N;
+// wires                                               
+wire [3:0] BC_COUNTER;
+wire [3:0] NUM;
+wire [3:0] PC_COUNTER;
+wire [15:0] PRICE_LIST_0;
+wire [15:0] PRICE_LIST_1;
+wire [15:0] PRICE_LIST_2;
+wire [15:0] PRICE_LIST_3;
+wire [15:0] PRICE_LIST_4;
+wire [15:0] PRICE_LIST_5;
+wire [15:0] PRICE_LIST_6;
+wire [15:0] PRICE_LIST_7;
+wire [15:0] PRICE_LIST_8;
+wire [15:0] PRICE_LIST_9;
+wire [15:0] PRICE_LIST_10;
+wire [15:0] PRICE_LIST_11;
+wire [3:0] P_LIST_0;
+wire [3:0] P_LIST_1;
+wire [3:0] P_LIST_2;
+wire [3:0] P_LIST_3;
+wire [3:0] P_LIST_4;
+wire [3:0] P_LIST_5;
+wire [3:0] P_LIST_6;
+wire [3:0] P_LIST_7;
+wire [3:0] P_LIST_8;
+wire [3:0] P_LIST_9;
+wire [3:0] P_LIST_10;
+wire [3:0] P_LIST_11;
+wire [3:0] QTT_LIST_0;
+wire [3:0] QTT_LIST_1;
+wire [3:0] QTT_LIST_2;
+wire [3:0] QTT_LIST_3;
+wire [3:0] QTT_LIST_4;
+wire [3:0] QTT_LIST_5;
+wire [3:0] QTT_LIST_6;
+wire [3:0] QTT_LIST_7;
+wire [3:0] QTT_LIST_8;
+wire [3:0] QTT_LIST_9;
+wire [3:0] QTT_LIST_10;
+wire [3:0] QTT_LIST_11;
+wire [15:0] T_PRICE;
+
+// assign statements (if any)                          
+BasketController i1 (
+// port map - connection between master ports and signals/registers   
+	.BC_COUNTER(BC_COUNTER),
+	.CANCEL(CANCEL),
+	.CLK(CLK),
+	.ENABLE(ENABLE),
+	.ID(ID),
+	.NUM(NUM),
+	.PC_COUNTER(PC_COUNTER),
+	.PRICE_LIST_0(PRICE_LIST_0),
+	.PRICE_LIST_1(PRICE_LIST_1),
+	.PRICE_LIST_2(PRICE_LIST_2),
+	.PRICE_LIST_3(PRICE_LIST_3),
+	.PRICE_LIST_4(PRICE_LIST_4),
+	.PRICE_LIST_5(PRICE_LIST_5),
+	.PRICE_LIST_6(PRICE_LIST_6),
+	.PRICE_LIST_7(PRICE_LIST_7),
+	.PRICE_LIST_8(PRICE_LIST_8),
+	.PRICE_LIST_9(PRICE_LIST_9),
+	.PRICE_LIST_10(PRICE_LIST_10),
+	.PRICE_LIST_11(PRICE_LIST_11),
+	.P_LIST_0(P_LIST_0),
+	.P_LIST_1(P_LIST_1),
+	.P_LIST_2(P_LIST_2),
+	.P_LIST_3(P_LIST_3),
+	.P_LIST_4(P_LIST_4),
+	.P_LIST_5(P_LIST_5),
+	.P_LIST_6(P_LIST_6),
+	.P_LIST_7(P_LIST_7),
+	.P_LIST_8(P_LIST_8),
+	.P_LIST_9(P_LIST_9),
+	.P_LIST_10(P_LIST_10),
+	.P_LIST_11(P_LIST_11),
+	.QTT(QTT),
+	.QTT_LIST_0(QTT_LIST_0),
+	.QTT_LIST_1(QTT_LIST_1),
+	.QTT_LIST_2(QTT_LIST_2),
+	.QTT_LIST_3(QTT_LIST_3),
+	.QTT_LIST_4(QTT_LIST_4),
+	.QTT_LIST_5(QTT_LIST_5),
+	.QTT_LIST_6(QTT_LIST_6),
+	.QTT_LIST_7(QTT_LIST_7),
+	.QTT_LIST_8(QTT_LIST_8),
+	.QTT_LIST_9(QTT_LIST_9),
+	.QTT_LIST_10(QTT_LIST_10),
+	.QTT_LIST_11(QTT_LIST_11),
+	.RESET_N(RESET_N),
+	.T_PRICE(T_PRICE)
+);
+initial 
+begin 
+#240000 $finish;
+end 
+
+// CANCEL
+initial
+begin
+	CANCEL = 1'b0;
+end 
+
+// RESET_N
+initial
+begin
+	RESET_N = 1'b1;
+end 
+
+// CLK
+always
+begin
+	CLK = 1'b0;
+	CLK = #10000 1'b1;
+	#10000;
+end 
+
+// ENABLE
+initial
+begin
+	ENABLE = 1'b1;
+	ENABLE = #20000 1'b0;
+	ENABLE = #140000 1'b1;
+	ENABLE = #10000 1'b0;
+end 
+// ID[ 3 ]
+initial
+begin
+	ID[3] = 1'b1;
+	ID[3] = #60000 1'b0;
+end 
+// ID[ 2 ]
+initial
+begin
+	ID[2] = 1'b0;
+	ID[2] = #160000 1'b1;
+end 
+// ID[ 1 ]
+initial
+begin
+	ID[1] = 1'b1;
+	ID[1] = #60000 1'b0;
+end 
+// ID[ 0 ]
+initial
+begin
+	ID[0] = 1'b1;
+	ID[0] = #60000 1'b0;
+	ID[0] = #100000 1'b1;
+end 
+// QTT[ 3 ]
+initial
+begin
+	QTT[3] = 1'b0;
+end 
+// QTT[ 2 ]
+initial
+begin
+	QTT[2] = 1'b1;
+	QTT[2] = #60000 1'b0;
+	QTT[2] = #100000 1'b1;
+end 
+// QTT[ 1 ]
+initial
+begin
+	QTT[1] = 1'b0;
+end 
+// QTT[ 0 ]
+initial
+begin
+	QTT[0] = 1'b0;
+end 
+endmodule
+
