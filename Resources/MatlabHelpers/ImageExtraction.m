@@ -23,7 +23,7 @@ LOGO_H          = 40;
 
 %% Directory Definitions
 WORKING_DIR = "../";
-IMAGES_DIR  = append(WORKING_DIR, "Images/");
+IMAGES_DIR  = append(WORKING_DIR, "NewImages/");
 ROM_DIR     = append(WORKING_DIR, "ROM_Init/");
 
 %% Extracting Image Files
