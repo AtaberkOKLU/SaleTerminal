@@ -65,20 +65,20 @@ mux_12x1 mux_12x1_1(
 
 );
 
-wire p_1= (ve_counter >= 10'd72 & ve_counter <= 10'd87);
-wire p_2= (ve_counter >= 10'd112 & ve_counter <=10'd127);
-wire p_3= (ve_counter >= 10'd152 & ve_counter <=10'd167);
-wire p_4= (ve_counter >= 10'd192 & ve_counter <=10'd207);
-wire p_5= (ve_counter >= 10'd232 & ve_counter <=10'd247);
-wire p_6= (ve_counter >= 10'd272 & ve_counter <=10'd287);
-wire p_7= (ve_counter >= 10'd312 & ve_counter <=10'd327);
-wire p_8= (ve_counter >= 10'd352 & ve_counter <=10'd367);
-wire p_9= (ve_counter >= 10'd392 & ve_counter <=10'd407);
-wire p_10=(ve_counter >= 10'd432 & ve_counter <=10'd447);
-wire p_11=(ve_counter >= 10'd472 & ve_counter <=10'd487);
-wire p_12=(ve_counter >= 10'd512 & ve_counter <=10'd527);
+wire p_1= (ve_counter >= 10'd72  & ve_counter <= 10'd87 );
+wire p_2= (ve_counter >= 10'd112 & ve_counter <= 10'd127);
+wire p_3= (ve_counter >= 10'd152 & ve_counter <= 10'd167);
+wire p_4= (ve_counter >= 10'd192 & ve_counter <= 10'd207);
+wire p_5= (ve_counter >= 10'd232 & ve_counter <= 10'd247);
+wire p_6= (ve_counter >= 10'd272 & ve_counter <= 10'd287);
+wire p_7= (ve_counter >= 10'd312 & ve_counter <= 10'd327);
+wire p_8= (ve_counter >= 10'd352 & ve_counter <= 10'd367);
+wire p_9= (ve_counter >= 10'd392 & ve_counter <= 10'd407);
+wire p_10=(ve_counter >= 10'd432 & ve_counter <= 10'd447);
+wire p_11=(ve_counter >= 10'd472 & ve_counter <= 10'd487);
+wire p_12=(ve_counter >= 10'd512 & ve_counter <= 10'd527);
 
-
+reg [3:0] counter = 4'b0000;
 
 
 always @(posedge CLK)
@@ -95,10 +95,12 @@ always @(posedge CLK)
 				if (char_counter == 4'b1000)
 				begin
 					char_counter <= 4'b0000;
-					coloumn_counter <= coloumn_counter + 4'b0001;
-					if (coloumn_counter == 4'b1111)
+					//coloumn_counter <= coloumn_counter + 4'b0001;
+					counter <= counter + 4'b0001;
+					if (counter == 4'b1111)
 					begin
-						coloumn_counter <= 4'b0000;
+						//coloumn_counter <= 4'b0000;
+						counter <= 4'b0000;
 						basket_counter <= basket_counter + 4'b0001;
 						if (basket_counter == 4'b1011)
 							basket_counter <= 4'b0000;
@@ -113,9 +115,5 @@ always @(posedge CLK)
  end
  
  
- 
- 
-
-
 
 endmodule
