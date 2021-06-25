@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "06/24/2021 23:45:50"
+// Generated on "06/25/2021 13:10:45"
                                                                                 
 // Verilog Test Bench (with test vectors) for design :                          BasketController
 // 
@@ -36,9 +36,7 @@ reg [3:0] ID;
 reg [3:0] QTT;
 reg RESET_N;
 // wires                                               
-wire [3:0] BC_COUNTER;
 wire [3:0] NUM;
-wire [3:0] PC_COUNTER;
 wire [15:0] PRICE_LIST_0;
 wire [15:0] PRICE_LIST_1;
 wire [15:0] PRICE_LIST_2;
@@ -75,18 +73,16 @@ wire [3:0] QTT_LIST_8;
 wire [3:0] QTT_LIST_9;
 wire [3:0] QTT_LIST_10;
 wire [3:0] QTT_LIST_11;
-wire [15:0] T_PRICE;
+wire [19:0] T_PRICE;
 
 // assign statements (if any)                          
 BasketController i1 (
 // port map - connection between master ports and signals/registers   
-	.BC_COUNTER(BC_COUNTER),
 	.CANCEL(CANCEL),
 	.CLK(CLK),
 	.ENABLE(ENABLE),
 	.ID(ID),
 	.NUM(NUM),
-	.PC_COUNTER(PC_COUNTER),
 	.PRICE_LIST_0(PRICE_LIST_0),
 	.PRICE_LIST_1(PRICE_LIST_1),
 	.PRICE_LIST_2(PRICE_LIST_2),
@@ -136,12 +132,8 @@ end
 initial
 begin
 	CANCEL = 1'b0;
-end 
-
-// RESET_N
-initial
-begin
-	RESET_N = 1'b1;
+	CANCEL = #200000 1'b1;
+	CANCEL = #20000 1'b0;
 end 
 
 // CLK
@@ -157,33 +149,48 @@ initial
 begin
 	ENABLE = 1'b1;
 	ENABLE = #20000 1'b0;
-	ENABLE = #140000 1'b1;
-	ENABLE = #10000 1'b0;
+	ENABLE = #40000 1'b1;
+	ENABLE = #20000 1'b0;
+	ENABLE = #40000 1'b1;
+	ENABLE = #20000 1'b0;
+end 
+
+// RESET_N
+initial
+begin
+	RESET_N = 1'b1;
 end 
 // ID[ 3 ]
 initial
 begin
-	ID[3] = 1'b1;
-	ID[3] = #60000 1'b0;
+	ID[3] = 1'b0;
 end 
 // ID[ 2 ]
 initial
 begin
-	ID[2] = 1'b0;
-	ID[2] = #160000 1'b1;
+	ID[2] = 1'b1;
+	ID[2] = #30000 1'b0;
 end 
 // ID[ 1 ]
 initial
 begin
 	ID[1] = 1'b1;
-	ID[1] = #60000 1'b0;
+	ID[1] = #30000 1'b0;
+	ID[1] = #30000 1'b1;
+	ID[1] = #30000 1'b0;
+	ID[1] = #70000 1'b1;
+	ID[1] = #20000 1'b0;
 end 
 // ID[ 0 ]
 initial
 begin
-	ID[0] = 1'b1;
-	ID[0] = #60000 1'b0;
-	ID[0] = #100000 1'b1;
+	ID[0] = 1'b0;
+	ID[0] = #60000 1'b1;
+	ID[0] = #30000 1'b0;
+	ID[0] = #30000 1'b1;
+	ID[0] = #20000 1'b0;
+	ID[0] = #60000 1'b1;
+	ID[0] = #20000 1'b0;
 end 
 // QTT[ 3 ]
 initial
@@ -193,19 +200,24 @@ end
 // QTT[ 2 ]
 initial
 begin
-	QTT[2] = 1'b1;
-	QTT[2] = #60000 1'b0;
-	QTT[2] = #100000 1'b1;
+	QTT[2] = 1'b0;
+	QTT[2] = #60000 1'b1;
+	QTT[2] = #30000 1'b0;
 end 
 // QTT[ 1 ]
 initial
 begin
 	QTT[1] = 1'b0;
+	QTT[1] = #160000 1'b1;
+	QTT[1] = #20000 1'b0;
 end 
 // QTT[ 0 ]
 initial
 begin
-	QTT[0] = 1'b0;
+	QTT[0] = 1'b1;
+	QTT[0] = #30000 1'b0;
+	QTT[0] = #90000 1'b1;
+	QTT[0] = #20000 1'b0;
 end 
 endmodule
 
