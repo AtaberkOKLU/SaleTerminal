@@ -115,8 +115,7 @@ module num_calc(enable,num_i,price_i,dat);
 			default : dat6 = 7'h00;
 		endcase
 		
-		dat7 = 7'h2e; //.
-		
+
 		case(price_i[7:4])
 			4'd0 : dat8 = 7'h30; //0
 			4'd1 : dat8 = 7'h31; //1
@@ -132,20 +131,63 @@ module num_calc(enable,num_i,price_i,dat);
 		endcase
 		
 		case(price_i[3:0])
-			4'd0 : dat9 = 7'h30; //0
-			4'd1 : dat9 = 7'h31; //1
-			4'd2 : dat9 = 7'h32; //2
-			4'd3 : dat9 = 7'h33; //3
-			4'd4 : dat9 = 7'h34; //4
-			4'd5 : dat9 = 7'h35; //5
-			4'd6 : dat9 = 7'h36; //6
-			4'd7 : dat9 = 7'h37; //7
-			4'd8 : dat9 = 7'h38; //8
-			4'd9 : dat9 = 7'h39; //9
-			default : dat9 = 7'h00;
+			4'd0 : begin
+				dat9 = 7'h30; //0
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd1 : begin
+				dat9 = 7'h31; //1
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd2 : begin
+				dat9 = 7'h32; //2
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd3 : begin
+				dat9 = 7'h33; //3
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd4 : begin
+				dat9 = 7'h34; //4
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd5 : begin
+				dat9 = 7'h35; //5
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd6 : begin
+				dat9 = 7'h36; //6
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd7 : begin
+				dat9 = 7'h37; //7
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd8 : begin
+				dat9 = 7'h38; //8
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			4'd9 : begin
+				dat9 = 7'h39; //9
+				dat7 = 7'h2e; //.
+				dat10 = 7'h24; //$
+			end
+			default : begin
+				dat9 = 7'h00; //
+				dat7 = 7'h00; //
+				dat10 = 7'h00; //
+			end
 		endcase
 		
-		dat10 = 7'h24; //$
 		
 		dat = {dat0,dat1,dat2,dat3,dat4,dat5,dat6,dat7,dat8,dat9,dat10};
 		
