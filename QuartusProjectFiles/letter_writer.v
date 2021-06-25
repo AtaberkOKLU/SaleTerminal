@@ -1,26 +1,20 @@
-module letter_writer(H_counter,V_counter,CLK,output_bit,words);
+module letter_writer(H_counter,ve_counter,CLK,output_bit,words,output_bit_char,coloumn_counter,data);
 
-input [9:0] H_counter,V_counter;
+input [10:0] H_counter;
+input [9:0] ve_counter;
 input CLK;
 wire [62:0]letters;
 output output_bit;
-wire [7:0] data;
+input wire [7:0] data;
 reg [2:0] row_counter=3'b000;
-reg [3:0] coloumn_counter=4'b0000;
+output reg [3:0] coloumn_counter=4'b0000;
 reg [3:0] char_counter=4'b0000;
-wire [6:0] output_bit_char;
+output wire [6:0] output_bit_char;
 reg enable=1'b0;
-reg [9:0] ve_counter;
 input [755:0] words;
 reg [3:0] basket_counter=4'b0000;
 
 
-
-font_rom font_rom1(
-.clk(CLK),
-.addr({output_bit_char,coloumn_counter}),
-.data(data)
-);
 
 mux_8x1 mux_8x1_1(
 .Sel(row_counter),
@@ -48,7 +42,8 @@ mux_9x1 mux_9x1_1(
 .In7(letters[20:14]),
 .In8(letters[13:7]),
 .In9(letters[6:0]),
-.Out(output_bit_char)
+.Out(output_bit_char),
+.enable(enable)
 
 );
 
@@ -70,17 +65,32 @@ mux_12x1 mux_12x1_1(
 
 );
 
+wire p_1= (ve_counter >= 10'd72 & ve_counter <= 10'd87);
+wire p_2= (ve_counter >= 10'd112 & ve_counter <=10'd127);
+wire p_3= (ve_counter >= 10'd152 & ve_counter <=10'd167);
+wire p_4= (ve_counter >= 10'd192 & ve_counter <=10'd207);
+wire p_5= (ve_counter >= 10'd232 & ve_counter <=10'd247);
+wire p_6= (ve_counter >= 10'd272 & ve_counter <=10'd287);
+wire p_7= (ve_counter >= 10'd312 & ve_counter <=10'd327);
+wire p_8= (ve_counter >= 10'd352 & ve_counter <=10'd367);
+wire p_9= (ve_counter >= 10'd392 & ve_counter <=10'd407);
+wire p_10=(ve_counter >= 10'd432 & ve_counter <=10'd447);
+wire p_11=(ve_counter >= 10'd472 & ve_counter <=10'd487);
+wire p_12=(ve_counter >= 10'd512 & ve_counter <=10'd527);
+
+
+
 
 always @(posedge CLK)
  begin
-  if (ve_counter >= 10'b0000111100 & ve_counter <= 10'b0001001011 & ve_counter >= 10'b0001100100 & ve_counter <= 10'b0001110011 & ve_counter >= 10'b0010001100 & ve_counter <= 10'b0010011011 & ve_counter >= 10'b0010110100 & ve_counter <= 10'b0011000011  & ve_counter >= 10'b0100000100 & ve_counter <= 10'b0100010011 & ve_counter >= 10'b0100101100 & ve_counter <= 10'b0100111011 & ve_counter >= 10'b0101010100 & ve_counter <= 10'b0101100011 & ve_counter >= 10'b0101111100 & ve_counter <= 10'b0110001011 & ve_counter >= 10'b0110100100 & ve_counter <= 10'b0110110011 & ve_counter >= 10'b0111001100 & ve_counter <= 10'b0111011011 & ve_counter >= 10'b0111110100 & ve_counter <= 10'b1000000011) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
+  if (p_1 | p_2 | p_3 | p_4 | p_5 | p_6 | p_7 | p_8 | p_9 | p_10 | p_11 | p_12) //60 & 75 .. 100 & 115 .. 140 & 155 .. 180 & 195 .. 220 & 235 .. 260 & 275 .. 300 & 315 .. 340 & 355 .. 380 & 395 .. 420 & 435 .. 460 & 475 .. 500 & 515
   begin
-	if (H_counter>=10'b0000010100 & H_counter<=10'b0001011011)  //20 & 91
+	if (H_counter>=11'd65 & H_counter<=11'd136)  //20 & 91
 	begin
 		enable<=1'b1;
 		row_counter<=row_counter + 3'b001;
 		if (row_counter == 3'b111)
-			begin
+		begin
 			char_counter<=char_counter + 4'b0001;
 				if (char_counter == 4'b1000)
 				begin
@@ -95,7 +105,7 @@ always @(posedge CLK)
 					end	
 				end	
 			row_counter<=3'b000;
-			end
+		end
 	end
 	else
 		enable<=1'b0;
@@ -105,12 +115,7 @@ always @(posedge CLK)
  
  
  
- always @(posedge CLK)
-  begin
-  
-	ve_counter<=V_counter;
 
-  end
 
 
 endmodule

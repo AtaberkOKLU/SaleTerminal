@@ -12,31 +12,23 @@ add wave -noupdate /SaleTerminal_tb/VGA_HS
 add wave -noupdate /SaleTerminal_tb/VGA_VS
 add wave -noupdate /SaleTerminal_tb/VGA_BLANK_N
 add wave -noupdate /SaleTerminal_tb/VGA_SYNC_N
-add wave -noupdate /SaleTerminal_tb/VGA_SYNC_N
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/CounterX
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/CounterY
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/ROM_Addr
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/PixelBus
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/isImage
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedArea
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedPrdArea_Reg
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/inHighlightedImgArea_Reg
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/Image_Shape_Submodule_inst0/ImageLocator_inst0/ImageID
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_0
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_1
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_2
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/Barcode_Digit_3
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/NumOfBarcodeDigitsEntered
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/ValidID
-add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/SelectedProductID
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedProductList
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedBarcodeOut
-add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/HoverController_inst0/HighlightedDecoderOut
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/P_LIST_0
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/P_LIST_1
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/P_LIST_2
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/P_LIST_3
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/output_bit
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/BasketProductNum
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/State_out
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/ProductQuantity
+add wave -noupdate -radix unsigned /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/ProductID_out
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/BasketController_Enable_Pulse
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/BasketController_Cancel_Pulse
+add wave -noupdate /SaleTerminal_tb/SaleTerminal_inst0/StateMachine_inst0/Product_valid
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {0 ps} 0}
+WaveRestoreCursors {{Cursor 1} {5795427 ps} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 737
-configure wave -valuecolwidth 87
+configure wave -namecolwidth 457
+configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 0
 configure wave -snapdistance 10
@@ -47,6 +39,6 @@ configure wave -gridoffset 0
 configure wave -gridperiod 1
 configure wave -griddelta 40
 configure wave -timeline 0
-configure wave -timelineunits ps
+configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ps} {326563299 ps}
+WaveRestoreZoom {5736596 ps} {5957450 ps}

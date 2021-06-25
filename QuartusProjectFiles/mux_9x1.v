@@ -9,7 +9,8 @@ module mux_9x1( Out,
   In6,
   In7,
   In8,
-  In9
+  In9,
+  enable
   ); 
 
 input
@@ -27,11 +28,14 @@ input
 
 input [3:0] Sel; //The three bit selection line 
 output reg [6:0] Out; //The single 8-bit output line of the Mux 
+input enable;
 
 
 //Check the state of the input lines 
-always @ (In1 or In2 or In3 or In4 or In5 or In6 or In7 or In8 or In9 or Sel) 
+always @ (In1 or In2 or In3 or In4 or In5 or In6 or In7 or In8 or In9 or Sel or enable) 
 begin 
+ if (enable)
+ begin
  case (Sel) 
   4'b0000 : Out = In1; 
   4'b0001 : Out = In2; 
@@ -43,10 +47,14 @@ begin
   4'b0111 : Out = In8;
   4'b1000 : Out = In9;  
   default : Out = 4'b0000; 
-
+ 
   //If input is undefined then output is undefined 
 
  endcase 
+ 
+ end
+ else
+	Out = 7'b0000000;
 
 end  
 

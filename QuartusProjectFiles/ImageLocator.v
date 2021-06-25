@@ -57,20 +57,20 @@ reg SW2_Reg							= 0;
 wire w_x_prdct 			= (CounterX > 19)  & (CounterX < 280);
 wire w_x_prdct_brdr		= (CounterX == 20) | (CounterX == 60) | (CounterX == 280);
 
-wire w_x_indicator_p		= (CounterX > 19)  & (CounterX < 59) ;
+wire w_x_indicator_p		= (CounterX > 19)  & (CounterX < 60) ;
  
-wire w_y_indicator_p0	= (CounterY > 59)  & (CounterY < 99) ;
-wire w_y_indicator_p1	= (CounterY > 99)  & (CounterY < 139);
-wire w_y_indicator_p2	= (CounterY > 139) & (CounterY < 179);
-wire w_y_indicator_p3	= (CounterY > 179) & (CounterY < 219);
-wire w_y_indicator_p4	= (CounterY > 219) & (CounterY < 259);
-wire w_y_indicator_p5	= (CounterY > 259) & (CounterY < 299);
-wire w_y_indicator_p6	= (CounterY > 299) & (CounterY < 339);
-wire w_y_indicator_p7	= (CounterY > 339) & (CounterY < 379);
-wire w_y_indicator_p8	= (CounterY > 379) & (CounterY < 419);
-wire w_y_indicator_p9	= (CounterY > 419) & (CounterY < 459);
-wire w_y_indicator_p10	= (CounterY > 459) & (CounterY < 499);
-wire w_y_indicator_p11	= (CounterY > 499) & (CounterY < 539);
+wire w_y_indicator_p0	= (CounterY > 59)  & (CounterY < 100);
+wire w_y_indicator_p1	= (CounterY > 99)  & (CounterY < 140);
+wire w_y_indicator_p2	= (CounterY > 139) & (CounterY < 180);
+wire w_y_indicator_p3	= (CounterY > 179) & (CounterY < 220);
+wire w_y_indicator_p4	= (CounterY > 219) & (CounterY < 260);
+wire w_y_indicator_p5	= (CounterY > 259) & (CounterY < 300);
+wire w_y_indicator_p6	= (CounterY > 299) & (CounterY < 340);
+wire w_y_indicator_p7	= (CounterY > 339) & (CounterY < 380);
+wire w_y_indicator_p8	= (CounterY > 379) & (CounterY < 420);
+wire w_y_indicator_p9	= (CounterY > 419) & (CounterY < 460);
+wire w_y_indicator_p10	= (CounterY > 459) & (CounterY < 500);
+wire w_y_indicator_p11	= (CounterY > 499) & (CounterY < 540);
 
 wire p_0_indicator  = w_x_indicator_p & w_y_indicator_p0;
 wire p_1_indicator  = w_x_indicator_p & w_y_indicator_p1;

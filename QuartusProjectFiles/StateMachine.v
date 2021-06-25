@@ -206,9 +206,9 @@ always @ (posedge CLOCK_50)
 						// Reset Barcode
 						RST_BarcodeController_Level <= 1;
 						// Reset Basket
-						
+						RST_BasketController_Level <= 1;
 						// Reset Quantity (if stored)
-						
+						RST_Direction2ProductID_Level <= 1;
 						// Reset ***
 						
 						// Go to IDLE State
@@ -228,20 +228,20 @@ always @ (posedge CLOCK_50)
 						else if(CleanSWOut[2])				// SW2 is Active?
 							begin
 								RST_BarcodeController_Level <= 1;
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 								State <= State5_BasketEdit;	// 	Go to Basket Editing Mode
 							end
 						else if (CleanSWOut[1])				// SW1 is Active?
 							begin
 								RST_Direction2ProductID_Level <= 1;
 								RST_BarcodeController_Level <= 1;
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 								State <= State3_Interactive;	// 	Go to Interactive Mode
 							end
 						else										// None is active?
 							begin
 								State <= State2_Barcode;		// 	Go to Barcode Mode
-								ProductID_out <= 4'b1111;
+								//ProductID_out <= 4'b1111;
 							end
 					end
 					
@@ -379,10 +379,10 @@ always @ (posedge CLOCK_50)
 							begin
 									// Case or Simple Encoder to extract the pressed key
 									case(KEY_Reg)
-										4'b0001: ProductQuantity <= 'd1;
-										4'b0010: ProductQuantity <= 'd2;
-										4'b0100: ProductQuantity <= 'd3;
-										4'b1000: ProductQuantity <= 'd4;
+										4'b0001: ProductQuantity <= 'd4;
+										4'b0010: ProductQuantity <= 'd3;
+										4'b0100: ProductQuantity <= 'd2;
+										4'b1000: ProductQuantity <= 'd1;
 										default: ProductQuantity <= 'd0;	// Never Reached
 									endcase
 									// TODO Basket Controller handling
