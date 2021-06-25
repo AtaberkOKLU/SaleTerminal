@@ -21,400 +21,471 @@
 # 
 # vlog "D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo"
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:05 on Jun 24,2021
+# Start time: 12:47:04 on Jun 25,2021
 # vlog -reportprogress 300 D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo 
 # -- Compiling module VGA_PLL
 # 
 # Top level modules:
 # 	VGA_PLL
-# End time: 16:33:05 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:04 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Bin2BCD_5D.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:04 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Bin2BCD_5D.v 
+# -- Compiling module Bin2BCD_5D
+# 
+# Top level modules:
+# 	Bin2BCD_5D
+# End time: 12:47:04 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Bin2BCD_4D.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:04 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Bin2BCD_4D.v 
+# -- Compiling module Bin2BCD_4D
+# 
+# Top level modules:
+# 	Bin2BCD_4D
+# End time: 12:47:04 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/text_controller_general.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:04 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/text_controller_general.v 
+# -- Compiling module text_controller_general
+# 
+# Top level modules:
+# 	text_controller_general
+# End time: 12:47:04 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/price_writer.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:04 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/price_writer.v 
+# -- Compiling module price_writer
+# 
+# Top level modules:
+# 	price_writer
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/number_writer_pixel.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:05 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/number_writer_pixel.v 
+# -- Compiling module number_writer_pixel
+# 
+# Top level modules:
+# 	number_writer_pixel
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/num_calc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:05 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/num_calc.v 
+# -- Compiling module num_calc
+# 
+# Top level modules:
+# 	num_calc
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_13x1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:05 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/mux_13x1.v 
+# -- Compiling module mux_13x1
+# 
+# Top level modules:
+# 	mux_13x1
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_11x1.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+# Start time: 12:47:05 on Jun 25,2021
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/mux_11x1.v 
+# -- Compiling module mux_11x1
+# 
+# Top level modules:
+# 	mux_11x1
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/writer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:05 on Jun 24,2021
+# Start time: 12:47:05 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/writer.v 
 # -- Compiling module writer
 # 
 # Top level modules:
 # 	writer
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:01
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/text_controller.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:05 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/text_controller.v 
 # -- Compiling module text_controller
 # 
 # Top level modules:
 # 	text_controller
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:05 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_9x1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:05 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/mux_9x1.v 
 # -- Compiling module mux_9x1
 # 
 # Top level modules:
 # 	mux_9x1
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_8x1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:06 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/mux_8x1.v 
 # -- Compiling module mux_8x1
 # 
 # Top level modules:
 # 	mux_8x1
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/mux_12x1.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:06 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/mux_12x1.v 
 # -- Compiling module mux_12x1
 # 
 # Top level modules:
 # 	mux_12x1
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/letter_writer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:06 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/letter_writer.v 
 # -- Compiling module letter_writer
 # 
 # Top level modules:
 # 	letter_writer
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/font_rom.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:06 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/font_rom.v 
 # -- Compiling module font_rom
 # 
 # Top level modules:
 # 	font_rom
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
+# Start time: 12:47:06 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v 
 # -- Compiling module PriceCalculator
 # 
 # Top level modules:
 # 	PriceCalculator
-# End time: 16:33:06 on Jun 24,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
-# vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BCD_Multiplier.v}
-# Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:06 on Jun 24,2021
-# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/BCD_Multiplier.v 
-# -- Compiling module BCD_Multiplier
-# 
-# Top level modules:
-# 	BCD_Multiplier
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:01
+# End time: 12:47:06 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BasketController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/BasketController.v 
 # -- Compiling module BasketController
+# ** Warning: D:/EE/EE314/Project/QuartusProjectFiles/BasketController.v(152): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
 # 
 # Top level modules:
 # 	BasketController
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
-# Errors: 0, Warnings: 0
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Encoder16x4.v 
 # -- Compiling module Encoder16x4
 # 
 # Top level modules:
 # 	Encoder16x4
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/encoder8x3.v 
 # -- Compiling module encoder8x3
 # 
 # Top level modules:
 # 	encoder8x3
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ButtonManager.v 
 # -- Compiling module ButtonManager
 # 
 # Top level modules:
 # 	ButtonManager
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/BarcodeController.v 
 # -- Compiling module BarcodeController
 # 
 # Top level modules:
 # 	BarcodeController
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Segment7.v 
 # -- Compiling module Segment7
 # 
 # Top level modules:
 # 	Segment7
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:07 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:07 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ImageROM.v 
 # -- Compiling module ImageROM
 # 
 # Top level modules:
 # 	ImageROM
-# End time: 16:33:07 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:07 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/HVSync_Generator.v 
 # -- Compiling module HVSync_Generator
 # 
 # Top level modules:
 # 	HVSync_Generator
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:01
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/VGA_Controller.v 
 # -- Compiling module VGA_Controller
 # 
 # Top level modules:
 # 	VGA_Controller
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/BarcodeShiftRegister.v 
 # -- Compiling module BarcodeShiftRegister
 # 
 # Top level modules:
 # 	BarcodeShiftRegister
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ImageLocator.v 
 # -- Compiling module ImageLocator
 # 
 # Top level modules:
 # 	ImageLocator
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ButtonDebouncer.v 
 # -- Compiling module ButtonDebouncer
 # 
 # Top level modules:
 # 	ButtonDebouncer
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ButtonLevelPulseConverter.v 
 # -- Compiling module ButtonLevelPulseConverter
 # 
 # Top level modules:
 # 	ButtonLevelPulseConverter
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:08 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:08 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/ButtonController.v 
 # -- Compiling module ButtonController
 # 
 # Top level modules:
 # 	ButtonController
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/SwitchDebouncer.v 
 # -- Compiling module SwitchDebouncer
 # 
 # Top level modules:
 # 	SwitchDebouncer
-# End time: 16:33:08 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:08 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Barcode2ProductID.v 
 # -- Compiling module Barcode2ProductID
 # 
 # Top level modules:
 # 	Barcode2ProductID
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:01
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Direction2ProductID.v 
 # -- Compiling module Direction2ProductID
 # 
 # Top level modules:
 # 	Direction2ProductID
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/StateMachine.v 
 # -- Compiling module StateMachine
 # 
 # Top level modules:
 # 	StateMachine
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/HoverController.v 
 # -- Compiling module HoverController
 # 
 # Top level modules:
 # 	HoverController
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:09 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Decoder4x16.v 
 # -- Compiling module Decoder4x16
 # 
 # Top level modules:
 # 	Decoder4x16
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:09 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Image_Shape_Submodule.v 
 # -- Compiling module Image_Shape_Submodule
 # 
 # Top level modules:
 # 	Image_Shape_Submodule
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/PixelController.v 
 # -- Compiling module PixelController
 # 
 # Top level modules:
 # 	PixelController
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.v 
 # -- Compiling module SaleTerminal
 # 
 # Top level modules:
 # 	SaleTerminal
-# End time: 16:33:09 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:09 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/LED_Controller.v 
 # -- Compiling module LED_Controller
 # 
 # Top level modules:
 # 	LED_Controller
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:01
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Decoder3x8.v 
 # -- Compiling module Decoder3x8
 # 
 # Top level modules:
 # 	Decoder3x8
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/DisplaySelectedIDSeg7.v 
 # -- Compiling module DisplaySelectedIDSeg7
 # 
 # Top level modules:
 # 	DisplaySelectedIDSeg7
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:10 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:10 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/Binary2BCD_2D.v 
 # -- Compiling module Binary2BCD_2D
 # 
 # Top level modules:
 # 	Binary2BCD_2D
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:11 on Jun 25,2021, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:11 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/BarcodeHoverController.v 
 # -- Compiling module BarcodeHoverController
 # 
 # Top level modules:
 # 	BarcodeHoverController
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:11 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vlog -vlog01compat -work work +incdir+D:/EE/EE314/Project/QuartusProjectFiles {D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v}
 # Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:11 on Jun 25,2021
 # vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/EE/EE314/Project/QuartusProjectFiles" D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v 
 # -- Compiling module SaleTerminal_tb
 # 
 # Top level modules:
 # 	SaleTerminal_tb
-# End time: 16:33:10 on Jun 24,2021, Elapsed time: 0:00:00
+# End time: 12:47:11 on Jun 25,2021, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs="+acc"  SaleTerminal_tb
 # vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver -L rtl_work -L work -voptargs=""+acc"" SaleTerminal_tb 
-# Start time: 16:33:10 on Jun 24,2021
+# Start time: 12:47:11 on Jun 25,2021
 # Loading work.SaleTerminal_tb
 # Loading work.SaleTerminal
 # Loading work.ButtonController
@@ -435,13 +506,19 @@
 # Loading work.ImageLocator
 # Loading work.Encoder16x4
 # Loading work.encoder8x3
+# Loading work.text_controller_general
 # Loading work.text_controller
 # Loading work.writer
 # Loading work.letter_writer
-# Loading work.font_rom
 # Loading work.mux_8x1
 # Loading work.mux_9x1
 # Loading work.mux_12x1
+# Loading work.price_writer
+# Loading work.num_calc
+# Loading work.number_writer_pixel
+# Loading work.mux_11x1
+# Loading work.mux_13x1
+# Loading work.font_rom
 # Loading work.StateMachine
 # Loading work.Barcode2ProductID
 # Loading work.Direction2ProductID
@@ -456,7 +533,8 @@
 # Loading work.Binary2BCD_2D
 # Loading work.BasketController
 # Loading work.PriceCalculator
-# Loading work.BCD_Multiplier
+# Loading work.Bin2BCD_5D
+# Loading work.Bin2BCD_4D
 # Loading work.LED_Controller
 # Loading altera_lnsim_ver.dps_extra_kick
 # Loading altera_lnsim_ver.dprio_init
@@ -488,10 +566,6 @@
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'Out'. The port definition is at: D:/EE/EE314/Project/QuartusProjectFiles/mux_8x1.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/letter_writer_1/mux_8x1_1 File: D:/EE/EE314/Project/QuartusProjectFiles/letter_writer.v Line: 26
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (16) for port 'NUM1'. The port definition is at: D:/EE/EE314/Project/QuartusProjectFiles/BCD_Multiplier.v(12).
-#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PriceCalculator_1/Calculate_Price File: D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v Line: 79
 # 
 # add wave *
 # view structure
@@ -556,6 +630,28 @@ configure wave -timeline 0
 configure wave -timelineunits ns
 update
 WaveRestoreZoom {5736596 ps} {5957450 ps}
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/ENABLE \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/ID \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/QTT \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/CANCEL \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/NUM \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/T_PRICE \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_0 \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_1 \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_2 \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE_LIST_3 \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/T_PRICE_REG \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PRICE \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/DELETE_PRICE \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/NUM_REG \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/EN_Price_Level \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/Price_Enable_Pulse
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/H_counter \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/V_counter \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/output_bit \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/output_bit_char
 restart -f
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'vga_pll_altera_pll_altera_pll_i_639'.  Expected 26, found 5.
@@ -581,10 +677,6 @@ restart -f
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
 # ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
-# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (1) for port 'Out'. The port definition is at: D:/EE/EE314/Project/QuartusProjectFiles/mux_8x1.v(1).
-#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/letter_writer_1/mux_8x1_1 File: D:/EE/EE314/Project/QuartusProjectFiles/letter_writer.v Line: 26
-# ** Warning: (vsim-3015) [PCDPC] - Port size (12) does not match connection size (16) for port 'NUM1'. The port definition is at: D:/EE/EE314/Project/QuartusProjectFiles/BCD_Multiplier.v(12).
-#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/BasketController_inst0/PriceCalculator_1/Calculate_Price File: D:/EE/EE314/Project/QuartusProjectFiles/PriceCalculator.v Line: 79
 run -all
 # Info: =================================================
 # Info:           Generic PLL Summary
@@ -598,5 +690,183 @@ run -all
 # Info: sim_additional_refclk_cycles_to_lock = 0
 # Info: output_clock_high_period = 12500.000000
 # Info: output_clock_low_period = 12500.000000
-# End time: 16:34:29 on Jun 24,2021, Elapsed time: 0:01:19
-# Errors: 0, Warnings: 24
+# ** Note: $stop    : D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v(112)
+#    Time: 20007600 ns  Iteration: 0  Instance: /SaleTerminal_tb
+# Break in Module SaleTerminal_tb at D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v line 112
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/EE314/Project/QuartusProjectFiles/simulation/modelsim/wave.do
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/row_counter \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/coloumn_counter \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/char_counter
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'vga_pll_altera_pll_altera_pll_i_639'.  Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/VGA_PLL_inst0/vga_pll_altera_pll_altera_pll_i_639 File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo Line: 46
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
+run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 40 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 12500.000000
+# Info: output_clock_low_period = 12500.000000
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/text_controller1/letter_writer_1/enable
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'vga_pll_altera_pll_altera_pll_i_639'.  Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/VGA_PLL_inst0/vga_pll_altera_pll_altera_pll_i_639 File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo Line: 46
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
+run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 40 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 12500.000000
+# Info: output_clock_low_period = 12500.000000
+# ** Note: $stop    : D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v(112)
+#    Time: 20007600 ns  Iteration: 0  Instance: /SaleTerminal_tb
+# Break in Module SaleTerminal_tb at D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v line 112
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/addr
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'vga_pll_altera_pll_altera_pll_i_639'.  Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/VGA_PLL_inst0/vga_pll_altera_pll_altera_pll_i_639 File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo Line: 46
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
+run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 40 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 12500.000000
+# Info: output_clock_low_period = 12500.000000
+# ** Note: $stop    : D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v(112)
+#    Time: 20007600 ns  Iteration: 0  Instance: /SaleTerminal_tb
+# Break in Module SaleTerminal_tb at D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v line 112
+add wave -position insertpoint  \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter1 \
+sim:/SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/PixelController_inst0/TextController_inst0/coloumn_counter2
+restart -f
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-2685) [TFMPC] - Too few port connections for 'vga_pll_altera_pll_altera_pll_i_639'.  Expected 26, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /SaleTerminal_tb/SaleTerminal_inst0/VGA_Controller_inst0/VGA_PLL_inst0/vga_pll_altera_pll_altera_pll_i_639 File: D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo Line: 46
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'refclk1'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_en'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'updn'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'num_phase_shifts'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'scanclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cntsel'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_to_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extswitch'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'adjpllin'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'fboutclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phase_done'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'reconfig_from_pll'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'activeclk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'clkbad'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'phout'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'lvds_clk'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'loaden'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'extclk_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'cascade_out'.
+# ** Warning: (vsim-3722) D:/EE/EE314/Project/QuartusProjectFiles/VGA_PLL_sim/VGA_PLL.vo(46): [TFMPC] - Missing connection for port 'zdbfbclk'.
+run -all
+# Info: =================================================
+# Info:           Generic PLL Summary
+# Info: =================================================
+# Time scale of (SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen) is  1ps /  1ps
+# Info: hierarchical_name = SaleTerminal_tb.SaleTerminal_inst0.VGA_Controller_inst0.VGA_PLL_inst0.vga_pll_altera_pll_altera_pll_i_639.new_model.gpll.no_need_to_gen
+# Info: reference_clock_frequency = 50.0 MHz
+# Info: output_clock_frequency = 40 MHZ
+# Info: phase_shift = 0 ps
+# Info: duty_cycle = 50
+# Info: sim_additional_refclk_cycles_to_lock = 0
+# Info: output_clock_high_period = 12500.000000
+# Info: output_clock_low_period = 12500.000000
+# ** Note: $stop    : D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v(112)
+#    Time: 20007600 ns  Iteration: 0  Instance: /SaleTerminal_tb
+# Break in Module SaleTerminal_tb at D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal_tb.v line 112
+write format wave -window .main_pane.wave.interior.cs.body.pw.wf D:/EE/EE314/Project/QuartusProjectFiles/simulation/modelsim/wave.do
+# End time: 13:19:56 on Jun 25,2021, Elapsed time: 0:32:45
+# Errors: 0, Warnings: 22

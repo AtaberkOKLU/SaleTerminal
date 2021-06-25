@@ -809,6 +809,8 @@ set_instance_assignment -name OUTPUT_TERMINATION "SERIES 50 OHM WITH CALIBRATION
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_FILE Bin2BCD_5D.v
+set_global_assignment -name VERILOG_FILE Bin2BCD_4D.v
 set_global_assignment -name VERILOG_FILE text_controller_tb.v
 set_global_assignment -name VERILOG_FILE text_controller_general.v
 set_global_assignment -name VERILOG_FILE price_writer.v
@@ -824,7 +826,6 @@ set_global_assignment -name VERILOG_FILE mux_12x1.v
 set_global_assignment -name VERILOG_FILE letter_writer.v
 set_global_assignment -name VERILOG_FILE font_rom.v
 set_global_assignment -name VERILOG_FILE PriceCalculator.v
-set_global_assignment -name VERILOG_FILE BCD_Multiplier.v
 set_global_assignment -name VERILOG_FILE BasketController.v
 set_global_assignment -name VERILOG_FILE Encoder16x4.v
 set_global_assignment -name VERILOG_FILE encoder8x3.v

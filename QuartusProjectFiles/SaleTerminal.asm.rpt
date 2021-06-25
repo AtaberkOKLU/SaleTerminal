@@ -1,5 +1,5 @@
 Assembler report for SaleTerminal
-Fri Jun 25 01:02:44 2021
+Fri Jun 25 13:33:38 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -39,7 +39,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Fri Jun 25 01:02:44 2021 ;
+; Assembler Status      ; Successful - Fri Jun 25 13:33:38 2021 ;
 ; Revision Name         ; SaleTerminal                          ;
 ; Top-level Entity Name ; SaleTerminal                          ;
 ; Family                ; Cyclone V                             ;
@@ -69,8 +69,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------+-------------------------------------------------------------------+
 ; Option         ; Setting                                                           ;
 +----------------+-------------------------------------------------------------------+
-; JTAG usercode  ; 0x040B7A82                                                        ;
-; Checksum       ; 0x040B7A82                                                        ;
+; JTAG usercode  ; 0x043988D6                                                        ;
+; Checksum       ; 0x043988D6                                                        ;
 +----------------+-------------------------------------------------------------------+
 
 
@@ -80,7 +80,7 @@ https://fpgasoftware.intel.com/eula.
 ; Option             ; Setting                                                       ;
 +--------------------+---------------------------------------------------------------+
 ; JTAG usercode      ; 0x00000000                                                    ;
-; Checksum           ; 0xDD2E9C6B                                                    ;
+; Checksum           ; 0xDC9D2A9D                                                    ;
 ; Compression Ratio  ; 2                                                             ;
 +--------------------+---------------------------------------------------------------+
 
@@ -91,13 +91,13 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Jun 25 01:02:27 2021
+    Info: Processing started: Fri Jun 25 13:33:21 2021
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 4903 megabytes
-    Info: Processing ended: Fri Jun 25 01:02:44 2021
+    Info: Peak virtual memory: 4906 megabytes
+    Info: Processing ended: Fri Jun 25 13:33:38 2021
     Info: Elapsed time: 00:00:17
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Total CPU time (on all processors): 00:00:17
 
 

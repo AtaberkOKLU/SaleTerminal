@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Fri Jun 25 00:57:09 2021
+Analysis & Synthesis Status : Successful - Fri Jun 25 13:29:15 2021
 Quartus Prime Version : 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 Revision Name : SaleTerminal
 Top-level Entity Name : SaleTerminal
 Family : Cyclone V
 Logic utilization (in ALMs) : N/A
-Total registers : 530
+Total registers : 532
 Total pins : 90
 Total virtual pins : 0
 Total block memory bits : 3,129,600
-Total DSP Blocks : 4
+Total DSP Blocks : 15
 Total HSSI RX PCSs : 0
 Total HSSI PMA RX Deserializers : 0
 Total HSSI TX PCSs : 0
