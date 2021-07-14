@@ -41,7 +41,7 @@ Visit Docs Folder
 +	4-Direction Buttons
 +	Select Button
 + 	Barcode Number Digits
-	+	6 Product
+	+	12 Product
 		+	4-digit Code for Each Product
 		+	Min 2 Different Digit/Button -> 2^4 = 16 Product
 	+	Quantity
@@ -49,7 +49,6 @@ Visit Docs Folder
 		+	4 Button (1, 2, 3, 4)
 +	Final Decition
 	+ 	4 Button (1, 2, 3, 4) (<-, ^, ->, v)
-	+	Max Product 4^4 = 256
 	+	1 Action Button (Select = Delete) ?+ (Edit Quantity in SW-2 Mode)
 
 ## Switchs
@@ -83,7 +82,7 @@ Visit Docs Folder
 
 ## States List
 +	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
-
+<!--
 ## TO DO
 +	VGA Controller                      : Ataberk ÖKLÜ 	 - Ongoing
 	+	ImageLocator                    : Ataberk ÖKLÜ 	 - Ongoing
@@ -133,11 +132,4 @@ Visit Docs Folder
 		+	4x16 Decoder				: Ataberk ÖKLÜ   - Done
 	+	VGA Implementation				: Ataberk ÖKLÜ   - Done
 	
-
-
-
-
-
-
-	
-
+-->
