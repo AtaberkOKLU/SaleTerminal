@@ -4,6 +4,9 @@ Visit Resources Folder
 # Documentations
 Visit Docs Folder
 
+# Project Report
++	[For Project Report Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/Project_Manuel/EE314_Term_Project_Report.pdf)
+
 # Link Resources
 
 ## Verilog Tutorial
@@ -32,6 +35,9 @@ Visit Docs Folder
 	+	Basket Editing : SW2 ON & SW1 X
 
 # System
+
+## States List
++	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
 
 ## Clocks
 +	Base CLK 	: 50 MHz
@@ -80,8 +86,6 @@ Visit Docs Folder
 +	Total B/s	: 39.790.080
 +	VGA CLK FREQ: 40 MHz
 
-## States List
-+	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
 <!--
 ## TO DO
 +	VGA Controller                      : Ataberk ÖKLÜ 	 - Ongoing
