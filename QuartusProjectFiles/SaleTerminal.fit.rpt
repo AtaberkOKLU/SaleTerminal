@@ -1,5 +1,5 @@
 Fitter report for SaleTerminal
-Fri Jun 25 16:28:14 2021
+Fri Jun 25 17:02:32 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Fri Jun 25 16:28:14 2021       ;
+; Fitter Status                   ; Successful - Fri Jun 25 17:02:32 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -159,13 +159,13 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 8           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
+; Average used               ; 1.11        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   3.7%      ;
-;     Processor 3            ;   3.4%      ;
+;     Processor 3            ;   3.5%      ;
 ;     Processor 4            ;   3.4%      ;
 +----------------------------+-------------+
 
@@ -3253,7 +3253,7 @@ Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176218): Packed 36 registers into blocks of type DSP block
     Extra Info (176220): Created 36 register duplicates
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:15
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:14
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:21
@@ -3266,7 +3266,7 @@ Info (170195): Router estimated average interconnect usage is 4% of the availabl
     Info (170196): Router estimated peak interconnect usage is 37% of the available device resources in the region that extends from location X22_Y35 to location X32_Y45
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (170194): Fitter routing operations ending: elapsed time is 00:01:38
+Info (170194): Fitter routing operations ending: elapsed time is 00:01:39
 Info (11888): Total time spent on timing analysis during the Fitter is 7.19 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
@@ -3277,8 +3277,8 @@ Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments 
 Info (144001): Generated suppressed messages file D:/EE/EE314/Project/QuartusProjectFiles/SaleTerminal.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 6652 megabytes
-    Info: Processing ended: Fri Jun 25 16:28:16 2021
-    Info: Elapsed time: 00:03:27
+    Info: Processing ended: Fri Jun 25 17:02:34 2021
+    Info: Elapsed time: 00:03:28
     Info: Total CPU time (on all processors): 00:05:05
 
 

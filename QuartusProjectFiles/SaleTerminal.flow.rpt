@@ -1,5 +1,5 @@
 Flow report for SaleTerminal
-Fri Jun 25 16:28:33 2021
+Fri Jun 25 17:02:51 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Fri Jun 25 16:28:33 2021       ;
+; Flow Status                     ; Successful - Fri Jun 25 17:02:51 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -68,7 +68,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/25/2021 16:24:20 ;
+; Start date & time ; 06/25/2021 16:58:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SaleTerminal        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id                        ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID                ; 141812761300711.162462746014172        ; --            ; --          ; --                                ;
+; COMPILER_SIGNATURE_ID                ; 141812761300711.162462951309912        ; --            ; --          ; --                                ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; SaleTerminal_tb                   ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; VGA_Controller_tb                 ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST      ; Off                                    ; --            ; --          ; eda_board_design_timing           ;
@@ -129,10 +129,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 4895 MB             ; 00:00:42                           ;
-; Fitter               ; 00:03:25     ; 1.1                     ; 6652 MB             ; 00:05:04                           ;
+; Analysis & Synthesis ; 00:00:31     ; 1.0                     ; 4884 MB             ; 00:00:43                           ;
+; Fitter               ; 00:03:26     ; 1.1                     ; 6652 MB             ; 00:05:03                           ;
 ; Assembler            ; 00:00:16     ; 1.0                     ; 4909 MB             ; 00:00:15                           ;
-; Total                ; 00:04:09     ; --                      ; --                  ; 00:06:01                           ;
+; Total                ; 00:04:13     ; --                      ; --                  ; 00:06:01                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

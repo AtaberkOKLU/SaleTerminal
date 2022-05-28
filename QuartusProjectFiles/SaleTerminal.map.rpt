@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SaleTerminal
-Fri Jun 25 16:24:48 2021
+Fri Jun 25 16:59:05 2021
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -85,7 +85,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Jun 25 16:24:48 2021       ;
+; Analysis & Synthesis Status     ; Successful - Fri Jun 25 16:59:05 2021       ;
 ; Quartus Prime Version           ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name                   ; SaleTerminal                                ;
 ; Top-level Entity Name           ; SaleTerminal                                ;
@@ -1436,7 +1436,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Fri Jun 25 16:24:20 2021
+    Info: Processing started: Fri Jun 25 16:58:32 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SaleTerminal -c SaleTerminal
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file bin2bcd_5d.v
@@ -1702,10 +1702,10 @@ Info (21057): Implemented 3419 device resources after synthesis - the final reso
     Info (21065): Implemented 1 PLLs
     Info (21062): Implemented 15 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 11 warnings
-    Info: Peak virtual memory: 4896 megabytes
-    Info: Processing ended: Fri Jun 25 16:24:48 2021
-    Info: Elapsed time: 00:00:28
-    Info: Total CPU time (on all processors): 00:00:43
+    Info: Peak virtual memory: 4905 megabytes
+    Info: Processing ended: Fri Jun 25 16:59:05 2021
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:44
 
 
 +------------------------------------------+

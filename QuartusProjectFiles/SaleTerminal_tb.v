@@ -7,22 +7,22 @@ reg  			RESET_N;
 reg [3:0] 	KEY;
 reg [2:0] 	SW;
 
-wire  [7:0] VGA_R;
-wire  [7:0] VGA_G;
-wire  [7:0] VGA_B;
+wire [7:0]  VGA_R;
+wire [7:0]  VGA_G;
+wire [7:0]  VGA_B;
 wire  		VGA_CLK;
 wire  		VGA_HS;
 wire  		VGA_VS;
 wire  		VGA_BLANK_N;
 wire  		VGA_SYNC_N;
 
-wire[6:0] 	HEX0;
-wire[6:0] 	HEX1;
-wire[6:0] 	HEX2;
-wire[6:0] 	HEX3;
-wire[6:0] 	HEX4;
-wire[6:0] 	HEX5;
-wire[9:0] 	LEDR;
+wire [6:0]	HEX0;
+wire [6:0]	HEX1;
+wire [6:0]	HEX2;
+wire [6:0]	HEX3;
+wire [6:0]	HEX4;
+wire [6:0]	HEX5;
+wire [9:0]	LEDR;
 
 SaleTerminal SaleTerminal_inst0(
 	.CLOCK_50(CLOCK_50),
