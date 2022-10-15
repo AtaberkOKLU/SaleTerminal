@@ -1,43 +1,16 @@
 # Resources
-Visit Resources Folder
+Visit [Resources Folder](https://github.com/AtaberkOKLU/SaleTerminal/tree/main/Docs)
 
 # Documentations
-Visit Docs Folder
+Visit [Docs Folder](https://github.com/AtaberkOKLU/SaleTerminal/tree/main/Resources)
 
 # Project Report
-+	[For Project Report Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/Project_Manuel/EE314_Term_Project_Report.pdf)
-
-# Link Resources
-
-## Verilog Tutorial
-* [Verilog](https://zipcpu.com/tutorial/)
-
-## VGA Controller
-* [VGA Controller using Verilog](https://ktln2.org/2018/01/23/implementing-vga-in-verilog/)
-* [VGA Controller | Verilog](https://numato.com/kb/simple-vga-design-example-for-telesto/)
-* [VGA Timing Calculations](http://tinyvga.com/vga-timing)
-* [One Deep Project - Interresting](https://projectf.io/posts/fpga-graphics/)
-	* [Project GitHub Page](https://github.com/projf/projf-explore/tree/master/lib)
-* [VGA Controller but VHDL - Teoritical Supplement](https://bertantaskin.com/fpga-ile-vga-monitor-kontrolu/)
-* [VGA Moving block and object selection using HDL](https://www.youtube.com/watch?v=WK5FT5RD1sU)
-
-# Need
-+	Layout		:
-	+	Product List
-	+	Basket List
-	+	Overall Price
-	+ 	Logo
-+	12	Product : banana(3124), patato(4132), tomato(4133), peach(3121), apple(3133), pineapple(3214), avocado(2134), cherry(2144), fig(3112), grape(4321), kiwi(1342), lemon(1213)
-	+	Images	: Fixed Sized (100 x 100), Fixed Position
-+	3 Modes		:
-	+	Barcode : SW1 & SW2 OFF
-	+	Arrow   : SW1 ON & SW2 OFF
-	+	Basket Editing : SW2 ON & SW1 X
++	[For Project Report Click Here](https://AtaberkOKLU.github.io/SaleTerminal/Docs/Project_Manuel/EE314_Term_Project_Report.pdf)
 
 # System
 
 ## States List
-+	[For State Flowchart Click Here](https://github.com/AtaberkOKLU/SaleTerminal/blob/main/Docs/StateFlowchart/StateFlowchart.pdf)
++	[For State Flowchart Click Here](https://AtaberkOKLU.github.io/SaleTerminal/Docs/StateFlowchart/StateFlowchart.pdf)
 
 ## Clocks
 +	Base CLK 	: 50 MHz
@@ -85,6 +58,38 @@ Visit Docs Folder
 	+	Total 	: 628
 +	Total B/s	: 39.790.080
 +	VGA CLK FREQ: 40 MHz
+
+
+
+
+# Link Resources
+
+## Verilog Tutorial
+* [Verilog](https://zipcpu.com/tutorial/)
+
+## VGA Controller
+* [VGA Controller using Verilog](https://ktln2.org/2018/01/23/implementing-vga-in-verilog/)
+* [VGA Controller | Verilog](https://numato.com/kb/simple-vga-design-example-for-telesto/)
+* [VGA Timing Calculations](http://tinyvga.com/vga-timing)
+* [One Deep Project - Interresting](https://projectf.io/posts/fpga-graphics/)
+	* [Project GitHub Page](https://github.com/projf/projf-explore/tree/master/lib)
+* [VGA Controller but VHDL - Teoritical Supplement](https://bertantaskin.com/fpga-ile-vga-monitor-kontrolu/)
+* [VGA Moving block and object selection using HDL](https://www.youtube.com/watch?v=WK5FT5RD1sU)
+
+# Need
++	Layout		:
+	+	Product List
+	+	Basket List
+	+	Overall Price
+	+ 	Logo
++	12	Product : banana(3124), patato(4132), tomato(4133), peach(3121), apple(3133), pineapple(3214), avocado(2134), cherry(2144), fig(3112), grape(4321), kiwi(1342), lemon(1213)
+	+	Images	: Fixed Sized (100 x 100), Fixed Position
++	3 Modes		:
+	+	Barcode : SW1 & SW2 OFF
+	+	Arrow   : SW1 ON & SW2 OFF
+	+	Basket Editing : SW2 ON & SW1 X
+
+
 
 <!--
 ## TO DO
